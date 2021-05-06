@@ -103,3 +103,7 @@ body{
     cursor: pointer;
     outline: none !important;
   }
+  .ad{
+    width: 100%;
+    height: fit-content;
+  }
