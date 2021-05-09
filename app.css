@@ -11,7 +11,8 @@ body{
     flex-flow: row;
     width: 100%;
     height: 30px;
-    background: #ffffff;
+    background-color: #ffffff99;
+    backdrop-filter: blur(21px);
     box-shadow: 2px 2px 90px 0px #00000030;
     padding: 16px;
     z-index: 2;
@@ -23,7 +24,8 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #ffffff99;
+    backdrop-filter: blur(54.03px);
     font-family: apple,"SF Pro Icons",
                "Helvetica Neue","Helvetica","Arial",sans-serif;
     font-size: 21px;
@@ -96,4 +98,11 @@ button{
     font-size: unset;
     color: #fff;
     cursor: pointer;
+    outline: none !important;
 }
+/* button:hover{
+    background: #00ad0e;
+    color: #fff;
+    font-weight: 500;
+    transition-duration: 2s;
+} */
