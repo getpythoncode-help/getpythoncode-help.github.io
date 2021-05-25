@@ -98,20 +98,21 @@ a{
     src: url(fonts/apple-Medium.otf);
 }
 button{
-    width: auto;
-    height: 40px;
+    width: fit-content;
+    height: fit-content;
     background: #651fff;
     border: transparent;
     border-radius: 4px;
     font-family: roboto;
-    font-size: unset;
+    font-size: medium;
     color: #fff;
     cursor: pointer;
     outline: none !important;
+    padding: 16px;
 }
-/* button:hover{
-    background: #00ad0e;
+button:hover{
+    background: #ff1f1f;
     color: #fff;
     font-weight: 500;
-    transition-duration: 2s;
-} */
+    transition-duration: 1s;
+}
