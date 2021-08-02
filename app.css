@@ -125,3 +125,26 @@ button:hover{
     font-weight: 500;
     transition-duration: 1s;
 }
+.Channel{
+    display: flex;
+    width: 270px;
+    height: 56px;   
+    margin: 20px;
+    line-height: 1;
+    align-content: center;
+    align-items: center;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.info{
+   font-family: Product Sans;
+   font-size: 24px;
+   margin-left: 20px;
+}
+#subscriberCount{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    color: #6B6B6B;
+}
