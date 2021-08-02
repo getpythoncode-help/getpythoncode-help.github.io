@@ -141,6 +141,11 @@ button:hover{
    font-size: 24px;
    margin-left: 20px;
 }
+h1{
+   font-family: Product Sans;
+   font-size: 24px;
+   margin-left: 20px;
+}
 #subscriberCount{
     font-family: Roboto;
     font-style: normal;
