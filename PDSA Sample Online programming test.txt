@@ -8,7 +8,7 @@
 
 #Q3
 
-elif y>=x and y>=w and y>=z:
+  elif y>=x and y>=w and y>=z:
     maximum=y
   elif x>=y and x>=w and x>=z:
     maximum=x
