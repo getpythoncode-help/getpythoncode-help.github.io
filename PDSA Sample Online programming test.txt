@@ -1,4 +1,8 @@
 #Given by www.youtube.com/c/getpythoncode
+
+# Online programming test answer of day session from 10 am to 12 pm will be given here please wait patiently till 50 minutes.
+# As soon as I complete all answers I will definately inform you in the youtube live streaming...........
+
 #Q1
 
 (-2,-8,2)
