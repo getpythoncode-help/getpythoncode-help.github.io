@@ -1,5 +1,91 @@
-#Given by www.youtube.com/c/getpythoncode
+#1
 
-# Online programming test answer of day session from 10 am to 12 pm will be given here please wait patiently till 50 minutes.
-# As soon as I complete all answers I will definately inform you in the youtube live streaming...........
+81
 
+#2
+
+      if (a!=c):
+        return True
+  return False
+
+#3
+
+[l[0]]+evenpositions(l[2:])
+
+
+#4
+
+def cubefree(n):
+  s=[]
+  i=2
+  while (i*i*i)<n:
+    s.append(i*i*i)
+    i+=1
+  for i in s:
+    if n%i==0:
+      return False
+  return True
+
+#5
+
+def dif(li1, li2):
+
+    li_dif = [i for i in li1 if i not in li2]
+    return li_dif
+def listdiff(l1,l2):
+  return (dif(l1,l2),dif(l2,l1))
+
+
+#6
+
+def deldup(l):
+  y=[]
+  for i in l:
+    if count(l,i)==1:
+      y.append(i)
+  return y
+
+def count(l,x):
+  c=0
+  for i in l:
+    if x==i:
+      c+=1
+  return c
+  
+      
+#7
+
+forbidden = input()
+while True:
+    try :
+        line = input()
+        if line == "":
+            break
+        if forbidden not in line:
+            print(line)
+    except EOFError:
+        break
+
+#8
+
+def aboveaverage(l):
+    p=0;
+    c=0;
+    m=0;
+    result=[]
+    for e in l:
+        p +=e[1]
+        c += e[2]
+        m += e[3]
+
+    for e in l:
+        count=0
+        if e[1]>=p/len(l):
+            count+=1
+        if e[2] >= c / len(l):
+            count += 1
+        if e[3] >= m / len(l):
+            count += 1
+        if count>=2:
+            result.append(e[0])
+    return result
