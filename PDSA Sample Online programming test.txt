@@ -60,7 +60,18 @@ def listdup(l):
 
 #7
 
-#please wait
+word = input()
+s = set(word)
+count = 0
+while True:
+    line = input()
+    if line == "":
+      break
+    for i in line:
+      if i in s:
+        count += 1
+
+print(count)
 
 #8
 
