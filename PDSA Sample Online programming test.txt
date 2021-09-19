@@ -75,4 +75,14 @@ print(count)
 
 #8
 
-#please wait
+def studypairs(l):
+    (phys, maths) = (0,0)
+    pairs = []
+    for i in l:
+        for j in l:
+            if i!=j:
+                # conditioning the statements
+                if (i[2]>j[2]) and (i[1]<j[1]) and (abs(i[1]-j[1])>=10) and (abs(i[2]-j[2])>=10):
+                    new_tuple = (i[0], j[0])
+                    pairs.append(tuple(sorted(new_tuple)))
+    return (sorted(pairs))
