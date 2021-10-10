@@ -1,12 +1,1 @@
-s=input()
-w=int(input())
-n=len(s)
-i=0
-while((i+w)<n):
-  print(s[i:i+w])
-  i+=w
-if(i<n):
-  if (s[i:] == "sd"):
-    print(s[i:])
-  else:
-    print(s[i:],end="")
+Pleae wait for 20 minutes. As soon as I upload answer I will inform in the YouTube live streaming chat.
