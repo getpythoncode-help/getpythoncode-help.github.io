@@ -1,1 +1,13 @@
-Please wait for 20 minutes as soon I upload answers I will immediately inform you in YouTube live streaming chat.
+Question 1
+
+A=(int*)malloc(n*sizeof(int));
+   for(int i=0;i<n;i++)
+   scanf("%d",A+i);
+               
+   B=(int*)malloc(n*sizeof(int));
+   C=(int*)malloc(n*sizeof(int));
+              for(int i=0;i<n;i++)
+               scanf("%d",B+i);
+                                             
+                for(int i=0;i<n;i++)
+                  *(C+i)=*(A+i)+*(B+i);
