@@ -1,16 +1,1 @@
-st = input()
-
-new = True
-curC = ''
-cnt = 0
-
-for i in st:
-    if i == curC:
-        cnt = cnt + 1
-    else:
-        if curC != '':
-            print ('(%d,%s)'% (cnt,curC),end=''),
-        curC = i
-        cnt = 1
-        
-print ('(%d,%s)'% (cnt,curC) )
+Please wait for answers . As soon as I upload answers I will inform you immediately in the youtube live streaming chat.
