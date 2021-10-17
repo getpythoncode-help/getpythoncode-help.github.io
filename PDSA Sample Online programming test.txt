@@ -1,1 +1,12 @@
-Please wait for answers . As soon as I upload answers I will inform you immediately in the youtube live streaming chat.
+Question 1
+
+for(i=0;i< n;i++)
+ {
+  for(j=0;j< n;j++)
+  {
+   if(i==j || i+j==n-1)
+   {
+    sum = sum + a[i][j];
+   }
+  }
+ }
