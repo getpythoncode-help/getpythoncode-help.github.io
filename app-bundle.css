@@ -126,8 +126,8 @@ button:hover{
     .menu{
         float: right;
         content: ' ';
-        height: 20px;
-        width: 20px;
+        height: 70px;
+        width: 70px;
         background-image: url(https://swift.org/assets/images/icon-menu.svg);
         background-repeat: no-repeat;
         background-position: center center;
