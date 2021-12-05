@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    overflow-x: hidden;
+    transition-duration: 200ms;
+}
+@font-face{
+    font-family: Youtube;
+    font-display: swap;
+    src: url(assets/font/google.ttf);
+}
+nav[role="navigation"] {
+    width: 189px;
+    position: fixed;
+    overflow: scroll;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #FAFAFA;
+    border-right: 1px solid #e6e6e6;
+    padding: 20px 30px;
+}
+main{
+    margin-left: 250px;
+    padding: 22px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+.logo{
+    display: block;
+    width: 190px;
+    height: 156px;
+    background-image: url(assets/images/vert_logo.svg);
+    background-repeat: no-repeat;
+    background-size: 90px;
+    margin-top: 20px;
+    margin-bottom: 0.5em;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+ul{
+    border-top: 1px solid #e6e6e6;
+    font-weight: 400;
+    margin-bottom: 30px;
+    list-style: none;
+}
+li{
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 17px;
+    padding-top: 17px;
+    margin-left: -40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+.page{
+    display: none;
+    padding: 40px;
+    margin-left: 250px;
+}
+.title{
+    font-size: 30px;
+}
+.important{
+    color: #FF0000;
+}
+button{
+    width: 110px;
+    height: 40px;
+    border: transparent solid;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #651fff;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+button:hover{
+    background-color: #4000ce;
+}
+.hero{
+    width: fit-content;
+    height: fit-content;
+    padding: 12px;
+    background-size: 22px;
+    background-position-x: 96%;
+    background-position-y: center;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+.hero:hover{
+    padding-right: 40px;
+    background: url(assets/images/redirect.svg) no-repeat;
+    background-size: 22px;
+    background-position-x: 96%;
+    background-position-y: center;
+}
+@media only screen and (max-width: 767px){
+    nav[role="navigation"] {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        background: #FAFAFA;
+        border-bottom: 1px solid #e6e6e6;
+        border-right: none;
+        padding: 20px 20px 20px 0px;
+        overflow: hidden;
+        transition-duration: 200ms;
+    }
+    ul{
+        display: none;
+        margin: 20px;
+        transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+    }
+    .logo{
+        width: 100%;
+        height: 56px;
+        margin: 0 auto;
+        background-image: url(assets/images/hor_logo.svg);
+        background-size: 70%;
+        background-position-x: 30%;
+        background-position-y: center;
+    }
+    .menu{
+        float: right;
+        content: ' ';
+        height: 20px;
+        width: 20px;
+        background-image: url(https://swift.org/assets/images/icon-menu.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 21px 21px;
+        margin-top: -40px;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    main{
+        max-width: 100%;
+        min-width: 320px;
+        margin-left: 0;
+        padding: 30px 30px 0;
+    }
+    .page{
+        display: none;
+        margin-left: 0px;
+    }
+}
+.sys{
+    position: fixed;
+    padding: 17px;
+    bottom: 12px;
+    right: 0px;
+    background-color: #000;
+    color: #fff;
+}
