@@ -1,0 +1,81 @@
+<!-- Programming, Data Structures And Algorithms Using Python -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Get Python Code</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
+	<style> /* unvisited link */
+#k:link {
+  color: red;
+}
+
+/* visited link */
+#k:visited {
+  color: green;
+}
+
+/* mouse over link */
+#k:hover {
+  color: hotpink;
+}
+
+/* selected link */
+#k:active {
+  color: blue;
+}
+	    </style>
+}
+        <script src='app.js'></script>
+    </head>
+    <body style="font-family: apple;">
+        <div id="get-nav" class="get-nav">
+            <div class="header">
+                <img src="getpythoncode/close.svg" onclick="closeNav()" width="24px"
+                style="padding: 8px;cursor: pointer;">
+                <div style="width: 8px; height: auto;"></div>
+                <img src="getpythoncode/getpythoncode.svg" width="220px;"
+                onclick="getpythoncode()">
+            </div>
+            <!-- NavContent -->
+            <div style="font-size: 17px; padding: 22px;display: block;
+                        width: 240px; height: fit-content;">
+               <a onclick="location.href='get.html'" style="cursor: pointer;">
+                Problem Solving through Programming in C</a><br><br>
+               <a onclick="location.href='python.html'" style="cursor: pointer;">
+                The Joy of Computing using Python</a><br><br>
+               <a onclick="location.href='code.html'" style="cursor: pointer;">
+                Programming, Data Structures And Algorithms using Python</a><br><br>
+                <a onclick="location.href='coursera.html'" style="cursor: pointer;">
+                    Coursera Answers</a>
+            </div>
+        </div>
+        <div class="appbar">
+            <img src="getpythoncode/menu.svg" onclick="openNav()" width="24px"
+             style="cursor: pointer;">
+            <img src="getpythoncode/getpythoncode.svg" width="220px;"
+             style="padding-left: 12px; cursor: pointer;" onclick="getpythoncode()">
+        </div>
+        <!--  -->
+        <div style="width: 100%; height: 60px;"></div>
+        <!-- <div class="get-newsflash"></div> -->
+        <!--  -->
+        Financial Aid application for <b> Coursera Python Data Structures</b><br />
+            <button  onclick="location.href='https://drive.google.com/drive/folders/1Vvdf8oy_rKejGD5opwNmzb6iSmj8PH0C'">
+            Download </button><br>
+            Financial Aid application  for <b>Coursera C for everyone peer graded assignments</b><br />
+            <button  onclick="location.href='https://drive.google.com/drive/folders/1gBF1RSgF23b-yhPOBJSAe9lzajW67Gov'">
+            Download </button><br>
+            Financial Aid application  for <b>Coursera Programming for Everybody (Getting Started with Python)</b><br />
+            <button  onclick="location.href='https://drive.google.com/drive/folders/1p6JWnDdXsZey-Pi3AR1hsWoIDDx0qTVU'">
+            Download </button><br>
+            Financial Aid application  for <b>Coursera Standford University Machine Learning</b><br />
+            <button  onclick="location.href='https://drive.google.com/drive/folders/1G7BtBxDBrA4nkWU-fu6j5hwIM0AQPSjn?usp=sharing'">
+            Download </button><br>
+</div>
+    </body>
+</html>
