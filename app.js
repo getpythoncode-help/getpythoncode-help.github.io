@@ -2,8 +2,8 @@ function openNav() {document.getElementById("get-nav").style.width = "296px";doc
 function closeNav() {document.getElementById("get-nav").style.width = "0";document.body.style.backgroundColor = "#fff";}
 function getpythoncode(){window.location.href="index.html";}
 
-const api = 'AIzaSyCVF-L8qPeRAmIbx0nnte72uDdXFNxXWlc';
-const ChannelID = 'UCEBt6_mbQsaAvSbsv2xwxiQ';
+const api = '';
+const ChannelID = '';
 const subscriberCount = document.getElementById("subscriberCount");
 
     let getSubscribers = () => {
