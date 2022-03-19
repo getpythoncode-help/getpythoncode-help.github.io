@@ -8,4 +8,14 @@
 
 ----------------------------
 
+# Q3
+else:
+    minimum=z
+  elif (y<=z and y<=x):
+    minimum=y
+  else:
+    minimum=z
+
+---------------------------
+
 # Working other questions 
