@@ -30,3 +30,14 @@ def intersect(l1,l2):
   l2s=set(l2)
   ls = l1s.intersection(l2s)
   return list(ls)
+
+#Q7
+pattern = input()
+while True:
+    try:
+        x = input()
+        if pattern in x:
+            a = x
+    except:
+        print(a)
+        break
