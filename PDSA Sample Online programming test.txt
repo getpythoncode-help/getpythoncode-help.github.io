@@ -1,3 +1,13 @@
-Please wait for about 40-50 minutes.I am working on the codes.
-As soon as I upload answers here,I will inform you in the youtube live streaming chat.
+#Q1
+[-1,-2,-4,-5]
 
+#Q2
+[(12,15),(5,9),(8,3),(77,15)]
+
+#Q3
+    l.sort()
+    mythirdmin=l[2]
+    break
+
+#Q4
+   [l[1]]+oddpositions(l[2:])
