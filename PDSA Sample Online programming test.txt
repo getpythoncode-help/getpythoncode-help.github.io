@@ -9,3 +9,14 @@ int temp;
 		}
 	}
 	System.out.print(arr[arr.length-4]);
+	
+//Q2
+
+int sum = arr[0];
+for (int i = 0; i < arr.length-1; i++) {
+  if (arr[i] != arr[i + 1]) {
+    sum = sum + arr[i+1];
+    }
+  
+}
+System.out.print(sum);
