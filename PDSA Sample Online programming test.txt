@@ -1,3 +1,25 @@
+Q1
+
+int min = arr[0];
+for(int i=1;i<arr.length;i++){
+  if(arr[i] < min){
+    min = arr[i];
+  }
+}
+
+System.out.print(min);
+
+Q2
+
+float avg = 0, count = 0;
+for(int i=0; i<arr.length; i++){
+  if(arr[i]%2 != 0){
+    avg += arr[i];
+    count++;
+  }
+}
+System.out.print(avg/count);
+
 Q5
 
 for(int i = 0; i < arr.length; i++) {  
