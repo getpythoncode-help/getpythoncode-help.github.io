@@ -1,7 +1,11 @@
-Please wait till 8:40 , I am working on the codes.
-As soon as I upload any answer I will inform in the youtube live streaming chat.
+#IMPORTANT NOTE:
+#Please change Joy week 12 quiz Question 9 ans to option B(One can only go forward from one node to another using a single edge.)
 
-IMPORTANT NOTE:
-Please change Joy week 12 quiz Question 9 ans to option B(One can only go forward from one node to another using a single edge.)
+#Q1
 
-
+a=input()
+a=sorted(a)
+for i in a:
+  for j in a:
+    print(i,end='')
+    print(j)
