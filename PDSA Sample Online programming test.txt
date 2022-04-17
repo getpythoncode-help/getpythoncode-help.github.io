@@ -1,7 +1,7 @@
 #IMPORTANT NOTE:
 #Please change Joy week 12 quiz Question 9 ans to option B(One can only go forward from one node to another using a single edge.)
 
-#Q1
+#Q3
 
 a=input()
 a=sorted(a)
