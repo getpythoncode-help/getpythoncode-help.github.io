@@ -50,3 +50,13 @@ for i in range(len(n)):
       print(n[j],end='')
       print(n[k],end='')
       print()
+
+
+#Q4
+
+m.sort()
+l = len(m)
+for k in range(l):
+  if sum(m[0:l-k-1]) <= sum(m[-1-k:]):
+    print(k+1,end="")
+    break
