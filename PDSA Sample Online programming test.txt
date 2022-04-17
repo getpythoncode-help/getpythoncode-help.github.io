@@ -1,6 +1,25 @@
 #IMPORTANT NOTE:
 #Please change Joy week 12 quiz Question 9 ans to option B(One can only go forward from one node to another using a single edge.)
 
+#Q1
+
+n=len(nums)
+if k>0:
+  k=k%n
+  x=[]
+  for i in range(0, n):
+    if(i < k):
+      x.append(nums[n + i - k])
+    else:
+      x.append(nums[i - k])
+  print(x, end='')
+else:
+  mod = k % n
+  x=[]
+  for i in range(n):
+    x.append(nums[(mod + i) % n])
+  print(x,end='')
+
 #Q3
 
 a=input()
