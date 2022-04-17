@@ -1,62 +1,7 @@
-#Q1
+Please wait till 8:40 , I am working on the codes.
+As soon as I upload any answer I will inform in the youtube live streaming chat.
 
-a=input()
-b=''
-for i in a:
-  if i not in b:
-    b+=i
-print(b,end='')
+IMPORTANT NOTE:
+Please Joy week 12 Question 9 quiz ans to option B(One can only go forward from one node to another using a single edge.)
 
 
-#2
-
-def isVowel(c):
-    if (c == 'a' or c == 'A' or c == 'e' or
-        c == 'E' or c == 'i' or c == 'I' or
-        c == 'o' or c == 'O' or c == 'u' or c == 'U'):
-        return True
-    return False
- 
-def reverserVowel(string):
-    j = 0
-    vowel = [0] * len(string)
-    string = list(string)
- 
-    for i in range(len(string)):
-        if isVowel(string[i]):
-            vowel[j] = string[i]
-            j += 1
- 
-    for i in range(len(string)):
-        if isVowel(string[i]):
-            j -= 1
-            string[i] = vowel[j]
- 
-    return ''.join(string)
- 
-string = input()
-print(reverserVowel(string))
-
-
-#Q3
-
-n = input()
-n = list(n)
-n = sorted(n)
-for i in range(len(n)):
-  for j in range(len(n)):
-    for k in range(len(n)):
-      print(n[i],end='')
-      print(n[j],end='')
-      print(n[k],end='')
-      print()
-
-
-#Q4
-
-m.sort()
-l = len(m)
-for k in range(l):
-  if sum(m[0:l-k-1]) <= sum(m[-1-k:]):
-    print(k+1,end="")
-    break
