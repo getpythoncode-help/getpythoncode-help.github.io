@@ -1,2 +1,6 @@
-Please wait for 40-50 minutes I am working on the codes.
-As soon as I upload answers I will inform you in the youtube live streaming chat.
+a=input()
+b=''
+for i in a:
+  if i not in b:
+    b+=i
+print(b,end='')
