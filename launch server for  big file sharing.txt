@@ -1,0 +1,5 @@
+python -m http.server 1458
+(inside the folder which is to be shared)
+
+ngrok http 1458
+(inside location where ngrok application is present)
