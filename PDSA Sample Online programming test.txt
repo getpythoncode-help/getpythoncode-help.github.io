@@ -38,5 +38,19 @@ def disjointlist(l1,l2):
     return True
   return False
 
+#Q7
+
+a=[]
+while True:
+  n=input()
+  if n!="":
+    a.append(n)
+  else:
+    break
+for i in range(len(a)//2,len(a)):
+  print(a[i])
+for i in range(len(a)//2):
+  print(a[i])
+
 Please wait for about 40-50 minutes ,I am working on the questions.
 As soon as I upload any answer I will inform you in the youtube live streaming chat.
