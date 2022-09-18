@@ -28,5 +28,15 @@ def squarefree(n):
             return False 
     return(True)
 
+#Q6
+
+def disjointlist(l1,l2):
+  a=set(l1)
+  b=set(l2)
+  c=a&b
+  if len(c)==0:
+    return True
+  return False
+
 Please wait for about 40-50 minutes ,I am working on the questions.
 As soon as I upload any answer I will inform you in the youtube live streaming chat.
