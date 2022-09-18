@@ -7,6 +7,23 @@
 
 [12,15,5,9,8,3,77,15]
 
+#Q3
+
+  if x>y:
+      if x<z:
+        mymedian=x
+      elif y>z:
+        mymedian=y
+      else:
+        mymedian=z
+  else:
+      if x>z:
+        mymedian=x
+      elif y<z:
+        mymedian=y
+      else:
+        mymedian=z
+
 
 Please wait for about 40-50 minutes,I am working on the
 questions.As soon as I upload any answer then I will
