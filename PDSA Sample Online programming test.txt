@@ -43,6 +43,17 @@ def sum3cubes(n):
     return False
 
 
+#Q6
+
+def uncommon(l1,l2) :
+    s1 = set(l1)
+    s2 = set(l2)
+    union = s1|s2
+    intersection = s1 & s2
+    ans = list(union - intersection)
+    ans.sort()
+    return ans
+
 Please wait for about 40-50 minutes,I am working on the
 questions.As soon as I upload any answer then I will
 inform in the youtube live streaming chat.
