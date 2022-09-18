@@ -24,6 +24,10 @@
       else:
         mymedian=z
 
+#Q4
+
+     decreasing(l[1:]) if l[0] > l[1] else False
+
 
 Please wait for about 40-50 minutes,I am working on the
 questions.As soon as I upload any answer then I will
