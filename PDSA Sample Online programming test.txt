@@ -19,5 +19,14 @@
 
      [l[0]]+mod3pos(l[3:])
 
+#Q5
+
+def squarefree(n): 
+
+    for i in range (2, round(n**0.5)): 
+        if n % (i**2) == 0: 
+            return False 
+    return(True)
+
 Please wait for about 40-50 minutes ,I am working on the questions.
 As soon as I upload any answer I will inform you in the youtube live streaming chat.
