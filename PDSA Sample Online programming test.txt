@@ -15,5 +15,9 @@
             l[j]=temp
   (mymax,mysecondmax,mythirdmax) =(l[-1],l[-2],l[-3])
 
+#Q4
+
+     [l[0]]+mod3pos(l[3:])
+
 Please wait for about 40-50 minutes ,I am working on the questions.
 As soon as I upload any answer I will inform you in the youtube live streaming chat.
