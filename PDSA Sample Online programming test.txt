@@ -52,5 +52,32 @@ for i in range(len(a)//2,len(a)):
 for i in range(len(a)//2):
   print(a[i])
 
-Please wait for about 40-50 minutes ,I am working on the questions.
-As soon as I upload any answer I will inform you in the youtube live streaming chat.
+#Q8
+
+def maxdifference(l):
+  d={}
+  for i in range(len(l)):
+    (name,scores )=l[i]
+    try:
+      d[name].append(scores )
+    except KeyError:
+      d[name]={}
+      d[name]=[scores ]
+  res=[]
+  maaa=0
+  for i in d.keys():
+    ma=max(d[i])
+    mi=min(d[i])
+    mx=ma-mi
+    if maaa<mx:
+      maaa=mx
+  for i in d.keys():
+    ma=max(d[i])
+    mi=min(d[i])
+    mx=ma-mi
+    if mx==maaa:
+      res.append(i)
+  res.sort()
+  return(res)
+
+#All Done please subscribe 
