@@ -1,6 +1,12 @@
 
 #Q1
+
 [52,13,20,44]
+
+#Q2
+
+[12,15,5,9,8,3,77,15]
+
 
 Please wait for about 40-50 minutes,I am working on the
 questions.As soon as I upload any answer then I will
