@@ -2,5 +2,9 @@
 
 [-9,-29,-39,-49]
 
+#Q2
+
+[(2,2),(1,2)]
+
 Please wait for about 40-50 minutes ,I am working on the questions.
 As soon as I upload any answer I will inform you in the youtube live streaming chat.
