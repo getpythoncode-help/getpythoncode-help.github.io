@@ -19,3 +19,14 @@ def converMarks(d):
             elif m>=0 and m<=40:
                 d[students][marks] = 'F'
     return(d)
+
+
+#Q2
+
+a,b = map(int, input().split())
+LINE= list(map(int, input().split()))
+R = sum(LINE)
+print(R%b,end="")
+
+
+#All done , this time we have only 2 questions
