@@ -1,2 +1,11 @@
-Please wait for 40-50 minutes as soon as I upload any 
-answer I will inform you in the youtube live streaming chat.
+#Q1
+
+m,c = map(int,input().split())
+a = ['+' for i in range(c+1)]
+d = ['|' for i in range(c+1)]
+e = '-'.join(a)
+f = '.'.join(d)
+for j in range(m):
+ print(e)
+ print(f)
+print(e,end = '')
