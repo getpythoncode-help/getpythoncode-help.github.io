@@ -37,3 +37,31 @@ static int findMissing(int array[], int s, int e)
  
         return findMissing(array, s, mid);
     }
+
+//Q4
+
+int n,sum=0,k=1; 
+
+Scanner sc = new Scanner(System.in); 
+
+n = sc.nextInt();
+for(int i=1;i<=n;i++)
+  { 
+      if(i%2==1) sum+=k; k+=2;}
+    System.out.print(sum);
+  }
+}
+
+//Q5
+
+int len = arr.length;
+for(int i=0;i<len;i++){
+ int j=i+1;
+   for(j=i+1;j<len;j++){
+       if(arr[i]==arr[j]){
+        System.out.println(arr[i]);
+        }
+    }
+}
+
+//All done please subscribe..
