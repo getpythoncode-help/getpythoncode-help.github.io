@@ -1,255 +1,104 @@
-<!-- Problem Solving through Programming in C -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Get Python Code</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
-        <script src='app.js'></script>
-	
-	    <style> /* unvisited link */
-#k:link {
-  color: red;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Get Python Code</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: large;
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+        }
+        .logo {
+            width: 320px;
+            height: 70px;
+            background: url("assets/logo.svg") no-repeat center;
+            cursor: pointer;
+        }
+        highlight {
+            background: rgb(0, 255, 0);
+            border-radius: 4px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        main {
+            margin: 13px;
+        }
+        #code {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+        }
+        @media only screen and (max-width: 600px) {
+            #code {
+                display: grid;
+                grid-template-columns: repeat(1, 100%);
+            }
+        }
+        textarea {
+            width: 100%;
+            min-height: 40vh;
+            word-break: break-all;
+            outline: none !important;
+            font-family: 'Roboto Mono', monospace;
+            resize: none;
+            /*border: transparent solid;*/
+        }
+        button {
+            font-family: 'Roboto Mono', monospace;
+            font-size: large;
+            padding: 10px 13px 10px 13px;
+            border: transparent solid;
+            background: #651fff;
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="logo"></div>
+</nav>
+<main>
+    <a><highlight>NPTEL</highlight> 2023 Java Week 1 Codes</a>
+    <div id="code"></div>
+</main>
+<script>
+    function DOM(data) {
+        data.forEach(t => {
+            document.getElementById("code").innerHTML += `
+        <div style="margin: 10px"><br/><a>${t.id}</a><br/>
+        <textarea spellcheck="false" readonly id="${t.id}">${t.code}</textarea><br/>
+        <button class="copy" data-code-id="${t.id}">Copy</button><br/></div>
+    `
+        });
+    }
 
-/* visited link */
-#k:visited {
-  color: green;
-}
-
-/* mouse over link */
-#k:hover {
-  color: hotpink;
-}
-
-/* selected link */
-#k:active {
-  color: blue;
-}
-	    </style>   
-	    
-    </head>
-    <body style="font-family: apple;margin: 16px;">
-        <div id="get-nav" class="get-nav">
-            <div class="header">
-                <img src="getpythoncode/close.svg" onclick="closeNav()" width="24px"
-                style="padding: 8px;cursor: pointer;">
-                <div style="width: 8px; height: auto;"></div>
-                <img src="getpythoncode/getpythoncode.svg" width="220px;"
-                onclick="getpythoncode()">
-            </div>
-            <!-- NavContent -->
-            <div style="font-size: 17px; padding: 22px;display: block;
-                        width: 240px; height: fit-content;">
-               <a onclick="location.href='get.html'" style="cursor: pointer;">
-                Problem Solving through Programming in C</a><br><br>
-               <a onclick="location.href='python.html'" style="cursor: pointer;">
-                The Joy of Computing using Python</a><br><br>
-               <a onclick="location.href='code.html'" style="cursor: pointer;">
-                Programming, Data Structures And Algorithms using Python</a><br><br>
-                <a onclick="location.href='coursera.html'" style="cursor: pointer;">
-                    Coursera Answers</a><br><br>
-                <a onclick="location.href='page5.html'" style="cursor: pointer;">
-                    Coursera Financial Aid Application </a><br><br>
-                    <a onclick="location.href='java.html'" style="cursor: pointer;">
-                      Java NPTEL </a>
-            </div>
-        </div>
-        <div class="appbar">
-            <img src="getpythoncode/menu.svg" onclick="openNav()" width="24px"
-             style="cursor: pointer;">
-            <img src="getpythoncode/getpythoncode.svg" width="220px;"
-             style="padding-left: 12px; cursor: pointer;" onclick="getpythoncode()">
-        </div>
-        <!--  -->
-        <div style="width: 100%; height: 30px;"></div>
-        <!-- <div class="get-newsflash"></div> -->
-        <!--  -->
-        <div  style="margin: 16px;font-size: 40px;"> 
-            
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- ads06 -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7940051656975251"
-                    data-ad-slot="8622665596"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-              <!--  -->
-              <div style="margin: 12px;">
-                <h4>NPTEL JAVA</h4>
-		      
-		      
-	    <h1> Click below button to download  Online programming test answers of  "NPTEL Programming in Java" for Night Session on 22nd October  (Time-8pm to 10 pm).</h1>
-	    
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=10su-quImPOUz1IlGoSKqwpR2G9GVDK-r'">Download "NPTEL Programming in Java" Online Programming Test answer(Night Exam). </button>
-		      <h3>As soon as I upload any answer you refresh this page or Close this website and then open again.In this way new answer will be visible to you.ok</h3>
-		      <!--             <br> <h1>OR Click below colored link to see the answers without downloading it.</h1>
-	   <a id ="k" href='https://raw.githubusercontent.com/getpythoncode-help/getpythoncode-help.github.io/main/PDSA%20Sample%20Online%20programming%20test.txt'>SEE  "NPTEL Programming in Java" Online programming test answer for Day Session on 22nd October (Time-10 am to 12 pm)  </a>
-               <h6>Note-As soon as you click on the above link it will show advertisement.So, please close it (By clicking on "CLOSE").</h6>
- -->
-
-          
-            
-                <br><br>	      
-	
-	     <h1> Click below button to download  previous year weekly quiz of "NPTEL Programming in Java"(2021,September to December)</h1>
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1W4uU09m3YBxo6D2x85_tqzky3ywHwZzS'">Download "NPTEL Programming in Java" Previous year quiz of 2021,September to December. </button>     
-            <br>	
-            <h1> Click below button to download  previous year weekly quiz of "NPTEL Programming in Java"(2021,January to April)</h1>
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=19nXwnJkcwRyhWJ6z-Ofj_yhMw6zIs-US'">Download "NPTEL Programming in Java" Previous year quiz of 2021,January to April</button>     
-            <br>
-           <h1> Click below button to download  previous year weekly quiz of "NPTEL Programming in Java"(2020,August to October)</h1>
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1LMuceQsxZKKx9gCmgm7bLEktuS1_Gbvb'">Download "NPTEL Programming in Java" Previous year quiz of 2020,August to October</button>     
-            <br>
-	<h2>__________________________________________________________________________________________________________________________________________________________________________________________________________</h2><br>         
-            
-                        <h1>Click below to get "NPTEL Programming in Java Week 1  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1Ba8kT-ldhAq1VsPtMuAeoTvXFYeFk5zG'">Download Programming in Java Week 1  programming assignment answer</button>
-                
-                              
-                              <br><br>
-                
-                              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7940051656975251"
-                     crossorigin="anonymous"></script>
-                <!-- Java Ad1 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7940051656975251"
-                     data-ad-slot="7425145015"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-		      
-           <br><br>
-                        <h1>Click below to get "NPTEL Programming in Java Week 2  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1RnAeqGT7VeQaOXzn4HRIx-tMIZ-DtnR5'">Download Programming in Java Week 2  programming assignment answer</button>
-                
-                              
-                              
-           <br><br>
-                        <h1>Click below to get "NPTEL Programming in Java Week 3  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1qHlu-B5TQ11JZRKqWWt2HtHBW_Wo09h3'">Download Programming in Java Week 3  programming assignment answer</button>
-           
-                              
-                              
-          <br><br>
-                        <h1>Click below button to get "NPTEL Programming in Java Week 4  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1V8cA-304bzgVzakvIUlOvexJ3AQ_tXeD'">Download Programming in Java Week 4  programming assignment answer</button>
-                
-           <br><br>
-	   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7940051656975251"
-     crossorigin="anonymous"></script>
-		<!-- java ad2 -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7940051656975251"
-		     data-ad-slot="9120156019"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		<br><br>
-                        <h1>Click below button to get "NPTEL Programming in Java Week 5  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=12wJClcALQ3kkLEkF4_eTh27le04QaN7M'">Download Programming in Java Week 5  programming assignment answer</button>
-                
-                              
-                              
-		      
-		<br><br>
-                        <h1>Click below button to get "NPTEL Programming in Java Week 6  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1ernI70c4CmfLXZTQXqywIX-bFUdH7cN5'">Download Programming in Java Week 6  programming assignment answer</button>
-                
-                              
-                              
-	      <br><br>
-                        <h1>Click below button to get "NPTEL Programming in Java Week 7  programming assignment answer "</h1>
-                                  <h6>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1ONhPxH9TWE5-f0ec1AQ6EgT0CydZHU4o'">Download Programming in Java Week 7  programming assignment answer</button>
-                
-                              
-                              <br><br>  
-	    <h1>Click below button to get "NPTEL Programming in Java Week 8  programming assignment answer "</h1>
-                                  <h6>(Note-NO password.Just copy and paste.Enjoy !!!)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=19GED9-ZSf4Swe8-mwtkmfkqibqnyMwJj'">Download Programming in Java Week 8  programming assignment answer</button>
-                
-                              
-                              <br><br>  
-          <h1>Click below button to get "NPTEL Programming in Java Week 9  programming assignment answer "</h1>
-                                  <h6>(Note-It is a zip file with NO PASSWORD just extract it and then open.)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=17VF4VVzuO3YpHqoYPhE_1NPlewAAQuq3'">Download Programming in Java Week 9  programming assignment answer</button>
-                
-                              
-                              <br><br>  
-		      
-           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7940051656975251"
-		     crossorigin="anonymous"></script>
-		<!-- Ad 3 -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7940051656975251"
-		     data-ad-slot="2476290809"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		      
-           <h1>Click below to get "NPTEL Programming in Java Week 10  programming assignment answer "</h1>
-                                  <h6>(Note-NO password , just copy and paste.)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1Gm6geSg3tiVZtgaYJivX1xH6DQG6J1Gl'">Download Programming in Java Week 10  programming assignment answer</button>
-                
-                              
-                              <br><br>  
-          <h1>Click below to get "NPTEL Programming in Java Week 11  programming assignment answer "</h1>
-                                  <h6>(NO password, just copy and paste.)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1Iiddd7RIvt_uzFMKSxHOv2ecO3rdPjI3'">Download Programming in Java Week 11  programming assignment answer</button>
-                
-                              
-                              <br><br>  
-           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7940051656975251"
-		     crossorigin="anonymous"></script>
-		<!-- last_java -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-7940051656975251"
-		     data-ad-slot="7354535786"
-		     data-ad-format="auto"
-		     data-full-width-responsive="true"></ins>
-		<script>
-		     (adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-		
-	   <br><br>  
-          <h1>Click below to get "NPTEL Programming in Java Week 12  programming assignment answer "</h1>
-                                  <h6>(Note-NO password, just copy and paste.)</h6>
-                              <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1Zx_BZnUZSZitf13X-a6Hb8xknunEBanC'">Download Programming in Java Week 12 programming assignment answer</button>
-                
-                              
-                              <br><br>  
-	
-	
-          </div>
-<!--       <iframe width="330" height="230" style="margin-left: 20px;" src="https://www.youtube-nocookie.com/embed/CB2jH5FMY_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-      </body>
-    </body>
+    const data = [];
+    fetch("data.json")
+        .then(response => response.json())
+        .then(json => {
+            for (let key in json) {
+                data.push({id: key, code: json[key]})
+            }
+            DOM(data);
+            for (let id of document.getElementsByClassName("copy")) {
+                id.addEventListener("click", (e) => {
+                    const textarea = document.getElementById(e.target.dataset.codeId);
+                    textarea.select();
+                    document.execCommand("copy");
+                });
+            }
+        });
+</script>
+</body>
 </html>
-
-
-
