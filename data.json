@@ -7,10 +7,10 @@
     "Java week 1 Question 5 code": "        if(x>y && x>z) \n        {\n          \n            result=x;\n        }\n        else if(y>x && y>z)\n        {\n            result=y;\n        }\n        else\n          result=z;\n        System.out.print(result);"
   },
   {
-    "Java week 2 Question 1 code":"Not uploaded",
-    "Java week 2 Question 2 code":"Not uploaded",
-    "Java week 2 Question 3 code":"Not uploaded",
-    "Java week 2 Question 4 code":"Not uploaded",
-    "Java week 2 Question 5 code":"Not uploaded"
+    "Java week 2 Question 1 code":"\t\tSchool school = new School();\n\t\tschool.print();\n        Student student = new Student();\n\t\tstudent.print();",
+    "Java week 2 Question 2 code":"    Printer p=new Printer();\n    String s=\"Hi! I class SCHOOL.\";\n    String r=\"Hi! I am class STUDENT\";\n    p.print(s);\n    p.print(r);\n",
+    "Java week 2 Question 3 code":"void student()\n    {\n\t\n\t\tprint(this);\n\t}",
+    "Java week 2 Question 4 code":"class Answer{\n\t\n\tAnswer(){\n\t\tSystem.out.println(\"You got nothing.\");\n\t}\n\t\n\tAnswer(int marks, String type){\n\t\t\n\t\tthis();\t\t\n\t\t\n\t\tSystem.out.print(\"You got \"+marks+\" for an \"+ type);\n\t}\n}\n",
+    "Java week 2 Question 5 code":"  System.out.print(nptel+space+java+space+nptel);"
   }
 ]
