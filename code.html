@@ -28,6 +28,45 @@
 #k:active {
   color: blue;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}		
+		
 	    </style>
 }
         <script src='app.js'></script>
@@ -80,16 +119,36 @@
            <br>
 	    <br> 
 	    
-	    <h1> Click below button to download  Online programming test answers for Night Session for session 2022 (Time-8pm to 10 pm).</h1>
+<!-- 	    <h1> Click below button to download  Online programming test answers for Night Session for session 2022 (Time-8pm to 10 pm).</h1>
 	    <br>
 	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=18HGYvYEySdmihFDw_8_9Zj6Mp_AIi0mb'">Download Programming Data Structures and Algorithm using python Online Programming Test answer(2022 September Night Exam). </button>
             <br><br> <h1>OR Click below colored link to see the answers without downloading it.</h1>
 	 <br>  <a id ="k" href='https://raw.githubusercontent.com/getpythoncode-help/getpythoncode-help.github.io/main/PDSA%20Sample%20Online%20programming%20test.txt'>SEE Programming Data Structures and Algorithm using python Online programming test answer for September Night Session (Time-8 pm to 10 pm)  </a>
-               <br>Note-As soon as you click on the above link it will show advertisement.So, please close it (By clicking on "CLOSE").
+               <br>Note-As soon as you click on the above link it will show advertisement.So, please close it (By clicking on "CLOSE"). -->
 
 
           <br>
 	    <br>
+	    
+	    <script>
+                  function myFunction() {
+                    var copyText = document.getElementById("myInput");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999);
+                    navigator.clipboard.writeText(copyText.value);
+                    
+                    var tooltip = document.getElementById("myTooltip");
+                    tooltip.innerHTML = "Copied: " + copyText.value;
+                  }
+                  
+                  function outFunc() {
+                    var tooltip = document.getElementById("myTooltip");
+                    tooltip.innerHTML = "Copy to clipboard";
+                  }
+                  </script>
+	    
+	     
+	    
 	    
 	    <h1> Click below button to download Programming Data Structures and Algorithm using python Previous year weekly quiz and All week lectures. </h1>
 	    <br>
@@ -165,7 +224,53 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	    <br><br>
-	    <a>Click below button to get "Programming Data Structures and Algorithm using python Week 2  programming assignment answer "</a>
+  	    
+	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment</p>
+
+                <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
+def isPrime(n):
+    if n==2:
+        return(True)
+    if n%2==0:
+        return(False)
+    return all(n%x>0 for x in range(3, int(n**0.5)+1, 2))
+ 
+def genP(n):
+    p = [2]
+    p.extend([z for z in range(3, n+1, 2) if isPrime(z)]) 
+    return p
+def primepartition(n):
+    q = genP(n)
+    for a in range(0,len(q)):
+        for b in range(0,len(q)):
+            if q[a]+q[b]==n:
+                return(True)  
+    return False
+  
+  
+def matched(s1):
+  s1=list(s1)
+  for i in range(len(s1)):
+    if s1[i]=="(":
+      if ')' in s1[i+1:]:
+        s1[s1.index(')')]='#'
+  return(s1.count('#')==s1.count('(')) 
+
+
+def rotatelist(l,k): 
+    ans =list() 
+    R = k%len(l)
+    for d in range(R, len(l)): 
+        ans.append(l[d]) 
+    for d in range(0, R):  
+        ans.append(l[d]) 
+    return(ans)         
+                </textarea><br><br>
+	    
+	    
+	    
+<!-- 	    <a>Click below button to get "Programming Data Structures and Algorithm using python Week 2  programming assignment answer "</a>
                   <h4>(Note-It has a zip file which is password protected.Get the password from the YouTube video)</h4>
               <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1fg386dFohhWCOHdBvv-MacXaGMsnhPvk'">Download Programming Data Structures and Algorithm using python Week 2  programming assignment answer</button>
               
@@ -210,7 +315,10 @@
 	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1klcfFIssaL9E9S8F9HOKUYy_-iSlEg-K'">Download Programming Data Structures and Algorithm using python Week 8  programming assignment answer  </button>
 
   
-            <br><br>
+            <br><br> -->
+	    
+	    
+	    
 	    
 	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7940051656975251"
      crossorigin="anonymous"></script>
