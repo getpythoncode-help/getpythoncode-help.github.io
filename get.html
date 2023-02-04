@@ -1,252 +1,97 @@
-<!-- Problem Solving through Programming in C -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Get Python Code</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
-        <script src='app.js'></script>
-	
-	    <style> /* unvisited link */
-#k:link {
-  color: red;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>GetPythonCode</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+</head>
+<body>
+<main>
+    <svg width="270" height="50" viewBox="0 0 400 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M104.44 25.84C104.44 29.84 103.253 33.0267 100.88 35.4C98.2133 38.2267 94.7067 39.64 90.36 39.64C86.2 39.64 82.68 38.2 79.8 35.32C76.92 32.44 75.48 28.8933 75.48 24.68C75.48 20.4667 76.92 16.92 79.8 14.04C82.68 11.16 86.2 9.72 90.36 9.72C92.4667 9.72 94.4533 10.0933 96.32 10.84C98.1867 11.5867 99.72 12.64 100.92 14L98.28 16.64C97.4 15.5733 96.2533 14.7467 94.84 14.16C93.4533 13.5467 91.96 13.24 90.36 13.24C87.24 13.24 84.6 14.32 82.44 16.48C80.3067 18.6667 79.24 21.4 79.24 24.68C79.24 27.96 80.3067 30.6933 82.44 32.88C84.6 35.04 87.24 36.12 90.36 36.12C93.2133 36.12 95.5867 35.32 97.48 33.72C99.3733 32.12 100.467 29.92 100.76 27.12H90.36V23.68H104.24C104.373 24.4267 104.44 25.1467 104.44 25.84ZM116.876 39.64C113.996 39.64 111.623 38.6533 109.756 36.68C107.889 34.7067 106.956 32.2133 106.956 29.2C106.956 26.2133 107.863 23.7333 109.676 21.76C111.489 19.76 113.809 18.76 116.636 18.76C119.543 18.76 121.849 19.7067 123.556 21.6C125.289 23.4667 126.156 26.0933 126.156 29.48L126.116 29.88H110.716C110.769 31.8 111.409 33.3467 112.636 34.52C113.863 35.6933 115.329 36.28 117.036 36.28C119.383 36.28 121.223 35.1067 122.556 32.76L125.836 34.36C124.956 36.0133 123.729 37.3067 122.156 38.24C120.609 39.1733 118.849 39.64 116.876 39.64ZM110.996 26.84H122.236C122.129 25.48 121.569 24.36 120.556 23.48C119.569 22.5733 118.236 22.12 116.556 22.12C115.169 22.12 113.969 22.5467 112.956 23.4C111.969 24.2533 111.316 25.4 110.996 26.84ZM136.695 39.32C135.095 39.32 133.762 38.8267 132.695 37.84C131.655 36.8533 131.122 35.48 131.095 33.72V22.76H127.655V19.4H131.095V13.4H134.775V19.4H139.575V22.76H134.775V32.52C134.775 33.8267 135.029 34.72 135.535 35.2C136.042 35.6533 136.615 35.88 137.255 35.88C137.549 35.88 137.829 35.8533 138.095 35.8C138.389 35.72 138.655 35.6267 138.895 35.52L140.055 38.8C139.095 39.1467 137.975 39.32 136.695 39.32ZM156.185 27.4V39H152.505V10.36H162.265C164.745 10.36 166.852 11.1867 168.585 12.84C170.345 14.4933 171.225 16.5067 171.225 18.88C171.225 21.3067 170.345 23.3333 168.585 24.96C166.878 26.5867 164.772 27.4 162.265 27.4H156.185ZM156.185 13.88V23.88H162.345C163.812 23.88 165.025 23.3867 165.985 22.4C166.972 21.4133 167.465 20.24 167.465 18.88C167.465 17.5467 166.972 16.3867 165.985 15.4C165.025 14.3867 163.812 13.88 162.345 13.88H156.185ZM191.963 19.4L179.683 47.64H175.883L180.443 37.76L172.363 19.4H176.363L182.203 33.48H182.283L187.963 19.4H191.963ZM202.125 39.32C200.525 39.32 199.192 38.8267 198.125 37.84C197.085 36.8533 196.552 35.48 196.525 33.72V22.76H193.085V19.4H196.525V13.4H200.205V19.4H205.005V22.76H200.205V32.52C200.205 33.8267 200.458 34.72 200.965 35.2C201.472 35.6533 202.045 35.88 202.685 35.88C202.978 35.88 203.258 35.8533 203.525 35.8C203.818 35.72 204.085 35.6267 204.325 35.52L205.485 38.8C204.525 39.1467 203.405 39.32 202.125 39.32ZM208.701 10.36H212.381V19.4L212.221 22.12H212.381C212.941 21.16 213.794 20.36 214.941 19.72C216.114 19.08 217.328 18.76 218.581 18.76C220.981 18.76 222.821 19.4533 224.101 20.84C225.408 22.2 226.061 24.1467 226.061 26.68V39H222.381V27.4C222.381 23.88 220.821 22.12 217.701 22.12C216.208 22.12 214.941 22.7467 213.901 24C212.888 25.2267 212.381 26.6667 212.381 28.32V39H208.701V10.36ZM229.261 29.2C229.261 26.1867 230.207 23.6933 232.101 21.72C234.021 19.7467 236.434 18.76 239.341 18.76C242.247 18.76 244.647 19.7467 246.541 21.72C248.461 23.6933 249.421 26.1867 249.421 29.2C249.421 32.24 248.461 34.7333 246.541 36.68C244.647 38.6533 242.247 39.64 239.341 39.64C236.434 39.64 234.021 38.6533 232.101 36.68C230.207 34.7067 229.261 32.2133 229.261 29.2ZM232.941 29.2C232.941 31.3067 233.554 33.0133 234.781 34.32C236.007 35.6267 237.527 36.28 239.341 36.28C241.154 36.28 242.674 35.6267 243.901 34.32C245.127 33.0133 245.741 31.3067 245.741 29.2C245.741 27.12 245.127 25.4267 243.901 24.12C242.647 22.7867 241.127 22.12 239.341 22.12C237.554 22.12 236.034 22.7867 234.781 24.12C233.554 25.4267 232.941 27.12 232.941 29.2ZM252.373 19.4H255.893V22.12H256.053C256.613 21.16 257.466 20.36 258.613 19.72C259.786 19.08 260.999 18.76 262.253 18.76C264.653 18.76 266.493 19.4533 267.773 20.84C269.079 22.2 269.733 24.1467 269.733 26.68V39H266.053V26.92C265.973 23.72 264.359 22.12 261.213 22.12C259.746 22.12 258.519 22.72 257.533 23.92C256.546 25.0933 256.053 26.5067 256.053 28.16V39H252.373V19.4ZM296.18 39.64C291.94 39.64 288.394 38.2133 285.54 35.36C282.714 32.5067 281.3 28.9467 281.3 24.68C281.3 20.4133 282.714 16.8667 285.54 14.04C288.367 11.16 291.914 9.72 296.18 9.72C300.5 9.72 304.007 11.28 306.7 14.4L304.06 16.96C302.007 14.48 299.38 13.24 296.18 13.24C293.007 13.24 290.354 14.3067 288.22 16.44C286.114 18.5467 285.06 21.2933 285.06 24.68C285.06 28.0667 286.114 30.8133 288.22 32.92C290.354 35.0533 293.007 36.12 296.18 36.12C299.514 36.12 302.407 34.72 304.86 31.92L307.54 34.52C306.18 36.1467 304.514 37.4133 302.54 38.32C300.567 39.2 298.447 39.64 296.18 39.64ZM309.3 29.2C309.3 26.1867 310.246 23.6933 312.14 21.72C314.06 19.7467 316.473 18.76 319.38 18.76C322.286 18.76 324.686 19.7467 326.58 21.72C328.5 23.6933 329.46 26.1867 329.46 29.2C329.46 32.24 328.5 34.7333 326.58 36.68C324.686 38.6533 322.286 39.64 319.38 39.64C316.473 39.64 314.06 38.6533 312.14 36.68C310.246 34.7067 309.3 32.2133 309.3 29.2ZM312.98 29.2C312.98 31.3067 313.593 33.0133 314.82 34.32C316.046 35.6267 317.566 36.28 319.38 36.28C321.193 36.28 322.713 35.6267 323.94 34.32C325.166 33.0133 325.78 31.3067 325.78 29.2C325.78 27.12 325.166 25.4267 323.94 24.12C322.686 22.7867 321.166 22.12 319.38 22.12C317.593 22.12 316.073 22.7867 314.82 24.12C313.593 25.4267 312.98 27.12 312.98 29.2ZM341.603 36.28C343.416 36.28 344.896 35.6267 346.043 34.32C347.243 33.0133 347.843 31.3067 347.843 29.2C347.843 27.1467 347.243 25.4533 346.043 24.12C344.869 22.7867 343.389 22.12 341.603 22.12C339.843 22.12 338.363 22.7867 337.163 24.12C335.963 25.4533 335.363 27.1467 335.363 29.2C335.363 31.28 335.963 32.9733 337.163 34.28C338.363 35.6133 339.843 36.28 341.603 36.28ZM341.003 39.64C338.443 39.64 336.243 38.6267 334.403 36.6C332.589 34.5467 331.683 32.08 331.683 29.2C331.683 26.32 332.589 23.8533 334.403 21.8C336.243 19.7733 338.443 18.76 341.003 18.76C342.443 18.76 343.749 19.0667 344.923 19.68C346.123 20.2933 347.043 21.1067 347.683 22.12H347.843L347.683 19.4V10.36H351.363V39H347.843V36.28H347.683C347.043 37.2933 346.123 38.1067 344.923 38.72C343.749 39.3333 342.443 39.64 341.003 39.64ZM364.454 39.64C361.574 39.64 359.201 38.6533 357.334 36.68C355.467 34.7067 354.534 32.2133 354.534 29.2C354.534 26.2133 355.441 23.7333 357.254 21.76C359.067 19.76 361.387 18.76 364.214 18.76C367.121 18.76 369.427 19.7067 371.134 21.6C372.867 23.4667 373.734 26.0933 373.734 29.48L373.694 29.88H358.294C358.347 31.8 358.987 33.3467 360.214 34.52C361.441 35.6933 362.907 36.28 364.614 36.28C366.961 36.28 368.801 35.1067 370.134 32.76L373.414 34.36C372.534 36.0133 371.307 37.3067 369.734 38.24C368.187 39.1733 366.427 39.64 364.454 39.64ZM358.574 26.84H369.814C369.707 25.48 369.147 24.36 368.134 23.48C367.147 22.5733 365.814 22.12 364.134 22.12C362.747 22.12 361.547 22.5467 360.534 23.4C359.547 24.2533 358.894 25.4 358.574 26.84Z"
+              fill="black" fill-opacity="0.6"/>
+        <path d="M50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50C38.8071 50 50 38.8071 50 25Z"
+              fill="#601CFB"/>
+        <path d="M17.434 34.356H17.016C16.0533 34.356 15.287 34.071 14.717 33.501C14.147 32.9437 13.862 32.1837 13.862 31.221V28.143C13.862 26.965 13.3933 26.376 12.456 26.376V24.932C13.3933 24.932 13.862 24.343 13.862 23.165V20.087C13.862 19.1243 14.147 18.3643 14.717 17.807C15.287 17.237 16.0533 16.952 17.016 16.952H17.434V18.396H17.149C16.0217 18.396 15.458 19.0357 15.458 20.315V23.469C15.4453 24.5963 15.0083 25.312 14.147 25.616V25.692C14.9957 25.9707 15.4327 26.6673 15.458 27.782V30.993C15.458 32.2723 16.0217 32.912 17.149 32.912H17.434V34.356ZM31.6266 34.356V32.912H31.9116C33.0389 32.912 33.6026 32.2723 33.6026 30.993V27.782C33.6279 26.6673 34.0649 25.9707 34.9136 25.692V25.616C34.0522 25.312 33.6152 24.5963 33.6026 23.469V20.315C33.6026 19.0357 33.0389 18.396 31.9116 18.396H31.6266V16.952H32.0446C33.0072 16.952 33.7736 17.237 34.3436 17.807C34.9136 18.3643 35.1986 19.1243 35.1986 20.087V23.165C35.1986 24.343 35.6672 24.932 36.6046 24.932V26.376C35.6672 26.376 35.1986 26.965 35.1986 28.143V31.221C35.1986 32.1837 34.9136 32.9437 34.3436 33.501C33.7736 34.071 33.0072 34.356 32.0446 34.356H31.6266Z"
+              fill="white"/>
+        <path d="M25.8388 18.396L20.1958 32H18.5618L24.2048 18.396H25.8388ZM30.5146 18.396L24.8716 32H23.2376L28.8806 18.396H30.5146Z"
+              fill="black"/>
+    </svg>
+    <br/>
+    <course>Click here to get Problem Solving Through Programming In C for Year
+        <week>2020</week> - <week>2022</week><br/>
+        <button onclick="location.href='https://drive.google.com/uc?export=download&id=1zIBEHIHqSh7opK3EKmsm-sL4NvzYcUOy'">Download</button><br/>
+    </course>
+    <space></space>
+    <br>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ads06 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7940051656975251"
+         data-ad-slot="8622665596"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!--  ads06  -->
+    <br>
+    <course>Problem Solving Through Programming In C -
+        <week>Week 3</week>
+    </course>
+    <div id="c-3"></div>
+    <space></space>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ads10 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7940051656975251"
+         data-ad-slot="6123467092"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!--  ads10  -->
+    <course>Problem Solving Through Programming In C -
+        <week>Week 4</week>
+    </course>
+    <div id="c-4"></div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- ads11 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7940051656975251"
+         data-ad-slot="4810385425"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- ads11 -->
+</main>
+<script>
+    fetch("/api/data.json")
+        .then(response => response.json())
+        .then(json => {
+            dom("c-3", json[0])
+            dom("c-4", json[1])
+        })
 
-/* visited link */
-#k:visited {
-  color: green;
-}
-
-/* mouse over link */
-#k:hover {
-  color: hotpink;
-}
-
-/* selected link */
-#k:active {
-  color: blue;
-}
-	    </style>   
-	    
-    </head>
-    <body style="font-family: apple;margin: 16px;">
-        <div id="get-nav" class="get-nav">
-            <div class="header">
-                <img src="getpythoncode/close.svg" onclick="closeNav()" width="24px"
-                style="padding: 8px;cursor: pointer;">
-                <div style="width: 8px; height: auto;"></div>
-                <img src="getpythoncode/getpythoncode.svg" width="220px;"
-                onclick="getpythoncode()">
-            </div>
-            <!-- NavContent -->
-            <div style="font-size: 17px; padding: 22px;display: block;
-                        width: 240px; height: fit-content;">
-               <a onclick="location.href='get.html'" style="cursor: pointer;">
-                Problem Solving through Programming in C</a><br><br>
-               <a onclick="location.href='python.html'" style="cursor: pointer;">
-                The Joy of Computing using Python</a><br><br>
-               <a onclick="location.href='code.html'" style="cursor: pointer;">
-                Programming, Data Structures And Algorithms using Python</a><br><br>
-                <a onclick="location.href='coursera.html'" style="cursor: pointer;">
-                    Coursera Answers</a><br><br>
-                <a onclick="location.href='page5.html'" style="cursor: pointer;">
-                    Coursera Financial Aid Application </a><br><br>
-                    <a onclick="location.href='java.html'" style="cursor: pointer;">
-                      Java NPTEL </a>
-            </div>
-        </div>
-        <div class="appbar">
-            <img src="getpythoncode/menu.svg" onclick="openNav()" width="24px"
-             style="cursor: pointer;">
-            <img src="getpythoncode/getpythoncode.svg" width="220px;"
-             style="padding-left: 12px; cursor: pointer;" onclick="getpythoncode()">
-        </div>
-        <!--  -->
-        <div style="width: 100%; height: 30px;"></div>
-        <!-- <div class="get-newsflash"></div> -->
-        <!--  -->
-        <div  style="margin: 16px;font-size: 40px;"> <br>
-		<h1> Click below button to download  previous year weekly quiz of "Problem Solving through Programming in C"(From 2020 to 2022)</h1>
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=1zIBEHIHqSh7opK3EKmsm-sL4NvzYcUOy'">Download "NPTEL Problem Solving through Programming in C  Previous year all quiz". </button>     
-            <br>
-	<h6>(Note-It has a zip file so first download zip file then extract it and then open it.)</h6>
-		
-            <a><h1>NPTEL Problem Solving through Programming in C  Online Programming Test answers(Exam Time-8 pm to 9 pm)</h1>
-            </a>
-            <h1> Click below button to download  Online programming test answers of  "Problem Solving through Programming in C " for Night Session (Time-8 pm to 9 pm)</h>
-	    <br>
-	    <button  onclick="location.href='https://drive.google.com/uc?export=download&id=10su-quImPOUz1IlGoSKqwpR2G9GVDK-r'">Download "Problem Solving through Programming in C " Online Programming Test answer(Night exam)</button>
-            <br> <h1>OR Click below colored link to see the answers without downloading it.</h1>
-	   <a id ="k" href='https://raw.githubusercontent.com/getpythoncode-help/getpythoncode-help.github.io/main/PDSA%20Sample%20Online%20programming%20test.txt'>SEE  "Problem Solving through Programming in C " Online programming test answer for Night session  </a>
-              <a>Note-As soon as you click on the above link it will show advertisement.So, please close it (By clicking on "CLOSE")</a>
-
-
-          <br><br>
-            
-<!--             <textarea style="width: 100%; height: 100vh; border: transparent solid; outline: none !important;" spellcheck="false" readonly>
-Question 1
-                
-try{ 
-  int num1=30, num2=0;
-  int output=num1/num2;
---------------------------------------
-Question 2
-                
-static void sort(int[] arr)
-    {
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++)
-            for (int j = 0; j < n-i-1; j++)
-                if (arr[j] > arr[j+1])
-                {
-                    // swap arr[j+1] and arr[j]
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
+    function dom(id, data) {
+        for (let key in data) {
+            document.getElementById(id).innerHTML += `
+                <a style="margin: 0 13px">${key}</a>
+                <pre>${data[key]}</pre>
+            `
+        }
     }
--------------------------------------
-Question 3
-
-int i,j,temp;
-
-for (i = 0; i < 20; i++)   
-        {  
-            for ( j = i + 1; j < 20; j++)   
-            {  
-                if (arr[i] > arr[j])   
-                {  
-                    temp = arr[i];  
-                    arr[i] = arr[j];  
-                    arr[j] = temp;  
-                }  
-            }  
-        }  
-System.out.print(arr[18]); 
----------------------------------------
-Question 4
-                
-Scanner s=new Scanner(System.in);
- int n=s.nextInt();
- n=n/2+1;
- int j=1,sum=0;;
- for(int i=0;i<n;i++)
- {
-  sum=sum+j;
-  j=j+4;
- }
- System.out.print(sum);
-}
-}
-----------------------------------------
-Question 5
-                      
-double sum=0;
-int count=0;
-for(int i=0;i<6;i++){
-  if(arr[i]%2==0&&arr[i]!=0){
-    count++;
-   sum=sum+arr[i];
-  }}
-sum=sum/count;
-     System.out.print(sum);
------------------------------------------
-            </textarea><br><br><br> -->
-            <a class="text" style="font-size: xx-large;">Problem Solving through 
-              Programming in C</a><br>
-          </div>
-            <a style="margin: 16px;font-size: 28px;">Syllabus</a><br>
-              <div style="margin: 16px;"><a><b>Week 1 :</b> Introduction to Problem Solving through programs, Flowcharts/Pseudo codes, the compilation process, Syntax and Semantic errors, Variables and Data Types</a></div>
-              <div style="margin: 16px;"><a><b>Week 2 :</b> Arithmetic expressions, Relational Operations, Logical expressions; Introduction to Conditional Branching</a></div>
-              <div style="margin: 16px;"><a><b>Week 3 :</b> Conditional Branching and Iterative Loops</a></div>
-              <div style="margin: 16px;"><a><b>Week 4 :</b> Arranging things : Arrays</a></div>
-              <div style="margin: 16px;"><a><b>Week 5 :</b> 2-D arrays, Character Arrays and Strings </a></div>
-              <div style="margin: 16px;"><a><b>Week 6 :</b> Basic Algorithms including Numerical Algorithms</a></div>
-              <div style="margin: 16px;"><a><b>Week 7 :</b> Functions and Parameter Passing by Value</a></div>
-              <div style="margin: 16px;"><a><b>Week 8 :</b> Passing Arrays to Functions, Call by Reference</a></div>
-              <div style="margin: 16px;"><a><b>Week 9 :</b> Recursion</a></div>
-              <div style="margin: 16px;"><a><b>Week 10 :</b> Structures and Pointers</a></div>
-              <div style="margin: 16px;"><a><b>Week 11 :</b> Self-Referential Structures and Introduction to Lists</a></div>
-              <div style="margin: 16px;"><a><b>Week 12 :</b> Advanced Topics</a></div>
-        
-              <!--  -->
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- ads06 -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7940051656975251"
-                    data-ad-slot="8622665596"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-              <!--  -->
-              <div style="margin: 12px;">
-                  <a class="text"><b style="font-size: x-large;">IMPORTANT: CERTIFICATION CRITERIA</b><br>
-          Candidates have to come to the exam center and take the theory test.<br>
-          (The date of the theory test will be announced by NPTEL)
-          It is mandatory to take the Proctored in-person final exam to obtain a certificate.<br>
-          To pass the course and get a certificate:<br>
-          score >= 40/100 AND Programming exam score >= 40/100 AND Proctored exam score >= 40/100<br>
-              <h1 style="text-align: center;">OR</h1>
-          Assignment score >= 10/25 AND Programming exam score >= 10/25 AND Proctored exam score >= 20/50 <br>
-          <b>All 3 conditions have to be satisfied.</b><br><br>
-          <b style="font-size: x-large;">ONLINE PROGRAMMING TEST</b><br>
-          This exam is also known as unproctored exam.<br><br>
-          Unproctored exam means you will give this exam at home in the absence of invigilator. <br>
-          The date of this exam will be announced by NPTEL.<br>
-          Duration of this exam is 1 hours only.<br>
-          3 programming questions will be there.<br>
-          <br><b>Click here to download C previous year 1st session online programming test questions with answer.</b><br>
-          <br><button class="btn" onclick="location.href='https://drive.google.com/uc?export=download&id=15oiqNHPf1aMAZQBIfJM4XIlWTLousr5p'">Download</button><br>
-          <br><b>Click here to download C previous year 2nd session online programming test questions with answer.</b><br>
-          <br><button class="btn" onclick="location.href='https://drive.google.com/uc?export=download&id=15tGq_qtbPaWqFgRNa0QTp47y530uN9SZ'">Download</button><br>
-      
-          This exam is taken in two sessions(You can give this exam 2 times).<br>
-          You can give this exam in the 1st session (Day session)<br>
-          or<br>
-          You can give this exam in the 2nd session (Night session)<br>
-          or<br>
-          You can give this exam in both the session.<br>
-          But the best score will be counted for final exam certification.<br><br>
-          <b>This is like a programming assignment of 1 hour.</b><br>
-          <b>NPTEL will never ask to switch on any webcam during this exam.</b><br>
-          <b>NPTEL says you can't give this exam using phone.</b><br>
-          <b>But you can give this exam using phone.</b><br><br>
-          <!--  -->
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- ads07 -->
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-7940051656975251"
-                data-ad-slot="5709561795"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script><br><br>
-          <!--  -->
-          <iframe width="340" height="315" 
-          src="https://www.youtube-nocookie.com/embed/8rNqZIzIdVQ" 
-          title="YouTube video player" frameborder="0" allow="accelerometer; 
-          autoplay; clipboard-write; encrypted-media; gyroscope; 
-          picture-in-picture" allowfullscreen></iframe><br><br>
-          <b>We will definitely help for this exam.<b><br><br>
-              <a style="font-size: 40px;">Proctored Exam</a><br>
-              <a>1.All questions will be MCQ<br>
-              2.No negative marking<br>
-              3.Question will be just like your weekly quiz assignments.<br>
-              3.Some Questions will be directly copy pasted from weekly assignments and some question will be somewhat twisted.<br>
-              4.You must get 40% marks in this exam to get certificate.<br>
-              See this video for more detail.<br></a></a>
-          </a>
-          </div>
-      <iframe width="330" height="230" style="margin-left: 20px;" src="https://www.youtube-nocookie.com/embed/CB2jH5FMY_Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </body>
-    </body>
+</script>
+</body>
 </html>
