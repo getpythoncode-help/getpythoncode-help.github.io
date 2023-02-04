@@ -1,0 +1,14 @@
+[
+  {
+    "Week-03: Programing Assignment-01": "  area = 3.14 * radius * radius;\n  printf(\"Area of a circle = %0.2f\\n\",area);\n}",
+    "Week-03: Programing Assignment-02": "  if(number<0.0)\n     printf(\"Negative number.\");\n   else if(number==0.0)\n     printf(\"The number is 0.\");\n   else\n     printf(\"Positive number.\");\n     return 0;\n}",
+    "Week-03: Programing Assignment-03": "  if (number%2==0)\n    printf(\"%d is even.\", number);\n  else\n    printf(\"%d is odd.\", number);\n    return 0;\n  }\n",
+    "Week-03: Programing Assignment-04": "  if (n1>n2 && n1>n3)\n    printf(\"%d is the largest number.\", n1);\n  else if(n2>n1 && n2>n3)\n     printf(\"%d is the largest number.\", n2);\n  else\n     printf(\"%d is the largest number.\", n3);\n    return 0;\n  }\n"
+  },
+  {
+    "Week-03 Programing Assignment-01": "  Will be uploaded in the next week",
+    "Week-03 Programing Assignment-02": "  Will be uploaded in the next week",
+    "Week-03 Programing Assignment-03": "  Will be uploaded in the next week",
+    "Week-03 Programing Assignment-04": "  Will be uploaded in the next week"
+  }
+]
