@@ -143,6 +143,9 @@
             for (let key in json[1]) {
                 data1.push({id: key, code: json[1][key]})
             }
+            for (let key in json[1]) {
+                data2.push({id: key, code: json[2][key]})
+            }
             DOM(data0, "code-java0");
             DOM(data1, "code-java1");
             DOM(data2, "code-java2");
