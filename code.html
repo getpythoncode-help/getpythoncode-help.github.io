@@ -272,7 +272,36 @@ def rotatelist(l,k):
                 <p> Week 3: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-Will be uploaded in the next week.        
+def remdup(l):
+  ans=list()
+  for i in l[::-1]:
+    if i not in ans:
+      ans.append(i)
+  return(ans[::-1])   
+
+def splitsum(l):
+  pos=0
+  neg=0
+  for i in l:
+    if i<0:
+      neg+=i**3
+    else:
+        pos+=i**2
+  return([pos,neg])  
+
+def matrixflip(m,d):
+  hor,ver=list(),list()
+  if d=='h':
+    for i in m:
+      hh=list()
+      for row in range(1,len(i)+1):
+        hh.append(i[-row])
+      hor.append(hh)
+    return(hor) 
+  if d=='v':
+    for v in range(1,len(m)+1):
+      ver.append(m[-v])
+    return(ver)        
                 </textarea><br><br>	    
 	    
 	    
