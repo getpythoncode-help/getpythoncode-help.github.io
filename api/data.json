@@ -6,7 +6,7 @@
     "Week-03: Programing Assignment-04": "  if (n1>n2 && n1>n3)\n    printf(\"%d is the largest number.\", n1);\n  else if(n2>n1 && n2>n3)\n     printf(\"%d is the largest number.\", n2);\n  else\n     printf(\"%d is the largest number.\", n3);\n    return 0;\n  }\n"
   },
   {
-    "Week-04 Programing Assignment-01": "if (n2>n1)\n    {\n    if(n1<n3)\n  printf(\"%d is the smallest number.\", n1);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n    else\n    {\n  if(n2<n3)\n printf(\"%d is the smallest number.\", n2);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n}",
+    "Week-04 Programing Assignment-01": "if (n2>n1)\n    {\n    if(n1 <n3)\n  printf(\"%d is the smallest number.\", n1);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n    else\n    {\n  if(n2<n3)\n printf(\"%d is the smallest number.\", n2);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n}",
     "Week-04 Programing Assignment-02": "     fact=1;\n   for(int i=n;i>0;i--)\n   {\n     fact*=i;\n   }\n\nprintf(\"The Factorial of %d is : %ld\",n,fact);\n\n}",
     "Week-04 Programing Assignment-03": "  for(int i=2;i<=N;i++)\n{\n  if(i%2==0)\n  sum+=i;\n}\nprintf(\"Sum = %d\", sum);\n}",
     "Week-04 Programing Assignment-04": "   Last_digit =N%10;\n while(N>0)\n {\n   First_digit=N%10;\n   N/=10;\n }\n"
