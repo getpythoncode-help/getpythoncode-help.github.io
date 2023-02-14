@@ -1,10 +1,10 @@
 [
   {
-    "Java week 1 Question 1 code": "   int max=arr[0];\n   int sum=0;\n   \n   for(i=0;i<arr.length;i++)\n   {\n     if (max<arr[i])\n       max=arr[i];\n     sum=sum+arr[i];\n   }\n   result=max;\n   mark_avg= sum/s;\n   \n   System.out.println(result);\n   System.out.print(mark_avg);",
-    "Java week 1 Question 2 code": "      int even =0;\n      for(int i=1;i<=n;i++ )\n      {\n        if (even%3==0)\n          sum+=even;\n        even+=2;\n      }\n      System.out.print(sum);",
-    "Java week 1 Question 3 code": "\n      if(radius <=0)\n        System.out.print(\" please enter non zero positive number \");\n      else\n      {\n        System.out.println(2*Math.PI*radius);\n        System.out.print(Math.PI*radius*radius);\n      }  \n    ",
-    "Java week 1 Question 4 code": "       int num=n;\n       int sum=0;\n       while(num>0)\n       {\n         int r=num%10;\n         sum+=r*r*r;\n         num/=10;\n       }\n       if (sum==n )\n         result=1;\n      \n      System.out.print(result);\n      ",
-    "Java week 1 Question 5 code": "        if(x>y && x>z) \n        {\n          \n            result=x;\n        }\n        else if(y>x && y>z)\n        {\n            result=y;\n        }\n        else\n          result=z;\n        System.out.print(result);"
+    "Java week 4 Question 1 code": " import java.util.Scanner;\nimport java.io.*;\nimport static java.lang.System.*;\nimport java.util.LinkedList;\n",
+    "Java week 4 Question 2 code": " java.util.Calendar current;\n\ncurrent = java.util.Calendar.getInstance();\nyear = current.get(current.YEAR);\n",
+    "Java week 4 Question 3 code": " class Large \n{\n    public void Print() \n    {\n        System.out.println(\"This is small\");\n    }\n}\n\nclass Medium extends Large\n{\n    public void Print() \n    {\n    \tsuper.Print();  \n        System.out.println(\"This is medium\");\n    }\n}\n\nclass Small extends Medium {\n    public void Print() {\n        super.Print();  \n        System.out.println(\"This is large\");\n    }\n}\n\ninterface ExtraLarge{\n\tstatic String extra = \"This is extra-large\";\n\tvoid display();\n}\n",
+    "Java week 4 Question 4 code": "  \n       \nSecond.super.show();\n\nFirst.super.show();",
+    "Java week 4 Question 5 code": "interface ShapeX \n{\n public String base = \"This is Shape1\";\n  \n public void display1();\n}\n\ninterface ShapeY extends ShapeX \n{\n public String base = \"This is Shape2\";\n public void display2();\n}\n\nclass ShapeG implements ShapeY \n{\n public String base = \"This is Shape3\";\n  \n public void display1() {\n  System.out.println(\"Circle: \" + ShapeX.base);\n }\n // Overriding method in ShapeY interface\n public void display2() {\n  System.out.println(\"Circle: \" + ShapeY.base);\n }\n}  \n"
   },
   {
     "Java week 2 Question 1 code":"\t\tSchool school = new School();\n\t\tschool.print();\n        Student student = new Student();\n\t\tstudent.print();",
