@@ -1,9 +1,9 @@
 [
   {
-    "Week-03: Programing Assignment-01": "  area = 3.14 * radius * radius;\n  printf(\"Area of a circle = %0.2f\\n\",area);\n}",
-    "Week-03: Programing Assignment-02": "  if(number<0.0)\n     printf(\"Negative number.\");\n   else if(number==0.0)\n     printf(\"The number is 0.\");\n   else\n     printf(\"Positive number.\");\n     return 0;\n}",
-    "Week-03: Programing Assignment-03": "  if (number%2==0)\n    printf(\"%d is even.\", number);\n  else\n    printf(\"%d is odd.\", number);\n    return 0;\n  }\n",
-    "Week-03: Programing Assignment-04": "  if (n1>n2 && n1>n3)\n    printf(\"%d is the largest number.\", n1);\n  else if(n2>n1 && n2>n3)\n     printf(\"%d is the largest number.\", n2);\n  else\n     printf(\"%d is the largest number.\", n3);\n    return 0;\n  }\n"
+    "Week-05: Programing Assignment-01": " int temp, no_of_digit; \nno_of_digit=0;\n    temp=N;\n    while(temp>0)\n\t{\n        no_of_digit+=1;\n        temp/=10;\n    }\n     printf(\"The number %d contains %d digits.\",N,no_of_digit);\n}\n ",
+    "Week-05: Programing Assignment-02": "int t2, flag;\n    t2=N;\n    flag=0;\n\n    while(t2!=1)\n    {\n        if(t2%2!=0){\n            flag=1;\n            break;\n        }\n        t2/=2;\n    }\n\n    if(flag==0)\n        printf(\"%d is a number that can be expressed as power of 2.\",N);\n    else\n        printf(\"%d cannot be expressed as power of 2.\",N);\n}\n  ",
+    "Week-05: Programing Assignment-03": "for(int z=1;z<=n;z=z+2)\n  {\n    sum+=z*z;\n  }\nprintf(\"Sum=%d\",sum);\nreturn 0;\n} ",
+    "Week-05: Programing Assignment-04": "int i3,j;\nfor(i3=N; i3>0; i3--)\n  {\n  for(j=0;j<i3;j++)\n    {\n    printf(\"*\");\n    }\n  printf(\"\\n\");\n  } \n}  "
   },
   {
     "Week-04 Programing Assignment-01": "if (n2>n1)\n    {\n    if(n1 < n3)\n  printf(\"%d is the smallest number.\", n1);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n    else\n    {\n  if(n2 < n3)\n printf(\"%d is the smallest number.\", n2);\n else\n printf(\"%d is the smallest number.\", n3);\n    }\n}",
