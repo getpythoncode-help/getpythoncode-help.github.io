@@ -258,40 +258,73 @@ def flatten(k):
   return (ans)        
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 3 programming answers</a>
-                <p> Week 3: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def remdup(l):
-  ans=list()
-  for i in l[::-1]:
-    if i not in ans:
-      ans.append(i)
-  return(ans[::-1])   
+def borrowers_input(b):
+    z=input()
+    while(z!='Checkouts'):
+        z=z.split('~')
+        b.append(z)
+        z=input()  
 
-def splitsum(l):
-  pos=0
-  neg=0
-  for i in l:
-    if i<0:
-      neg+=i**3
-    else:
-        pos+=i**2
-  return([pos,neg])  
+def checkouts_input(c):
+    y=input()
+    while(y!='EndOfInput'):
+        y=y.split('~')
+        c.append(y)
+        y=input()
 
-def matrixflip(m,d):
-  hor,ver=list(),list()
-  if d=='h':
-    for i in m:
-      hh=list()
-      for row in range(1,len(i)+1):
-        hh.append(i[-row])
-      hor.append(hh)
-    return(hor) 
-  if d=='v':
-    for v in range(1,len(m)+1):
-      ver.append(m[-v])
-    return(ver)        
+def output():
+    name=list()
+    Anum=list()
+    title=list()
+    date=list()
+    uname=list()
+    
+    global books,borrower,checkout
+    for a in range(0,len(checkout)):
+        date.append(checkout[a][2])
+
+    for b in range(0,len(checkout)):
+        uname.append(checkout[b][0])
+
+    for c in range(0,len(uname)):
+        for e in range(0,len(borrower)):
+            if(uname[c] == borrower[e][0]):
+                name.append(borrower[e][1])  
+
+    for a in range(0,len(checkout)):
+        Anum.append(checkout[a][1])
+
+    for a in range(0,len(Anum)):
+        for b in range(0,len(books)):
+            if(Anum[a] == books[b][0]):
+                title.append(books[b][1])  
+
+    final=[]
+    for i in range(0,len(checkout)):
+        final.append(date[i]+'~'+name[i]+'~'+Anum[i]+'~'+title[i])
+    final.sort()
+    for i in range(0,len(final)):
+        print(final[i])
+
+
+
+borrower=list()
+books=list()
+checkout=list()
+x=input()
+x=input()
+while x!='Borrowers':
+    x=x.split('~')
+    books.append(x)
+    x=input()
+borrowers_input(borrower)
+borrower.sort()
+checkouts_input(checkout)
+output()       
                 </textarea><br><br>	    
 	    
 	    
