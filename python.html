@@ -204,15 +204,14 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-n=int(input())
-ans=0
-for i in range(1,n+1):
-  ans+=i**2
-print(ans,end="")  
+N=int(input())
+L=[int(i) for i in input().split()]
+K=int(input())
+print(sorted(L).index(L[K-1])+1,end="")
                   
                 </textarea><br><br>
 
@@ -225,11 +224,31 @@ print(ans,end="")
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2</p>
+                <p> Week 6: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-n=int(input())
-print(2**n,end="")
+A=input()
+ans=str()
+for i in A:
+  if i.islower():
+    if i=='a':
+      ans+='y'
+    elif i=='b':
+      ans+='z' 
+    else:
+      ans+=chr(ord(i)-2)
+  elif i.isupper():
+    if i=='A':
+      ans+='X' 
+    elif i=='B':
+      ans+='Y' 
+    elif i=='C':
+      ans+='Z'
+    else:
+      ans+=chr(ord(i)-3)  
+  elif i.isspace() or i.isnumeric():
+    ans+=i
+print(ans,end="")
                   
                 </textarea><br><br>
 
@@ -242,41 +261,11 @@ print(2**n,end="")
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3</p>
+                <p> Week 6: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-#This code is written for Pyramid inside Pyramid
-#The inner pyramid starts from 6th row when number>9
-#You will never see any number>9 in this Pyramid
-
-n=int(input())
-max_row=1
-max_row1=1
-
-for row in range(1,n+1):
-    b=0
-    for space in range(1,n-row+1):
-        print(" ",end="")
-
-    a=row
-    Left=list()
-    while(a!=max_row1):
-        
-        if a>9:
-            Left.append(str(b))
-            b=b+1
-        else:    
-            Left.append(str(a))
-        a=a+1
-    if row==n:    
-      print(("".join(Left)+str(max_row)+"".join(Left[::-1])),end="") 
-    else:
-      print(("".join(Left)+str(max_row)+"".join(Left[::-1]))) 
-    if (max_row+2>9):
-        max_row=-1
-    max_row+=2
-    max_row1+=2    
-
+N=int(input())
+print(sum([i for i in range(N+1)]),end="")
                   
                 </textarea><br><br>
 
