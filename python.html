@@ -297,14 +297,25 @@ print(sum([i for i in range(N+1)]),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-import math
-a=int(input())
-b=int(input())
-print(math.gcd(a,b),end="")
+def DiagCalc(Matrix):
+  left,right,j=(0,0,1)
+  for i in range(len(Matrix)):
+    left+=Matrix[i][i]
+    right+=Matrix[i][-j]
+    j+=1
+  return((left,right)) 
+
+M=int(input())
+Matrix=[]
+for i in range(M):
+  Matrix.append([int(i) for i in input().split()])
+  
+print(DiagCalc(Matrix)[0])
+print(DiagCalc(Matrix)[1],end="")
 			
                   
                 </textarea><br><br>
@@ -317,15 +328,19 @@ print(math.gcd(a,b),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-raja=[int(i) for i in input().split()]
-rani=[int(i) for i in input().split()] 
-def dot_product(Romio, Juliet ):
-  return(sum([Romio[i]*Juliet[i]  for i in range(len(Romio))]))   
-print(dot_product(raja,rani),end="")
+def Transpose(M):
+    T=list()
+    for i in range(len(M[0])):
+         t=list()
+         for j in range(len(M)):
+              t.append(M[j][i])
+         T.append(t)     
+    return(T) 
+
                   
                 </textarea><br><br>
 
@@ -337,14 +352,18 @@ print(dot_product(raja,rani),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-def largest_zero_streak(mystring):
-    return(len(max(mystring.split('1'))))
-s=input()
-print(largest_zero_streak(s),end="")  
+def  snake(M):
+  s=[]
+  for i in range(len(M)):
+    if i%2==0:
+      s+=M[i]
+    else:
+      s+=M[i][::-1]
+  return(s) 
 
                   
                 </textarea><br><br>
