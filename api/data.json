@@ -1,9 +1,9 @@
 [
   {
-    "Week-05: Programing Assignment-01": " int temp, no_of_digit; \nno_of_digit=0;\n    temp=N;\n    while(temp>0)\n\t{\n        no_of_digit+=1;\n        temp/=10;\n    }\n     printf(\"The number %d contains %d digits.\",N,no_of_digit);\n}\n ",
-    "Week-05: Programing Assignment-02": "int t2, flag;\n    t2=N;\n    flag=0;\n\n    while(t2!=1)\n    {\n        if(t2%2!=0){\n            flag=1;\n            break;\n        }\n        t2/=2;\n    }\n\n    if(flag==0)\n        printf(\"%d is a number that can be expressed as power of 2.\",N);\n    else\n        printf(\"%d cannot be expressed as power of 2.\",N);\n}\n  ",
-    "Week-05: Programing Assignment-03": "for(int z=1;z<=n;z=z+2)\n  {\n    sum+=z*z;\n  }\nprintf(\"Sum=%d\",sum);\nreturn 0;\n} ",
-    "Week-05: Programing Assignment-04": "int i3,j;\nfor(i3=N; i3>0; i3--)\n  {\n  for(j=0;j < i3;j++)\n    {\n    printf(\"*\");\n    }\n  printf(\"\\n\");\n  } \n}  "
+    "Week-07: Programing Assignment-01": "    int v = 0;\n   while (ch[v] != '\\0') {\n      if (ch[v] >= 'A' && ch[v] <= 'Z')\n         upper++;\n      if (ch[v] >= 'a' && ch[v] <= 'z')\n         lower++;\n      v++;\n   }\n\n   \n \n   ",
+    "Week-07: Programing Assignment-02": "    int ans;\n    for(i=0;i < r;i++)\n    {\n        ans=0;      \n        for(j=0;j < c;j++)\n        {\n       \n            ans+=  matrix[i][j];\n        }\n        printf(\"%d\\n\",ans);\n    }\n \n}\n  ",
+    "Week-07: Programing Assignment-03": "for(int i1=0; i1 < row; i1++)\n    {\n        for(int kk=0; kk < col; kk++)\n        {\n    \n            matrix_C[i1][kk] = matrix_A[i1][kk] - matrix_B[i1][kk];\n        }\n    }\n\n     for(i=0; i < row; i++)\n    {\n        for(j=0; j < col; j++)\n        {\n            printf(\"%d \", matrix_C[i][j]);\n        }\n        printf(\"\\n\");\n    }\n\n    return 0;\n} ",
+    "Week-07: Programing Assignment-04": "for(int rows = 0; rows < i; rows++)\n  \t{\n  \t\tprintf(\"\\n\");\n   \t\tfor(int columns = 0; columns < j; columns++)\n    \t{\n    \t\tif(rows >= columns)\n    \t\t{\n    \t\t\tprintf(\"%d \", matrix[rows][columns]);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tprintf(\"0 \");\n\t\t\t}\n   \t \t}\n  \t}\n  \t\n \treturn 0;\n}  "
   },
   {
     "Week-06 Programing Assignment-01": "largest = arr[0];\n\nfor(i = 1; i < n; ++i)\n    {\n    if(largest < arr[i])\n          {\n                     largest = arr[i];\n          }\n    }\n\nprintf(\"Largest element = %d\", largest);\n\n    return 0;\n}\n",
