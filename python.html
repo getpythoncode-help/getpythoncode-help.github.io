@@ -204,14 +204,12 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-N=int(input())
-L=[int(i) for i in input().split()]
-K=int(input())
-print(sorted(L).index(L[K-1])+1,end="")
+def squareT(T):
+  return(T+tuple([i*i for i in T]))
                   
                 </textarea><br><br>
 
@@ -223,32 +221,23 @@ print(sorted(L).index(L[K-1])+1,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-A=input()
-ans=str()
-for i in A:
-  if i.islower():
-    if i=='a':
-      ans+='y'
-    elif i=='b':
-      ans+='z' 
-    else:
-      ans+=chr(ord(i)-2)
-  elif i.isupper():
-    if i=='A':
-      ans+='X' 
-    elif i=='B':
-      ans+='Y' 
-    elif i=='C':
-      ans+='Z'
-    else:
-      ans+=chr(ord(i)-3)  
-  elif i.isspace() or i.isnumeric():
-    ans+=i
-print(ans,end="")
+def replaceV(S):
+  vowels=list("aeiouAEIOU")
+  L=list(S)
+  for i in range(len(L)-2):
+    if L[i] in vowels and L[i+1] in vowels and L[i+2] in vowels:
+      L[i]='*'
+      L[1+i]="*"
+      L[i+2]="*"
+      i+=2
+  return("".join(L).replace("***","_"))
+ 
+print(replaceV(input()),end="")
+
                   
                 </textarea><br><br>
 
@@ -260,12 +249,19 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-N=int(input())
-print(sum([i for i in range(N+1)]),end="")
+L=[int(i) for i in input().split()]
+A=[]
+B=[]
+for i in L:  
+  if i==0:
+    A.append(0)
+  else:
+    B.append(i)
+print(B+A,end="")      
                   
                 </textarea><br><br>
 
