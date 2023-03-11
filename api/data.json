@@ -6,9 +6,9 @@
     "Week-07: Programing Assignment-04": "for(int rows = 0; rows < i; rows++)\n  \t{\n  \t\tprintf(\"\\n\");\n   \t\tfor(int columns = 0; columns < j; columns++)\n    \t{\n    \t\tif(rows >= columns)\n    \t\t{\n    \t\t\tprintf(\"%d \", matrix[rows][columns]);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tprintf(\"0 \");\n\t\t\t}\n   \t \t}\n  \t}\n  \t\n \treturn 0;\n}  "
   },
   {
-    "Week-06 Programing Assignment-01": "largest = arr[0];\n\nfor(i = 1; i < n; ++i)\n    {\n    if(largest < arr[i])\n          {\n                     largest = arr[i];\n          }\n    }\n\nprintf(\"Largest element = %d\", largest);\n\n    return 0;\n}\n",
-    "Week-06 Programing Assignment-02": "int w, temp;  \nw = i - 1;   \ni = 0;      \n\n   while (i < w) \n   {\n      temp = arr[i];\n      arr[i] = arr[w];\n      arr[w] = temp;\n      i++;             \n      w--;        \n   } \n\n\n\n\n\n\n\n\n\n",
-    "Week-06 Programing Assignment-03": "  \n  int s;\n  for (i=0;i < n1;++i)\n  array_new[i]=arr1[i];\n\n  size =  n1 + n2;\n  for(i=0, s=n1; s< size &&i < n2; ++i, ++s)\n  array_new[s] = arr2[i];     ",
-    "Week-06 Programing Assignment-04": "    while (pos < num)\n   {\n    array[pos - 1] = array[pos];\n    pos+=1;\n   }\n\n  num-=1;"
+    "Week-08 Programing Assignment-01": "int HCF(int p, int q)\n{\n   while (p != q)\n   { \n      if (p  >  q)\n       {\n           return HCF(p - q, q);\n       }\n       else\n       {\n       return HCF(p, q - p);\n       }\n    }\n    return(p); \n}\n",
+    "Week-08 Programing Assignment-02": "long power(int n, int p)\n{\nif (p)\n{\nreturn (n * power(n, p - 1));\n}\nreturn(1);\n}",
+    "Week-08 Programing Assignment-03": "int binary_conversion(int number3)\n  { \n     if (number3 == 0)\n        {\n            return 0;\n        }\n        else\n        {\n            return (number3 % 2) + 10 * binary_conversion(number3 / 2);\n        }\n  }",
+    "Week-08 Programing Assignment-04": "int q, t;\nint num = 2;\nfor (q = 0; q < lines; q++) \n{\n      \n   for (t = 0; t <= q; t++)\n   {\n      while (!prime(num))  \n      {\n         num++;\n      }\n         printf(\"%d\\t\", num++);  \n      }\n      printf(\"\\n\");\n   }\n   return (0);\n}  \n \nint prime(int num) \n{\n   int q, flag;\n   for (q = 2; q < num; q++)\n   {\n      if (num % q != 0)\n         flag = 1;\n      else {\n         flag = 0;\n         break;\n      }\n   }\n \n   if (flag == 1 || num == 2)\n      return (1);\n   else\n      return (0);\n}  "
   }
 ]
