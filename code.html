@@ -225,37 +225,42 @@
 		</script>
 	    <br><br>
   	    
-	    <a>The Programming Data Structure And Algorithm using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment</p>
+	    <a>The Programming Data Structure And Algorithm using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def rainaverage(l):
-  d1=dict()
-  d2=dict()
-  d3=dict()
-  for a,b in l:
-    if a in  d1:
-      d1[a]=d1[a]+b
-      d2[a]=d2[a]+1
-    else:
-      d1[a]=b
-      d2[a]=1
-  for i,j in  d2.items():
-     d3[i]=float( d1[i]/j)
-  ans=[(i,j) for i,j in  d3.items()]
-  ans.sort(key=lambda  a:a[0])
-  return(ans)
+def dist(i,j):
+    
+    x = abs(dragons[i][0] - dragons[j][0])
+    y = abs(dragons[i][1] - dragons[j][1])
+    return(x+y)
 
-def listtype(l):
-  return(type(l) == type([]))
-ans=list()
-def flatten(k):
-  for i in k:
-    if listtype(i)==True:
-      flatten(i)
-    else:
-      ans.append(i)
-  return (ans)        
+(rstr,cstr,kstr,dstr) = input().strip().split()
+
+(r,c,k,d) = (int(rstr),int(cstr),int(kstr),int(dstr))
+
+dragons = [(0,0)]
+
+for i in range(d):
+   (xstr,ystr) = input().strip().split()
+   (x,y) = (int(xstr),int(ystr))
+   dragons.append((x,y))
+
+dragons.sort()
+
+killed = [[0 for col in range(k+1)] for row in range(d+1)]
+
+for row in range(d+1):
+   for col in range(k+1):
+      if col != row:
+         killed[row][col] = r*c+1
+
+for dragon in range(1,d+1):
+   for victim in range(1,min(dragon+1,k+1)):
+       killed[dragon][victim] = min([ killed[i][victim-1] + dist(i,dragon) for i in range(victim-1,dragon) ])
+
+optimum = min( [ killed[i][k] for i in range(dragon+1) ])
+print(optimum,end="")        
                 </textarea><br><br>
 	    
 <a>The Programming Data Structure And Algorithm using python week 5 programming answers</a>
