@@ -293,25 +293,12 @@ print(B+A,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-def DiagCalc(Matrix):
-  left,right,j=(0,0,1)
-  for i in range(len(Matrix)):
-    left+=Matrix[i][i]
-    right+=Matrix[i][-j]
-    j+=1
-  return((left,right)) 
-
-M=int(input())
-Matrix=[]
-for i in range(M):
-  Matrix.append([int(i) for i in input().split()])
-  
-print(DiagCalc(Matrix)[0])
-print(DiagCalc(Matrix)[1],end="")
+def subStr(s1,s2):
+  return(s2 in s1)
 			
                   
                 </textarea><br><br>
@@ -324,18 +311,15 @@ print(DiagCalc(Matrix)[1],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def Transpose(M):
-    T=list()
-    for i in range(len(M[0])):
-         t=list()
-         for j in range(len(M)):
-              t.append(M[j][i])
-         T.append(t)     
-    return(T) 
+def mergeDic(d1,d2):
+  for i in d2.keys():
+    if i not in d1.keys():
+      d1[i]=d2[i]
+  return(d1)  
 
                   
                 </textarea><br><br>
@@ -348,20 +332,21 @@ def Transpose(M):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-def  snake(M):
-  s=[]
-  for i in range(len(M)):
-    if i%2==0:
-      s+=M[i]
-    else:
-      s+=M[i][::-1]
-  return(s) 
-
-                  
+n=int(input())
+idp=dict()
+for i in str(n):
+  idp[i]=[]
+  for j in range(len(str(n))):
+    if i==str(n)[j]:
+      idp[i]+=[j] 
+for k in idp:
+    print(k,*idp[k],"")
+    
+                      
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
