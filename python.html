@@ -289,12 +289,20 @@ print(s.swapcase(),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-def subStr(s1,s2):
-  return(s2 in s1)
+a=int(input())
+b=int(input())
+c=int(input())
+LG=[a,b,c]
+h=max(LG)
+LG.remove(h)
+if h**2==LG[0]**2+LG[1]**2:
+  print("YES",end="")
+else:
+  print("NO",end="")  
 			
                   
                 </textarea><br><br>
@@ -307,15 +315,12 @@ def subStr(s1,s2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def mergeDic(d1,d2):
-  for i in d2.keys():
-    if i not in d1.keys():
-      d1[i]=d2[i]
-  return(d1)  
+LSG=sorted(input().split("#"),reverse=True)
+print("#".join(LSG),end="")
 
                   
                 </textarea><br><br>
@@ -328,19 +333,21 @@ def mergeDic(d1,d2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-n=int(input())
-idp=dict()
-for i in str(n):
-  idp[i]=[]
-  for j in range(len(str(n))):
-    if i==str(n)[j]:
-      idp[i]+=[j] 
-for k in idp:
-    print(k,*idp[k],"")
+prime=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 
+       59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
+       127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 
+       191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
+       257, 263, 269, 271, 277, 281, 283, 293]
+Kolkata =int(input())
+Mumbai=int(input())
+for i in range(Kolkata ,Mumbai+1):
+    if i not in prime:
+      print(i) 
+         
     
                       
                 </textarea><br><br>
