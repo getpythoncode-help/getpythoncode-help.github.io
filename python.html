@@ -204,16 +204,12 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-L=[int(i) for i in input().split()]
-ans=[0]*(max(L)+1)
-for i in range(len(ans)):
-  if i in L:
-    ans[i]=i
-print(*ans,end="")    
+n=int(input())
+print(int("".join(list(str(n))[::-1])),end="")   
                   
                 </textarea><br><br>
 
@@ -225,21 +221,18 @@ print(*ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def closestSchool(x, y, L):
-  min=999466
-  distance=[]
-  for a in L: 
-    dis=((x-a[0])**2+(y-a[1])**2)**0.5
-    distance.append(dis)
-    if dis<min:
-      min=dis 
-  for i in range(len(distance)):
-    if distance[i]==min:
-        print(L[i])
+LSG=input().split()
+MI=[]
+for i in LSG:
+  MI.append("".join(list(i)[::-1]))
+ans=[]
+for i in sorted(MI):
+  ans.append("".join(list(i)[::-1]))
+print(ans,end="")    
 
                   
                 </textarea><br><br>
@@ -252,12 +245,12 @@ def closestSchool(x, y, L):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-s=input()
-print(s.swapcase(),end="")      
+rollg=input()
+print(rollg.split('@')[0],rollg.split('@')[1].split(".")[0],end="")     
                   
                 </textarea><br><br>
 
