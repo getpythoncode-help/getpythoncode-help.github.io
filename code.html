@@ -225,47 +225,53 @@
 		</script>
 	    <br><br>
   	    
-<a style = "color: rgb(255,0,0)">Programming Data Structures And Algorithm using python  Week 7 correction:
+<!-- <a style = "color: rgb(255,0,0)">Programming Data Structures And Algorithm using python  Week 7 correction:
 Please enclose your 1st question answer in single quotes.
-	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a>
+	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 8 programming answers</a>
+	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers</a>
 	    
-                <p> Week 8: Programming Assignment</p>
+                <p> Week 2: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def dist(i,j):
-    
-    x = abs(dragons[i][0] - dragons[j][0])
-    y = abs(dragons[i][1] - dragons[j][1])
-    return(x+y)
+def primeproduct(m):
+    P=list()  
+    if m>=2:
+        for k in range(2,m):
+            if m%k==0:                
+                P=P+[k]            
+        if len(P)==2:
+            if m==P[0]*P[1]:
+                if P[1]%P[0]==0:
+                    return(False)
+                return(True)
+        elif len(P)==1:
+            if m==P[0]*P[0]:
+                return(True)
+        else:   
+            return(False)     
+    else:
+        return(False)
+        
 
-(rstr,cstr,kstr,dstr) = input().strip().split()
-
-(r,c,k,d) = (int(rstr),int(cstr),int(kstr),int(dstr))
-
-dragons = [(0,0)]
-
-for i in range(d):
-   (xstr,ystr) = input().strip().split()
-   (x,y) = (int(xstr),int(ystr))
-   dragons.append((x,y))
-
-dragons.sort()
-
-killed = [[0 for col in range(k+1)] for row in range(d+1)]
-
-for row in range(d+1):
-   for col in range(k+1):
-      if col != row:
-         killed[row][col] = r*c+1
-
-for dragon in range(1,d+1):
-   for victim in range(1,min(dragon+1,k+1)):
-       killed[dragon][victim] = min([ killed[i][victim-1] + dist(i,dragon) for i in range(victim-1,dragon) ])
-
-optimum = min( [ killed[i][k] for i in range(dragon+1) ])
-print(optimum,end="")        
+def delchar(s,c):
+    if len(c)==1:
+        s=s.replace(c,'')  
+        ans=s
+    else:
+        ans=s
+    return(ans)    
+  
+def shuffle(l1,l2):
+    ans=[]
+    if len(l1)!=0 and len(l2)!=0:
+      for q in range(min(len(l1), len(l2))):
+        ans.extend([l1[q],l2[q]])      
+      ans.extend(l1[q+1:] or l2[q+1:])
+    else:
+      ans.extend(l1[0:] or l2[0:])      
+    return(ans)    
+     
                 </textarea><br><br>
 	    
 <a>The Programming Data Structure And Algorithm using python week 5 programming answers</a>
