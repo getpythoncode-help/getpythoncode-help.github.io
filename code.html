@@ -275,72 +275,44 @@ def shuffle(l1,l2):
                 </textarea><br><br>
 	    
 <a>The Programming Data Structure And Algorithm using python week 5 programming answers</a>
-                <p> Week 5: Programming Assignment</p>
+                <p> Week 3: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def borrowers_input(b):
-    z=input()
-    while(z!='Checkouts'):
-        z=z.split('~')
-        b.append(z)
-        z=input()  
+def expanding(l):
+    if len(l) <= 2:
+        return(True)
+    diff = abs(l[1]-l[0])
+    return(diff < abs(l[2]-l[1]) and expanding(l[1:]))
 
-def checkouts_input(c):
-    y=input()
-    while(y!='EndOfInput'):
-        y=y.split('~')
-        c.append(y)
-        y=input()
+def expanding_loop(l):
+    if len(l) <= 2:
+        return(True)
+    olddiff = abs(l[1]-l[0])
+    for i3 in range(2,len(l)):
+        newdiff = abs(l[i3]-l[i3-1])
+        if newdiff <= olddiff:
+            return(False)
+        olddiff = newdiff
+    return(True)
 
-def output():
-    name=list()
-    Anum=list()
-    title=list()
-    date=list()
-    uname=list()
-    
-    global books,borrower,checkout
-    for a in range(0,len(checkout)):
-        date.append(checkout[a][2])
-
-    for b in range(0,len(checkout)):
-        uname.append(checkout[b][0])
-
-    for c in range(0,len(uname)):
-        for e in range(0,len(borrower)):
-            if(uname[c] == borrower[e][0]):
-                name.append(borrower[e][1])  
-
-    for a in range(0,len(checkout)):
-        Anum.append(checkout[a][1])
-
-    for a in range(0,len(Anum)):
-        for b in range(0,len(books)):
-            if(Anum[a] == books[b][0]):
-                title.append(books[b][1])  
-
-    final=[]
-    for i in range(0,len(checkout)):
-        final.append(date[i]+'~'+name[i]+'~'+Anum[i]+'~'+title[i])
-    final.sort()
-    for i in range(0,len(final)):
-        print(final[i])
-
-
-
-borrower=list()
-books=list()
-checkout=list()
-x=input()
-x=input()
-while x!='Borrowers':
-    x=x.split('~')
-    books.append(x)
-    x=input()
-borrowers_input(borrower)
-borrower.sort()
-checkouts_input(checkout)
-output()       
+  
+def sumsquare(l):
+  (odd_sum,even_sum)=(0,0)
+  for aa in l:
+    if aa%2!=0:
+      odd_sum+=aa*aa
+    else:
+      even_sum+=aa*aa
+  return([odd_sum,even_sum])
+ 
+def transpose(m):
+  ans1=list()
+  for ip in range(len(m[0])):
+    a=list()
+    for j in range(len(m)):
+      a.append(m[j][ip])
+    ans1.append(a)
+  return(ans1)     
                 </textarea><br><br>	    
 	    
 	    
