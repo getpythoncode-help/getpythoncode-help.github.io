@@ -6,9 +6,9 @@
     "Week-3: Programing Assignment-04": "     if( n1 >= n2 && n1 >= n3 )\n        printf(\"%d is the largest number.\", n1);\n\n    if( n2 >= n3 && n2 >= n1 )\n        printf(\"%d is the largest number.\", n2);\n\n    if( n3 >= n1 && n3 >= n2  )\n        printf(\"%d is the largest number.\", n3);\n} "
   },
   {
-    "Week-4 Programing Assignment-01": " ",
-    "Week-4 Programing Assignment-02": " ",
-    "Week-4 Programing Assignment-03": " ",
-    "Week-4 Programing Assignment-04": " "
+    "Week-4 Programing Assignment-01": " if (n2  >  n1)\n    {\n        if(n1 < n3)\n            printf(\"%d is the smallest number.\", n1);\n        else\n        {printf(\"%d is the smallest number.\", n3);}\n    }\n    else\n    {\n       if(n2 < n3)\n           printf(\"%d is the smallest number.\", n2);\n       else\n         printf(\"%d is the smallest number.\", n3);}\n    \n\n\n}\n",
+    "Week-4 Programing Assignment-02": " if(a < (b+c)&&b < (a+c)&&c < (a+b))\n    {\n       // printf(\"\\n RESULT: It is a Triangle.\");\n        if(a==b&&a==c&&b==c)\n        printf(\"Equilateral Triangle\");\n        else if(a==b||a==c||b==c)\n        printf(\"Isosceles Triangle\");\n        else if((a*a)==(b*b)+(c*c)||(b*b)==(a*a)+(c*c)||(c*c)==(a*a)+(b*b))\n        printf(\"Right-angle Triangle\");\n        else if(a!=b&&a!=c&&b!=c)\n        printf(\"Scalene Triangle\");\n    }\n    else\n    printf(\"Triangle is not possible\");\n    return 0;\n}\n\n  ",
+    "Week-4 Programing Assignment-03": " fact=1;\n   for(int i4=n;i4 > 0;i4--)\n   {\n     fact*=i4;\n   }\n\nprintf(\"The Factorial of %d is : %ld\",n,fact);\n\n}\n",
+    "Week-4 Programing Assignment-04": " fact=1;\n   for(int i4=n;i4 > 0;i4--)\n   {\n     fact*=i4;\n   }\n\nprintf(\"The Factorial of %d is : %ld\",n,fact);\n\n}\n"
   }
 ]
