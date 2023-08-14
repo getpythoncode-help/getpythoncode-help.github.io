@@ -231,46 +231,41 @@ Please enclose your 1st question answer in single quotes.
 	    
 	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers</a>
 	    
-                <p> Week 2: Programming Assignment</p>
+                <p> Week 4: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def primeproduct(m):
-    P=list()  
-    if m>=2:
-        for k in range(2,m):
-            if m%k==0:                
-                P=P+[k]            
-        if len(P)==2:
-            if m==P[0]*P[1]:
-                if P[1]%P[0]==0:
-                    return(False)
-                return(True)
-        elif len(P)==1:
-            if m==P[0]*P[0]:
-                return(True)
-        else:   
-            return(False)     
-    else:
-        return(False)
-        
-
-def delchar(s,c):
-    if len(c)==1:
-        s=s.replace(c,'')  
-        ans=s
-    else:
-        ans=s
-    return(ans)    
+def histogram(l):
+    count,ans,k = 0,list(),[]
+    for i in range(len(l)):
+        index,count=i,0
+        for j in range(index,len(l)):
+            if l[index] == l[j] and l[index] not in k :
+                count =count + 1
+        k = k + [l[index]] 
+        if (count != 0): 
+            ans = ans + [(l[index], count)]
+    ans.sort()
+    ans=sorted(ans,key=lambda ans:ans[1])
+    return(ans)
   
-def shuffle(l1,l2):
-    ans=[]
-    if len(l1)!=0 and len(l2)!=0:
-      for q in range(min(len(l1), len(l2))):
-        ans.extend([l1[q],l2[q]])      
-      ans.extend(l1[q+1:] or l2[q+1:])
-    else:
-      ans.extend(l1[0:] or l2[0:])      
-    return(ans)    
+  
+def transcript(coursedetails, studentdetails, grades):
+    ans = list()
+    studentdetails.sort()
+    coursedetails.sort()
+    grades.sort()
+    for studentdet in studentdetails:
+        tuple,inlist = studentdet,list()
+        for grade in grades:
+            if studentdet[0] == grade[0]:
+                for cdetail in coursedetails:
+                    if grade[1] == cdetail[0]:
+                        intuple = cdetail
+                        intuple = intuple + (grade[2],)
+                        inlist.append(intuple)
+        tuple = tuple + (inlist,)
+        ans.append(tuple)
+    return(ans)  
      
                 </textarea><br><br>
 	    
