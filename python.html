@@ -204,12 +204,20 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-n=int(input())
-print(int("".join(list(str(n))[::-1])),end="")   
+def count_letters(S):
+    ans = {}
+    
+    for j in S:
+        if j in ans:
+            ans[j] += 1
+        else:
+            ans[j] = 1
+    
+    return(ans)  
                   
                 </textarea><br><br>
 
@@ -221,18 +229,17 @@ print(int("".join(list(str(n))[::-1])),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-LSG=input().split()
-MI=[]
-for i in LSG:
-  MI.append("".join(list(i)[::-1]))
-ans=[]
-for i in sorted(MI):
-  ans.append("".join(list(i)[::-1]))
-print(ans,end="")    
+def uniqueE(L):
+  ans=list()
+  for a in L:
+    if L.count(a)==1:
+      ans.append(a)
+  return(sorted(ans))   
+  
 
                   
                 </textarea><br><br>
@@ -245,12 +252,21 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-rollg=input()
-print(rollg.split('@')[0],rollg.split('@')[1].split(".")[0],end="")     
+prime=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 
+       41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89,
+       97, 101, 103, 107, 109, 113, 127, 131, 137, 139,
+       149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 
+       197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 
+       257, 263, 269, 271, 277, 281, 283, 293, 307, 311]
+for j in L:
+  if j in prime:
+    print(j,end="")
+    break
+       
                   
                 </textarea><br><br>
 
