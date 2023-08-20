@@ -1,9 +1,9 @@
 [
   {
-    "Week-3: Programing Assignment-01": "area = PI*radius * radius;\n",
-    "Week-3: Programing Assignment-02": " if(number  > 0.00)\n     printf(\"Positive number.\");\n\n   else if(number == 0.0)\n     printf(\"The number is 0.\");\n     \n   else\n     printf(\"Negative number.\");\n     \n   return 0;\n} ",
-    "Week-3: Programing Assignment-03": "  if (number%2!=0)\n    printf(\"%d is odd.\", number);\n  else\n    printf(\"%d is even.\", number);\n\n\n    return 0;\n  }\n\n ",
-    "Week-3: Programing Assignment-04": "     if( n1 >= n2 && n1 >= n3 )\n        printf(\"%d is the largest number.\", n1);\n\n    if( n2 >= n3 && n2 >= n1 )\n        printf(\"%d is the largest number.\", n2);\n\n    if( n3 >= n1 && n3 >= n2  )\n        printf(\"%d is the largest number.\", n3);\n} "
+    "Week-5: Programing Assignment-01": "  \nfor(int ik = 1; ik <= N / 2; ik++)\n    {\n       \n        if(N%ik == 0)\n        {\n            sum += ik;\n        }\n    }\n\n  \n    if(sum == N && N > 0)\n    {\n       printf(\"%d is a perfect number.\",N);\n    }\n    else\n    {\n        printf(\"%d is not a perfect number.\",N);\n    }\n\n    return 0;\n} ",
+    "Week-5: Programing Assignment-02": "int temp02, no_of_digit; \nno_of_digit=0;\n    temp02=N;\n    while(temp02 > 0)\n\t{\n        no_of_digit+=1;\n        temp02/=10;\n    }\n     printf(\"The number %d contains %d digits.\",N,no_of_digit);\n}\n  ",
+    "Week-5: Programing Assignment-03": " int t21, flag;\n    t21=N;\n    flag=0;\n\n    while(t21!=1)\n    {\n        if(t21%2!=0){\n            flag=1;\n            break;\n        }\n        t21/=2;\n    }\n\n    if(flag==0)\n        printf(\"%d is a number that can be expressed as power of 2.\",N);\n    else\n        printf(\"%d cannot be expressed as power of 2.\",N);\n}\n",
+    "Week-5: Programing Assignment-04": "   for(int y=1;y <= N;y++)\n  {\n    sum+=1.0/y;\n  }\n\nprintf(\"Sum of the series is: %.2f\",sum);\n\n} "
   },
   {
     "Week-4 Programing Assignment-01": " if (n2  >  n1)\n    {\n        if(n1 < n3)\n            printf(\"%d is the smallest number.\", n1);\n        else\n        {printf(\"%d is the smallest number.\", n3);}\n    }\n    else\n    {\n       if(n2 < n3)\n           printf(\"%d is the smallest number.\", n2);\n       else\n         printf(\"%d is the smallest number.\", n3);}\n    \n\n\n}\n",
