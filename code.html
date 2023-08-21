@@ -269,45 +269,85 @@ def transcript(coursedetails, studentdetails, grades):
      
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 3 programming answers</a>
-                <p> Week 3: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def expanding(l):
-    if len(l) <= 2:
-        return(True)
-    diff = abs(l[1]-l[0])
-    return(diff < abs(l[2]-l[1]) and expanding(l[1:]))
+def Gvalue(code1):
+        if code1=="A":
+                return(10)
+        if code1=="AB":
+                return(9)
+        if code1=="B":
+                return(8)
+        if code1=="BC":
+                return(7)
+        if code1=="C":
+                return(6)
+        if code1=="CD":
+                return(5)
+        if code1=="D":
+                return(4)
+        
+# varibles used for storing data
 
-def expanding_loop(l):
-    if len(l) <= 2:
-        return(True)
-    olddiff = abs(l[1]-l[0])
-    for i3 in range(2,len(l)):
-        newdiff = abs(l[i3]-l[i3-1])
-        if newdiff <= olddiff:
-            return(False)
-        olddiff = newdiff
-    return(True)
+ROLL_GRADEsum={}
+Roll_course_count={}
+Roll_name={}
 
-  
-def sumsquare(l):
-  (odd_sum,even_sum)=(0,0)
-  for aa in l:
-    if aa%2!=0:
-      odd_sum+=aa*aa
+#COURSES INPUT SECTION
+
+type_course=input()
+enter_course_detail=input()
+next_input=input()
+while(next_input!="Students"):
+        next_input=input()
+
+#STUDENT INPUT SECTION
+        
+#if it fails in courses section then 
+#it will automatically enter students
+#contact us 
+        
+roll,name=input().split('~')
+Roll_name[roll]=name
+ROLL_GRADEsum[roll]=0
+Roll_course_count[roll]=0
+next_input=input()
+while('~' in next_input):
+    roll,name=next_input.split('~')
+    Roll_name[roll]=name
+    ROLL_GRADEsum[roll]=0
+    Roll_course_count[roll]=0
+    next_input=input()
+
+#GRADES INPUT SECTION
+
+code,sem,year,Rnum,grade=input().split('~')
+if Rnum in ROLL_GRADEsum.keys():
+    ROLL_GRADEsum[Rnum]=ROLL_GRADEsum[Rnum]+Gvalue(grade)
+    Roll_course_count[Rnum]=Roll_course_count[Rnum]+1
+next_input=input()
+while(next_input!="EndOfInput"):
+    code,sem,year,Rnum,grade=next_input.split('~')
+    if Rnum in ROLL_GRADEsum.keys():
+        ROLL_GRADEsum[Rnum]=ROLL_GRADEsum[Rnum]+Gvalue(grade)
+        Roll_course_count[Rnum]=Roll_course_count[Rnum]+1
+    next_input=input()
+    
+#print(Roll_course_count)
+#print(ROLL_GRADEsum)
+#print(Roll_name)
+
+#RESULT COMPUTATION
+    
+Sort_roll=sorted(Roll_name)
+for key in Sort_roll:
+    if ROLL_GRADEsum[key]!=0:
+        ans=round((ROLL_GRADEsum[key]/Roll_course_count[key]),2)
+        print(key+"~"+Roll_name[key]+"~"+str(ans))
     else:
-      even_sum+=aa*aa
-  return([odd_sum,even_sum])
- 
-def transpose(m):
-  ans1=list()
-  for ip in range(len(m[0])):
-    a=list()
-    for j in range(len(m)):
-      a.append(m[j][ip])
-    ans1.append(a)
-  return(ans1)     
+        print(key+"~"+Roll_name[key]+"~"+"0")        
                 </textarea><br><br>	    
 	    
 	    
