@@ -298,21 +298,11 @@ for j in L:
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-a=int(input())
-b=int(input())
-c=int(input())
-LG=[a,b,c]
-h=max(LG)
-LG.remove(h)
-if h**2==LG[0]**2+LG[1]**2:
-  print("YES",end="")
-else:
-  print("NO",end="")  
-			
+print(sorted(L).index(L[K-1])+1+0,end="")
                   
                 </textarea><br><br>
 
@@ -324,12 +314,35 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 2</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 2</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-LSG=sorted(input().split("#"),reverse=True)
-print("#".join(LSG),end="")
+Cap1=list("ABCDEFGHIJKLMNOPQRSTUVMWXYZ")
+Small=list('abcdefghijklmnopqrstuvwxyz')
+ans=""
+for a in S:
+  if a=='a':
+    ans+='y'
+  elif a=='b':
+    ans+='z'
+  elif a=='A':
+    ans+='X' 
+  elif a=='B':
+    ans+='Y'
+  elif a=='C':
+    ans+='Z'
+  elif a=='W':
+    ans+='T'
+  else:
+    if a in Cap1:
+      ans+=Cap1[Cap1.index(a)-3]
+    elif a in Small:
+      ans+=Small[Small.index(a)-2]
+    else:
+      ans+=a
+print(ans,end="")			
+			
 
                   
                 </textarea><br><br>
@@ -342,20 +355,16 @@ print("#".join(LSG),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 3</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 3</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-prime=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 
-       59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
-       127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 
-       191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
-       257, 263, 269, 271, 277, 281, 283, 293]
-Kolkata =int(input())
-Mumbai=int(input())
-for i in range(Kolkata ,Mumbai+1):
-    if i not in prime:
-      print(i) 
+def whole(n):
+    if n==0:
+        return 0
+    else:
+        return n+whole(n-1)
+
          
     
                       
