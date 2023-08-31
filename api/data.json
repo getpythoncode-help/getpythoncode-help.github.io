@@ -6,9 +6,9 @@
     "Week-5: Programing Assignment-04": "   for(int y=1;y <= N;y++)\n  {\n    sum+=1.0/y;\n  }\n\nprintf(\"Sum of the series is: %.2f\",sum);\n\n} "
   },
   {
-    "Week-4 Programing Assignment-01": " if (n2  >  n1)\n    {\n        if(n1 < n3)\n            printf(\"%d is the smallest number.\", n1);\n        else\n        {printf(\"%d is the smallest number.\", n3);}\n    }\n    else\n    {\n       if(n2 < n3)\n           printf(\"%d is the smallest number.\", n2);\n       else\n         printf(\"%d is the smallest number.\", n3);}\n    \n\n\n}\n",
-    "Week-4 Programing Assignment-02": " if(a < (b+c)&&b < (a+c)&&c < (a+b))\n    {\n       // printf(\"\\n RESULT: It is a Triangle.\");\n        if(a==b&&a==c&&b==c)\n        printf(\"Equilateral Triangle\");\n        else if(a==b||a==c||b==c)\n        printf(\"Isosceles Triangle\");\n        else if((a*a)==(b*b)+(c*c)||(b*b)==(a*a)+(c*c)||(c*c)==(a*a)+(b*b))\n        printf(\"Right-angle Triangle\");\n        else if(a!=b&&a!=c&&b!=c)\n        printf(\"Scalene Triangle\");\n    }\n    else\n    printf(\"Triangle is not possible\");\n    return 0;\n}\n\n  ",
-    "Week-4 Programing Assignment-03": " fact=1;\n   for(int i4=n;i4 > 0;i4--)\n   {\n     fact*=i4;\n   }\n\nprintf(\"The Factorial of %d is : %ld\",n,fact);\n\n}\n",
-    "Week-4 Programing Assignment-04": " for(int i8=2;i8 <= N;i8++)\n{\n  if(i8%2==0)\n  sum+=i8;\n}\nprintf(\"Sum = %d\", sum);\n}\n\n"
+    "Week-6 Programing Assignment-01": "largest=arr[0]*1;\nfor(i = 1; i < n; ++i)\n    {\n    if(largest < arr[i])\n          {\n                     largest = arr[i];\n          }\n    }\n\nprintf(\"Largest element = %d\", largest);\n\n    return 0;\n}\n",
+    "Week-6 Programing Assignment-02": "int w15, temp;  \nw15 = i - 1;   \ni = 0;      \n\n   while (i < w15) \n   {\n      temp = arr[i];\n      arr[i] = arr[w15];\n      arr[w15] = temp;\n      i++;             \n      w15--;        \n   } \n\n\n\n\n ",
+    "Week-6 Programing Assignment-03": "  int ss;\n  for (i=0;i < n1;++i)\n  array_new[i]=arr1[i];\n\n  size =  n1 + n2;\n  for(i=0, ss=n1; ss < size &&i < n2; ++i, ++ss)\n  array_new[ss] = arr2[i];       ",
+    "Week-6 Programing Assignment-04": " int j,k; \nfor ( i = 0; i < size; i ++)  \n    {  \n        for ( j = i + 1; j < size; j++)  \n        {  \n            if ( array[i] == array[j])  \n            {  \n                for ( k = j; k < size - 1; k++)  \n                {  \n                    array[k] = array[k + 1];  \n                }  \n                size--;  \n                  \n                j--;      \n            }\n          \n        }\n} "
   }
 ]
