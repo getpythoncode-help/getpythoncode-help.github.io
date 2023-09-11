@@ -347,39 +347,27 @@ def snake(M):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1   Due on 2023-09-07, 23:59 IST</p>
-<p>Aman likes to study about planets. Every night he goes outside and observe some planets with his telescope. Then he guesses the distance of each planet and pen it down. In this process he also pen down his favourite planet position. Given the distance of each planet to be unique you need to return position of Aman's favourite planet after sorting all the distances.
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1   Due on 2023-09-21, 23:59 IST</p>
+<p>
+Given a Tuple T, create a function squareT which accepts one argument and returns a tuple containing similar elements given in tuple T and its sqaures in sequence. Input and function call is already managed.
 
 Input:
 
-N (No of planets)
-L (List of distances of planet)
-K (position of Aman's favourite planet in unsorted list)
+(1,2,3)
 
-Output:
+Output :
 
-Position of Aman's favourite planet in sorted List.
-
-Example:
-
-Input
-5
-[4,5,3,2,1]
-2
-
-Output
-5
+(1,2,3,1,4,9)
 
 Explanation:
 
-The position of aman's favourite planet in unsorted list is 2 and list of distances of planets at position 2 the distance is 5. After sorting the list [1,2,3,4,5] the position of aman's favourite is changed to 5.
-
-Note: Index is different from position. Indexing of the list starts from 0 whereas positioning in the list start form 1.	
+Tuple T contains (1,2,3) the output tuple contains the original elements of T that is 1,2,3 and its sqaures 1,4,9 in sequence.	
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-print(sorted(L).index(L[K-1])+1+0,end="")
+def squareT(T):
+  return(T+tuple([i*i  for i in T]))
                   
                 </textarea><br><br>
 
@@ -391,55 +379,38 @@ print(sorted(L).index(L[K-1])+1+0,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 2 Due on 2023-09-07, 23:59 IST </p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 2  Due on 2023-09-21, 23:59 IST </p>
 		<p>
-			Romeo and Juliet love each other. Romeo wants to send a message to Juliet and also don't want anyone to read it without his permission. So he shifted every small letter in the sentence by -2 position and every capital letter by -3 position. (If the letter is c, after shifting to by -2 position it changes to a, and for D new letter will be A).
-But the letter is too long and Romeo does not have enough time to encrypt his whole letter. Write a program to help Romeo which prints the encrypted message. You can assume there are no special characters except spaces and numeric value.
+			Given a string S, write a function replaceV that accepts a string and replace the occurrences of 3 consecutive vowels with _ in that string. Make sure to return the answer string.
 
-Input
-A string S 
+Input:
 
-Output 
-Encrypted string 
+aaahellooo
 
-Example
+Output:
 
-Input
-Hello Juliet
+_hell_
 
-Output
-Ecjjm Gsjgcr
+Explanation:
 
-Explanation
-H is shifted by -3 position and changed to E. 'e' is shifted by -2 position and changed to c and so on.
+Since aaa and ooo are consecutive 3 vowels therefor replaced by _ .
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-Cap1=list("ABCDEFGHIJKLMNOPQRSTUVMWXYZ")
-Small=list('abcdefghijklmnopqrstuvwxyz')
-ans=""
-for a in S:
-  if a=='a':
-    ans+='y'
-  elif a=='b':
-    ans+='z'
-  elif a=='A':
-    ans+='X' 
-  elif a=='B':
-    ans+='Y'
-  elif a=='C':
-    ans+='Z'
-  elif a=='W':
-    ans+='T'
-  else:
-    if a in Cap1:
-      ans+=Cap1[Cap1.index(a)-3]
-    elif a in Small:
-      ans+=Small[Small.index(a)-2]
-    else:
-      ans+=a
-print(ans,end="")			
+vo = list('aeiou')+list('AEIOU')
+def replaceV(s):
+    ans = ""
+    a = 0  # Initialize a manually
+    while a < len(s) - 2:  # Use a while loop
+        if s[a] in vo and s[a + 1] in vo and s[a + 2] in vo:
+            a = a + 2  # Move ahead by 2 positions
+            ans+="_"
+        else:
+            ans += s[a]
+        a += 1  # Always increment a in the while loop
+    ans += s[a:]  # Add the remaining characters to ans
+    return(ans)			
 			
 
                   
@@ -453,34 +424,30 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 3  Due on 2023-09-07, 23:59 IST</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 3  Due on 2023-09-21, 23:59 IST</p>
 <p>
-	Write a function whole(N) which takes a number N and return the sum of first N whole number. Write the program using recursion.
+	Given a list L, write a program to shift all zeroes in list L towards the right by maintaining the order of the list. Also print the new list.
 
-Input
-N
+Input:
 
-Output
-sum of whole numbers till N
+[0,1,0,3,12]
 
-Example:
+Output:
 
-Input
-3
+[1,3,12,0,0]
 
-Output
-6
+Explanation:
 
-Explanation 
-Sum of first 3 natural numbers are 0+1+2+3 = 6
+There are two zeroes in the list which are shifted to the right and the order of the list is also maintained. (1,3,12 are in order as in the old list.)
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-def whole(n):
-    if n==0:
-        return 0
-    else:
-        return n+whole(n-1)
+G=list()
+for i in L:
+  if i!=0:
+    G.append(i)
+G+=[0]*(len(L)-len(G))
+print(G,end="")
 
          
     
