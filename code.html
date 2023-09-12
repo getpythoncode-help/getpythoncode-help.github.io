@@ -269,150 +269,54 @@ def transcript(coursedetails, studentdetails, grades):
      
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 5 programming answers [Due on 2023-08-31, 23:59 IST]</a>
-                <p> Week 5: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 8 programming answers [Due on 2023-09-21, 23:59 IST]</a>
+                <p> Week 8: Programming Assignment</p>
 	    <p>
-		    The academic office at the Hogwarts School of Witchcraft and Wizardry has compiled data about students' grades. The data is provided as text from standard input in three parts: information about courses, information about students and information about grades. Each part has a specific line format, described below..
+		    
+Dividing Sequences
+(IARCS OPC Archive, K Narayan Kumar, CMI)
+This problem is about sequences of positive integers a1,a2,…,aN. A subsequence of a sequence is anything obtained by dropping some of the elements. For example, 3,7,11,3 is a subsequence of 6,3,11,5,7,4,3,11,5,3 , but 3,3,7 is not a subsequence of 6,3,11,5,7,4,3,11,5,3 .
 
-Information about courses
-Line format: Course Code~Course Name~Semester~Year~Instructor
-Information about students
-Line format: Roll Number~Full Name
-Information about grades
-Line format: Course Code~Semester~Year~Roll Number~Grade
-The possible grades are A, AB, B, BC, C, CD, D with corresponding grade points 10, 9, 8, 7, 6, 5 and 4. The grade point average of a student is the sum of his/her grade points divided by the number of courses. For instance, if a student has taken two courses with grades A and C, the grade point average is 8.50 = (10+7)÷2. If a student has not completed any courses, the grade point average is defined to be 0.
+A fully dividing sequence is a sequence a1,a2,…,aN where ai divides aj whenever i < j. For example, 3,15,60,720 is a fully dividing sequence.
 
-You may assume that the data is internally consistent. For every grade, there is a corresponding course code and roll number in the input data.
+Given a sequence of integers your aim is to find the length of the longest fully dividing subsequence of this sequence.
 
-Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Courses. The second section begins with a line containing Students. The third section begins with a line containing Grades. The end of the input is marked by a line containing EndOfInput.
+Consider the sequence 2,3,7,8,14,39,145,76,320
 
-Write a Python program to read the data as described above and print out a line listing the grade point average for each student in the following format:
+It has a fully dividing sequence of length 3, namely 2,8,320, but none of length 4 or greater.
 
-Roll Number~Full Name~Grade Point Average
-Your output should be sorted by Roll Number. The grade point average should be rounded off to 2 digits after the decimal point. Use the built-in function round().
+Consider the sequence 2,11,16,12,36,60,71,17,29,144,288,129,432,993 .
 
-Here is a sample input and its corresponding output.
+It has two fully dividing subsequences of length 5,
 
-Sample Input
+2,11,16,12,36,60,71,17,29,144,288,129,432,993 and
+2,11,16,12,36,60,71,17,29,144,288,129,432,993
+and none of length 6 or greater.
 
-Courses
-TRAN~Transfiguration~1~2011-2012~Minerva McGonagall
-CHAR~Charms~1~2011-2012~Filius Flitwick
-Students
-SLY2301~Hannah Abbott
-SLY2302~Euan Abercrombie
-SLY2303~Stewart Ackerley
-SLY2304~Bertram Aubrey
-SLY2305~Avery
-SLY2306~Malcolm Baddock
-SLY2307~Marcus Belby
-SLY2308~Katie Bell
-SLY2309~Sirius Orion Black
-Grades
-TRAN~1~2011-2012~SLY2301~AB
-TRAN~1~2011-2012~SLY2302~B
-TRAN~1~2011-2012~SLY2303~B
-TRAN~1~2011-2012~SLY2305~A
-TRAN~1~2011-2012~SLY2306~BC
-TRAN~1~2011-2012~SLY2308~A
-TRAN~1~2011-2012~SLY2309~AB
-CHAR~1~2011-2012~SLY2301~A
-CHAR~1~2011-2012~SLY2302~BC
-CHAR~1~2011-2012~SLY2303~B
-CHAR~1~2011-2012~SLY2305~BC
-CHAR~1~2011-2012~SLY2306~C
-CHAR~1~2011-2012~SLY2307~B
-CHAR~1~2011-2012~SLY2308~AB
-EndOfInput
-Sample Output
-
-SLY2301~Hannah Abbott~9.5
-SLY2302~Euan Abercrombie~7.5
-SLY2303~Stewart Ackerley~8.0
-SLY2304~Bertram Aubrey~0
-SLY2305~Avery~8.5
-SLY2306~Malcolm Baddock~6.5
-SLY2307~Marcus Belby~8.0
-SLY2308~Katie Bell~9.5
-SLY2309~Sirius Orion Black~9.0
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def Gvalue(code1):
-        if code1=="A":
-                return(10)
-        if code1=="AB":
-                return(9)
-        if code1=="B":
-                return(8)
-        if code1=="BC":
-                return(7)
-        if code1=="C":
-                return(6)
-        if code1=="CD":
-                return(5)
-        if code1=="D":
-                return(4)
-        
-# varibles used for storing data
 
-ROLL_GRADEsum={}
-Roll_course_count={}
-Roll_name={}
+n = int(input())
+L = list()
+bestvals =list()
+best_stored = list()
+for x in range(n):
+  L.append(int(input()))
+  best_stored.append(0)
 
-#COURSES INPUT SECTION
+best_stored[0] = 1
 
-type_course=input()
-enter_course_detail=input()
-next_input=input()
-while(next_input!="Students"):
-        next_input=input()
+for i in range(n):
+  maxval = 1
+  for j in range(i):
+    if L[i] % L[j] == 0:
+      maxval = max(maxval,(best_stored[j])+1)
+  best_stored[i] = maxval
 
-#STUDENT INPUT SECTION
-        
-#if it fails in courses section then 
-#it will automatically enter students
-#contact us 
-        
-roll,name=input().split('~')
-Roll_name[roll]=name
-ROLL_GRADEsum[roll]=0
-Roll_course_count[roll]=0
-next_input=input()
-while('~' in next_input):
-    roll,name=next_input.split('~')
-    Roll_name[roll]=name
-    ROLL_GRADEsum[roll]=0
-    Roll_course_count[roll]=0
-    next_input=input()
-
-#GRADES INPUT SECTION
-
-code,sem,year,Rnum,grade=input().split('~')
-if Rnum in ROLL_GRADEsum.keys():
-    ROLL_GRADEsum[Rnum]=ROLL_GRADEsum[Rnum]+Gvalue(grade)
-    Roll_course_count[Rnum]=Roll_course_count[Rnum]+1
-next_input=input()
-while(next_input!="EndOfInput"):
-    code,sem,year,Rnum,grade=next_input.split('~')
-    if Rnum in ROLL_GRADEsum.keys():
-        ROLL_GRADEsum[Rnum]=ROLL_GRADEsum[Rnum]+Gvalue(grade)
-        Roll_course_count[Rnum]=Roll_course_count[Rnum]+1
-    next_input=input()
+print(max(best_stored),end="")
     
-#print(Roll_course_count)
-#print(ROLL_GRADEsum)
-#print(Roll_name)
-
-#RESULT COMPUTATION
-    
-Sort_roll=sorted(Roll_name)
-for key in Sort_roll:
-    if ROLL_GRADEsum[key]!=0:
-        ans=round((ROLL_GRADEsum[key]/Roll_course_count[key]),2)
-        print(key+"~"+Roll_name[key]+"~"+str(ans))
-    else:
-        print(key+"~"+Roll_name[key]+"~"+"0")        
+       
                 </textarea><br><br>	    
 	    
 	    
