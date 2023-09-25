@@ -363,26 +363,27 @@ for i in range(len(P)):
                 <br><br>
 
                 <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1   Due on 2023-09-21, 23:59 IST</p>
+                <p>Week 10: Programming Assignment 1   Due on 2023-10-05, 23:59 IST</p>
 <p>
-Given a Tuple T, create a function squareT which accepts one argument and returns a tuple containing similar elements given in tuple T and its sqaures in sequence. Input and function call is already managed.
+Given a list L write a program to make a new list to fix the indexes of numbers to in list L to its same value in the new list. Put 0 at remaining indexes. Also print the elements of the new list in the single line. (See explanation for more clarity.)
 
 Input:
+[1,5,6]
 
-(1,2,3)
+Output:
+0 1 0 0 0 5 6
 
-Output :
+Explanation: 
 
-(1,2,3,1,4,9)
-
-Explanation:
-
-Tuple T contains (1,2,3) the output tuple contains the original elements of T that is 1,2,3 and its sqaures 1,4,9 in sequence.	
+List L contains 1,5,9 so at 1,5,9, index of new list the respective values are put and rest are initialized as zero.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-def squareT(T):
-  return(T+tuple([i*i  for i in T]))
+K=[0]*(max(L)+1)
+for i in range(len(K)):
+  if i in L:
+    K[i]=i
+print(*K,end="") 
                   
                 </textarea><br><br>
 
@@ -395,37 +396,41 @@ def squareT(T):
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 2  Due on 2023-09-21, 23:59 IST </p>
+                <p>Week 10: Programming Assignment 2  Due on 2023-10-05, 23:59 IST </p>
 		<p>
-			Given a string S, write a function replaceV that accepts a string and replace the occurrences of 3 consecutive vowels with _ in that string. Make sure to return the answer string.
+		Ram shifted to a new place recently. There are multiple schools near his locality. Given the co-ordinates of Ram P(X,Y) and schools near his locality in a nested list, find the closest school. Print multiple coordinates in respective order if there exists multiple schools closest to him. Write a function closestSchool that accepts (X ,Y , L) where X and Y are co-ordinates of Ram's house and L contains co-ordinates of different school.
+
+Distance Formula(To calculate distance between two co-ordinates): √((X2 - X1)² + (Y2 - Y1)²)
+
+where (x1,y1) is the co-ordinate of point 1 and (x2, y2) is the co-ordinate of point 2.
 
 Input:
+X, Y (Ram's house co-ordinates)
+N (No of schools)
+X1 Y1
+X2 Y2
+.
+.
+.
 
-aaahellooo
+X6 Y6
 
 Output:
-
-_hell_
-
-Explanation:
-
-Since aaa and ooo are consecutive 3 vowels therefor replaced by _ .
+Closest pont/points to X, Y	
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-vo = list('aeiou')+list('AEIOU')
-def replaceV(s):
-    ans = ""
-    a = 0  # Initialize a manually
-    while a < len(s) - 2:  # Use a while loop
-        if s[a] in vo and s[a + 1] in vo and s[a + 2] in vo:
-            a = a + 2  # Move ahead by 2 positions
-            ans+="_"
-        else:
-            ans += s[a]
-        a += 1  # Always increment a in the while loop
-    ans += s[a:]  # Add the remaining characters to ans
-    return(ans)			
+def closestSchool(x, y, L):
+  min=9999999
+  distance=list()
+  for ij in L: 
+    dis=((x-ij[0])**2+(y-ij[1])**2)**0.5
+    distance.append(dis)
+    if dis<min:
+      min=dis  
+  for ij in range(len(distance)):
+    if distance[ij]==min:
+        print(L[ij]) 		
 			
 
                   
@@ -440,30 +445,20 @@ def replaceV(s):
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 3  Due on 2023-09-21, 23:59 IST</p>
+                <p>Week 10: Programming Assignment 3  Due on 2023-10-05, 23:59 IST</p>
 <p>
-	Given a list L, write a program to shift all zeroes in list L towards the right by maintaining the order of the list. Also print the new list.
+Given a string s write a program to convert uppercase letters into lowercase and lowercase letters into uppercase. Also print the resultant string.
+
+Note: You need to talk the input and do not print anything while taking input.
 
 Input:
+The Joy Of Computing
 
-[0,1,0,3,12]
-
-Output:
-
-[1,3,12,0,0]
-
-Explanation:
-
-There are two zeroes in the list which are shifted to the right and the order of the list is also maintained. (1,3,12 are in order as in the old list.)
+Output
+tHE jOY oF cOMPUTING	
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-G=list()
-for i in L:
-  if i!=0:
-    G.append(i)
-G+=[0]*(len(L)-len(G))
-print(G,end="")
-
+print(input().swapcase(),end='')
          
     
                       
