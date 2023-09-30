@@ -204,41 +204,32 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1 [Due on 2023-09-28, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1 [Due on 2023-10-12, 23:59 IST]</p>
 		<p>
-		Given two string s1 and s2, write a function subStr which accepts two parameters s1 and s2 and will return True if a s2 is a substring of s1 otherwise return False. A substring is a is a contiguous sequence of characters within a string. 
+		
+Take 3 sides of a triangle as an input and find whether that triangle is a right angled triangle or not. Print 'YES' if a triangle is right angled triangle or 'NO' if it's not.
 
 Input:
+3
+4
+5
 
-bananamania
-nana
-
-Output:
-True
-
-Explanation:
-
-S2 which is nana is in bananamania hence it is a substring of s1.
-
-Example 2:
-
-Input:
-
-aabbcc
-abc
-
-output:
-False
-
-Explanation:
-
-String s1 does not contain string s2 hence the answer is false.	
+Output
+YES
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-def subStr(s1,s2):
-  return(s2 in s1)  
+a1=int(input())
+b3=int(input())
+c=int(input())
+L=[a1,b3,c]
+h=max(L)
+L.remove(h)
+if h**2==L[0]**2+L[1]**2:
+  print("YES",end="")
+else:
+  print("NO",end="")
                   
                 </textarea><br><br>
 
@@ -250,26 +241,21 @@ def subStr(s1,s2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p> Week 9: Programming Assignment 2 [Due on 2023-09-28, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p> Week 11: Programming Assignment 2 [Due on 2023-10-12, 23:59 IST]</p>
 		<p>
-	Given two dictionaries d1 and d2, write a function mergeDic that accepts two dictionaries d1 and d2 and return a new dictionary by merging d1 and d2. 
-Note: Contents of d1 should be appear before contents of d2 in the new dictionary and in same order. In case of duplicate value retain the value present in d1.
+Write a program that accepts a hash-separated sequence of words as input and prints the words in a hash-separated sequence after sorting them alphabetically in reverse order.
 
 Input:
-{1: 1, 2: 2}
-{3: 3, 4: 4}
+hey#input#bye
 
-output:
-{1: 1, 2: 2, 3: 3, 4: 4}		
+Output:
+input#hey#bye		
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def mergeDic(d1,d2):
-  for kd in d2:
-    if kd not in d1:
-      d1[kd]=d2[kd]
-  return(d1)
+LGF=sorted(input().split("#"),reverse=True)
+print("#".join(LGF),end="")
 
                   
                 </textarea><br><br>
@@ -282,54 +268,35 @@ def mergeDic(d1,d2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p> Week 9: Programming Assignment 3 [Due on 2023-09-28, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p> Week 11: Programming Assignment 3 [Due on 2023-10-12, 23:59 IST]</p>
 <p>
-Given an integer n, print all the indexes of numbers in that integer from left to right.
+Write a program which takes two integer a and b and prints all composite numbers between a and b.(both numbers are inclusive)
 
 Input:
-
-122345
+10
+20
 
 Output:
-1 0 
-2 1 2
-3 3
-4 4
-5 5
-
-Explanation:
-
-Given integer 122345. Now printing indexes of numbers from left to right.
-First number is 1 and its index is 0 therefore
-1 0 
-
-Second and third number is 2 and its index is 1,2 therefore
-2 1 2
-
-and so on...
+10
+12
+14
+15
+16
+18
+20
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-N=list(str(n))
-P=[]
-for isp in N:
-  if isp not in P:
-    P.append(isp)
-ans=[]
-for i in range(len(P)):
-  a=[]
-  for j in range(len(N)):
-    if(P[i]==N[j]):
-      a.append(j)
-  ans.append(a)
-#print(ans)
-
-for i in range(len(P)):
-  print(int(P[i]), "",end="")
-  #print(len(ans[i]))
-  for j in range(len(ans[i])):
-               print(int(ans[i][j]),"",end="")
-  print()
+prime_nb=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 
+       59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
+       127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 
+       191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
+       257, 263, 269, 271, 277, 281, 283, 293]
+a=int(input())
+b=int(input())
+for i in range(a,b+1):
+    if i not in prime_nb:
+      print(i)
        
                   
                 </textarea><br><br>
