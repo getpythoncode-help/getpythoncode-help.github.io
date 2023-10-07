@@ -329,28 +329,29 @@ for i in range(a,b+1):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1   Due on 2023-10-05, 23:59 IST</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1   Due on 2023-10-19, 23:59 IST</p>
 <p>
-Given a list L write a program to make a new list to fix the indexes of numbers to in list L to its same value in the new list. Put 0 at remaining indexes. Also print the elements of the new list in the single line. (See explanation for more clarity.)
+Write a program to an integer as an input and reverse that integer.
 
 Input:
-[1,5,6]
+A single integer.
 
 Output:
-0 1 0 0 0 5 6
+Reverse number of that integer.
 
-Explanation: 
+Example:
 
-List L contains 1,5,9 so at 1,5,9, index of new list the respective values are put and rest are initialized as zero.
+Input:
+54321
+
+Output:
+12345
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-K=[0]*(max(L)+1)
-for i in range(len(K)):
-  if i in L:
-    K[i]=i
-print(*K,end="") 
+print(int("".join(list(input())[::-1])),end="")
+pass
                   
                 </textarea><br><br>
 
@@ -362,42 +363,27 @@ print(*K,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 2  Due on 2023-10-05, 23:59 IST </p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 2  Due on 2023-10-19, 23:59 IST </p>
 		<p>
-		Ram shifted to a new place recently. There are multiple schools near his locality. Given the co-ordinates of Ram P(X,Y) and schools near his locality in a nested list, find the closest school. Print multiple coordinates in respective order if there exists multiple schools closest to him. Write a function closestSchool that accepts (X ,Y , L) where X and Y are co-ordinates of Ram's house and L contains co-ordinates of different school.
-
-Distance Formula(To calculate distance between two co-ordinates): √((X2 - X1)² + (Y2 - Y1)²)
-
-where (x1,y1) is the co-ordinate of point 1 and (x2, y2) is the co-ordinate of point 2.
+Given a list of strings, write a program to write sort the list of strings on the basis of last character of each string.
 
 Input:
-X, Y (Ram's house co-ordinates)
-N (No of schools)
-X1 Y1
-X2 Y2
-.
-.
-.
-
-X6 Y6
+L = ['ram', 'shyam', 'lakshami']
 
 Output:
-Closest pont/points to X, Y	
+['lakshami', 'ram', 'shyam']		
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def closestSchool(x, y, L):
-  min=9999999
-  distance=list()
-  for ij in L: 
-    dis=((x-ij[0])**2+(y-ij[1])**2)**0.5
-    distance.append(dis)
-    if dis<min:
-      min=dis  
-  for ij in range(len(distance)):
-    if distance[ij]==min:
-        print(L[ij]) 		
+Ll=input().split()
+M=list()
+for i in Ll:
+  M.append("".join(list(i)[::-1]))
+ans=[]
+for i in sorted(M):
+  ans.append("".join(list(i)[::-1]))
+print(ans,end="")	
 			
 
                   
@@ -411,21 +397,20 @@ def closestSchool(x, y, L):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 3  Due on 2023-10-05, 23:59 IST</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 3  Due on 2023-10-19, 23:59 IST</p>
 <p>
-Given a string s write a program to convert uppercase letters into lowercase and lowercase letters into uppercase. Also print the resultant string.
-
-Note: You need to talk the input and do not print anything while taking input.
+Given a student's roll number in the following format rollNumber@institute.edu.in, write a program to find the roll number and institute name of the student.
 
 Input:
-The Joy Of Computing
+roll@institute.edu.in
 
-Output
-tHE jOY oF cOMPUTING	
+Output:
+roll institute
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-print(input().swapcase(),end='')
+roll146=input()
+print(roll146.split('@')[0],roll146.split('@')[1].split(".")[0],end="")
          
     
                       
