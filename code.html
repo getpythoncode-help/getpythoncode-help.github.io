@@ -229,43 +229,46 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers</a>
+	    <a>The Programming Data Structure And Algorithm using python week 1 programming answers</a>
 	    
-                <p> Week 4: Programming Assignment</p>
+                <p> Week 1: Programming Assignment</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def histogram(l):
-    count,ans,k = 0,list(),[]
-    for i in range(len(l)):
-        index,count=i,0
-        for j in range(index,len(l)):
-            if l[index] == l[j] and l[index] not in k :
-                count =count + 1
-        k = k + [l[index]] 
-        if (count != 0): 
-            ans = ans + [(l[index], count)]
-    ans.sort()
-    ans=sorted(ans,key=lambda ans:ans[1])
-    return(ans)
+def threesquares(n):
+    while n > 0 and n % 4 == 0:
+        n =n// 4
+    return(n % 8 != 7)
+
+def repfree(s):
+    return(len(set(s))==len(s))
   
   
-def transcript(coursedetails, studentdetails, grades):
-    ans = list()
-    studentdetails.sort()
-    coursedetails.sort()
-    grades.sort()
-    for studentdet in studentdetails:
-        tuple,inlist = studentdet,list()
-        for grade in grades:
-            if studentdet[0] == grade[0]:
-                for cdetail in coursedetails:
-                    if grade[1] == cdetail[0]:
-                        intuple = cdetail
-                        intuple = intuple + (grade[2],)
-                        inlist.append(intuple)
-        tuple = tuple + (inlist,)
-        ans.append(tuple)
-    return(ans)  
+def hillvalley(l):
+    dect = False
+    inc = False
+    c = 0
+    for i in range(len(l)-1):
+        if c > 1:
+            return False
+        right = l[i+1]
+        middle = l[i]
+        diff = right - middle
+        if diff > 0:
+            if dect:
+                c += 1
+            inc = True
+            dect = False
+        elif diff < 0:
+            if inc:
+                c += 1
+            dect = True
+            inc = False
+    if c == 1:
+        return True
+    return False  
+  
+  
+  
      
                 </textarea><br><br>
 	    
