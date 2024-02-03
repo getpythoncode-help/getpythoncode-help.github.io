@@ -209,32 +209,28 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1 [Due on 2023-10-12, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 1 programming answers</a>
+                <p>Week 1: Programming Assignment 1 [Due on 2024-02-08, 23:59 IST]</p>
 		<p>
-		
-Take 3 sides of a triangle as an input and find whether that triangle is a right angled triangle or not. Print 'YES' if a triangle is right angled triangle or 'NO' if it's not.
-
-Input:
-3
-4
-5
-
-Output
-YES
+Accept two positive integers M and N as input. There are two cases to consider:
+(1) If M < N, then print M as output.
+(2) If M >= N, subtract N from M. Call the difference M1. If M1 >= N, then subtract N from M1 and call the difference M2. Keep doing this operation until you reach a value k, such that, Mk < N. You have to print the value of Mk as output.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-a1=int(input())
-b3=int(input())
-c=int(input())
-L=[a1,b3,c]
-h=max(L)
-L.remove(h)
-if h**2==L[0]**2+L[1]**2:
-  print("YES",end="")
-else:
-  print("NO",end="")
+def find_output(M, N):
+    if M < N:
+        print(M,end="")
+    else:
+        while M >= N:
+            M -= N
+        print(M,end="")
+
+M_input = int(input())
+N_input = int(input())
+
+find_output(M_input, N_input)
+
                   
                 </textarea><br><br>
 
@@ -246,22 +242,29 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p> Week 11: Programming Assignment 2 [Due on 2023-10-12, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 1 programming answers</a>
+                <p> Week 1: Programming Assignment 2 [Due on 2024-02-08, 23:59 IST ]</p>
 		<p>
-Write a program that accepts a hash-separated sequence of words as input and prints the words in a hash-separated sequence after sorting them alphabetically in reverse order.
-
-Input:
-hey#input#bye
-
-Output:
-input#hey#bye		
+Accept three positive integers as input and check if they form the sides of a right triangle. Print YES if they form one, and NO if they do not. The input will have three lines, with one integer on each line. The output should be a single line containing one of these two strings: YES or NO.		
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-LGF=sorted(input().split("#"),reverse=True)
-print("#".join(LGF),end="")
-
+a,b,c=int(input()),int(input()),int(input())
+if max(a,b,c)==a:
+  if a*a==b*b+c*c:
+    print("YES",end="")
+  else:
+    print("NO",end="")
+elif max(a,b,c)==b:
+  if b*b==a*a+c*c:
+    print("YES",end="")
+  else:
+    print("NO",end="") 
+else:
+  if c*c==b*b+a*a:
+    print("YES",end="")
+  else:
+    print("NO",end="")
                   
                 </textarea><br><br>
 
@@ -273,35 +276,31 @@ print("#".join(LGF),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p> Week 11: Programming Assignment 3 [Due on 2023-10-12, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 1 programming answers</a>
+                <p> Week 1: Programming Assignment 3 [Due on 2024-02-08, 23:59 IST ]</p>
 <p>
-Write a program which takes two integer a and b and prints all composite numbers between a and b.(both numbers are inclusive)
-
-Input:
-10
-20
-
-Output:
-10
-12
-14
-15
-16
-18
-20
+Accept a string as input. Your task is to determine if the input string is a valid password or not. For a string to be a valid password, it must satisfy all the conditions given below:
+(1) It should have at least 8 and at most 32 characters
+(2) It should start with an uppercase or lowercase letter
+(3) It should not have any of these characters: / \ = ' "
+(4) It should not have spaces
+It could have any character that is not mentioned in the list of characters to be avoided (points 3 and 4). Output True if the string forms a valid password and False otherwise.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-prime_nb=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 
-       59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113,
-       127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 
-       191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251,
-       257, 263, 269, 271, 277, 281, 283, 293]
-a=int(input())
-b=int(input())
-for i in range(a,b+1):
-    if i not in prime_nb:
-      print(i)
+def is_valid_password(password):
+    if 8 <= len(password) <= 32:
+        if password[0].isalpha():
+            forbidden_chars = set("/\\='\" ")
+            if not any(char in forbidden_chars for char in password):
+                if ' ' not in password:
+                    return True
+
+    return False
+
+password_input = input()
+result = is_valid_password(password_input)
+print(result,end="")
+
        
                   
                 </textarea><br><br>
