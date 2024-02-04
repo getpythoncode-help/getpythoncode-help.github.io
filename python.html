@@ -217,7 +217,7 @@ Accept two positive integers M and N as input. There are two cases to consider:
 (2) If M >= N, subtract N from M. Call the difference M1. If M1 >= N, then subtract N from M1 and call the difference M2. Keep doing this operation until you reach a value k, such that, Mk < N. You have to print the value of Mk as output.
 		</p>
 
-                <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
+                <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 def find_output(M, N):
     if M < N:
         print(M,end="")
@@ -286,7 +286,7 @@ Accept a string as input. Your task is to determine if the input string is a val
 (4) It should not have spaces
 It could have any character that is not mentioned in the list of characters to be avoided (points 3 and 4). Output True if the string forms a valid password and False otherwise.
 </p>
-                <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
+                <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 def is_valid_password(password):
     if 8 <= len(password) <= 32:
         if password[0].isalpha():
@@ -333,30 +333,34 @@ print(result,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1   Due on 2023-10-19, 23:59 IST</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 1   Due on 2024-02-15, 23:59 IST</p>
 <p>
-Write a program to an integer as an input and reverse that integer.
+You are given a list marks that has the marks scored by a class of students in a Mathematics test. Find the median marks and store it in a float variable named median. You can assume that marks is a list of float values.
 
-Input:
-A single integer.
+Procedure to find the median
 
-Output:
-Reverse number of that integer.
+(1) Sort the marks in ascending order. Do not try to use built-in methods.
 
-Example:
+(2) If the number of students is odd, then the median is the middle value in the sorted sequence. If the number of students is even, then the median is the arithmetic mean of the two middle values in the sorted sequence.
 
-Input:
-54321
+You do not have to accept input from the console as it has already been provided to you. You do not have to print the output to the console. Input-Output is the responsibility of the auto-grader for this problem.
 
-Output:
-12345
+FILL THE MISSING CODE
 		</p>
 
-                <textarea type="text" id="myInput" readonly style="width: 100%;height: 60vh;">
-print(int("".join(list(input())[::-1])),end="")
-pass
-                  
+                <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
+    for i in range(0, len(marks)):
+      for j in range(i+1, len(marks)):
+          if marks[i] >= marks[j]:
+              marks[i], marks[j] = marks[j],marks[i]
+              
+    #print(marks)          
+    m=len(marks)//2
+    if len(marks)%2!=0:
+      median=marks[m]
+    else:
+      median=(marks[m-1]+marks[m])/2
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -367,27 +371,16 @@ pass
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 2  Due on 2023-10-19, 23:59 IST </p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 2  Due on 2024-02-15, 23:59 IST </p>
 		<p>
-Given a list of strings, write a program to write sort the list of strings on the basis of last character of each string.
-
-Input:
-L = ['ram', 'shyam', 'lakshami']
-
-Output:
-['lakshami', 'ram', 'shyam']		
+Accept a string as input, convert it to lower case, sort the string in alphabetical order, and print the sorted string to the console. You can assume that the string will only contain letters.		
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-Ll=input().split()
-M=list()
-for i in Ll:
-  M.append("".join(list(i)[::-1]))
-ans=[]
-for i in sorted(M):
-  ans.append("".join(list(i)[::-1]))
-print(ans,end="")	
+get=input()
+get=get.lower()
+print("".join(sorted(get)),end="")	
 			
 
                   
@@ -401,20 +394,44 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 3  Due on 2023-10-19, 23:59 IST</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 3  Due on 2024-02-15, 23:59 IST</p>
 <p>
-Given a student's roll number in the following format rollNumber@institute.edu.in, write a program to find the roll number and institute name of the student.
+You are given the dates of birth of two persons, not necessarily from the same family. Your task is to find the younger of the two. If both of them share the same date of birth, then the younger of the two is assumed to be that person whose name comes first in alphabetical order (names will follow Python's capitalize case format).
 
-Input:
-roll@institute.edu.in
-
-Output:
-roll institute
+The input will have four lines. The first two lines correspond to the first person, while the last two lines correspond to the second person. For each person, the first line corresponds to the name and the second line corresponds to the date of birth in DD-MM-YYYY format. Your output should be the name of the younger of the two.
 </p>
-                <textarea type="text" id="myInput" readonly style="width: 100%;height: 20vh;">
-roll146=input()
-print(roll146.split('@')[0],roll146.split('@')[1].split(".")[0],end="")
+                <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
+p1=input()
+dob1=input()
+p2=input()
+dob2=input()
+y1=int(dob1.split('-')[2])
+y2=int(dob2.split('-')[2])
+m1=int(dob1.split('-')[1])
+m2=int(dob2.split('-')[1])
+d1=int(dob1.split('-')[0])
+d2=int(dob2.split('-')[0])
+#print(y1,m1,d1)
+if (y1>y2):
+  print(p1,end="")
+elif (y2>y1):
+  print(p2,end="")
+else:
+  if(m1>m2):
+    print(p1,end="")
+  elif(m2>m1):
+    print(p2,end="")
+  else:
+    if(d1>d2):
+      print(p1,end="")
+    elif(d2>d1):
+      print(p2,end="")
+    else:
+      print(min(p1,p2),end="")
+      
+      
+
          
     
                       
