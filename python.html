@@ -209,27 +209,73 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p>Week 2: Programming Assignment 1 [Due on 2024-02-08, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 1 [Due on 2024-02-22, 23:59 IST]</p>
 		<p>
-Accept two positive integers M and N as input. There are two cases to consider:
-(1) If M < N, then print M as output.
-(2) If M >= N, subtract N from M. Call the difference M1. If M1 >= N, then subtract N from M1 and call the difference M2. Keep doing this operation until you reach a value k, such that, Mk < N. You have to print the value of Mk as output.
+The first line of input is a sequence of comma-separated names. The second line of input is a sequence of comma-separated positive integers. Each integer in the sequence will be in the range [1,365], endpoints inclusive, and stands for someday in the year.
+
+Find all pairs of names that share a common date of birth and store them in a list called common. Each element of this list is itself a list and should be of the form [name1, name2], such that name1 comes before name2 in alphabetical order.
+
+Notes
+
+1)     You can assume that each test case will have at least one pair of members who share the same date of birth.
+
+2)     You do not have to print the output to the console. This is the responsibility of the autograder. You just have to populate the list common in the required format.
+
+Sample Input/Output
+
+For example, consider the input:
+
+sachin,ramesh,rohit,priya,saina,sandeep,stella
+
+100,50,100,20,30,20,20
+
+Your list common could look like this:
+
+[['rohit', 'sachin'], ['priya', 'sandeep'], ['priya', 'stella'], ['sandeep', 'stella']]
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def find_output(M, N):
-    if M < N:
-        print(M,end="")
-    else:
-        while M >= N:
-            M -= N
-        print(M,end="")
+def find_common_birthdays(names, dates):
+    birth_dict = {}
+    common = []
 
-M_input = int(input())
-N_input = int(input())
+    # Create a dictionary where keys are dates and values are lists of names born on that date
+    for name, date in zip(names, dates):
+        if date not in birth_dict:
+            birth_dict[date] = [name]
+        else:
+            birth_dict[date].append(name)
 
-find_output(M_input, N_input)
+    # Iterate through the birth_dict to find pairs with common dates
+    for date, name_list in birth_dict.items():
+        if len(name_list) > 1:
+            name_list.sort()  # Sort the names alphabetically
+            # Generate pairs of names
+            for i in range(len(name_list)):
+                for j in range(i+1, len(name_list)):
+                    pair = [name_list[i], name_list[j]]
+                    # Ensure that only one of the pairs is added
+                    if pair not in common and pair[::-1] not in common:
+                        common.append(pair)
+
+    # Sort the list common based on alphabetical order of names within each pair
+    # and the index of the first name in the original input list
+    common.sort(key=lambda x: (names.index(x[0]), x[0], x[1]))
+
+    return common
+
+
+# Sample Input
+names = input().strip().split(',')
+dates = list(map(int, input().strip().split(',')))
+
+# Find pairs with common birthdates
+common = find_common_birthdays(names, dates)
+
+# Printing the result in the desired format
+
+
 
                   
                 </textarea><br><br>
@@ -242,29 +288,50 @@ find_output(M_input, N_input)
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 2 [Due on 2024-02-08, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 2 [Due on 2024-02-22, 23:59 IST ]</p>
 		<p>
-Accept three positive integers as input and check if they form the sides of a right triangle. Print YES if they form one, and NO if they do not. The input will have three lines, with one integer on each line. The output should be a single line containing one of these two strings: YES or NO.		
-		</p>
+Accept two square matrices A and B of dimensions n×n as input and compute their product AB.
+
+The first line of the input will contain the integer n. This is followed by 2n lines. Out of these, each of the first n lines is a sequence of comma-separated integers that denotes one row of the matrix A. Each of the last n lines is a sequence of comma-separated integers that denotes one row of the matrix B.
+
+Your output should again be a sequence of n lines, where each line is a sequence of comma-separated integers that denote a row of the matrix AB.		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-a,b,c=int(input()),int(input()),int(input())
-if max(a,b,c)==a:
-  if a*a==b*b+c*c:
-    print("YES",end="")
-  else:
-    print("NO",end="")
-elif max(a,b,c)==b:
-  if b*b==a*a+c*c:
-    print("YES",end="")
-  else:
-    print("NO",end="") 
-else:
-  if c*c==b*b+a*a:
-    print("YES",end="")
-  else:
-    print("NO",end="")
+def matrix_product(A, B):
+    n = len(A)
+    result = [[0] * n for ads in range(n)]
+
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                result[i][j] += A[i][k] * B[k][j]
+
+    return(result)
+
+
+# Input
+n = int(input())
+A = []
+B = []
+
+# Input matrix A
+for apple in range(n):
+    row = list(map(int, input().strip().split(',')))
+    A.append(row)
+
+# Input matrix B
+for mango in range(n):
+    row = list(map(int, input().strip().split(',')))
+    B.append(row)
+
+# Compute matrix product AB
+AB = matrix_product(A, B)
+
+# Output
+for row in AB:
+    print(','.join(map(str, row)))
+
                   
                 </textarea><br><br>
 
@@ -276,30 +343,34 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 3 [Due on 2024-02-08, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 3 [Due on 2024-02-22, 23:59 IST ]</p>
 <p>
-Accept a string as input. Your task is to determine if the input string is a valid password or not. For a string to be a valid password, it must satisfy all the conditions given below:
-(1) It should have at least 8 and at most 32 characters
-(2) It should start with an uppercase or lowercase letter
-(3) It should not have any of these characters: / \ = ' "
-(4) It should not have spaces
-It could have any character that is not mentioned in the list of characters to be avoided (points 3 and 4). Output True if the string forms a valid password and False otherwise.
+Accept a square matrix A and an integer s as input and print the matrix s⋅A as output. Multiplying a matrix by an integer s is equivalent to multiplying each element of the matrix by s. For example:
+
+
+The first line of input is a positive integer, n, that denotes the dimension of the matrix A. Each of the next n lines contains a sequence of space-separated integers. The last line of the input contains the integer s.
+
+Print the matrix s⋅A as output. Each row of the matrix must be printed as a sequence of space-separated integers, one row on each line. There should not be any space after the last number on each line. If the expected output looks exactly like the actual output and still you are getting a wrong answer, it is because of the space at the end.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def is_valid_password(password):
-    if 8 <= len(password) <= 32:
-        if password[0].isalpha():
-            forbidden_chars = set("/\\='\" ")
-            if not any(char in forbidden_chars for char in password):
-                if ' ' not in password:
-                    return True
+# Read input
+n = int(input())  # Dimension of the matrix A
+A = []  # Initialize matrix A
 
-    return False
+# Input matrix A
+for pay in range(n):
+    row = list(map(int, input().split()))  # Read a row of integers
+    A.append(row)
 
-password_input = input()
-result = is_valid_password(password_input)
-print(result,end="")
+s = int(input())  # Scalar value
+
+# Multiply each element of matrix A by the scalar s
+result = [[s * A[i][j] for j in range(n)] for i in range(n)]
+
+# Print the result
+for row in result:
+    print(*row)
 
        
                   
