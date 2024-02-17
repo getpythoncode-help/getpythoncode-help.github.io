@@ -404,34 +404,31 @@ for row in result:
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1   Due on 2024-02-15, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1   Due on 2024-02-29, 23:59 IST</p>
 <p>
-You are given a list marks that has the marks scored by a class of students in a Mathematics test. Find the median marks and store it in a float variable named median. You can assume that marks is a list of float values.
+1.      Write a function insert that accepts a sorted list L of integers and an integer x as input. The function should return a sorted list with the element x inserted at the right place in the input list. The original list should not be disturbed in the process.
 
-Procedure to find the median
+1)     The only built-in methods you are allowed to use are append and remove. You should not use any other method provided for lists.
 
-(1) Sort the marks in ascending order. Do not try to use built-in methods.
-
-(2) If the number of students is odd, then the median is the middle value in the sorted sequence. If the number of students is even, then the median is the arithmetic mean of the two middle values in the sorted sequence.
-
-You do not have to accept input from the console as it has already been provided to you. You do not have to print the output to the console. Input-Output is the responsibility of the auto-grader for this problem.
-
-FILL THE MISSING CODE
+2)     You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-    for i in range(0, len(marks)):
-      for j in range(i+1, len(marks)):
-          if marks[i] >= marks[j]:
-              marks[i], marks[j] = marks[j],marks[i]
-              
-    #print(marks)          
-    m=len(marks)//2
-    if len(marks)%2!=0:
-      median=marks[m]
-    else:
-      median=(marks[m-1]+marks[m])/2
+def insert(L, x):
+    """
+    insert an element x into a sorted list L
+
+    Arguments:
+        L: list
+        x: integers
+    Return:
+        sorted_L: list
+    """
+    M=L[::]
+    M.append(x)
+    return(sorted(M))
+      
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -442,17 +439,25 @@ FILL THE MISSING CODE
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 2  Due on 2024-02-15, 23:59 IST </p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 2  Due on 2024-02-29, 23:59 IST </p>
 		<p>
-Accept a string as input, convert it to lower case, sort the string in alphabetical order, and print the sorted string to the console. You can assume that the string will only contain letters.		
-		</p>
+Accept a sequence of words as input. Create a dictionary named real_dict whose keys are the letters of the English alphabet. For each key (letter), the corresponding value should be a list of words that begin with this key (letter). For any given key, the words should be appended to the corresponding list in the order in which they appear in the sequence. You can assume that all words of the sequence will be in lower case.		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-get=input()
-get=get.lower()
-print("".join(sorted(get)),end="")	
-			
+words=input().split(",")
+#print("words is ",words)
+real_dict={}
+k=list("abcdefghijklmnopqrstuvwxyz")
+for w in words:
+  if w[0] not in real_dict:
+    real_dict[w[0]]=[w]
+  else:
+    real_dict[w[0]].append(w)
+#print(real_dict)    
+  
+  
+  
 
                   
                 </textarea><br><br>
@@ -465,41 +470,30 @@ print("".join(sorted(get)),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 3  Due on 2024-02-15, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 3  Due on 2024-02-29, 23:59 IST</p>
 <p>
-You are given the dates of birth of two persons, not necessarily from the same family. Your task is to find the younger of the two. If both of them share the same date of birth, then the younger of the two is assumed to be that person whose name comes first in alphabetical order (names will follow Python's capitalize case format).
+Consider a grid-world of size n×n. You are at the bottom-left corner, at the cell (1,1), to start with. A sample grid-world for the case of n=5 is given below for your reference:
 
-The input will have four lines. The first two lines correspond to the first person, while the last two lines correspond to the second person. For each person, the first line corresponds to the name and the second line corresponds to the date of birth in DD-MM-YYYY format. Your output should be the name of the younger of the two.
+You can move one step at a time in any one of the four directions: "North", "East", "West", "South". At every cell of the grid, all four moves are possible. The only catch is that if you make a move that will take you out of the grid at a border cell, you will stay put at the same cell. Concretely, if you are at the cell (1,4) and try to move west, you will remain at the same cell. Or if you are at (3,1) and try to move south, you will remain there.
+
+Write a function named final that accepts a positive integer n and a sequence of moves (string) as arguments and returns the final position where you would end up in an n×n grid-world if you start at (1,1). You must return a tuple of size 2, where the first element is the x-coordinate and the second is the y-coordinate.
+
+
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-p1=input()
-dob1=input()
-p2=input()
-dob2=input()
-y1=int(dob1.split('-')[2])
-y2=int(dob2.split('-')[2])
-m1=int(dob1.split('-')[1])
-m2=int(dob2.split('-')[1])
-d1=int(dob1.split('-')[0])
-d2=int(dob2.split('-')[0])
-#print(y1,m1,d1)
-if (y1>y2):
-  print(p1,end="")
-elif (y2>y1):
-  print(p2,end="")
-else:
-  if(m1>m2):
-    print(p1,end="")
-  elif(m2>m1):
-    print(p2,end="")
-  else:
-    if(d1>d2):
-      print(p1,end="")
-    elif(d2>d1):
-      print(p2,end="")
-    else:
-      print(min(p1,p2),end="")
+def final(n, moves):
+    x, y = 1, 1  # Starting position at (1,1)
+    for move in moves:
+        if move == "N" and y < n:
+            y += 1
+        elif move == "E" and x < n:
+            x += 1
+        elif move == "S" and y > 1:
+            y -= 1
+        elif move == "W" and x > 1:
+            x -= 1
+    return (x, y)
       
       
 
