@@ -209,71 +209,45 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1 [Due on 2024-02-22, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1 [Due on 2024-03-07, 23:59 IST]</p>
 		<p>
-The first line of input is a sequence of comma-separated names. The second line of input is a sequence of comma-separated positive integers. Each integer in the sequence will be in the range [1,365], endpoints inclusive, and stands for someday in the year.
+The distance between two letters in the English alphabet is one more than the number of letters between them. Alternatively, it can be defined as the number of steps needed to move from the alphabetically smaller letter to the larger letter. This is always a non-negative integer. For example:
 
-Find all pairs of names that share a common date of birth and store them in a list called common. Each element of this list is itself a list and should be of the form [name1, name2], such that name1 comes before name2 in alphabetical order.
 
-Notes
 
-1)     You can assume that each test case will have at least one pair of members who share the same date of birth.
+The distance between two words is defined as follows:
 
-2)     You do not have to print the output to the console. This is the responsibility of the autograder. You just have to populate the list common in the required format.
+It is -1, if the words are f unequal lengths.
+If the word-lengths are equal, it is the sum of the distances between letters at corresponding positions in the words. For example:
+​dword​(dog,cat)=dletter​(d,c)+dletter​(o,a)+dletter​(g,t)=1+14+13=28
 
-Sample Input/Output
+Write a function named distance that accepts two words as arguments and returns the distance between them.
 
-For example, consider the input:
-
-sachin,ramesh,rohit,priya,saina,sandeep,stella
-
-100,50,100,20,30,20,20
-
-Your list common could look like this:
-
-[['rohit', 'sachin'], ['priya', 'sandeep'], ['priya', 'stella'], ['sandeep', 'stella']]
+You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def find_common_birthdays(names, dates):
-    birth_dict = {}
-    common = []
+def distance(word1, word2):
+  """
+  This function calculates the distance between two words.
 
-    # Create a dictionary where keys are dates and values are lists of names born on that date
-    for name, date in zip(names, dates):
-        if date not in birth_dict:
-            birth_dict[date] = [name]
-        else:
-            birth_dict[date].append(name)
+  Args:
+      word1: The first word.
+      word2: The second word.
 
-    # Iterate through the birth_dict to find pairs with common dates
-    for date, name_list in birth_dict.items():
-        if len(name_list) > 1:
-            name_list.sort()  # Sort the names alphabetically
-            # Generate pairs of names
-            for i in range(len(name_list)):
-                for j in range(i+1, len(name_list)):
-                    pair = [name_list[i], name_list[j]]
-                    # Ensure that only one of the pairs is added
-                    if pair not in common and pair[::-1] not in common:
-                        common.append(pair)
+  Returns:
+      The distance between the two words.
+  """
 
-    # Sort the list common based on alphabetical order of names within each pair
-    # and the index of the first name in the original input list
-    common.sort(key=lambda x: (names.index(x[0]), x[0], x[1]))
+  if len(word1) != len(word2):
+    return(-1)
 
-    return common
+  dis = 0
+  for i in range(len(word1)):
+    dis += abs(ord(word1[i]) - ord(word2[i]))
 
-
-# Sample Input
-names = input().strip().split(',')
-dates = list(map(int, input().strip().split(',')))
-
-# Find pairs with common birthdates
-common = find_common_birthdays(names, dates)
-
-# Printing the result in the desired format
+  return(dis)
 
 
 
@@ -288,49 +262,61 @@ common = find_common_birthdays(names, dates)
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2 [Due on 2024-02-22, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 2 [Due on 2024-03-07, 23:59 IST ]</p>
 		<p>
-Accept two square matrices A and B of dimensions n×n as input and compute their product AB.
+P is a dictionary of father-son relationships that has the following structure: for any key in the dictionary, its corresponding value is the father of key. As an example:
 
-The first line of the input will contain the integer n. This is followed by 2n lines. Out of these, each of the first n lines is a sequence of comma-separated integers that denotes one row of the matrix A. Each of the last n lines is a sequence of comma-separated integers that denotes one row of the matrix B.
+P = {
 
-Your output should again be a sequence of n lines, where each line is a sequence of comma-separated integers that denote a row of the matrix AB.		</p>
+    'Jahangir': 'Akbar',
+
+    'Akbar': 'Humayun',
+
+    'Humayun': 'Babur'   
+
+}
+
+If 'Jahangir' is the key, then 'Akbar', his father, is the value. This is true of every key in the dictionary.
+
+Write a recursive function named ancestry that accepts the following arguments:
+
+P: a dictionary of relationships
+present: name of a person, string
+past: name of a person, string
+It should return the sequence of ancestors of the person named present, traced back up to the person named past. For example, ancestry(P, 'Jahangir', 'Babur') should return the list:
+
+L = ['Jahangir', 'Akbar', 'Humayun', 'Babur']
+
+In more Pythonic terms, L[i] is the father of L[i - 1], for 1≤ i < len(L), with the condition that L[0] should be present and L[-1] should be past.
+
+(1) You can assume that no two persons in the dictionary have the same name. However, a given person could either appear as a key or as a value in the dictionary.
+
+(2) A given person could appear multiple times as one of the values of the dictionary. For example, in test-case-2, Prasanna has two sons, Mohan and Krishna, and hence appears twice (as a value).
+
+(3) You do not have to accept input from the user or print output to the console. You just have to write the function definition.		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def matrix_product(A, B):
-    n = len(A)
-    result = [[0] * n for ads in range(n)]
+def ancestry(P, present, past):
+ 
 
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
-                result[i][j] += A[i][k] * B[k][j]
+  # Base case: present is the past person, return the list containing only present
+  if present == past:
+    return([present])
 
-    return(result)
+  # Check if present is in the dictionary. If not, return None
+  if present not in P:
+    return(None)
 
+  # Recursive call with current person's father as present and past remaining the same
+  ancestral_chains = ancestry(P, P[present], past)
 
-# Input
-n = int(input())
-A = []
-B = []
+  # If a valid chain is found, prepend present and return
+  if ancestral_chains:
+    return([present] + ancestral_chains)
 
-# Input matrix A
-for apple in range(n):
-    row = list(map(int, input().strip().split(',')))
-    A.append(row)
-
-# Input matrix B
-for mango in range(n):
-    row = list(map(int, input().strip().split(',')))
-    B.append(row)
-
-# Compute matrix product AB
-AB = matrix_product(A, B)
-
-# Output
-for row in AB:
-    print(','.join(map(str, row)))
+  # No valid chain found, return None
+  return(None)
 
                   
                 </textarea><br><br>
@@ -343,35 +329,54 @@ for row in AB:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3 [Due on 2024-02-22, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 3 [Due on 2024-03-07, 23:59 IST ]</p>
 <p>
-Accept a square matrix A and an integer s as input and print the matrix s⋅A as output. Multiplying a matrix by an integer s is equivalent to multiplying each element of the matrix by s. For example:
+Fibonacci
 
+Fibonacci is a young resident of the Italian city of Pisa. He spends a lot of time visiting the Leaning Tower of Pisa, one of the iconic buildings in the city, that is situated close to his home. During all his visits to the tower, he plays a strange game while climbing the marble steps of the tower.
 
-The first line of input is a positive integer, n, that denotes the dimension of the matrix A. Each of the next n lines contains a sequence of space-separated integers. The last line of the input contains the integer s.
+The Game
 
-Print the matrix s⋅A as output. Each row of the matrix must be printed as a sequence of space-separated integers, one row on each line. There should not be any space after the last number on each line. If the expected output looks exactly like the actual output and still you are getting a wrong answer, it is because of the space at the end.
+Fibonacci likes to climb the steps either one at a time, two at a time, or three at a time. This adds variety to the otherwise monotonous task of climbing. He wants to find the total number of ways in which he can climb n steps, if the order of his individual steps matters. Your task is to help Fibonacci compute this number.
+
+For example, if he wishes to climb three steps, in the case of n=3, he could do it in four different ways:
+
+(1,1,1) (1,1,1): do it in three moves, one step at a time
+(1,2) (1,2): do it in two moves, first take a single step, then a double step
+(2,1) (2,1): do it in two moves, first take a double step, then a single step
+(3): do it in just one move, directly leaping to the third step
+To take another example, if n=5, then some of the sequences could be:
+
+ (1,3,1), (1,1,3), (3,1,1), (2,1,1,1), (1,2,1,1), (2,1,2)
+
+Each sequence is one of the ways of climbing five steps. The point to note here is that each element of a sequence can only be 1, 2, or 3.
+
+Write a recursive function named steps that accepts a positive integer n as the argument. It should return the total number of ways in which Fibonacci can ascend n steps. Note that the order of his steps is important.
+
+You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-# Read input
-n = int(input())  # Dimension of the matrix A
-A = []  # Initialize matrix A
+def steps(n):
+ 
 
-# Input matrix A
-for pay in range(n):
-    row = list(map(int, input().split()))  # Read a row of integers
-    A.append(row)
+  if n <= 0:
+    return 0
+  elif n == 1:
+    return 1
+  elif n == 2:
+    return 2
+  elif n == 3:
+    return 4
 
-s = int(input())  # Scalar value
 
-# Multiply each element of matrix A by the scalar s
-result = [[s * A[i][j] for j in range(n)] for i in range(n)]
+  one_steps = steps(n-1)
+  
+  two_steps = steps(n-2)
+  
+  three_steps = steps(n-3)
 
-# Print the result
-for row in result:
-    print(*row)
-
+  return(one_steps + two_steps + three_steps)
        
                   
                 </textarea><br><br>
