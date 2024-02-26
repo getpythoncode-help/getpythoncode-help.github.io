@@ -1,43 +1,46 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'Inter var', sans-serif; }
+}
 body {
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-size: 15px;
 }
-header {
+main {
     display: flex;
-    flex-flow: row;
-    height: 64px;
-    border-bottom: 1px solid #dadce0;
-    align-items: center;
+    flex-flow: column;
 }
-h1 {
-    font-weight: 400;
+course {
     font-size: 22px;
+    line-height: 2;
+    margin: 13px;
 }
-#grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-article {
-    background: #651fff19;
-    border-radius: 16px;
-    contain: paint;
-    margin: 6px;
-    padding: 10px 22px;
-}
-article p {
-    font-size: larger;
-}
-h1 span {
-    color: #fff;
-    background: #651fff;
+week {
+    background: rgb(0, 255, 0);
     border-radius: 4px;
     padding: 2px 6px;
-    margin-bottom: 2px;
+}
+pre {
+    font-family: 'Roboto Mono', sans-serif;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.07);
+    padding: 10px 0;
+}
+svg {
+    margin: 13px 13px 0 13px;
 }
 button {
-    margin-bottom: 13px;
-    font-family: "Inter", sans-serif;
+    padding: 10px 13px;
+    font-family: 'Inter', sans-serif;
     font-size: 17px;
-    padding: 10px 22px;
+    color: #fff;
+    border: transparent solid 0;
+    background: #651fff;
+    border-radius: 5px;
     cursor: pointer;
+}
+space {
+    border-top: 2px dashed lightgrey;
+    width: 100%;
 }
