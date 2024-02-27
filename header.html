@@ -1,0 +1,40 @@
+<button onclick="{
+    const items = document.getElementById('items');
+    const currentLeft = items.style.left;
+
+    if (currentLeft === '-1px') {
+        items.style.left = '-290px';
+    } else {
+        items.style.left = '-1px';
+    }
+}" style="
+        width: 64px;
+    background: url(/assets/menu.svg) no-repeat;
+    border: transparent;
+    background-position-y: 25px;
+    background-size: 26px;
+    height: 64px;
+    background-position-x: 25px;
+"></button>
+<img src="/assets/logo.svg" alt="logo" style="height: 33px; margin: 10px 22px; cursor: pointer;" onclick="window.location='index.html'"/>
+<div id="items" style="
+    position: absolute;
+    left: -290px;
+    top: 64px;
+    width: 190px;
+    height: fit-content;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    padding: 22px;
+    border: 1px solid #dadce0;
+    z-index: 1;
+    transition: left 200ms;
+">
+    <a href="/get.html" style="font-size: larger;color: #000;text-decoration: none;padding: 10px 0;">Problem Solving through Programming in C</a>
+    <a href="/python.html" style="font-size: larger;color: #000;text-decoration: none;padding: 10px 0;">The Joy of Computing using Python</a>
+    <a href="/code.html" style="font-size: larger;color: #000;text-decoration: none;padding:10px 0;">Programming, Data Structures And Algorithms Using Python</a>
+    <a href="/coursera.html" style="font-size: larger;color: #000;text-decoration: none;padding: 10px 0;">Coursera Python Data Structures</a>
+    <a href="/page5.html" style="font-size: larger;color: #000;text-decoration: none;padding: 10px 0;">Coursera Financial Aid Application</a>
+    <a href="/java.html" style="font-size: larger;color: #000;text-decoration: none;padding: 10px 0;">Java NPTEL</a>
+</div>
