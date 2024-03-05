@@ -542,18 +542,32 @@ Accept a string of lowercase letters from the user and encrypt it using the foll
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def final(n, moves):
-    x, y = 1, 1  # Starting position at (1,1)
-    for move in moves:
-        if move == "N" and y < n:
-            y += 1
-        elif move == "E" and x < n:
-            x += 1
-        elif move == "S" and y > 1:
-            y -= 1
-        elif move == "W" and x > 1:
-            x -= 1
-    return (x, y)
+# Create a dictionary to map letters in the upper half to their corresponding letters in the lower half and vice versa
+letter_map = {
+    'a': 'z', 'b': 'y', 'c': 'x', 'd': 'w', 'e': 'v', 'f': 'u', 'g': 't', 'h': 's',
+    'i': 'r', 'j': 'q', 'k': 'p', 'l': 'o', 'm': 'n', 'n': 'm', 'o': 'l', 'p': 'k',
+    'q': 'j', 'r': 'i', 's': 'h', 't': 'g', 'u': 'f', 'v': 'e', 'w': 'd', 'x': 'c',
+    'y': 'b', 'z': 'a'
+}
+
+def encrypt_message(message):
+  encrypted_message = ""
+  for char in message:
+    if char.isalpha():
+     
+      encrypted_message += letter_map[char]
+    else:
+      
+      encrypted_message += char
+  return encrypted_message
+
+
+message = input()
+
+
+encrypted_message = encrypt_message(message)
+print( encrypted_message,end="")
+
       
       
 
