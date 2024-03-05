@@ -409,30 +409,31 @@ def steps(n):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1   Due on 2024-02-29, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on 2024-03-14, 23:59 IST</p>
 <p>
-1.      Write a function insert that accepts a sorted list L of integers and an integer x as input. The function should return a sorted list with the element x inserted at the right place in the input list. The original list should not be disturbed in the process.
+In spreadsheets, columns are labelled as follows:
+	A is the first column, B is the second column, Z is the 26th column, and so on. Using the table given above, deduce the mapping between column labels and their corresponding numbers. Accept the column label as input and print the corresponding column number as output.
 
-1)     The only built-in methods you are allowed to use are append and remove. You should not use any other method provided for lists.
-
-2)     You do not have to accept input from the user or print output to the console. You just have to write the function definition.
+ 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def insert(L, x):
-    """
-    insert an element x into a sorted list L
+def letter_value(letter):
+    return ord(letter) - ord('A') + 1
 
-    Arguments:
-        L: list
-        x: integers
-    Return:
-        sorted_L: list
-    """
-    M=L[::]
-    M.append(x)
-    return(sorted(M))
+def string_value(s):
+    n = len(s)
+    value = 0
+    for i in range(n):
+        value += letter_value(s[i]) * (26 ** (n - i - 1))
+    return value
+
+
+code = input().upper()
+print(string_value(code),end="")
+
+
       
                 </textarea><br><br>
 
@@ -444,23 +445,81 @@ def insert(L, x):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2  Due on 2024-02-29, 23:59 IST </p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2  Due on 2024-03-14, 23:59 IST </p>
 		<p>
-Accept a sequence of words as input. Create a dictionary named real_dict whose keys are the letters of the English alphabet. For each key (letter), the corresponding value should be a list of words that begin with this key (letter). For any given key, the words should be appended to the corresponding list in the order in which they appear in the sequence. You can assume that all words of the sequence will be in lower case.		</p>
+A queue at a fast-food restaurant operates in the following manner. The queue is a single line with its head at the left-end and tail at the right-end. A person can exit the queue only at the head (left) and join the queue only at the tail (right). At the point of entry, each person is assigned a unique token.
+
+You have been asked to manage the queue. The following operations are permitted on it:
+
+Operation
+
+Meaning
+
+JOIN,token
+
+Add a person with this token number to the tail of the queue.
+
+LEAVE
+
+Remove the person from the head of the queue.
+
+MOVE,token,HEAD
+
+Move the person with this token number to the head of the queue.
+
+MOVE,token,TAIL
+
+Move the person with this token number to the tail of the queue.
+
+PRINT
+
+Print the queue as a sequence of comma-separated token numbers.
+The head comes to the left, tail to the right.
+
+The queue is empty to begin with. Keep accepting an operation as input from the user until the string "END" is entered.		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-words=input().split(",")
-#print("words is ",words)
-real_dict={}
-k=list("abcdefghijklmnopqrstuvwxyz")
-for w in words:
-  if w[0] not in real_dict:
-    real_dict[w[0]]=[w]
-  else:
-    real_dict[w[0]].append(w)
-#print(real_dict)    
-  
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    def join(self, token):
+        self.queue.append(token)
+
+    def leave(self):
+        if self.queue:
+            self.queue.pop(0)
+
+    def move(self, token, position):
+        if token in self.queue:
+            self.queue.remove(token)
+            if position.upper() == 'HEAD':
+                self.queue.insert(0, token)
+            elif position.upper() == 'TAIL':
+                self.queue.append(token)
+
+    def print_queue(self):
+        print(",".join(map(str, self.queue)))
+
+
+def main():
+    q = Queue()
+    while True:
+        operation = input().split(",")
+        if operation[0].upper() == "END":
+            break
+        elif operation[0].upper() == "JOIN":
+            q.join(operation[1])
+        elif operation[0].upper() == "LEAVE":
+            q.leave()
+        elif operation[0].upper() == "MOVE":
+            q.move(operation[1], operation[2])
+        elif operation[0].upper() == "PRINT":
+            q.print_queue()
+
+chalo=main()
+
   
   
 
@@ -475,15 +534,11 @@ for w in words:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 3  Due on 2024-02-29, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3  Due on 2024-03-14, 23:59 IST</p>
 <p>
-Consider a grid-world of size n×n. You are at the bottom-left corner, at the cell (1,1), to start with. A sample grid-world for the case of n=5 is given below for your reference:
-
-You can move one step at a time in any one of the four directions: "North", "East", "West", "South". At every cell of the grid, all four moves are possible. The only catch is that if you make a move that will take you out of the grid at a border cell, you will stay put at the same cell. Concretely, if you are at the cell (1,4) and try to move west, you will remain at the same cell. Or if you are at (3,1) and try to move south, you will remain there.
-
-Write a function named final that accepts a positive integer n and a sequence of moves (string) as arguments and returns the final position where you would end up in an n×n grid-world if you start at (1,1). You must return a tuple of size 2, where the first element is the x-coordinate and the second is the y-coordinate.
-
+Accept a string of lowercase letters from the user and encrypt it using the following image:
+	Each letter in the string that appears in the upper half should be replaced with the corresponding letter in the lower half and vice versa. Print the encrypted string as output.
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
