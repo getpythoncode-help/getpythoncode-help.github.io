@@ -209,45 +209,29 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1 [Due on 2024-03-07, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1 [Due on 2024-03-21, 23:59 IST]</p>
 		<p>
-The distance between two letters in the English alphabet is one more than the number of letters between them. Alternatively, it can be defined as the number of steps needed to move from the alphabetically smaller letter to the larger letter. This is always a non-negative integer. For example:
+A round-robin tournament is one in which each team competes with every other team. Consider a version of the IPL tournament in which every team plays exactly one game against every other team. All these games have a definite result and no match ends in a tie. The winning team in each match is awarded one point.
 
+Eight teams participate in this round-robin cricket tournament: CSK, DC, KKR, MI, PK, RR, RCB and SH. You are given the details of the outcome of the matches. Your task is to prepare the IPL points table in descending order of wins. If two teams have the same number of points, the team whose name comes first in alphabetical order must figure higher up in the table.
 
+There are eight lines of input. Each line is a sequence of comma-separated team names. The first team across these eight lines will always be in this order: CSK, DC, KKR, MI, PK, RR, RCB and SH. For a given sequence, all the other terms represent the teams that have lost to the first team. For example, the first line of input could be CSK, MI, DC, PK. This means that CSK has won its matches against the teams MI, DC, and PK and lost its matches against all other teams. If a sequence has just one team, it means that it lost all its matches.
 
-The distance between two words is defined as follows:
-
-It is -1, if the words are f unequal lengths.
-If the word-lengths are equal, it is the sum of the distances between letters at corresponding positions in the words. For example:
-​dword​(dog,cat)=dletter​(d,c)+dletter​(o,a)+dletter​(g,t)=1+14+13=28
-
-Write a function named distance that accepts two words as arguments and returns the distance between them.
-
-You do not have to accept input from the user or print output to the console. You just have to write the function definition.
+Print the IPL points table in the following format — team: wins — one team on each line. There shouldn't be any spaces in any of the lines.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def distance(word1, word2):
-  """
-  This function calculates the distance between two words.
+d = {}
+for i in range(8):
+    match = input().split(',')
+    d[match[0]] = len(match) - 1
 
-  Args:
-      word1: The first word.
-      word2: The second word.
+sorted_items = sorted(d.items(), key=lambda x: (-x[1], x[0]))
 
-  Returns:
-      The distance between the two words.
-  """
+for k, v in sorted_items:
+    print(f"{k.strip()}:{v}")
 
-  if len(word1) != len(word2):
-    return(-1)
-
-  dis = 0
-  for i in range(len(word1)):
-    dis += abs(ord(word1[i]) - ord(word2[i]))
-
-  return(dis)
 
 
 
@@ -262,61 +246,44 @@ def distance(word1, word2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2 [Due on 2024-03-07, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2 [Due on 2024-03-21, 23:59 IST ]</p>
 		<p>
-P is a dictionary of father-son relationships that has the following structure: for any key in the dictionary, its corresponding value is the father of key. As an example:
+ Given a square matrix M and two indices (i,j), Mij​ is the matrix obtained by removing the ith row and the jth column of M.
 
-P = {
+Write a function named minor_matrix that accepts three arguments:
 
-    'Jahangir': 'Akbar',
+M: a square matrix
+i: a non-negative integer
+j: a non-negative integer
+The function should return the matrix Mij​ after removing the ith row and the jth column of M. Note that we use zero-based indexing throughout. That is, if the matrix M is of dimensions n×n, then we have 0 ≤ i, j ≤ n−1.
 
-    'Akbar': 'Humayun',
+(1) You can assume that the number of rows in M will be at least 3 in each test case.
 
-    'Humayun': 'Babur'   
-
-}
-
-If 'Jahangir' is the key, then 'Akbar', his father, is the value. This is true of every key in the dictionary.
-
-Write a recursive function named ancestry that accepts the following arguments:
-
-P: a dictionary of relationships
-present: name of a person, string
-past: name of a person, string
-It should return the sequence of ancestors of the person named present, traced back up to the person named past. For example, ancestry(P, 'Jahangir', 'Babur') should return the list:
-
-L = ['Jahangir', 'Akbar', 'Humayun', 'Babur']
-
-In more Pythonic terms, L[i] is the father of L[i - 1], for 1≤ i < len(L), with the condition that L[0] should be present and L[-1] should be past.
-
-(1) You can assume that no two persons in the dictionary have the same name. However, a given person could either appear as a key or as a value in the dictionary.
-
-(2) A given person could appear multiple times as one of the values of the dictionary. For example, in test-case-2, Prasanna has two sons, Mohan and Krishna, and hence appears twice (as a value).
-
-(3) You do not have to accept input from the user or print output to the console. You just have to write the function definition.		</p>
+(2) You do not have to accept input from the user or print the output to the console.
+		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def ancestry(P, present, past):
- 
+def minor_matrix(M, i, j):
+    n = len(M)
+    if n == 0 or len(M[0]) != n:
+        raise ValueError("Input matrix is not square ok listen")
 
-  # Base case: present is the past person, return the list containing only present
-  if present == past:
-    return([present])
+   
+    M_ij = []
+    
 
-  # Check if present is in the dictionary. If not, return None
-  if present not in P:
-    return(None)
+    for row in range(n):
+        if row != i: 
+            new_row = []
+            
+            for col_index in range(n):
+                if col_index != j: 
+                    new_row.append(M[row][col_index])
+            M_ij.append(new_row)
+    
+    return (M_ij)
 
-  # Recursive call with current person's father as present and past remaining the same
-  ancestral_chains = ancestry(P, P[present], past)
-
-  # If a valid chain is found, prepend present and return
-  if ancestral_chains:
-    return([present] + ancestral_chains)
-
-  # No valid chain found, return None
-  return(None)
 
                   
                 </textarea><br><br>
@@ -329,54 +296,48 @@ def ancestry(P, present, past):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3 [Due on 2024-03-07, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3 [Due on 2024-03-21, 23:59 IST ]</p>
 <p>
-Fibonacci
+Write a function named two_level_sort that accepts a list of tuples named scores as argument. Each element in this list is of the form (Name, Marks) and represents the marks scored by a student in a test: the first element is the student's name and the second element is his or her marks.
 
-Fibonacci is a young resident of the Italian city of Pisa. He spends a lot of time visiting the Leaning Tower of Pisa, one of the iconic buildings in the city, that is situated close to his home. During all his visits to the tower, he plays a strange game while climbing the marble steps of the tower.
+The function should return a list of tuples sorted that is sorted in two levels:
 
-The Game
+Level-1: ascending order of marks
+Level-2: alphabetical order of names among those students who have scored equal marks
+Each element in the returned list should also be of the form (Name, marks). Note that level-2 should not override level-1. That is, after the second level of sorting, the list should still be sorted in ascending order of marks. Additionally, the students having the same marks should appear in alphabetical order.
 
-Fibonacci likes to climb the steps either one at a time, two at a time, or three at a time. This adds variety to the otherwise monotonous task of climbing. He wants to find the total number of ways in which he can climb n steps, if the order of his individual steps matters. Your task is to help Fibonacci compute this number.
+Sample input-output behaviour
 
-For example, if he wishes to climb three steps, in the case of n=3, he could do it in four different ways:
 
-(1,1,1) (1,1,1): do it in three moves, one step at a time
-(1,2) (1,2): do it in two moves, first take a single step, then a double step
-(2,1) (2,1): do it in two moves, first take a double step, then a single step
-(3): do it in just one move, directly leaping to the third step
-To take another example, if n=5, then some of the sequences could be:
+(1) You should not use any built-in sort functions to solve this problem.
+(2) You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 
- (1,3,1), (1,1,3), (3,1,1), (2,1,1,1), (1,2,1,1), (2,1,2)
-
-Each sequence is one of the ways of climbing five steps. The point to note here is that each element of a sequence can only be 1, 2, or 3.
-
-Write a recursive function named steps that accepts a positive integer n as the argument. It should return the total number of ways in which Fibonacci can ascend n steps. Note that the order of his steps is important.
-
-You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def steps(n):
- 
+def insertion_sort(lst):
+    for iz in range(1, len(lst)):
+        key = lst[iz]
+        j = iz - 1
+        while j >= 0 and (lst[j][1] > key[1] or (lst[j][1] == key[1] and lst[j][0] > key[0])):
+            lst[j + 1] = lst[j]
+            j -= 1
+        lst[j + 1] = key
 
-  if n <= 0:
-    return 0
-  elif n == 1:
-    return 1
-  elif n == 2:
-    return 2
-  elif n == 3:
-    return 4
+def two_level_sort(scores):
 
+    insertion_sort(scores)
+    
+    start_idx = 0
+    for i in range(1, len(scores)):
+        if scores[i][1] != scores[i - 1][1]:
+            insertion_sort(scores[start_idx:i])
+            start_idx = i
+    
+    insertion_sort(scores[start_idx:])
+    
+    return scores
 
-  one_steps = steps(n-1)
-  
-  two_steps = steps(n-2)
-  
-  three_steps = steps(n-3)
-
-  return(one_steps + two_steps + three_steps)
        
                   
                 </textarea><br><br>
