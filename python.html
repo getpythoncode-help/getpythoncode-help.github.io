@@ -370,29 +370,35 @@ def two_level_sort(scores):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1   Due on 2024-03-14, 23:59 IST</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on 2024-03-28, 23:59 IST</p>
 <p>
-In spreadsheets, columns are labelled as follows:
-	A is the first column, B is the second column, Z is the 26th column, and so on. Using the table given above, deduce the mapping between column labels and their corresponding numbers. Accept the column label as input and print the corresponding column number as output.
+word is a string that contains one or more parentheses of the following types: "{ }", "[ ]", "( )". The string is said to be balanced if all the following conditions are satisfied.
 
- 
+When read from left to right:
+(1) The number of opening parentheses of a given type is equal to the number of closing parentheses of the same type.
+(2) An opening parenthesis cannot be immediately followed by a closing parenthesis of a different type.
+(3) Every opening parenthesis should be eventually closed by a closing parenthesis of the same type.
+
+Write a function named balanced that accepts the string word as an argument. Return True if the string is balanced, and False otherwise. You can assume that the string doesn't contain any characters other than parentheses.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def letter_value(letter):
-    return ord(letter) - ord('A') + 1
+def balanced(word):
+    stack = list()
+    opening = "([{"
+    closing = ")]}"
+    mapping = {')': '(', ']': '[', '}': '{'}
+    
+    for char in word:
+        if char in opening:
+            stack.append(char)
+        elif char in closing:
+            if not stack or stack.pop() != mapping[char]:
+                return(not True)
+    
+    return(not stack)
 
-def string_value(s):
-    n = len(s)
-    value = 0
-    for i in range(n):
-        value += letter_value(s[i]) * (26 ** (n - i - 1))
-    return value
-
-
-code = input().upper()
-print(string_value(code),end="")
 
 
       
@@ -406,80 +412,28 @@ print(string_value(code),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 2  Due on 2024-03-14, 23:59 IST </p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 2  Due on 2024-03-28, 23:59 IST </p>
 		<p>
-A queue at a fast-food restaurant operates in the following manner. The queue is a single line with its head at the left-end and tail at the right-end. A person can exit the queue only at the head (left) and join the queue only at the tail (right). At the point of entry, each person is assigned a unique token.
+Consider the problem about balanced expressions discussed in 1. Programming Assignment | Week 9. We have a balanced expression (string) that has only the flower brackets: '( )'. We can recursively define a concept called nesting depth for each pair of opening and closing brackets.
 
-You have been asked to manage the queue. The following operations are permitted on it:
+The nesting depth of a pair that lies within another pair is one more than the nesting depth of the pair that immediately englobes it. For a pair that is not surrounded by any other pair, the nesting depth is 1.
 
-Operation
 
-Meaning
-
-JOIN,token
-
-Add a person with this token number to the tail of the queue.
-
-LEAVE
-
-Remove the person from the head of the queue.
-
-MOVE,token,HEAD
-
-Move the person with this token number to the head of the queue.
-
-MOVE,token,TAIL
-
-Move the person with this token number to the tail of the queue.
-
-PRINT
-
-Print the queue as a sequence of comma-separated token numbers.
-The head comes to the left, tail to the right.
-
-The queue is empty to begin with. Keep accepting an operation as input from the user until the string "END" is entered.		</p>
+ Write a function named depth that accepts a balanced expression (string) as an argument. It should return the maximum nesting depth in this expression.	</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-class Queue:
-    def __init__(self):
-        self.queue = []
+def depth(expr):
+  max_deep = 0
+  current_deep= 0
+  for char in expr:
+    if char == '(':
+      current_deep += 1
+      max_deep = max(max_deep, current_deep)
+    elif char == ')':
+      current_deep -= 1
+  return(max_deep)
 
-    def join(self, token):
-        self.queue.append(token)
-
-    def leave(self):
-        if self.queue:
-            self.queue.pop(0)
-
-    def move(self, token, position):
-        if token in self.queue:
-            self.queue.remove(token)
-            if position.upper() == 'HEAD':
-                self.queue.insert(0, token)
-            elif position.upper() == 'TAIL':
-                self.queue.append(token)
-
-    def print_queue(self):
-        print(",".join(map(str, self.queue)))
-
-
-def main():
-    q = Queue()
-    while True:
-        operation = input().split(",")
-        if operation[0].upper() == "END":
-            break
-        elif operation[0].upper() == "JOIN":
-            q.join(operation[1])
-        elif operation[0].upper() == "LEAVE":
-            q.leave()
-        elif operation[0].upper() == "MOVE":
-            q.move(operation[1], operation[2])
-        elif operation[0].upper() == "PRINT":
-            q.print_queue()
-
-chalo=main()
 
   
   
@@ -495,39 +449,42 @@ chalo=main()
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 3  Due on 2024-03-14, 23:59 IST</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 3  Due on 2024-03-28, 23:59 IST</p>
 <p>
-Accept a string of lowercase letters from the user and encrypt it using the following image:
-	Each letter in the string that appears in the upper half should be replaced with the corresponding letter in the lower half and vice versa. Print the encrypted string as output.
+Write a recursive function named power that accepts a square matrix A and a positive integer m as arguments and returns Am.
+
+You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-# Create a dictionary to map letters in the upper half to their corresponding letters in the lower half and vice versa
-letter_map = {
-    'a': 'z', 'b': 'y', 'c': 'x', 'd': 'w', 'e': 'v', 'f': 'u', 'g': 't', 'h': 's',
-    'i': 'r', 'j': 'q', 'k': 'p', 'l': 'o', 'm': 'n', 'n': 'm', 'o': 'l', 'p': 'k',
-    'q': 'j', 'r': 'i', 's': 'h', 't': 'g', 'u': 'f', 'v': 'e', 'w': 'd', 'x': 'c',
-    'y': 'b', 'z': 'a'
-}
-
-def encrypt_message(message):
-  encrypted_message = ""
-  for char in message:
-    if char.isalpha():
-     
-      encrypted_message += letter_map[char]
+def power(A, m):
+    if m == 0:
+        ap = len(A)
+        return [[1 if i == j else 0 for j in range(n)] for i in range(ap)]
+    elif m == 1:
+        return A
     else:
-      
-      encrypted_message += char
-  return encrypted_message
+        G = power(A, m // 2)
+        if m % 2 == 0:
+            return matrix_multiply(G, G)
+        else:
+            return matrix_multiply(matrix_multiply(G, G), A)
 
+def matrix_multiply(A, B):
+    rows_A = len(A)
+    cols_A = len(A[0])
+    cols_B = len(B[0])
+    
+    result = [[0] * cols_B for i in range(rows_A)]
+    
+    for i in range(rows_A):
+        for j in range(cols_B):
+            for k in range(cols_A):
+                result[i][j] += A[i][k] * B[k][j]
+    
+    return result
 
-message = input()
-
-
-encrypted_message = encrypt_message(message)
-print( encrypted_message,end="")
 
       
       
