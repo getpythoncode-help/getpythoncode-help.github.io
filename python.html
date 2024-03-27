@@ -209,33 +209,31 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1 [Due on 2024-03-21, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 1 [Due on 2024-04-11, 23:59 IST]</p>
 		<p>
-A round-robin tournament is one in which each team competes with every other team. Consider a version of the IPL tournament in which every team plays exactly one game against every other team. All these games have a definite result and no match ends in a tie. The winning team in each match is awarded one point.
+Write a function named rotate that accepts a matrix mat as argument. It should return a matrix that is rotated by 90 degrees in the clockwise direction. For example:
 
-Eight teams participate in this round-robin cricket tournament: CSK, DC, KKR, MI, PK, RR, RCB and SH. You are given the details of the outcome of the matches. Your task is to prepare the IPL points table in descending order of wins. If two teams have the same number of points, the team whose name comes first in alphabetical order must figure higher up in the table.
+You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 
-There are eight lines of input. Each line is a sequence of comma-separated team names. The first team across these eight lines will always be in this order: CSK, DC, KKR, MI, PK, RR, RCB and SH. For a given sequence, all the other terms represent the teams that have lost to the first team. For example, the first line of input could be CSK, MI, DC, PK. This means that CSK has won its matches against the teams MI, DC, and PK and lost its matches against all other teams. If a sequence has just one team, it means that it lost all its matches.
-
-Print the IPL points table in the following format — team: wins — one team on each line. There shouldn't be any spaces in any of the lines.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-d = {}
-for i in range(8):
-    match = input().split(',')
-    d[match[0]] = len(match) - 1
+def rotate(mat):
+    if not mat:
+        return list()
 
-sorted_items = sorted(d.items(), key=lambda x: (-x[1], x[0]))
+    rows = len(mat)
+    cols = len(mat[0])
 
-for k, v in sorted_items:
-    print(f"{k.strip()}:{v}")
+    rotated = [[0] * rows for csk in range(cols)]
 
+    for ipl in range(rows):
+        for jk in range(cols):
+            rotated[jk][rows - 1 - ipl] = mat[ipl][jk]
 
+    return(rotated)
 
-
-                  
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -246,43 +244,47 @@ for k, v in sorted_items:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 2 [Due on 2024-03-21, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 2 [Due on 2024-04-11, 23:59 IST ]</p>
 		<p>
- Given a square matrix M and two indices (i,j), Mij​ is the matrix obtained by removing the ith row and the jth column of M.
+ A n×n square matrix of positive integers is called a magic square if the following sums are equal:
+(1) row-sum: sum of numbers in every row; there are n such values, one for each row
+(2) column-sum: sum of numbers in every column; there are n such values, one for each column
+(3) diagonal-sum: sum of numbers in both the diagonals; there are two values
 
-Write a function named minor_matrix that accepts three arguments:
+There are n+n+2=2n+2 values involved. All these values must be the same for the matrix to be a magic-square.
 
-M: a square matrix
-i: a non-negative integer
-j: a non-negative integer
-The function should return the matrix Mij​ after removing the ith row and the jth column of M. Note that we use zero-based indexing throughout. That is, if the matrix M is of dimensions n×n, then we have 0 ≤ i, j ≤ n−1.
+Write a function named is_magic that accepts a square matrix as argument and returns YES if it is a magic-square and NO if it isn't one.
 
-(1) You can assume that the number of rows in M will be at least 3 in each test case.
+Notes
 
-(2) You do not have to accept input from the user or print the output to the console.
+(1) The cells of a magic square need not be distinct. Some or even all the cells could be identical.
+
+(2) You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def minor_matrix(M, i, j):
-    n = len(M)
-    if n == 0 or len(M[0]) != n:
-        raise ValueError("Input matrix is not square ok listen")
+def is_magic(matrix):
+    n = len(matrix)
 
-   
-    M_ij = []
-    
+    magic_sum = sum(matrix[0])
 
-    for row in range(n):
-        if row != i: 
-            new_row = []
-            
-            for col_index in range(n):
-                if col_index != j: 
-                    new_row.append(M[row][col_index])
-            M_ij.append(new_row)
-    
-    return (M_ij)
+    for r1 in matrix:
+        if sum(r1) != magic_sum:
+            return "NO"
+
+    for j in range(n):
+        column_sum = sum(matrix[i][j] for i in range(n))
+        if column_sum != magic_sum:
+            return "NO"
+
+    diagonal_sum1 = sum(matrix[i][i] for i in range(n))
+    diagonal_sum2 = sum(matrix[i][n - 1 - i] for i in range(n))
+    if diagonal_sum1 != magic_sum or diagonal_sum2 != magic_sum:
+        return "NO"
+
+    return("YES")
+
 
 
                   
@@ -296,47 +298,49 @@ def minor_matrix(M, i, j):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 3 [Due on 2024-03-21, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 3 [Due on 2024-04-11, 23:59 IST ]</p>
 <p>
-Write a function named two_level_sort that accepts a list of tuples named scores as argument. Each element in this list is of the form (Name, Marks) and represents the marks scored by a student in a test: the first element is the student's name and the second element is his or her marks.
+You are given certain details of the trains that stop at a station. Your task is to store these details in a nested dictionary.
 
-The function should return a list of tuples sorted that is sorted in two levels:
+The first line of input is n, the number of trains that stop at the station. n blocks of input follow. The first line in each block corresponds to the train name. The second line in each block corresponds to m, the number of compartments in the train. m lines of input follow. Each of these m lines has two values separated by a comma: name of the compartment and number of passengers in it.
 
-Level-1: ascending order of marks
-Level-2: alphabetical order of names among those students who have scored equal marks
-Each element in the returned list should also be of the form (Name, marks). Note that level-2 should not override level-1. That is, after the second level of sorting, the list should still be sorted in ascending order of marks. Additionally, the students having the same marks should appear in alphabetical order.
-
-Sample input-output behaviour
+Your task is to create a nested dictionary named station_dict. The keys of the dictionary are train names, the value corresponding to a key is another dictionary. The keys of the inner dictionary are the compartment names in this train, the values are the number of passengers in each compartment. For example:
 
 
-(1) You should not use any built-in sort functions to solve this problem.
-(2) You do not have to accept input from the user or print output to the console. You just have to write the function definition.
+{
+    'Mumbai Express': {
+        'S1': 10,
+        'S2': 20,
+        'S3': 30
+    },
+    'Chennai Express': {
+        'S1': 10,
+        'S2': 20,
+        'S3': 30
+    }
+  }
+
+(1) The values of the compartments should be represented as integers and not as strings.
+(2) You do not have to print the output to the console. Do not try to print the output that you observe in the "Expected Output". You just have to process the input and create the dictionary station_dict.
+
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def insertion_sort(lst):
-    for iz in range(1, len(lst)):
-        key = lst[iz]
-        j = iz - 1
-        while j >= 0 and (lst[j][1] > key[1] or (lst[j][1] == key[1] and lst[j][0] > key[0])):
-            lst[j + 1] = lst[j]
-            j -= 1
-        lst[j + 1] = key
+n = int(input())
+station_dict =dict()
 
-def two_level_sort(scores):
+for chapri in range(n):
+    train_name = input()
+    m = int(input())
+    compartments = {}
 
-    insertion_sort(scores)
-    
-    start_idx = 0
-    for i in range(1, len(scores)):
-        if scores[i][1] != scores[i - 1][1]:
-            insertion_sort(scores[start_idx:i])
-            start_idx = i
-    
-    insertion_sort(scores[start_idx:])
-    
-    return scores
+    for hardik in range(m):
+        compartment, passengers = input().split(",")
+        compartments[compartment] = int(passengers)
+
+    station_dict[train_name] = compartments
+
 
        
                   
