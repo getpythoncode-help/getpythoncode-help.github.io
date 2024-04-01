@@ -374,34 +374,54 @@ for chapri in range(n):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1   Due on 2024-03-28, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1   Due on 2024-04-11, 23:59 IST</p>
 <p>
-word is a string that contains one or more parentheses of the following types: "{ }", "[ ]", "( )". The string is said to be balanced if all the following conditions are satisfied.
+Write the following functions:
 
-When read from left to right:
-(1) The number of opening parentheses of a given type is equal to the number of closing parentheses of the same type.
-(2) An opening parenthesis cannot be immediately followed by a closing parenthesis of a different type.
-(3) Every opening parenthesis should be eventually closed by a closing parenthesis of the same type.
+(1) factors: accept a positive integer n as argument. Return the set of all factors of n.
 
-Write a function named balanced that accepts the string word as an argument. Return True if the string is balanced, and False otherwise. You can assume that the string doesn't contain any characters other than parentheses.
+(2) common_factors: accept two positive integers a and b as arguments. Return the set of common factors of the two numbers. This function must make use of factors.
+
+(3) factors_upto: accept a positive integer n as argument. Return a dict D, whose keys are integers and values are sets. Each integer in the range [1,n], endpoints inclusive, is a key of D. The value corresponding to a key, is the set of all factors of key. This function must make use of factors.
+
+The idea we are trying to bring out here is to make use of pre-defined functions whenever needed.
+
+You do not have to accept input from the user or print output to the console. You just have to write the definition of all three functions. Each test case will correspond to one function call.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def balanced(word):
-    stack = list()
-    opening = "([{"
-    closing = ")]}"
-    mapping = {')': '(', ']': '[', '}': '{'}
-    
-    for char in word:
-        if char in opening:
-            stack.append(char)
-        elif char in closing:
-            if not stack or stack.pop() != mapping[char]:
-                return(not True)
-    
-    return(not stack)
+def factors(n):
+    """
+    Accepts a positive integer n as an argument.
+    Returns the set of all factors of n.
+    """
+    factor_set = set()
+    for ips in range(1, n + 1):
+        if n % ips == 0:
+            factor_set.add(ips)
+    return factor_set
+
+
+def common_factors(a, b):
+    """
+    Return the set of common factors of a and b.
+    """
+    factors_a = factors(a)
+    factors_b = factors(b)
+    return factors_a.intersection(factors_b)
+
+def factors_upto(n):
+    """
+    Return a dict D, whose keys are integers and values are sets.
+    Each integer in the range [1,n], endpoints inclusive, is a key of D.
+    The value corresponding to a key is the set of all factors of the key.
+    """
+    factors_dict = {}
+    for i in range(1, n + 1):
+        factors_dict[i] = factors(i)
+    return (factors_dict)
+
 
 
 
@@ -416,27 +436,25 @@ def balanced(word):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 2  Due on 2024-03-28, 23:59 IST </p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 2  Due on 2024-04-11, 23:59 IST </p>
 		<p>
-Consider the problem about balanced expressions discussed in 1. Programming Assignment | Week 9. We have a balanced expression (string) that has only the flower brackets: '( )'. We can recursively define a concept called nesting depth for each pair of opening and closing brackets.
+A clockwise rotation of a list consists of taking the last element and moving it to the beginning of the list. For instance, if we rotate the list [1, 2, 3, 4, 5], we get [5, 1, 2, 3, 4]. If we rotate it again, we get [4, 5, 1, 2, 3]. Your task is to perform k rotations of a list.
 
-The nesting depth of a pair that lies within another pair is one more than the nesting depth of the pair that immediately englobes it. For a pair that is not surrounded by any other pair, the nesting depth is 1.
-
-
- Write a function named depth that accepts a balanced expression (string) as an argument. It should return the maximum nesting depth in this expression.	</p>
+The first line of input contains a non-empty sequence of comma-separated integers. The second line of input is a positive integer k. Perform k rotations of the list and print it as a sequence of comma-separated integers.
+		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def depth(expr):
-  max_deep = 0
-  current_deep= 0
-  for char in expr:
-    if char == '(':
-      current_deep += 1
-      max_deep = max(max_deep, current_deep)
-    elif char == ')':
-      current_deep -= 1
-  return(max_deep)
+def rotate_clockwise(lst, k):
+    npk = len(lst)
+    k %= npk
+    rotated_list = lst[-k:] + lst[:-k]
+    return rotated_list
+
+input_list = input().split(",")  
+k = int(input()) 
+rotated_result = rotate_clockwise(input_list, k)
+print(",".join(rotated_result)) 
 
 
   
@@ -453,41 +471,42 @@ def depth(expr):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 3  Due on 2024-03-28, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 3  Due on 2024-04-11, 23:59 IST</p>
 <p>
-Write a recursive function named power that accepts a square matrix A and a positive integer m as arguments and returns Am.
+Consider a spiral of semicircles. We start at a point P0​ on the x-axis with coordinates (l,0). The first arm of the spiral ends at P1​ with coordinates (r,0). The second arm of the spiral starts at P1​ and ends at the center of the first arm, P2​. The third arm starts from P2​ and ends at P3​ which happens to be the center of the second arm. And finally, the fourth arm starts at P3​ and ends at P4​, the center of the third arm.
+
+
+Write two functions named spiral_iterative and spiral_recursive, each of which accepts three arguments:
+
+left: x-coordinate of the point P0​
+right: x-coordinate of the point P1​
+n: the number of arms in the spiral
+Both functions should return the the x-coordinate of Pn​, the point at which the nth arm of the spiral ends.
+
 
 You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def power(A, m):
-    if m == 0:
-        ap = len(A)
-        return [[1 if i == j else 0 for j in range(n)] for i in range(ap)]
-    elif m == 1:
-        return A
+def spiral_iterative(left, right, n):
+ 
+    for ipl in range(1,n):
+      center = (left + right)/2
+      if ipl % 2 :
+        left = center
+      else:
+        right = center
+    return center
+    
+def spiral_recursive(left, right, n):
+    if n == 1:
+        return right
     else:
-        G = power(A, m // 2)
-        if m % 2 == 0:
-            return matrix_multiply(G, G)
-        else:
-            return matrix_multiply(matrix_multiply(G, G), A)
+        center = (left + right) / 2
+        return spiral_recursive(right, center, n - 1)
 
-def matrix_multiply(A, B):
-    rows_A = len(A)
-    cols_A = len(A[0])
-    cols_B = len(B[0])
-    
-    result = [[0] * cols_B for i in range(rows_A)]
-    
-    for i in range(rows_A):
-        for j in range(cols_B):
-            for k in range(cols_A):
-                result[i][j] += A[i][k] * B[k][j]
-    
-    return result
+
 
 
       
