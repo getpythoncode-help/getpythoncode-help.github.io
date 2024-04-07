@@ -209,30 +209,32 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1 [Due on 2024-04-11, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1 [Due on 2024-04-18, 23:59 IST]</p>
 		<p>
-Write a function named rotate that accepts a matrix mat as argument. It should return a matrix that is rotated by 90 degrees in the clockwise direction. For example:
+The Pearson correlation coefficient is a measure of association between two sets of data. In this problem, the data shall be represented as vectors (lists) X and Y. The formula for computing the coefficient is given below:
 
-You do not have to accept input from the user or print output to the console. You just have to write the function definition.
 
+Xi​ corresponds to the element X[0] in the list X. We have used zero-indexing here.
+
+Write a function named pearson that accepts two vectors X and Y as arguments and returns the Pearson correlation coefficient between them.
+
+To help you with the computation, some functions have already been defined in the prefix code. You can write the entire function by just using the pre-defined functions. This is an important exercise that will help you in future projects when you start working with libraries.
+
+
+You do not have to accept the input from the user or print output to the console. You just have to write the function definition.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def rotate(mat):
-    if not mat:
-        return list()
+def pearson(X, Y):
+    p= f(X)
+    Q = f(Y)
+    nm = g(p, Q)
+    denominator_X = g(p, p)
+    denominator_Y = g(Q, Q)
+    denominator = h(denominator_X * denominator_Y)
+    return nm / denominator
 
-    rows = len(mat)
-    cols = len(mat[0])
-
-    rotated = [[0] * rows for csk in range(cols)]
-
-    for ipl in range(rows):
-        for jk in range(cols):
-            rotated[jk][rows - 1 - ipl] = mat[ipl][jk]
-
-    return(rotated)
 
                 </textarea><br><br>
 
@@ -244,46 +246,34 @@ def rotate(mat):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 2 [Due on 2024-04-11, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 2 [Due on 2024-04-18, 23:59 IST ]</p>
 		<p>
- A n×n square matrix of positive integers is called a magic square if the following sums are equal:
-(1) row-sum: sum of numbers in every row; there are n such values, one for each row
-(2) column-sum: sum of numbers in every column; there are n such values, one for each column
-(3) diagonal-sum: sum of numbers in both the diagonals; there are two values
+ A square metal plate in 2D space is the setup we are going to work with. The spatial extent of the metal plate is given by:
 
-There are n+n+2=2n+2 values involved. All these values must be the same for the matrix to be a magic-square.
+0 ≤ x,y ≤ 5
 
-Write a function named is_magic that accepts a square matrix as argument and returns YES if it is a magic-square and NO if it isn't one.
+The temperature at any point (x,y) on the plate is given by the following equation. The temperature is measured in Celsius and can be negative:
 
-Notes
+f(x,y) = 30 + x2 + y2 − 3x − 4y
 
-(1) The cells of a magic square need not be distinct. Some or even all the cells could be identical.
+A micro-organism lives on the surface of the metal plate. It occupies only those points on the plate where both the coordinates are integers. The organism cannot survive in high temperatures and instinctively moves to regions of low temperature that are less or equal to a threshold T. If no such region is found, it can't survive. The terms high and low are used in a relative sense and should be compared with respect to the threshold.
 
-(2) You do not have to accept input from the user or print output to the console. You just have to write the function definition.
+Write a function named survival that accepts the value of T as argument and returns True if the organism can survive on the metal plate, and False otherwise.
+
+You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def is_magic(matrix):
-    n = len(matrix)
+def f(x, y):
+    return 30 + x**2 + y**2 - 3*x - 4*y
 
-    magic_sum = sum(matrix[0])
-
-    for r1 in matrix:
-        if sum(r1) != magic_sum:
-            return "NO"
-
-    for j in range(n):
-        column_sum = sum(matrix[i][j] for i in range(n))
-        if column_sum != magic_sum:
-            return "NO"
-
-    diagonal_sum1 = sum(matrix[i][i] for i in range(n))
-    diagonal_sum2 = sum(matrix[i][n - 1 - i] for i in range(n))
-    if diagonal_sum1 != magic_sum or diagonal_sum2 != magic_sum:
-        return "NO"
-
-    return("YES")
+def survival(T):
+    for x in range(6):
+        for y in range(6):
+            if f(x, y) <= T:
+                return True
+    return False
 
 
 
@@ -298,48 +288,26 @@ def is_magic(matrix):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 3 [Due on 2024-04-11, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 3 [Due on 2024-04-18, 23:59 IST ]</p>
 <p>
-You are given certain details of the trains that stop at a station. Your task is to store these details in a nested dictionary.
-
-The first line of input is n, the number of trains that stop at the station. n blocks of input follow. The first line in each block corresponds to the train name. The second line in each block corresponds to m, the number of compartments in the train. m lines of input follow. Each of these m lines has two values separated by a comma: name of the compartment and number of passengers in it.
-
-Your task is to create a nested dictionary named station_dict. The keys of the dictionary are train names, the value corresponding to a key is another dictionary. The keys of the inner dictionary are the compartment names in this train, the values are the number of passengers in each compartment. For example:
+Write a function named std_dev that accepts a list of real numbers X as argument. It should return the standard deviation of the points given by the following formula:
 
 
-{
-    'Mumbai Express': {
-        'S1': 10,
-        'S2': 20,
-        'S3': 30
-    },
-    'Chennai Express': {
-        'S1': 10,
-        'S2': 20,
-        'S3': 30
-    }
-  }
+Here, Xi​ refers to the element X[i] in the list and X refers to the arithmetic mean of the numbers in X. Try to use list-comprehension wherever possible. However, we won't be evaluating you on this.
 
-(1) The values of the compartments should be represented as integers and not as strings.
-(2) You do not have to print the output to the console. Do not try to print the output that you observe in the "Expected Output". You just have to process the input and create the dictionary station_dict.
+
+You do not have to accept the input from the user or print output to the console. You just have to write the function definition.
 
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-n = int(input())
-station_dict =dict()
+def std_dev(X):
+    mean_X = sum(X) / len(X)
+    squared_diff = [(x - mean_X) ** 2 for x in X]
+    variance = sum(squared_diff) / (len(X)-1)
+    return variance ** 0.5
 
-for chapri in range(n):
-    train_name = input()
-    m = int(input())
-    compartments = {}
-
-    for hardik in range(m):
-        compartment, passengers = input().split(",")
-        compartments[compartment] = int(passengers)
-
-    station_dict[train_name] = compartments
 
 
        
