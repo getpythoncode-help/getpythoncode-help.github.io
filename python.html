@@ -218,31 +218,28 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1 [Due on 2024-04-18, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 1 [Due on 2024-08-08, 23:59 IST]</p>
 		<p>
-The Pearson correlation coefficient is a measure of association between two sets of data. In this problem, the data shall be represented as vectors (lists) X and Y. The formula for computing the coefficient is given below:
+Create a Python program that calculates the absolute value of a given number.
+The program should prompt the user to input a number, then compute and print the absolute value of that number.
 
+Input Format-
+The input consists of single number.
 
-Xi​ corresponds to the element X[0] in the list X. We have used zero-indexing here.
+Output Format-
+The output consists of absolute value of the input.
 
-Write a function named pearson that accepts two vectors X and Y as arguments and returns the Pearson correlation coefficient between them.
-
-To help you with the computation, some functions have already been defined in the prefix code. You can write the entire function by just using the pre-defined functions. This is an important exercise that will help you in future projects when you start working with libraries.
-
-
-You do not have to accept the input from the user or print output to the console. You just have to write the function definition.
+Example-
+Input:
+-6
+Output:
+6
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def pearson(X, Y):
-    p= f(X)
-    Q = f(Y)
-    nm = g(p, Q)
-    denominator_X = g(p, p)
-    denominator_Y = g(Q, Q)
-    denominator = h(denominator_X * denominator_Y)
-    return nm / denominator
+number= int(input())
+print(abs(number),end="")
 
 
                 </textarea><br><br>
@@ -255,35 +252,28 @@ def pearson(X, Y):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 2 [Due on 2024-04-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 2 [Due on2024-08-08, 23:59 IST ]</p>
 		<p>
- A square metal plate in 2D space is the setup we are going to work with. The spatial extent of the metal plate is given by:
+Create a Python program to determine the nth element of an arithmetic sequence where the first term a is 7 and the common difference d is 11. The program should prompt the user to input the value of n, then compute and print the nth element of the sequence.
 
-0 ≤ x,y ≤ 5
+Input Format:
+The input consists of a single integer n.
 
-The temperature at any point (x,y) on the plate is given by the following equation. The temperature is measured in Celsius and can be negative:
+Output Format:
 
-f(x,y) = 30 + x2 + y2 − 3x − 4y
+The output consists of the nth element of the arithmetic sequence.
 
-A micro-organism lives on the surface of the metal plate. It occupies only those points on the plate where both the coordinates are integers. The organism cannot survive in high temperatures and instinctively moves to regions of low temperature that are less or equal to a threshold T. If no such region is found, it can't survive. The terms high and low are used in a relative sense and should be compared with respect to the threshold.
-
-Write a function named survival that accepts the value of T as argument and returns True if the organism can survive on the metal plate, and False otherwise.
-
-You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
+Example:
+Input:
+3
+Output:
+29
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def f(x, y):
-    return 30 + x**2 + y**2 - 3*x - 4*y
-
-def survival(T):
-    for x in range(6):
-        for y in range(6):
-            if f(x, y) <= T:
-                return True
-    return False
-
+n=int(input())
+print(a +(n-1)*d, end="")
 
 
                   
@@ -297,25 +287,31 @@ def survival(T):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 3 [Due on 2024-04-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 3 [Due on 2024-08-08, 23:59 IST ]</p>
 <p>
-Write a function named std_dev that accepts a list of real numbers X as argument. It should return the standard deviation of the points given by the following formula:
+Question:
+
+Create a Python program to compute the sum of the first N natural numbers {1,2,3...N}. The program should prompt the user to input the value of N, then compute and print the sum of the first N natural numbers.
 
 
-Here, Xi​ refers to the element X[i] in the list and X refers to the arithmetic mean of the numbers in X. Try to use list-comprehension wherever possible. However, we won't be evaluating you on this.
+Input Format:
+The input consists of a single integer N.
 
+Output Format:
+The output consists of the sum of the first N natural numbers.
 
-You do not have to accept the input from the user or print output to the console. You just have to write the function definition.
+Example:
+Input-
+5
+Output-
+15
 
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def std_dev(X):
-    mean_X = sum(X) / len(X)
-    squared_diff = [(x - mean_X) ** 2 for x in X]
-    variance = sum(squared_diff) / (len(X)-1)
-    return variance ** 0.5
+N=int(input())
+print(int(N*(N+1)/2),end="")
 
 
 
