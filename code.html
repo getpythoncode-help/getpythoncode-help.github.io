@@ -229,9 +229,9 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 4 programming answers[Due on 2024-02-22, 23:59 IST]</a>
+	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers[Due on 2024-08-08, 23:59 IST]</a>
 	   
-                <p> Week 4: Programming Assignment</p>
+                <p> Week 2: Programming Assignment</p>
  <div>
 	 Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
@@ -247,70 +247,42 @@ Ignore warnings about "Presentation errors".
 	    </div>
 	    <br>
 	    <div>
-		   1. We represent scores of batsmen across a sequence of matches in a two level dictionary as follows:
+		   1.Write a function intreverse(n) that takes as input a positive integer n and returns the integer obtained by reversing the digits in n.
 
-{'match1':{'player1':57, 'player2':38}, 'match2':{'player3':9, 'player1':42}, 'match3':{'player2':41, 'player4':63, 'player3':91}
-Each match is identified by a string, as is each player. The scores are all integers. The names associated with the matches are not fixed (here they are 'match1', 'match2', 'match3'), nor are the names of the players. A player need not have a score recorded in all matches.
+Here are some examples of how your function should work.
 
-Define a Python function orangecap(d) that reads a dictionary d of this form and identifies the player with the highest total score. Your function should return a pair (playername,topscore) where playername is a string, the name of the player with the highest score, and topscore is an integer, the total score of playername.
-
-The input will be such that there are never any ties for highest total score.
-
-For instance:
-
->>> orangecap({'match1':{'player1':57, 'player2':38}, 'match2':{'player3':9, 'player1':42}, 'match3':{'player2':41, 'player4':63, 'player3':91}})
-('player3', 100)
-
->>> orangecap({'test1':{'Pant':84, 'Kohli':120}, 'test2':{'Pant':59, 'Gill':42}})
-		    ('Pant', 143)
+>>> intreverse(783)
+387
+>>> intreverse(242789)
+987242
+>>> intreverse(3)
+3
 	    </div>
 	    <br>
 	    <div>
-		    2.Let us consider polynomials in a single variable x with integer coefficients. For instance:
+		    2.Write a function matched(s) that takes as input a string s and checks if the brackets "(" and ")" in s are matched: that is, every "(" has a matching ")" after it and every ")" has a matching "(" before it. Your function should ignore all other symbols that appear in s. Your function should return True if s has matched brackets and False if it does not.
 
-3x4 - 17x2 - 3x + 5
-Each term of the polynomial can be represented as a pair of integers (coefficient,exponent). The polynomial itself is then a list of such pairs.
+Here are some examples to show how your function should work.
 
-We have the following constraints to guarantee that each polynomial has a unique representation:
+ 
+>>> matched("zb%78")
+True
+>>> matched("(7)(a")
+False
+>>> matched("a)*(?")
+False
+>>> matched("((jkl)78(A)&l(8(dd(FJI:),):)?)")
+True
+3.Write a function sumprimes(l) that takes as input a list of integers l and retuns the sum of all the prime numbers in l.
 
-Terms are sorted in descending order of exponent
-No term has a zero cofficient
-No two terms have the same exponent
-Exponents are always nonnegative
-For example, the polynomial introduced earlier is represented as:
+Here are some examples to show how your function should work.
 
-[(3,4),(-17,2),(-3,1),(5,0)]
-The zero polynomial, 0, is represented as the empty list [], since it has no terms with nonzero coefficients.
-
-Write Python functions for the following operations:
-
-addpoly(p1,p2)
-multpoly(p1,p2)
-that add and multiply two polynomials, respectively.
-
-You may assume that the inputs to these functions follow the representation given above. Correspondingly, the outputs from these functions should also obey the same constraints.
-
-You can write auxiliary functions to "clean up" polynomials – e.g., remove zero coefficient terms, combine like terms, sort by exponent etc. Build a library of functions that can be combined to achieve the desired format.
-
-You may also want to convert the list representation to a dictionary representation and manipulate the dictionary representation, and then convert back.
-
-Some examples:
-
-  
-   >>> addpoly([(4,3),(3,0)],[(-4,3),(2,1)])
-   [(2, 1),(3, 0)]
-
-   Explanation: (4x^3 + 3) + (-4x^3 + 2x) = 2x + 3
-
-   >>> addpoly([(2,1)],[(-2,1)])
-   []
-
-   Explanation: 2x + (-2x) = 0
-
-   >>> multpoly([(1,1),(-1,0)],[(1,2),(1,1),(1,0)])
-   [(1, 3),(-1, 0)]
-
-   Explanation: (x - 1) * (x^2 + x + 1) = x^3 - 1
+>>> sumprimes([3,3,1,13])
+19
+>>> sumprimes([2,4,6,9,11])
+13
+>>> sumprimes([-3,1,6])
+0
 	    </div>
 	    <br>
 	    <div>
@@ -318,60 +290,38 @@ Some examples:
 	    </div>
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def orangecap(d):
-    scr = dict()
-    for msc in d:
-        for p in d[msc]:
-            if p in scr:
-                scr[p] += d[msc][p]
-            else:
-                scr[p] = d[msc][p]
-
-   
-    pn=str()
-    tscr=0
-    for p in scr:
-        if scr[p] > tscr:
-            tscr = scr[p]
-            pn = p
-
-    return (pn, tscr)
-
-def addpoly(p1, p2):
-    r = list()
-    for aq in range(len(p1)):
-        
-        for j in range(len(p2)):
-            if p1[aq][1] == p2[j][1]:
-                r += [(p1[aq][0] + p2[j][0], p1[aq][1])]
-
-        
-        for k in range(len(r)): 
-            if r[k][1] == p1[aq][1]:
-                break
-        else:
-            r += [p1[aq]]
-
-    
-    for j in range(len(p2)):
-        for k in range(len(r)):
-            if r[k][1] == p2[j][1]:
-                break
-        else:
-            r += [p2[j]]
-
-    r = [(c, e) for (c, e) in r if c != 0]  
-    r.sort(key= lambda l : l[1], reverse=True) 
-
-    return r
-
-def multpoly(p1, p2):
-    rv = list()
-    for i in range(len(p1)):
-        for j in range(len(p2)):
-            rv = addpoly([(p1[i][0] * p2[j][0], p1[i][1] + p2[j][1])], rv)
-
-    return(rv) 
+def intreverse(n):
+  
+  Get=''.join(list(str(n))[::-1])
+  return(int(Get))
+def matched(s):
+  qa=list(s)
+  for i in range(len(qa)):
+    if qa[i]=="(":
+      if ')' in qa[i+1:]:
+        qa[qa.index(')')]='#'
+  return(qa.count('#')==qa.count('(')) 
+def sumprimes(l):
+  prime_ne=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 
+         43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 
+         101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 
+         151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 
+         199, 211, 223, 227, 229, 233, 239, 241, 251, 257,
+         263, 269, 271, 277, 281, 283, 293, 307, 311, 313,
+         317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 
+         383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 
+         443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503,
+         509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 
+         593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647,
+        653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 
+         733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 
+         811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877,
+         881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953]
+  sum=0
+  for a in l:
+    if a in prime_ne:
+      sum+=a
+  return(sum)
   
   
   
