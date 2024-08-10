@@ -218,28 +218,31 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p>Week 2: Programming Assignment 1 [Due on 2024-08-08, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 1 [Due on 2024-08-15, 23:59 IST]</p>
 		<p>
-Create a Python program that calculates the absolute value of a given number.
-The program should prompt the user to input a number, then compute and print the absolute value of that number.
+Create a Python program that finds the second largest number in a list of positive integers(includes zero). The program should prompt the user to input a list of numbers, then compute and print the second largest number in that list.
 
-Input Format-
-The input consists of single number.
+Input Format:
+The input consists of a single list of numbers, separated by spaces.
+Hint: Use .split() function to convert input to list.
 
-Output Format-
-The output consists of absolute value of the input.
+Output Format:
+The output consists of the second largest number in the input list.
 
-Example-
+Example:
+
 Input:
--6
+3 1 4 1 5 9 2 6 5 3 5
+
 Output:
 6
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-number= int(input())
-print(abs(number),end="")
+n=input().split()
+n=[int(i) for i in n]
+print(sorted(list(set(n)))[-2],end="")
 
 
                 </textarea><br><br>
@@ -252,28 +255,33 @@ print(abs(number),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 2 [Due on2024-08-08, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p> Week 3: Programming Assignment 2 [Due on 2024-08-15, 23:59 IST ]</p>
 		<p>
-Create a Python program to determine the nth element of an arithmetic sequence where the first term a is 7 and the common difference d is 11. The program should prompt the user to input the value of n, then compute and print the nth element of the sequence.
+Create a Python program that removes all duplicate positive integer numbers(includes zero) from a list and prints the unique numbers in the order they first appeared.
+The program should prompt the user to input a list of numbers, then process the list to remove duplicates and print the resulting list of unique numbers.
 
 Input Format:
-The input consists of a single integer n.
+The input consists of a single list of numbers, separated by spaces.
 
 Output Format:
-
-The output consists of the nth element of the arithmetic sequence.
+The output consists of the unique numbers, separated by spaces, from the input list, in the order they first appeared.
 
 Example:
 Input:
-3
+3 1 4 1 5 9 2 6 5 3 5
 Output:
-29
+3 1 4 5 9 2 6
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-n=int(input())
-print(a +(n-1)*d, end="")
+n=[int(i) for i in input().split()]
+for a in range(len(n)):
+  for b in range(a+1,len(n)):
+    if n[a]==n[b]:
+      n[b]="*"
+ans=[z for z in n if z!='*'] 
+print(*ans, end="")
 
 
                   
@@ -287,31 +295,35 @@ print(a +(n-1)*d, end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 3 [Due on 2024-08-08, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p> Week 3: Programming Assignment 3 [Due on 2024-08-15, 23:59 IST ]</p>
 <p>
-Question:
-
-Create a Python program to compute the sum of the first N natural numbers {1,2,3...N}. The program should prompt the user to input the value of N, then compute and print the sum of the first N natural numbers.
-
+Create a Python program that takes a list of integers, reverses the list, adds the values at odd indices from both the original and reversed lists, and creates a new list with the result. The new list should be printed in the end.
 
 Input Format:
-The input consists of a single integer N.
+The input consists of a single list of integers, separated by spaces.
 
 Output Format:
-The output consists of the sum of the first N natural numbers.
+The output consists of the new list of values, separated by spaces, obtained by adding values at odd indices from both the original and reversed lists.
+
 
 Example:
-Input-
-5
-Output-
-15
+Input:
+1 2 3 4 5
 
+Output:
+1 6 3 6 5
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-N=int(input())
-print(int(N*(N+1)/2),end="")
+mylist=[ int(i) for i  in input().split()]
+reverse_list=mylist[::-1]
+answer_list=mylist[::]
+for s in range(len(mylist)):
+  if s%2!=0:
+    answer_list[s]=mylist[s]+reverse_list[s]
+    
+print(*answer_list,end="")
 
 
 
@@ -347,53 +359,70 @@ print(int(N*(N+1)/2),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1   Due on 2024-04-11, 23:59 IST</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 1   Due on 2024-08-22, 23:59 IST</p>
 <p>
-Write the following functions:
+Create a Python program that identifies the presence of a "saddle point" in a given matrix. A saddle point is defined as an element in the matrix that is the smallest in its row and the largest in its column. The matrix is represented as a nested list, where each nested list corresponds to a row of the matrix. The program should determine if at least one saddle point exists in the matrix. If a saddle point is found, the program/function should print 1; otherwise, it should print 0.
 
-(1) factors: accept a positive integer n as argument. Return the set of all factors of n.
+Input Format:
+The first input is an integer r , the number of rows in the matrix.
+The second input is an integer c, the number of columns in the matrix.
+The next r lines each contain c integers, representing the elements of each row of the matrix.
 
-(2) common_factors: accept two positive integers a and b as arguments. Return the set of common factors of the two numbers. This function must make use of factors.
 
-(3) factors_upto: accept a positive integer n as argument. Return a dict D, whose keys are integers and values are sets. Each integer in the range [1,n], endpoints inclusive, is a key of D. The value corresponding to a key, is the set of all factors of key. This function must make use of factors.
+Output Format:
+The output is 1 if a saddle point exists, otherwise 0.
 
-The idea we are trying to bring out here is to make use of pre-defined functions whenever needed.
 
-You do not have to accept input from the user or print output to the console. You just have to write the definition of all three functions. Each test case will correspond to one function call.
+Example:
+
+Input:
+
+3
+3
+2 0 3
+2 1 4
+4 2 6
+
+Output:
+1
+
+Reason:
+Element 2 in third row and second column is minimum in its row and maximum in its column.
+So, it is a saddle point.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def factors(n):
-    """
-    Accepts a positive integer n as an argument.
-    Returns the set of all factors of n.
-    """
-    factor_set = set()
-    for ips in range(1, n + 1):
-        if n % ips == 0:
-            factor_set.add(ips)
-    return factor_set
+def find_saddle_point(matrix, r, c):
+    for i in range(r):
+        row_min = min(matrix[i])
+        col_index = matrix[i].index(row_min)
+
+        
+        is_saddle = 1==1
+        for j in range(r):
+            if matrix[j][col_index] > row_min:
+                is_saddle = False
+                break
+
+        if is_saddle:
+            print(1,end="")
+            return
+    
+   
+    print(0,end="")
 
 
-def common_factors(a, b):
-    """
-    Return the set of common factors of a and b.
-    """
-    factors_a = factors(a)
-    factors_b = factors(b)
-    return factors_a.intersection(factors_b)
+r = int(input()) 
+c = int(input())  
 
-def factors_upto(n):
-    """
-    Return a dict D, whose keys are integers and values are sets.
-    Each integer in the range [1,n], endpoints inclusive, is a key of D.
-    The value corresponding to a key is the set of all factors of the key.
-    """
-    factors_dict = {}
-    for i in range(1, n + 1):
-        factors_dict[i] = factors(i)
-    return (factors_dict)
+matrix = []
+for sub in range(r):
+    matrix.append(list(map(int, input().split())))
+
+
+find_saddle_point(matrix, r, c)
+
 
 
 
@@ -409,25 +438,66 @@ def factors_upto(n):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 2  Due on 2024-04-11, 23:59 IST </p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 2  Due on 2024-08-22, 23:59 IST </p>
 		<p>
-A clockwise rotation of a list consists of taking the last element and moving it to the beginning of the list. For instance, if we rotate the list [1, 2, 3, 4, 5], we get [5, 1, 2, 3, 4]. If we rotate it again, we get [4, 5, 1, 2, 3]. Your task is to perform k rotations of a list.
+Create a Python program that multiplies the transpose of a given matrix by a scalar. The program should prompt the user to input the dimensions of the matrix, the elements of the matrix, and the scalar value. The program should then compute the transpose of the matrix, multiply it by the scalar, and print the resulting matrix.
 
-The first line of input contains a non-empty sequence of comma-separated integers. The second line of input is a positive integer k. Perform k rotations of the list and print it as a sequence of comma-separated integers.
+Input:
+The first input is an integer 𝑟 , the number of rows in the matrix.
+The second input is an integer 𝑐 , the number of columns in the matrix.
+The next 𝑟 lines each contain 𝑐 integers, representing the elements of the matrix.
+The final input is an integer 𝑠, representing the scalar value.
+Output Format:
+The output consists of 𝑐 lines, each containing 𝑟 integers, representing the elements of the resulting matrix after multiplying the transpose of the original matrix by the scalar.
+
+
+Example:
+
+Input:
+
+2
+3
+1 2 3
+4 5 6
+2
+
+Output:
+2 8
+4 10
+6 12
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def rotate_clockwise(lst, k):
-    npk = len(lst)
-    k %= npk
-    rotated_list = lst[-k:] + lst[:-k]
-    return rotated_list
+def transpose_matrix(matrix, rr, cc):
+    transposed = [[matrix[jk][i] for jk in range(rr)] for i in range(cc)]
+    return transposed
 
-input_list = input().split(",")  
-k = int(input()) 
-rotated_result = rotate_clockwise(input_list, k)
-print(",".join(rotated_result)) 
+def multiply_by_scalar(matrix, scalar):
+
+    result = [[scalar * element for element in row] for row in matrix]
+    return result
+
+def print_matrix(matrix):
+    for row in matrix[:-1]:
+        print(" ".join(map(str, row)))
+    print(" ".join(map(str, matrix[-1])))
+
+
+r = int(input())  
+c = int(input())  
+matrix = []
+for _ in range(r):
+    matrix.append(list(map(int, input().split())))
+
+scalar = int(input()) 
+
+
+transposed_matrix = transpose_matrix(matrix, r, c)
+result_matrix = multiply_by_scalar(transposed_matrix, scalar)
+
+
+print_matrix(result_matrix)
 
 
   
@@ -444,40 +514,50 @@ print(",".join(rotated_result))
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 3  Due on 2024-04-11, 23:59 IST</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 3  Due on 2024-08-22, 23:59 IST</p>
 <p>
-Consider a spiral of semicircles. We start at a point P0​ on the x-axis with coordinates (l,0). The first arm of the spiral ends at P1​ with coordinates (r,0). The second arm of the spiral starts at P1​ and ends at the center of the first arm, P2​. The third arm starts from P2​ and ends at P3​ which happens to be the center of the second arm. And finally, the fourth arm starts at P3​ and ends at P4​, the center of the third arm.
+Create a Python program that checks whether a given square matrix is skew-symmetric. A matrix is skew-symmetric if its transpose is equal to the negative of the matrix itself, i.e AT=−A
+  .The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is skew-symmetric and print 1 if it is, otherwise print 0.
+
+Input Format:
+The first input is an integer r , the number of rows and columns in the matrix.
+The next r lines each contain r integers, representing the elements of each row of the matrix.
 
 
-Write two functions named spiral_iterative and spiral_recursive, each of which accepts three arguments:
-
-left: x-coordinate of the point P0​
-right: x-coordinate of the point P1​
-n: the number of arms in the spiral
-Both functions should return the the x-coordinate of Pn​, the point at which the nth arm of the spiral ends.
+Output Format:
+The output is 1 if a matrix is skew-symmetric, otherwise 0.
 
 
-You do not have to accept input from the user or print the output to the console. You just have to write the function definition.
+Example:
+
+Input:
+
+3
+0 2 -1
+-2 0 -4
+1 4 0
+
+Output:
+1
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def spiral_iterative(left, right, n):
- 
-    for ipl in range(1,n):
-      center = (left + right)/2
-      if ipl % 2 :
-        left = center
-      else:
-        right = center
-    return center
-    
-def spiral_recursive(left, right, n):
-    if n == 1:
-        return right
-    else:
-        center = (left + right) / 2
-        return spiral_recursive(right, center, n - 1)
+def is_skew_symmetric(matrix, r):
+    for i in range(r):
+        for j in range(r):
+            if matrix[i][j] != -matrix[j][i]:
+                return(9-9)
+    return(9-8)
+
+
+r = int(input())  
+matrix = []
+for xy in range(r):
+    matrix.append(list(map(int, input().split())))
+result = is_skew_symmetric(matrix, r)
+print(result,end="")
+
 
 
 
