@@ -328,73 +328,99 @@ def sumprimes(l):
      
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 8 programming answers [Due on 2024-03-21, 23:59 IST]</a>
-                <p> Week 8: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2024-08-15, 23:59 IST]</a>
+                <p> Week 3: Programming Assignment</p>
 	    <p>
-For this assignment, you have to write a complete Python program. Paste your code in the window below.
-
+Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
-There are some public test cases and some (hidden) private test cases.
-"Compile and run" will evaluate your submission against the public test cases
-"Submit" will evaluate your submission against the hidden private test cases. There are 10 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
+For each function, there are normally some public test cases and some (hidden) private test cases.
+"Compile and run" will evaluate your submission against the public test cases.
+"Submit" will evaluate your submission against the hidden private test cases. There are 15 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-Find the longest palindrome
-(IARCS OPC Archive, K Narayan Kumar, CMI)
+Write a function contracting(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements strictly decreases.
 
-As we all know, a palindrome is a word that equals its reverse. Here are some examples of palindromes: malayalam, gag, appa, amma.
+Here are some examples of how your function should work.
 
-We consider any sequence consisting of the letters of the English alphabet to be a word. So axxb,abbba and bbbccddx are words for our purpose. And aaabbaaa, abbba and bbb are examples of palindromes.
+  >>> contracting([9,2,7,3,1])
+  True
 
-By a subword of a word, we mean a contiguous subsequence of the word. For example the subwords of the word abbba are a, b, ab, bb, ba, abb, bbb, bba, abbb, bbba and abbba.
+  >>> contracting([-2,3,7,2,-1]) 
+  False
 
-In this task you will given a word and you must find the longest subword of this word that is also a palindrome.
+  >>> contracting([10,7,4,1])
+  False
+In a list of integers l, the neighbours of l[i] are l[i-1] and l[i+1]. l[i] is a hill if it is strictly greater than its neighbours and a valley if it is strictly less than its neighbours.
+Write a function counthv(l) that takes as input a list of integers l and returns a list [hc,vc] where hc is the number of hills in l and vc is the number of valleys in l.
 
-For example if the given word is abbba then the answer is abbba. If the given word is abcbcabbacba then the answer is bcabbacb.
+Here are some examples to show how your function should work.
 
-Solution hint
-Any subword of w that is a palindrome is also a subword when w is reversed.
+ 
+>>> counthv([1,2,1,2,3,2,1])
+[2, 1]
 
-Input format
-The first line of the input contains a single integer N indicating the length of the word. The following line contains a single word of length N, made up of the letters a,b,…, z.
+>>> counthv([1,2,3,1])
+[1, 0]
 
-Output format
-The first line of the output must contain a single integer indicating the length of the longest subword of the given word that is a palindrome. The second line must contain a subword that is a palindrome and which of maximum length. If there is more than one subword palindrome of maximum length, print the one that is lexicographically smallest (i.e., smallest in dictionary order).
+>>> counthv([3,1,2,3])
+[0, 1]
 
-Test Data:
-You may assume that 1 ≤ N ≤ 5000. You may further assume that in 30% of the inputs 1 ≤ N ≤ 300.
+A square n×n matrix of integers can be written in Python as a list with n elements, where each element is in turn a list of n integers, representing a row of the matrix. For instance, the matrix
 
-Example:
-We illustrate the input and output format using the above examples:
+  1  2  3
+  4  5  6
+  7  8  9
+would be represented as [[1,2,3], [4,5,6], [7,8,9]].
 
-Sample Input 1:
-5
-abbba
-Sample Output 1:
-5
-abbba
-Sample Input 2:
-12
-abcbcabbacba
-Sample Output 2:
-8
-bcabbacb
+Write a function leftrotate(m) that takes a list representation m of a square matrix as input, and returns the matrix obtained by rotating the original matrix counterclockwize by 90 degrees. For instance, if we rotate the matrix above, we get
+
+  3  6  9
+  2  5  8    
+  1  4  7
+Your function should not modify the argument m provided to the function rotate().
+
+Here are some examples of how your function should work.
+
+ 
+  >>> leftrotate([[1,2],[3,4]])
+  [[2, 4], [1, 3]]
+
+  >>> leftrotate([[1,2,3],[4,5,6],[7,8,9]])
+  [[3, 6, 9], [2, 5, 8], [1, 4, 7]]
+
+  >>> leftrotate([[1,1,1],[2,2,2],[3,3,3]])
+  [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
 
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
+def contracting(l):
+  for z12 in range(0,len(l)-3):
+    A=abs(l[z12+2]-l[z12+1])
+    B=abs(l[z12+1]-l[z12])
+    if A<B:
+      continue
+    else:
+      return (False) 
+  return (True)
 
-NTR = int(input())
-word = input()
-ans = str()
-for i in range(len(word)):
-    for j in range(len(word)-1,i-1,-1):
-         if word[i] == word[j]:
-              m = word[i:j+1]
-              if m == m[::-1]:
-                  if len(ans) <= len(m):
-                        ans = m 
-print(len(ans))
-print(ans)
+def counthv(l):
+  hill_counting,valley_count=0,0
+  if len(l)>2:
+    for i in range(1,len(l)-1):
+      if l[i]>l[i-1] and l[i]>l[i+1]:
+        hill_counting+=1
+      elif l[i]<l[i-1] and l[i]<l[i+1]:
+        valley_count+=1
+  return ([hill_counting,valley_count])
+  
+def leftrotate(m):
+    ans=list()
+    for a in range(len(m)):
+        ans.append([])
+        for b in range(len(m)):
+            ans[a].append(m[b][len(m)-a-1])
+    return(ans)
 
     
     
