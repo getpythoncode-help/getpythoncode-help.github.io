@@ -262,7 +262,7 @@ print(loc,end="")
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 5 programming answers</a>
-                <p> Week 3: Programming Assignment 2 [Due on 2024-08-29, 23:59 IST ]</p>
+                <p> Week 5: Programming Assignment 2 [Due on 2024-08-29, 23:59 IST ]</p>
 		<p>
 Create a Python program that merges two sorted lists into one sorted list. The program should prompt the user to input two sorted lists of integers. The program should then merge these two lists into one sorted list and print the result.
 
@@ -328,12 +328,10 @@ Output:
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 def find_kth_elements(numbers, k):
-
   sorted_numbers = sorted(numbers)
   n = len(sorted_numbers)
   kth_largest = sorted_numbers[-k]
   kth_smallest = sorted_numbers[k - 1]
-
   if kth_largest == kth_smallest:
     return 1 if k == n // 2 + 1 else -1
   else:
@@ -343,7 +341,7 @@ numbers_str = input()
 numbers = list(map(int, numbers_str.split()))
 k = int(input())
 result = find_kth_elements(numbers, k)
-print(result)
+print(result,end="")
 
 
 
