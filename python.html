@@ -218,31 +218,37 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1 [Due on 2024-08-15, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1 [Due on 2024-08-29, 23:59 IST]</p>
 		<p>
-Create a Python program that finds the second largest number in a list of positive integers(includes zero). The program should prompt the user to input a list of numbers, then compute and print the second largest number in that list.
+Create a Python program that performs a binary search on a sorted list of integers using only loops. The program should prompt the user to input a sorted list of integers and a target number to search for. The program should then search for the target number in the list using the binary search algorithm and print the index of the target if found. If the target is not found, the program should print -1.
 
 Input Format:
-The input consists of a single list of numbers, separated by spaces.
-Hint: Use .split() function to convert input to list.
 
+The first line of input consists of a space-separated sorted list of integers.
+The second line of input consists of a single integer, representing the target number.
 Output Format:
-The output consists of the second largest number in the input list.
+
+The output consists of the index of the target number in the list if found. If the target number is not found, the output should be -1.
 
 Example:
-
 Input:
-3 1 4 1 5 9 2 6 5 3 5
+10 20 30 40 50
+30
 
 Output:
-6
+2
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-n=input().split()
-n=[int(i) for i in n]
-print(sorted(list(set(n)))[-2],end="")
+sorted_numbers=[int(i) for i in input().split()]
+n=int(input())
+loc=-1
+for i in range(len(sorted_numbers)):
+  if n==sorted_numbers[i]:
+    loc=i
+    break
+print(loc,end="")   
 
 
                 </textarea><br><br>
@@ -255,33 +261,33 @@ print(sorted(list(set(n)))[-2],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p> Week 3: Programming Assignment 2 [Due on 2024-08-15, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 3: Programming Assignment 2 [Due on 2024-08-29, 23:59 IST ]</p>
 		<p>
-Create a Python program that removes all duplicate positive integer numbers(includes zero) from a list and prints the unique numbers in the order they first appeared.
-The program should prompt the user to input a list of numbers, then process the list to remove duplicates and print the resulting list of unique numbers.
+Create a Python program that merges two sorted lists into one sorted list. The program should prompt the user to input two sorted lists of integers. The program should then merge these two lists into one sorted list and print the result.
 
 Input Format:
-The input consists of a single list of numbers, separated by spaces.
+The first line of input consists of a space-separated sorted list of integers.
+The second line of input consists of another space-separated sorted list of integers.
 
 Output Format:
-The output consists of the unique numbers, separated by spaces, from the input list, in the order they first appeared.
+- The output consists of a single sorted list, which is the result of merging the two input lists.
 
 Example:
+
 Input:
-3 1 4 1 5 9 2 6 5 3 5
+1 3 5 7
+2 4 6 8
+
+
 Output:
-3 1 4 5 9 2 6
+1 2 3 4 5 6 7 8
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-n=[int(i) for i in input().split()]
-for a in range(len(n)):
-  for b in range(a+1,len(n)):
-    if n[a]==n[b]:
-      n[b]="*"
-ans=[z for z in n if z!='*'] 
-print(*ans, end="")
+A=[int(i) for i in input().split()]
+B=[int(i) for i in input().split()]
+print(*sorted(A+B),end="")
 
 
                   
@@ -295,35 +301,49 @@ print(*ans, end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p> Week 3: Programming Assignment 3 [Due on 2024-08-15, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment 3 [Due on 2024-08-29, 23:59 IST ]</p>
 <p>
-Create a Python program that takes a list of integers, reverses the list, adds the values at odd indices from both the original and reversed lists, and creates a new list with the result. The new list should be printed in the end.
+Create a Python program that finds the k-th largest and k-th smallest elements in a list of integers. The program should prompt the user to input a list of integers and a value `k`. The program should then find and print:
 
+1 if the k-th largest and k-th smallest elements are the same and are at the middle of the sorted list.
+ -1 if the k-th largest and k-th smallest elements are the same but are not in the middle of the sorted list.
+0 if the k-th largest and k-th smallest elements are different.
 Input Format:
-The input consists of a single list of integers, separated by spaces.
+The first line of input consists of a space-separated list of integers.
+The second line of input consists of a single integer k.
 
 Output Format:
-The output consists of the new list of values, separated by spaces, obtained by adding values at odd indices from both the original and reversed lists.
-
+The output consists of a single integer 1, -1, or 0 based on the conditions specified.
 
 Example:
+
 Input:
-1 2 3 4 5
+3 8 7 5 9 1
+2
 
 Output:
-1 6 3 6 5
+0
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-mylist=[ int(i) for i  in input().split()]
-reverse_list=mylist[::-1]
-answer_list=mylist[::]
-for s in range(len(mylist)):
-  if s%2!=0:
-    answer_list[s]=mylist[s]+reverse_list[s]
-    
-print(*answer_list,end="")
+def find_kth_elements(numbers, k):
+
+  sorted_numbers = sorted(numbers)
+  n = len(sorted_numbers)
+  kth_largest = sorted_numbers[-k]
+  kth_smallest = sorted_numbers[k - 1]
+
+  if kth_largest == kth_smallest:
+    return 1 if k == n // 2 + 1 else -1
+  else:
+    return 0
+
+numbers_str = input()
+numbers = list(map(int, numbers_str.split()))
+k = int(input())
+result = find_kth_elements(numbers, k)
+print(result)
 
 
 
