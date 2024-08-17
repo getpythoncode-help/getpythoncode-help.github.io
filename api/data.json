@@ -6,12 +6,11 @@
     "Week-4: Programing Assignment-04": "  result=1;\n  while (exponent != 0) {\n        result *= base;\n        --exponent;\n    }\n\n"
   },
   {
-    "Week-5: Programing Assignment-01": "  Question not released in NPTEL ",
-    "Week-5: Programing Assignment-02": " Question not released in NPTEL",
-    "Week-5: Programing Assignment-03": " Question not released in NPTEL",
-    "Week-5: Programing Assignment-04": " Question not released in NPTEL"
+    "Week-5: Programing Assignment-01": "    int ips, sum=0;\n    for(ips=1; ips<N;ips++)\n    {\n        if(N%ips==0)\n            sum+=ips;\n    }\n \n    if(sum==N)\n        printf(\"\\n%d is a perfect number.\",N);\n    else\n        printf(\"\\n%d is not a perfect number.\",N);\n}",
+    "Week-5: Programing Assignment-02": "    int tempo, count; \n    count=0;\n    tempo=N;\n    while(tempo>0)\n\t{\n        count++;\n        tempo/=10;\n    }\n     printf(\"The number %d contains %d digits.\",N,count);\n}",
+    "Week-5: Programing Assignment-03": "    int tempy, flag;\n    tempy=N;\n    flag=0;\n   \n    while(tempy!=1)\n    {\n        if(tempy%2!=0){\n            flag=1;\n            break;\n        }\n        tempy=tempy/2;\n    }\n  \n    if(flag==0)\n        printf(\"%d is a number that can be expressed as power of 2.\",N);\n    else\n        printf(\"%d cannot be expressed as power of 2.\",N);\n}",
+    "Week-5: Programing Assignment-04": "  int ikl,j;\n  for(ikl=N; ikl>0; ikl--)\n  {\n  for(j=0;j<ikl;j++)\n    {\n    printf(\"*\");\n    }\n  printf(\"\\n\");\n  } \n}\n"
   }
 ]
-
 
 
