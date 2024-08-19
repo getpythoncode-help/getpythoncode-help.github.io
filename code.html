@@ -349,101 +349,118 @@ def onehop(l):
                 </textarea><br><br>
 	    
 <a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2024-08-15, 23:59 IST]</a>
-                <p> Week 3: Programming Assignment</p>
+                <p> Week 5: Programming Assignment</p>
 	    <p>
-Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
+
+For this assignment, you have to write a complete Python program. Paste your code in the window below.
+
 You may define additional auxiliary functions as needed.
-In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
-For each function, there are normally some public test cases and some (hidden) private test cases.
+In all cases you may assume that the input to your program has the expected format, so your program does not have to check for malformed inputs.
+There are some public test cases and some (hidden) private test cases.
 "Compile and run" will evaluate your submission against the public test cases.
-"Submit" will evaluate your submission against the hidden private test cases. There are 15 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+"Submit" will evaluate your submission against the hidden private test cases. There are 6 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-Write a function contracting(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements strictly decreases.
+The library at the Hogwarts School of Witchcraft and Wizardry has computerized its book issuing process. The relevant information is provided as text from standard input in three parts: information about books, information about borrowers and information about checkouts. Each part has a specific line format, described below.
 
-Here are some examples of how your function should work.
+Information about books
+Line format: Accession Number~Title
 
-  >>> contracting([9,2,7,3,1])
-  True
+Information about borrowers
+Line format: Username~Full Name
 
-  >>> contracting([-2,3,7,2,-1]) 
-  False
+Information about checkouts
+Line format: Username~Accession Number~Due Date
+Note: Due Date is in YYYY-MM-DD format.
 
-  >>> contracting([10,7,4,1])
-  False
-In a list of integers l, the neighbours of l[i] are l[i-1] and l[i+1]. l[i] is a hill if it is strictly greater than its neighbours and a valley if it is strictly less than its neighbours.
-Write a function counthv(l) that takes as input a list of integers l and returns a list [hc,vc] where hc is the number of hills in l and vc is the number of valleys in l.
+You may assume that the data is internally consistent. For every checkout, there is a corresponding username and accession number in the input data, and no book is simultaneously checked out by two people.
 
-Here are some examples to show how your function should work.
+Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Books. The second section begins with a line containing Borrowers. The third section begins with a line containing Checkouts. The end of the input is marked by a line containing EndOfInput.
 
- 
->>> counthv([1,2,1,2,3,2,1])
-[2, 1]
+Write a Python program to read the data as described above and print out details about books that have been checked out. Each line should describe to one currently issued book in the following format:
 
->>> counthv([1,2,3,1])
-[1, 0]
+Due Date~Full Name~Accession Number~Title
+Your output should be sorted in increasing order of due date. For books due on the same date, sort in increasing order of full name.
 
->>> counthv([3,1,2,3])
-[0, 1]
+Here is a sample input and its corresponding output.
 
-A square n×n matrix of integers can be written in Python as a list with n elements, where each element is in turn a list of n integers, representing a row of the matrix. For instance, the matrix
+Sample Input
 
-  1  2  3
-  4  5  6
-  7  8  9
-would be represented as [[1,2,3], [4,5,6], [7,8,9]].
+Books
+APM-001~Advanced Potion-Making
+GWG-001~Gadding With Ghouls
+APM-002~Advanced Potion-Making
+DMT-001~Defensive Magical Theory
+DMT-003~Defensive Magical Theory
+GWG-002~Gadding With Ghouls
+DMT-002~Defensive Magical Theory
+Borrowers
+SLY2301~Hannah Abbott
+SLY2302~Euan Abercrombie
+SLY2303~Stewart Ackerley
+SLY2304~Bertram Aubrey
+SLY2305~Avery
+SLY2306~Malcolm Baddock
+SLY2307~Marcus Belby
+SLY2308~Katie Bell
+SLY2309~Sirius Orion Black
+Checkouts
+SLY2304~DMT-002~2019-03-27
+SLY2301~GWG-001~2019-03-27
+SLY2308~APM-002~2019-03-14
+SLY2303~DMT-001~2019-04-03
+SLY2301~GWG-002~2019-04-03
+EndOfInput
+Sample Output
 
-Write a function leftrotate(m) that takes a list representation m of a square matrix as input, and returns the matrix obtained by rotating the original matrix counterclockwize by 90 degrees. For instance, if we rotate the matrix above, we get
-
-  3  6  9
-  2  5  8    
-  1  4  7
-Your function should not modify the argument m provided to the function rotate().
-
-Here are some examples of how your function should work.
-
- 
-  >>> leftrotate([[1,2],[3,4]])
-  [[2, 4], [1, 3]]
-
-  >>> leftrotate([[1,2,3],[4,5,6],[7,8,9]])
-  [[3, 6, 9], [2, 5, 8], [1, 4, 7]]
-
-  >>> leftrotate([[1,1,1],[2,2,2],[3,3,3]])
-  [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
-
+2019-03-14~Katie Bell~APM-002~Advanced Potion-Making
+2019-03-27~Bertram Aubrey~DMT-002~Defensive Magical Theory
+2019-03-27~Hannah Abbott~GWG-001~Gadding With Ghouls
+2019-04-03~Hannah Abbott~GWG-002~Gadding With Ghouls
+2019-04-03~Stewart Ackerley~DMT-001~Defensive Magical Theory
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def contracting(l):
-  for z12 in range(0,len(l)-3):
-    A=abs(l[z12+2]-l[z12+1])
-    B=abs(l[z12+1]-l[z12])
-    if A<B:
-      continue
-    else:
-      return (False) 
-  return (True)
 
-def counthv(l):
-  hill_counting,valley_count=0,0
-  if len(l)>2:
-    for i in range(1,len(l)-1):
-      if l[i]>l[i-1] and l[i]>l[i+1]:
-        hill_counting+=1
-      elif l[i]<l[i-1] and l[i]<l[i+1]:
-        valley_count+=1
-  return ([hill_counting,valley_count])
   
-def leftrotate(m):
-    ans=list()
-    for a in range(len(m)):
-        ans.append([])
-        for b in range(len(m)):
-            ans[a].append(m[b][len(m)-a-1])
-    return(ans)
+   books = dict()
+# Dictionary to map username to fullname
+borrowers = dict()
+# List to store checkout data: accumulate, sort and print
+checkouts = [] 
 
-    
-    
+# Find the start of Books data
+nextline12 = input().strip()
+while nextline12.find("Books") < 0:
+    nextline12 = input().strip()
+
+# Read upto start of Borrowers data
+# Skip the line with "Books"
+nextline = input().strip()
+while nextline.find("Borrowers") < 0:
+    (accession_number,title) = nextline.split('~')
+    books[accession_number] = title
+    nextline = input().strip()
+
+# Read upto Checkout data
+# Skip the line with "Borrowers"
+nextline = input().strip()
+while nextline.find("Checkouts") < 0:
+    (username,fullname) = nextline.split('~')
+    borrowers[username] = fullname
+    nextline = input().strip()
+
+# Process Checkouts
+# Skip the line with "Checkouts"
+nextline = input().strip()
+while nextline.find("EndOfInput") < 0:
+    (username,accession_number,due_date) = nextline.split('~')
+    checkoutline = due_date+"~"+borrowers[username]+"~"+accession_number+"~"+books[accession_number]
+    checkouts.append(checkoutline)
+    nextline = input().strip()
+
+# Print the output from checkouts
+for k in sorted(checkouts):
+    print(k)    
        
                 </textarea><br><br>	    
 	    
