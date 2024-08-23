@@ -377,73 +377,41 @@ print(result,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1   Due on 2024-08-22, 23:59 IST</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1   Due on 2024-09-05, 23:59 IST</p>
 <p>
-Create a Python program that identifies the presence of a "saddle point" in a given matrix. A saddle point is defined as an element in the matrix that is the smallest in its row and the largest in its column. The matrix is represented as a nested list, where each nested list corresponds to a row of the matrix. The program should determine if at least one saddle point exists in the matrix. If a saddle point is found, the program/function should print 1; otherwise, it should print 0.
+Question:
+Write a Python program that takes two positive integers a and b as input and returns their product using a recursive function. The function should only use the + and - operators to calculate the product.
 
 Input Format:
-The first input is an integer r , the number of rows in the matrix.
-The second input is an integer c, the number of columns in the matrix.
-The next r lines each contain c integers, representing the elements of each row of the matrix.
-
+The first line of input consists of two space-separated positive integers, a and b.
 
 Output Format:
-The output is 1 if a saddle point exists, otherwise 0.
-
+The output consists of a single integer representing the product of a and b.
 
 Example:
 
 Input:
-
-3
-3
-2 0 3
-2 1 4
-4 2 6
+3 4
 
 Output:
-1
-
-Reason:
-Element 2 in third row and second column is minimum in its row and maximum in its column.
-So, it is a saddle point.
+12
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def find_saddle_point(matrix, r, c):
-    for i in range(r):
-        row_min = min(matrix[i])
-        col_index = matrix[i].index(row_min)
-
-        
-        is_saddle = 1==1
-        for j in range(r):
-            if matrix[j][col_index] > row_min:
-                is_saddle = False
-                break
-
-        if is_saddle:
-            print(1,end="")
-            return
-    
-   
-    print(0,end="")
+def recursive_product(a1, b):
+    if b == 0:
+        return 0
+    elif b == 1:
+        return a1
+    else:
+        return a1 + recursive_product(a1, b - 1)
 
 
-r = int(input()) 
-c = int(input())  
-
-matrix = []
-for sub in range(r):
-    matrix.append(list(map(int, input().split())))
+a, b = map(int, input().split())
 
 
-find_saddle_point(matrix, r, c)
-
-
-
-
+print(recursive_product(a, b),end="")
 
       
                 </textarea><br><br>
@@ -456,70 +424,36 @@ find_saddle_point(matrix, r, c)
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 2  Due on 2024-08-22, 23:59 IST </p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 2  Due on 2024-09-05, 23:59 IST </p>
 		<p>
-Create a Python program that multiplies the transpose of a given matrix by a scalar. The program should prompt the user to input the dimensions of the matrix, the elements of the matrix, and the scalar value. The program should then compute the transpose of the matrix, multiply it by the scalar, and print the resulting matrix.
+Question:
+Write a Python program that takes a positive integer x as input and returns the logarithm of x to the base 2 using a recursive function. The logarithm of x to the base 2, denoted by log₂(x), is the number of times 2 has to be multiplied by itself to get x. Assume that x is a power of 2.
 
-Input:
-The first input is an integer 𝑟 , the number of rows in the matrix.
-The second input is an integer 𝑐 , the number of columns in the matrix.
-The next 𝑟 lines each contain 𝑐 integers, representing the elements of the matrix.
-The final input is an integer 𝑠, representing the scalar value.
+Input Format:
+The input consists of a single positive integer x which is a power of 2.
+
 Output Format:
-The output consists of 𝑐 lines, each containing 𝑟 integers, representing the elements of the resulting matrix after multiplying the transpose of the original matrix by the scalar.
-
+The output consists of a single integer representing log₂(x).
 
 Example:
 
 Input:
-
-2
-3
-1 2 3
-4 5 6
-2
+8
 
 Output:
-2 8
-4 10
-6 12
+3
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def transpose_matrix(matrix, rr, cc):
-    transposed = [[matrix[jk][i] for jk in range(rr)] for i in range(cc)]
-    return transposed
+def recursive_log2(xyz):
+    if xyz == 1:
+        return 0
+    else:
+        return 1 + recursive_log2(xyz // 2)
 
-def multiply_by_scalar(matrix, scalar):
-
-    result = [[scalar * element for element in row] for row in matrix]
-    return result
-
-def print_matrix(matrix):
-    for row in matrix[:-1]:
-        print(" ".join(map(str, row)))
-    print(" ".join(map(str, matrix[-1])))
-
-
-r = int(input())  
-c = int(input())  
-matrix = []
-for _ in range(r):
-    matrix.append(list(map(int, input().split())))
-
-scalar = int(input()) 
-
-
-transposed_matrix = transpose_matrix(matrix, r, c)
-result_matrix = multiply_by_scalar(transposed_matrix, scalar)
-
-
-print_matrix(result_matrix)
-
-
-  
-  
+xyz = int(input())
+print(recursive_log2(xyz),end="")
 
                   
                 </textarea><br><br>
@@ -532,49 +466,35 @@ print_matrix(result_matrix)
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 3  Due on 2024-08-22, 23:59 IST</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 3  Due on 2024-09-05, 23:59 IST</p>
 <p>
-Create a Python program that checks whether a given square matrix is skew-symmetric. A matrix is skew-symmetric if its transpose is equal to the negative of the matrix itself, i.e AT=−A
-  .The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is skew-symmetric and print 1 if it is, otherwise print 0.
+Question
+Write a Python program that includes a recursive function named non_decreasing which takes a non-empty list L of integers as input. The function should return True if the elements in the list are sorted in non-decreasing order from left to right, and False otherwise.
 
 Input Format:
-The first input is an integer r , the number of rows and columns in the matrix.
-The next r lines each contain r integers, representing the elements of each row of the matrix.
-
+The input consists of a single line containing space-separated integers that form the list L.
 
 Output Format:
-The output is 1 if a matrix is skew-symmetric, otherwise 0.
-
+The output consists of a single boolean value (True or False) indicating whether the list is sorted in non-decreasing order.
 
 Example:
 
 Input:
-
-3
-0 2 -1
--2 0 -4
-1 4 0
+1 2 2 3 4
 
 Output:
-1
+True
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def is_skew_symmetric(matrix, r):
-    for i in range(r):
-        for j in range(r):
-            if matrix[i][j] != -matrix[j][i]:
-                return(9-9)
-    return(9-8)
+def non_decreasing(L):
+    if len(L) == 1:
+        return (True)
+    return L[0] <= L[1] and non_decreasing(L[1:])
 
-
-r = int(input())  
-matrix = []
-for xy in range(r):
-    matrix.append(list(map(int, input().split())))
-result = is_skew_symmetric(matrix, r)
-print(result,end="")
+L = list(map(int, input().split()))
+print(non_decreasing(L),end="")
 
 
 
