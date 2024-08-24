@@ -1,9 +1,9 @@
 [
   {
-    "Week-4: Programing Assignment-01": "if (n1 < n2)\n    {\n        if(n1 < n3)\n            printf(\"%d is the smallest number.\", n1);\n        else\n        {printf(\"%d is the smallest number.\", n3); }\n    }\n   \n    else\n    {\n        if(n2 < n3)\n            printf(\"%d is the smallest number.\", n2);\n        else\n            printf(\"%d is the smallest number.\", n3);\n    }\n}",
-    "Week-4: Programing Assignment-02": "if(a<(b+c)&&b<(a+c)&&c<(a+b))\n    {\n        if(a==b&&a==c&&b==c)\n        printf(\"Equilateral Triangle\");\n          else if(a==b||a==c||b==c)\n          {printf(\"Isosceles Triangle\");}\n          else   \n    if((a*a)==(b*b)+(c*c)||(b*b)==(a*a)+(c*c)||(c*c)==(a*a)+(b*b))\n        printf(\"Right-angle Triangle\");\n        else if(a!=b&&a!=c&&b!=c)\n        printf(\"Scalene Triangle\");\n    }\n    else\n    {printf(\"Triangle is not possible\");}\n}",
-    "Week-4: Programing Assignment-03": "  fact=1;\n  int number=n;\n  while(number>0)\n  {\n    fact*=number;\n    number=number-1;\n  }\n  \n printf(\"The Factorial of %d is : %ld\",n,fact);\n\n}\n ",
-    "Week-4: Programing Assignment-04": "  result=1;\n  while (exponent != 0) {\n        result *= base;\n        --exponent;\n    }\n\n"
+    "Week-6: Programing Assignment-01": "largest = arr[0];\nfor(i = 1; i < n; ++i)\n    {\n           if(largest < arr[i])\n           {largest = arr[i];}\n    }\n    printf(\"Largest element = %d\", largest);\n\n    return 0;\n}",
+    "Week-6: Programing Assignment-02": "int jkl, temp;  \njkl = i - 1;   // last Element of the array\ni = 0;       // first element of the array\n \n   while (i < jkl) {\n      temp = arr[i];\n      arr[i] = arr[jkl];\n      arr[jkl] = temp;\n      i++;             \n      jkl--;        \n   }\n",
+    "Week-6: Programing Assignment-03": "\nint jp;\nfor (i=0;i < n1;++i)\narray_new[i]=arr1[i];\n\nsize =  n1 + n2;\n\nfor(i=0, jp=n1; jp < size && i < n2; ++i, ++jp)\narray_new[jp] = arr2[i];\n",
+    "Week-6: Programing Assignment-04": " int j, ki;\n   for (i = 0; i < size; i++) {\n      for (j = i + 1; j < size;) {\n         if (array[j] == array[i]) {\n            for (ki = j; ki < size; ki++) {\n               array[ki] = array[ki + 1];\n            }\n            size--;\n         } else\n            j++;\n      }\n   }\n"
   },
   {
     "Week-5: Programing Assignment-01": "    int ips, sum=0;\n    for(ips=1; ips < N;ips++)\n    {\n        if(N%ips==0)\n            sum+=ips;\n    }\n \n    if(sum==N)\n        printf(\"\\n%d is a perfect number.\",N);\n    else\n        printf(\"\\n%d is not a perfect number.\",N);\n}",
