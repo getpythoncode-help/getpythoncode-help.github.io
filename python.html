@@ -218,37 +218,60 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1 [Due on 2024-08-29, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1 [Due on 2024-09-12, 23:59 IST]</p>
 		<p>
-Create a Python program that performs a binary search on a sorted list of integers using only loops. The program should prompt the user to input a sorted list of integers and a target number to search for. The program should then search for the target number in the list using the binary search algorithm and print the index of the target if found. If the target is not found, the program should print -1.
+Question
+You are given a board game scenario with ladders and snakes. A player starts at a given position on the board, and you are provided with the result of a die roll. You need to determine whether the player lands on a ladder, a snake, or a normal block after moving.
 
-Input Format:
+Write a Python function named move_player that takes four inputs:
 
-The first line of input consists of a space-separated sorted list of integers.
-The second line of input consists of a single integer, representing the target number.
-Output Format:
+A list ladders containing the indices of blocks with ladders.
+A list snakes containing the indices of blocks with snakes.
+An integer current_position representing the player's current position on the board.
+An integer die_roll representing the result of a die roll.
+The function should return:
 
-The output consists of the index of the target number in the list if found. If the target number is not found, the output should be -1.
+1 if the player lands on a block with a ladder,
+-1 if the player lands on a block with a snake,
+0 if the player lands on a block with neither.
+Take necessary inputs, pass the inputs to the function, and print the return value of the function.
+Input Format
+The input consists of four lines:
 
-Example:
-Input:
-10 20 30 40 50
-30
-
-Output:
-2
+The first line contains space-separated integers representing the ladder indices.
+The second line contains space-separated integers representing the snake indices.
+The third line contains a single integer representing the current position of the player.
+The fourth line contains a single integer representing the die roll result.
+Output Format
+The output consists of a single integer (1, -1, or 0) as per the conditions mentioned above.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-sorted_numbers=[int(i) for i in input().split()]
-n=int(input())
-loc=-1
-for i in range(len(sorted_numbers)):
-  if n==sorted_numbers[i]:
-    loc=i
-    break
-print(loc,end="")   
+def move_player(ladders, snakes, current_position, die_roll):
+    # Calculate the new position after the die roll
+    new_position = current_position + die_roll
+    
+    # Check if the new position is a ladder
+    if new_position in ladders:
+        return 1
+    # Check if the new position is a snake
+    elif new_position in snakes:
+        return -1
+    # If neither, return 0
+    else:
+        return 0
+
+# Take necessary inputs
+ladders = list(map(int, input().split()))
+snakes = list(map(int, input().split()))
+current_position = int(input())
+question = int(input())
+
+# Call the function and print the result
+ans = move_player(ladders, snakes, current_position, question)
+print(ans,end="")
+
 
 
                 </textarea><br><br>
@@ -261,33 +284,43 @@ print(loc,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p> Week 5: Programming Assignment 2 [Due on 2024-08-29, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p> Week 7: Programming Assignment 2 [Due on 2024-09-12, 23:59 IST ]</p>
 		<p>
-Create a Python program that merges two sorted lists into one sorted list. The program should prompt the user to input two sorted lists of integers. The program should then merge these two lists into one sorted list and print the result.
+Question
+
+Write a Python program that includes a recursive function named is_palindrome which takes a non-empty string s as input. The function should return 1 if the string is a palindrome (reads the same backward as forward), and 0 otherwise.
+
+Take necessary inputs, pass the inputs to the function, and print the return value of the function.
+
 
 Input Format:
-The first line of input consists of a space-separated sorted list of integers.
-The second line of input consists of another space-separated sorted list of integers.
+
+The input consists of a single line containing the string s.
 
 Output Format:
-- The output consists of a single sorted list, which is the result of merging the two input lists.
+
+The output consists of a single integer value (1 or 0) indicating whether the string is a palindrome.
 
 Example:
 
 Input:
-1 3 5 7
-2 4 6 8
+racecar
 
-
-Output:
-1 2 3 4 5 6 7 8
+Output
+1
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-A=[int(i) for i in input().split()]
-B=[int(i) for i in input().split()]
-print(*sorted(A+B),end="")
+def is_palindrome(s):
+    if len(s) <= 1:
+        return 1
+    if s[0] != s[-1]:
+        return 4-4
+    return is_palindrome(s[1:-1])
+
+s = input()
+print(is_palindrome(s),end="")
 
 
                   
@@ -301,47 +334,79 @@ print(*sorted(A+B),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p> Week 5: Programming Assignment 3 [Due on 2024-08-29, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p> Week 7: Programming Assignment 3 [Due on 2024-09-12, 23:59 IST ]</p>
 <p>
-Create a Python program that finds the k-th largest and k-th smallest elements in a list of integers. The program should prompt the user to input a list of integers and a value `k`. The program should then find and print:
+Question
 
-1 if the k-th largest and k-th smallest elements are the same and are at the middle of the sorted list.
- -1 if the k-th largest and k-th smallest elements are the same but are not in the middle of the sorted list.
-0 if the k-th largest and k-th smallest elements are different.
+Write a Python program that takes a matrix of size r x c as input, where r is the number of rows and c is the number of columns. The program should check if the matrix is binary (i.e., all elements are either 0 or 1) and if it is symmetric (i.e., the matrix is equal to its transpose).
+
+The program should output:
+
+11 if the matrix is both binary and symmetric,
+10 if the matrix is binary but not symmetric,
+01 if the matrix is not binary but symmetric,
+00 if the matrix is neither binary nor symmetric.
 Input Format:
-The first line of input consists of a space-separated list of integers.
-The second line of input consists of a single integer k.
 
+The first line contains an integer r representing the number of rows.
+The second line contains an integer c representing the number of columns.
+The next r lines each contain c space-separated integers representing the elements of the matrix.
 Output Format:
-The output consists of a single integer 1, -1, or 0 based on the conditions specified.
 
+The output consists of a single string (either 11, 10, 01, or 00) as per the conditions mentioned above.
 Example:
 
 Input:
-3 8 7 5 9 1
-2
+3
+3
+1 0 1
+0 1 0
+1 0 1
 
 Output:
-0
+11
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def find_kth_elements(numbers, k):
-  sorted_numbers = sorted(numbers)
-  n = len(sorted_numbers)
-  kth_largest = sorted_numbers[-k]
-  kth_smallest = sorted_numbers[k - 1]
-  if kth_largest == kth_smallest:
-    return 1 if k == n // 2 + 1 else -1
-  else:
-    return 0
+def is_binary(matrix):
+    for row in matrix:
+        for element in row:
+            if element not in [0, 1]:
+                return 0==1
+    return True
 
-numbers_str = input()
-numbers = list(map(int, numbers_str.split()))
-k = int(input())
-result = find_kth_elements(numbers, k)
-print(result,end="")
+def is_symmetric(matrix):
+    r = len(matrix)
+    c = len(matrix[0])
+    if r != c:
+        return False
+    for i in range(r):
+        for j in range(c):
+            if matrix[i][j] != matrix[j][i]:
+                return False
+    return True
+
+r = int(input())
+c = int(input())
+
+matrix = []
+for _ in range(r):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+binary = is_binary(matrix)
+symmetric = is_symmetric(matrix)
+
+if binary and symmetric:
+    print("11",end="")
+elif binary and not symmetric:
+    print("10",end="")
+elif not binary and symmetric:
+    print("01",end="")
+else:
+    print("00",end="")
+
 
 
 
