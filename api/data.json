@@ -1,9 +1,9 @@
 [
   {
-    "Week-6: Programing Assignment-01": "largest = arr[0];\nfor(i = 1; i < n; ++i)\n    {\n           if(largest < arr[i])\n           {largest = arr[i];}\n    }\n    printf(\"Largest element = %d\", largest);\n\n    return 0;\n}",
-    "Week-6: Programing Assignment-02": "int jkl, temp;  \njkl = i - 1;   // last Element of the array\ni = 0;       // first element of the array\n \n   while (i < jkl) {\n      temp = arr[i];\n      arr[i] = arr[jkl];\n      arr[jkl] = temp;\n      i++;             \n      jkl--;        \n   }\n",
-    "Week-6: Programing Assignment-03": "\nint jp;\nfor (i=0;i < n1;++i)\narray_new[i]=arr1[i];\n\nsize =  n1 + n2;\n\nfor(i=0, jp=n1; jp < size && i < n2; ++i, ++jp)\narray_new[jp] = arr2[i];\n",
-    "Week-6: Programing Assignment-04": " int j, ki;\n   for (i = 0; i < size; i++) {\n      for (j = i + 1; j < size;) {\n         if (array[j] == array[i]) {\n            for (ki = j; ki < size; ki++) {\n               array[ki] = array[ki + 1];\n            }\n            size--;\n         } else\n            j++;\n      }\n   }\n"
+    "Week-8: Programing Assignment-01": "int HCF(int x1, int y)\n{\n   while (x1 != y)\n   {\n      if (x1 >  y)\n       {\n           return HCF(x1 - y, y);\n       }\n       else\n       {\n       return HCF(x1, y - x1);\n       }\n    }\n    return x1;\n}",
+    "Week-8: Programing Assignment-02": "long power(int num, int pow1)\n{\nif (pow1)\n{\nreturn (num * power(num, pow1 - 1));\n}\nreturn 1;\n}",
+    "Week-8: Programing Assignment-03": "int binary_conversion(int number)\n  { \n     if (number == 0)\n        {\n            return 0;\n        }\n        else\n        {\n            return (number % 2) + 10 * binary_conversion(number / 2);\n        }\n  }",
+    "Week-8: Programing Assignment-04": "   int size;\n\tsize = strlen(str1);\n        reverse(str1, 0, size - 1);\n        printf(\"The string after reversing is: %s\", str1);  \n        return 0;\n    }\n\n    void reverse(char str1[], int index0, int size)\n    {\n        char temp;\n        temp = str1[index0];\n        str1[index0] = str1[size - index0];\n        str1[size - index0] = temp;\n        if (index0 == size / 2)\n        {\n            return;\n        }\n        reverse(str1, index0 + 1, size);\n    }"
   },
   {
     "Week-7: Programing Assignment-01": "int mp = 0;\n   while (ch[mp] != '\\0') {\n      if (ch[mp]  >=  'A' && ch[mp] <= 'Z')\n         upper++;\n      if (ch[mp]  >=  'a' && ch[mp] <= 'z')\n         lower++;\n      mp++;\n   } ",
