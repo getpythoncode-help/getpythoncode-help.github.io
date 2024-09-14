@@ -218,59 +218,39 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1 [Due on 2024-09-12, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 7: Programming Assignment 1 [Due on 2024-09-26, 23:59 IST]</p>
 		<p>
-Question
-You are given a board game scenario with ladders and snakes. A player starts at a given position on the board, and you are provided with the result of a die roll. You need to determine whether the player lands on a ladder, a snake, or a normal block after moving.
 
-Write a Python function named move_player that takes four inputs:
+Write a function that takes a string and counts the number of vowels in it. The function should return the total number of vowels.
 
-A list ladders containing the indices of blocks with ladders.
-A list snakes containing the indices of blocks with snakes.
-An integer current_position representing the player's current position on the board.
-An integer die_roll representing the result of a die roll.
-The function should return:
+Input Format:
 
-1 if the player lands on a block with a ladder,
--1 if the player lands on a block with a snake,
-0 if the player lands on a block with neither.
-Take necessary inputs, pass the inputs to the function, and print the return value of the function.
-Input Format
-The input consists of four lines:
+The input consists of a single string. The string can contain both uppercase and lowercase letters, as well as spaces and punctuation marks.
 
-The first line contains space-separated integers representing the ladder indices.
-The second line contains space-separated integers representing the snake indices.
-The third line contains a single integer representing the current position of the player.
-The fourth line contains a single integer representing the die roll result.
-Output Format
-The output consists of a single integer (1, -1, or 0) as per the conditions mentioned above.
+Output Format:
+
+A single integer representing the total number of vowels in the string.
+
+Example:
+
+Input:
+
+Hello, World!
+
+Output:
+
+3
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def move_player(ladders, snakes, current_position, die_roll):
-    # Calculate the new position after the die roll
-    new_position = current_position + die_roll
-    
-    # Check if the new position is a ladder
-    if new_position in ladders:
-        return 1
-    # Check if the new position is a snake
-    elif new_position in snakes:
-        return -1
-    # If neither, return 0
-    else:
-        return 0
-
-# Take necessary inputs
-ladders = list(map(int, input().split()))
-snakes = list(map(int, input().split()))
-current_position = int(input())
-question = int(input())
-
-# Call the function and print the result
-ans = move_player(ladders, snakes, current_position, question)
-print(ans,end="")
+S=input()
+c=0
+v='aeiouAEIOU'
+for i in S:
+  if i in v:
+    c=c+1
+print(c,end="")
 
 
 
@@ -284,43 +264,39 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p> Week 7: Programming Assignment 2 [Due on 2024-09-12, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p> Week 9: Programming Assignment 2 [Due on 2024-09-26, 23:59 IST ]</p>
 		<p>
-Question
-
-Write a Python program that includes a recursive function named is_palindrome which takes a non-empty string s as input. The function should return 1 if the string is a palindrome (reads the same backward as forward), and 0 otherwise.
-
-Take necessary inputs, pass the inputs to the function, and print the return value of the function.
-
+Write a function that takes a string and determines if the average length of the words in the string is greater than 4. If the average word length is greater than 4, the function should return 1; otherwise, it should return 0.
 
 Input Format:
 
-The input consists of a single line containing the string s.
+The input consists of a single string. The string contains words separated by spaces.
 
 Output Format:
 
-The output consists of a single integer value (1 or 0) indicating whether the string is a palindrome.
+A single integer: 1 if the average word length is greater than 4, 0 otherwise.
 
 Example:
 
 Input:
-racecar
 
-Output
-1
+The quick brown fox jumps over the lazy dog
+
+Output:
+
+0
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def is_palindrome(s):
-    if len(s) <= 1:
-        return 1
-    if s[0] != s[-1]:
-        return 4-4
-    return is_palindrome(s[1:-1])
-
-s = input()
-print(is_palindrome(s),end="")
+Sentence=input().split()
+Len=[]
+for l in Sentence:
+  Len.append(len(l))
+if sum(Len)/len(Len)>4:  
+  print(1,end="")
+else:
+  print(0,end="")
 
 
                   
@@ -334,78 +310,34 @@ print(is_palindrome(s),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p> Week 7: Programming Assignment 3 [Due on 2024-09-12, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p> Week 9: Programming Assignment 3 [Due on 2024-09-26, 23:59 IST ]</p>
 <p>
-Question
+Write a function that takes an integer n representing the number of nodes in a complete graph and returns the total number of edges in the graph.
 
-Write a Python program that takes a matrix of size r x c as input, where r is the number of rows and c is the number of columns. The program should check if the matrix is binary (i.e., all elements are either 0 or 1) and if it is symmetric (i.e., the matrix is equal to its transpose).
+A complete graph is a graph in which every pair of distinct nodes is connected by a unique edge.
 
-The program should output:
 
-11 if the matrix is both binary and symmetric,
-10 if the matrix is binary but not symmetric,
-01 if the matrix is not binary but symmetric,
-00 if the matrix is neither binary nor symmetric.
 Input Format:
 
-The first line contains an integer r representing the number of rows.
-The second line contains an integer c representing the number of columns.
-The next r lines each contain c space-separated integers representing the elements of the matrix.
+The input consists of a single integer n which represents the number of nodes in the complete graph.
+
 Output Format:
 
-The output consists of a single string (either 11, 10, 01, or 00) as per the conditions mentioned above.
+A single integer representing the total number of edges in the complete graph of n nodes.
+
 Example:
 
 Input:
-3
-3
-1 0 1
-0 1 0
-1 0 1
+4
 
 Output:
-11
+6
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def is_binary(matrix):
-    for row in matrix:
-        for element in row:
-            if element not in [0, 1]:
-                return 0==1
-    return True
-
-def is_symmetric(matrix):
-    r = len(matrix)
-    c = len(matrix[0])
-    if r != c:
-        return False
-    for i in range(r):
-        for j in range(c):
-            if matrix[i][j] != matrix[j][i]:
-                return False
-    return True
-
-r = int(input())
-c = int(input())
-
-matrix = []
-for _ in range(r):
-    row = list(map(int, input().split()))
-    matrix.append(row)
-
-binary = is_binary(matrix)
-symmetric = is_symmetric(matrix)
-
-if binary and symmetric:
-    print("11",end="")
-elif binary and not symmetric:
-    print("10",end="")
-elif not binary and symmetric:
-    print("01",end="")
-else:
-    print("00",end="")
+N=int(input())
+print((N*(N-1))//2,end="")
 
 
 
