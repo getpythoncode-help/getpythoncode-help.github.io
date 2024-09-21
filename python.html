@@ -374,40 +374,53 @@ print((N*(N-1))//2,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1   Due on 2024-09-19, 23:59 IST</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 1   Due on 2024-10-03, 23:59 IST</p>
 <p>
 Question:
-Write a function that takes an integer n followed by n lines of space-separated integers, where each line represents a tuple. The function should return the sum of the first elements of all tuples.
+
+Write a program that accepts the string `para` and a positive integer `n` as input. The program should print `1` if there is at least one word in `para` that occurs exactly `n` times, and `0` otherwise.
 
 Input Format:
 
-The first line contains a single integer n, which represents the number of tuples.
-The next n lines each contain two space-separated integers representing the values of the tuple.
+- The input consists of two lines.
+
+  - The first line contains the string `para`, which is a sequence of space-separated words.
+
+  - The second line contains a positive integer `n`.
+
 Output Format:
 
-A single integer representing the sum of the first elements of all tuples.
+- A single integer, either `1` or `0`.
+
+  - Print `1` if there is at least one word that occurs exactly `n` times.
+
+  - Print `0` otherwise.
+
 Example:
 
 Input:
 
-3
-3 4
-1 2
-5 6
+apple orange apple banana orange banana banana
+
+2
 
 Output:
-9
+
+1
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
+para=input().split()
 n=int(input())
-L=[]
-for q in range(n):
-  l=[int(i) for i in input().split()]
-  L.append(l)
-A=[r[0] for r in L] 
-print(sum(A),end="")
+S=list(set(para))
+d={}
+for i in S:
+  d[i]=para.count(i)
+if n in d.values():
+  print(1,end="")
+else:
+  print(0,end="")
   
 
       
@@ -421,45 +434,31 @@ print(sum(A),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 2  Due on 2024-09-19, 23:59 IST </p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 2  Due on 2024-10-03, 23:59 IST </p>
 		<p>
 Question:
-
-Write a function that checks if two given strings are anagrams of each other considering only alphabetic characters and ignoring case. Additionally, the function should handle cases where the strings may contain spaces or punctuation, and should return the result as 1 or 0.
+Write a program that accepts a string of space-separated float numbers. The program should print the number of long tail numbers, where a float number is said to have a long tail if the number of digits after the decimal point is greater than the number of digits before the decimal point.
 
 Input Format:
-
-The first line contains a string str1 which may include alphabetic characters, spaces, and punctuation.
-The second line contains a string str2 which may also include alphabetic characters, spaces, and punctuation.
+The input consists of a single line containing space-separated float numbers.
 Output Format:
-
-Print 1 if the two strings are anagrams of each other, considering only alphabetic characters and ignoring case, otherwise print 0.
+A single integer representing the number of long tail numbers.
 Example:
-
 Input:
-
-Astronomer
-Moon starer
-
+12.3214 123.56 3.14159 100.1 45.6789
 Output:
-1
+3
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def check_anagram(str1,str2):
-  apha='qwertyuiopasdfghjklzxcvbnm'
-  A=[i.lower() for i in str1 if i in apha or i.lower() in apha]
-  B=[i.lower() for i in str2 if i in apha or i.lower() in apha]
-  if sorted(A)==sorted(B):
-    return 1
-  else:
-    return 0
-  
-str1=input()
-str2=input()
-print(check_anagram(str1,str2),end="")
-  
+S=[i for i in input().split()]
+ans=0
+for i in S:
+  k=i.split('.')
+  if len(k[1])>len(k[0]):
+    ans+=1
+print(ans, end="") 
 
                   
                 </textarea><br><br>
@@ -472,38 +471,38 @@ print(check_anagram(str1,str2),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 3  Due on 2024-09-19, 23:59 IST</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 3  Due on 2024-10-03, 23:59 IST</p>
 <p>
+
 Question:
+Write a program that accepts a space-separated string of integers representing a sequence of even length. The program should determine whether the sequence is left-heavy, right-heavy, or balanced. It should print:
 
-Write a function that takes a list of integers and an integer k. The function should multiply each integer in the list by k and then return the maximum value from the resulting list.
-
+-1 if the sequence is left-heavy (left half sum > right half sum).
+1 if the sequence is right-heavy (right half sum > left half sum).
+0 if the sequence is balanced (both sums are equal).
 Input Format:
-
-The first line contains space-separated integers representing the list of numbers.
-The second line contains a single integer k, the multiplier.
+The input consists of a single line containing space-separated integers.
 Output Format:
-
-Print a single integer representing the maximum value after multiplying each number by k.
+A single integer: -1 for left-heavy, 1 for right-heavy, or 0 for balanced.
 Example:
-
 Input:
-1 5 3 9
-2
-
-
+1 2 3 4 5 6
 Output:
-18
-
+1
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def max_multiply(LIST,k):
-  return(max(LIST)*k)
-
-LIST=[ int(i) for i in input().split()]
-k=int(input())
-print(max_multiply(LIST,k),end="")
+n=[int(i) for i in input().split()]
+mid=len(n)/2
+left=sum(n[:len(n)//2])
+right=sum(n[len(n)//2:])
+#print(f"left is {left} and right is {right}")
+if left>right:
+  print(-1,end="")
+elif right>left:
+  print(1,end="")
+else:
+  print(0,end="")
 
 
 
