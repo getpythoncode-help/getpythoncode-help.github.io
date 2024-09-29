@@ -218,40 +218,38 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1 [Due on 2024-09-26, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1 [Due on 2024-10-10, 23:59 IST]</p>
 		<p>
+Question:
 
-Write a function that takes a string and counts the number of vowels in it. The function should return the total number of vowels.
+Write a program that accepts a date in MM/DD/YYYY format as input and prints the date in DD-MM-YY format. The program should retain only the last two digits of the year, replace the forward slash (/) with a dash (-), and swap the order of the month and date.
 
 Input Format:
 
-The input consists of a single string. The string can contain both uppercase and lowercase letters, as well as spaces and punctuation marks.
+The input consists of a single line.
 
+The line contains a date string in MM/DD/YYYY format.
 Output Format:
 
-A single integer representing the total number of vowels in the string.
+A single string in DD-MM-YY format.
 
+Print the date with the day and month swapped, the year truncated to the last two digits, and all separators replaced by dashes (-).
 Example:
 
 Input:
 
-Hello, World!
+12/25/2024
 
 Output:
 
-3
-		</p>
+25-12-24
+	</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-S=input()
-c=0
-v='aeiouAEIOU'
-for i in S:
-  if i in v:
-    c=c+1
-print(c,end="")
 
+date=input().split('/')
+print(date[1]+'-'+date[0]+'-'+date[2][2]+date[2][3],end="")
 
 
                 </textarea><br><br>
@@ -264,39 +262,41 @@ print(c,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p> Week 9: Programming Assignment 2 [Due on 2024-09-26, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p> Week 11: Programming Assignment 2 [Due on 2024-10-10, 23:59 IST ]</p>
 		<p>
-Write a function that takes a string and determines if the average length of the words in the string is greater than 4. If the average word length is greater than 4, the function should return 1; otherwise, it should return 0.
+Question:
+Write a program that accepts a sequence of numbers separated by colons as input, and prints the common factors of all the numbers in ascending order.
 
 Input Format:
+The input consists of a single line.
 
-The input consists of a single string. The string contains words separated by spaces.
+The line contains a sequence of integers separated by colons.
 
 Output Format:
-
-A single integer: 1 if the average word length is greater than 4, 0 otherwise.
+Print the common factors of all the numbers, separated by spaces, in ascending order.
 
 Example:
-
 Input:
 
-The quick brown fox jumps over the lazy dog
+12:18:24
 
 Output:
+1 2 3 6
 
-0
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-Sentence=input().split()
-Len=[]
-for l in Sentence:
-  Len.append(len(l))
-if sum(Len)/len(Len)>4:  
-  print(1,end="")
-else:
-  print(0,end="")
+
+n=[int(i) for i in input().split(':')]
+def print_factors(x):
+    f=[]
+    for i in range(1, x + 1):
+      if x % i == 0:
+        f.append(i)
+    return(set(f))    
+fact=sorted(list(print_factors(n[0])&print_factors(n[1])&print_factors(n[2])))
+print(*fact,end="")
 
 
                   
@@ -310,36 +310,47 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p> Week 9: Programming Assignment 3 [Due on 2024-09-26, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p> Week 11: Programming Assignment 3 [Due on 2024-10-10, 23:59 IST ]</p>
 <p>
-Write a function that takes an integer n representing the number of nodes in a complete graph and returns the total number of edges in the graph.
+Question:
+You are given a specific mapping between random lowercase alphabet letters and digits. Your task is to decode a date provided in the format `DD-MM-YYYY`, where each digit is represented by a corresponding letter, and convert it back to its standard decimal format.
 
-A complete graph is a graph in which every pair of distinct nodes is connected by a unique edge.
-
+The mapping is as follows:
+a → 0
+k → 1
+x → 2
+y → 3
+s → 4
+m → 5
+b → 6
+d → 7
+p → 8
+z → 9
 
 Input Format:
-
-The input consists of a single integer n which represents the number of nodes in the complete graph.
+- A single line containing a date in the format `DD-MM-YYYY`, where each digit is encoded using the given letter-to-number mapping.
 
 Output Format:
-
-A single integer representing the total number of edges in the complete graph of n nodes.
+- A single line containing the decoded date in standard `DD-MM-YYYY` format.
 
 Example:
-
 Input:
-4
-
+mk-ya-kzma
 Output:
-6
+15-03-1750
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-N=int(input())
-print((N*(N-1))//2,end="")
 
 
+mapping = {'a': '0', 'k': '1', 'x': '2', 
+           'y': '3', 's': '4', 'm': '5',
+           'b': '6', 'd': '7', 'p': '8', 
+           'z': '9'}
+encoded_date = input().strip()
+decoded_dates = ''.join(mapping[c] if c in mapping else c for c in encoded_date)
+print(decoded_dates,end="")
 
 
        
