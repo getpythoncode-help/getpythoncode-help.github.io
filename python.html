@@ -385,53 +385,43 @@ print(decoded_dates,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1   Due on 2024-10-03, 23:59 IST</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1   Due on 2024-10-17, 23:59 IST</p>
 <p>
 Question:
+Write a recursive function named collatz that accepts a positive integer n as an argument, where 1 < n ≤ 32,000, and returns the number of times the Collatz function has to be applied repeatedly in order to first reach 1.
 
-Write a program that accepts the string `para` and a positive integer `n` as input. The program should print `1` if there is at least one word in `para` that occurs exactly `n` times, and `0` otherwise.
+The Collatz function is defined as follows:
+
+If n is even, divide n by 2.
+If n is odd, multiply n by 3 and add 1.
+The function should continue applying this process until n becomes 1, and return the number of steps taken.
 
 Input Format:
-
-- The input consists of two lines.
-
-  - The first line contains the string `para`, which is a sequence of space-separated words.
-
-  - The second line contains a positive integer `n`.
+A single integer n where 1 < n ≤ 32,000.
 
 Output Format:
-
-- A single integer, either `1` or `0`.
-
-  - Print `1` if there is at least one word that occurs exactly `n` times.
-
-  - Print `0` otherwise.
+A single integer representing the number of steps required for n to reach 1.
 
 Example:
-
 Input:
-
-apple orange apple banana orange banana banana
-
-2
+12
 
 Output:
-
-1
+9
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-para=input().split()
+def collatz(n):
+    if n == 1:
+        return 0
+    if n % 2 == 0:
+        return 1 + collatz(n // 2)
+    else:
+        return 1 + collatz(3 * n + 1)
 n=int(input())
-S=list(set(para))
-d={}
-for i in S:
-  d[i]=para.count(i)
-if n in d.values():
-  print(1,end="")
-else:
-  print(0,end="")
+print(collatz(n),end="")
+
   
 
       
@@ -445,31 +435,46 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 2  Due on 2024-10-03, 23:59 IST </p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 2  Due on 2024-10-17, 23:59 IST </p>
 		<p>
 Question:
-Write a program that accepts a string of space-separated float numbers. The program should print the number of long tail numbers, where a float number is said to have a long tail if the number of digits after the decimal point is greater than the number of digits before the decimal point.
+There are `n` people who start in a happy state. The following rules determine how people move between states after each iteration:
+- A person in the happy state has a 70% chance of moving to a sad state, and a 30% chance of staying in the happy state.
+- A person in the sad state has a 50% chance of moving to a happy state, and a 50% chance of staying in the sad state.
 
+Write a program that computes the number of people in the happy and sad states after 3 iterations.
 Input Format:
-The input consists of a single line containing space-separated float numbers.
+A single integer `n` representing the number of people who start in the happy state.
 Output Format:
-A single integer representing the number of long tail numbers.
+Two integers separated by a space, where the first integer is the number of people in the happy state and the second is the number of people in the sad state after the 3rd iteration.
 Example:
 Input:
-12.3214 123.56 3.14159 100.1 45.6789
+1000
+
 Output:
-3
+412 588
+
+Explanation:
+State 0: 1000 0
+State 1: 300 700
+State 2: 440 560
+State 3: 412 588
+
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-S=[i for i in input().split()]
-ans=0
-for i in S:
-  k=i.split('.')
-  if len(k[1])>len(k[0]):
-    ans+=1
-print(ans, end="") 
+n=int(input())
+def happy_sad_check(n):
+    happy = n
+    sad = 0
+    for _ in range(3):
+        new_happy = 0.3 * happy + 0.5 * sad
+        new_sad = 0.7 * happy + 0.5 * sad
+        happy, sad = new_happy, new_sad
+    print(int(happy), int(sad),)
+happy_sad_check(n)   
+
 
                   
                 </textarea><br><br>
@@ -482,38 +487,43 @@ print(ans, end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 3  Due on 2024-10-03, 23:59 IST</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 3  Due on 2024-10-17, 23:59 IST</p>
 <p>
+Problem Statement:
+Write a program that accepts a positive integer n and prints the sum of all prime numbers in the range [1, n], including both endpoints. If there are no prime numbers in the given range, the program should print 0.
 
-Question:
-Write a program that accepts a space-separated string of integers representing a sequence of even length. The program should determine whether the sequence is left-heavy, right-heavy, or balanced. It should print:
-
--1 if the sequence is left-heavy (left half sum > right half sum).
-1 if the sequence is right-heavy (right half sum > left half sum).
-0 if the sequence is balanced (both sums are equal).
 Input Format:
-The input consists of a single line containing space-separated integers.
+A single integer n, representing the upper limit of the range.
 Output Format:
-A single integer: -1 for left-heavy, 1 for right-heavy, or 0 for balanced.
+A single integer representing the sum of all prime numbers in the range [1, n]. If no prime numbers are found, output 0.
 Example:
 Input:
-1 2 3 4 5 6
+10
 Output:
-1
+17
+Explanation:
+The prime numbers between 1 and 10 are 2, 3, 5, and 7. Their sum is 2 + 3 + 5 + 7 = 17.
+
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-n=[int(i) for i in input().split()]
-mid=len(n)/2
-left=sum(n[:len(n)//2])
-right=sum(n[len(n)//2:])
-#print(f"left is {left} and right is {right}")
-if left>right:
-  print(-1,end="")
-elif right>left:
-  print(1,end="")
-else:
-  print(0,end="")
+def is_prime(x):
+    if x < 2:
+        return False
+    for i in range(2, int(x ** 0.5) + 1):
+        if x % i == 0:
+            return False
+    return True
+
+def get_sum_primes(n):
+    total = 0
+    for i in range(1, n + 1):
+        if is_prime(i):
+            total += i
+    return(total)
+  
+n=int(input()) 
+print(get_sum_primes(n),end="")
 
 
 
