@@ -218,38 +218,30 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1 [Due on 2024-10-10, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 1 [Due on 2025-02-06, 23:59 IST]</p>
 		<p>
-Question:
+Create a Python program that calculates the sum of the squares of the first n natural numbers. The program should prompt the user to input a number n, then compute and print the sum of squares from 1 to n.
 
-Write a program that accepts a date in MM/DD/YYYY format as input and prints the date in DD-MM-YY format. The program should retain only the last two digits of the year, replace the forward slash (/) with a dash (-), and swap the order of the month and date.
+Input Format: The input consists of a single integer, n.
 
-Input Format:
+Output Format: The output consists of the sum of squares of the first n natural numbers.
 
-The input consists of a single line.
-
-The line contains a date string in MM/DD/YYYY format.
-Output Format:
-
-A single string in DD-MM-YY format.
-
-Print the date with the day and month swapped, the year truncated to the last two digits, and all separators replaced by dashes (-).
 Example:
-
 Input:
-
-12/25/2024
+5
 
 Output:
-
-25-12-24
+55
 	</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-date=input().split('/')
-print(date[1]+'-'+date[0]+'-'+date[2][2]+date[2][3],end="")
+n=int(input())
+ans=0
+for i in range(1,n+1):
+  ans+=i*i
+print(ans,end="")
 
 
                 </textarea><br><br>
@@ -262,41 +254,33 @@ print(date[1]+'-'+date[0]+'-'+date[2][2]+date[2][3],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p> Week 11: Programming Assignment 2 [Due on 2024-10-10, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 2 [Due on 2025-02-06, 23:59 IST ]</p>
 		<p>
-Question:
-Write a program that accepts a sequence of numbers separated by colons as input, and prints the common factors of all the numbers in ascending order.
+Write a Python program to calculate the arithmetic mean of n numbers, rounding the result to the nearest integer. The program should first take a single line of input containing n space-separated integer numbers, and then output the rounded mean of these numbers.
 
 Input Format:
-The input consists of a single line.
-
-The line contains a sequence of integers separated by colons.
+The input consists of a single line containing an integer n followed by n space-separated numbers.
 
 Output Format:
-Print the common factors of all the numbers, separated by spaces, in ascending order.
+The output is the arithmetic mean of the input numbers, rounded to the nearest integer.
 
 Example:
 Input:
-
-12:18:24
+5 10 15 20
 
 Output:
-1 2 3 6
+13
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-n=[int(i) for i in input().split(':')]
-def print_factors(x):
-    f=[]
-    for i in range(1, x + 1):
-      if x % i == 0:
-        f.append(i)
-    return(set(f))    
-fact=sorted(list(print_factors(n[0])&print_factors(n[1])&print_factors(n[2])))
-print(*fact,end="")
+n=[int(i) for i in input().split()]
+sum=0
+for x in n:
+  sum+=x
+print(round(sum/len(n)),end="") 
 
 
                   
@@ -310,47 +294,35 @@ print(*fact,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p> Week 11: Programming Assignment 3 [Due on 2024-10-10, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 3 [Due on 2025-02-06, 23:59 IST ]</p>
 <p>
-Question:
-You are given a specific mapping between random lowercase alphabet letters and digits. Your task is to decode a date provided in the format `DD-MM-YYYY`, where each digit is represented by a corresponding letter, and convert it back to its standard decimal format.
+Develop a Python program that determines the mode of a list of n numbers, assume only one mode exists in the provided test cases. The program should ask for a single line of input containing n, then n space-separated numbers, and output the mode.
 
-The mapping is as follows:
-a → 0
-k → 1
-x → 2
-y → 3
-s → 4
-m → 5
-b → 6
-d → 7
-p → 8
-z → 9
+
 
 Input Format:
-- A single line containing a date in the format `DD-MM-YYYY`, where each digit is encoded using the given letter-to-number mapping.
+The first line contains an integer n, followed by n space-separated numbers.
 
 Output Format:
-- A single line containing the decoded date in standard `DD-MM-YYYY` format.
+The output is the mode of the list.
 
 Example:
 Input:
-mk-ya-kzma
+5 1 2 2 3 4
+
 Output:
-15-03-1750
+2
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
-mapping = {'a': '0', 'k': '1', 'x': '2', 
-           'y': '3', 's': '4', 'm': '5',
-           'b': '6', 'd': '7', 'p': '8', 
-           'z': '9'}
-encoded_date = input().strip()
-decoded_dates = ''.join(mapping[c] if c in mapping else c for c in encoded_date)
-print(decoded_dates,end="")
+n=[int(i) for i in input().split()]
+dict={}
+for i in set(n):
+  dict[n.count(i)]=i 
+print(dict[max(dict.keys())],end="")
 
 
        
