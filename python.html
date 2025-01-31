@@ -357,42 +357,30 @@ print(dict[max(dict.keys())],end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1   Due on 2024-10-17, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 1   Due on 2025-02-13, 23:59 IST</p>
 <p>
-Question:
-Write a recursive function named collatz that accepts a positive integer n as an argument, where 1 < n ≤ 32,000, and returns the number of times the Collatz function has to be applied repeatedly in order to first reach 1.
-
-The Collatz function is defined as follows:
-
-If n is even, divide n by 2.
-If n is odd, multiply n by 3 and add 1.
-The function should continue applying this process until n becomes 1, and return the number of steps taken.
+Create a Python program that finds the second smallest number in a list of positive integers (including zero). The program should prompt the user to input a list of numbers, then compute and print the second smallest number in that list.
 
 Input Format:
-A single integer n where 1 < n ≤ 32,000.
+The input consists of a single list of numbers, separated by spaces.
+Hint: Use .split() function to convert input to list.
 
 Output Format:
-A single integer representing the number of steps required for n to reach 1.
+The output consists of the second smallest number in the input list.
 
 Example:
+
 Input:
-12
+3 1 4 1 5 9 2 6 5 3 5
 
 Output:
-9
+2
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def collatz(n):
-    if n == 1:
-        return 0
-    if n % 2 == 0:
-        return 1 + collatz(n // 2)
-    else:
-        return 1 + collatz(3 * n + 1)
-n=int(input())
-print(collatz(n),end="")
+number=[int(i) for i in input().split()]
+print(sorted(list(set(number)))[1],end="")
 
   
 
@@ -407,45 +395,48 @@ print(collatz(n),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 2  Due on 2024-10-17, 23:59 IST </p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 2  Due on 2025-02-13, 23:59 IST </p>
 		<p>
-Question:
-There are `n` people who start in a happy state. The following rules determine how people move between states after each iteration:
-- A person in the happy state has a 70% chance of moving to a sad state, and a 30% chance of staying in the happy state.
-- A person in the sad state has a 50% chance of moving to a happy state, and a 50% chance of staying in the sad state.
+Create a Python program that removes even duplicate positive integer numbers(includes zero) from a list and prints the unique numbers in the order they first appeared.
+The program should prompt the user to input a list of numbers, then process the list to remove duplicates and print the resulting list of unique numbers.
 
-Write a program that computes the number of people in the happy and sad states after 3 iterations.
+
 Input Format:
-A single integer `n` representing the number of people who start in the happy state.
+The input consists of a single list of numbers, separated by spaces.
+
 Output Format:
-Two integers separated by a space, where the first integer is the number of people in the happy state and the second is the number of people in the sad state after the 3rd iteration.
+The output consists of the unique numbers, separated by spaces, from the input list, in the order they first appeared.
+
 Example:
 Input:
-1000
-
+3 1 4 1 5 9 2 6 5 3 5
 Output:
-412 588
-
-Explanation:
-State 0: 1000 0
-State 1: 300 700
-State 2: 440 560
-State 3: 412 588
+3 1 4 1 5 9 2 6 5 3 5
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-n=int(input())
-def happy_sad_check(n):
-    happy = n
-    sad = 0
-    for _ in range(3):
-        new_happy = 0.3 * happy + 0.5 * sad
-        new_sad = 0.7 * happy + 0.5 * sad
-        happy, sad = new_happy, new_sad
-    print(int(happy), int(sad),)
-happy_sad_check(n)   
+def remove_even_duplicates(nums):
+    seen = set()
+    result = []
+    
+    for num in nums:
+        if num % 2 == 0 and num in seen:
+            continue 
+        seen.add(num)
+        result.append(num)
+    
+    return result
+
+
+input_list =[int(i) for i in input().split()]
+
+
+output_list = remove_even_duplicates(input_list)
+
+
+print(" ".join(map(str, output_list)),end="") 
 
 
                   
@@ -459,43 +450,40 @@ happy_sad_check(n)
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 3  Due on 2024-10-17, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 3  Due on 2025-02-13, 23:59 IST</p>
 <p>
-Problem Statement:
-Write a program that accepts a positive integer n and prints the sum of all prime numbers in the range [1, n], including both endpoints. If there are no prime numbers in the given range, the program should print 0.
+Create a Python program that takes a list of integers, reverses the list, adds the values at even indices from both the original and reversed lists, and creates a new list with the result. The new list should be printed in the end.
 
 Input Format:
-A single integer n, representing the upper limit of the range.
+The input consists of a single list of integers, separated by spaces.
+
 Output Format:
-A single integer representing the sum of all prime numbers in the range [1, n]. If no prime numbers are found, output 0.
+The output consists of the new list of values, separated by spaces, obtained by adding values at even indices from both the original and reversed lists.
+
+
 Example:
 Input:
-10
+1 2 3 4 5
+
 Output:
-17
-Explanation:
-The prime numbers between 1 and 10 are 2, 3, 5, and 7. Their sum is 2 + 3 + 5 + 7 = 17.
+6 2 6 4 6
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def is_prime(x):
-    if x < 2:
-        return False
-    for i in range(2, int(x ** 0.5) + 1):
-        if x % i == 0:
-            return False
-    return True
+def process_list(nums):
+    reversed_nums = nums[::-1]  
+    result = [nums[g] + reversed_nums[g] if g % 2 == 0 else nums[g] for g in range(len(nums))]
+    return result
 
-def get_sum_primes(n):
-    total = 0
-    for i in range(1, n + 1):
-        if is_prime(i):
-            total += i
-    return(total)
-  
-n=int(input()) 
-print(get_sum_primes(n),end="")
+
+input_list = [int(z) for z in input().split()]
+
+
+output_list = process_list(input_list)
+
+
+print(" ".join(map(str, output_list)),end="")
 
 
 
