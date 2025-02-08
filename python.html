@@ -218,30 +218,52 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p>Week 2: Programming Assignment 1 [Due on 2025-02-06, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 1 [Due on 2025-02-20, 23:59 IST]</p>
 		<p>
-Create a Python program that calculates the sum of the squares of the first n natural numbers. The program should prompt the user to input a number n, then compute and print the sum of squares from 1 to n.
+Create a Python program that checks whether a given square matrix is diagonal. A diagonal matrix is a square matrix (same number of rows and columns) where all the entries outside the main diagonal are zero. The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is diagonal and print 1 if it is, otherwise print 0.
 
-Input Format: The input consists of a single integer, n.
 
-Output Format: The output consists of the sum of squares of the first n natural numbers.
+Input Format:
+The first input is an integer r , the number of rows and columns in the matrix.
+The next r lines each contain r integers, representing the elements of each row of the matrix.
+
+
+Output Format:
+The output is 1 if a matrix is diagonal, otherwise 0.
+
 
 Example:
+
 Input:
-5
+
+2
+1 0
+0 1
 
 Output:
-55
+1
+
+
 	</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-n=int(input())
-ans=0
-for i in range(1,n+1):
-  ans+=i*i
-print(ans,end="")
+def is_diagonal_matrix(matrix, r):
+    for i in range(r):
+        for j in range(r):
+            if i != j and matrix[i][j] != 0:
+                return(0) 
+    return(1) 
+
+  
+r = int(input())  
+matrix = []
+for k in range(r):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+print(is_diagonal_matrix(matrix, r),end="")
 
 
                 </textarea><br><br>
@@ -254,33 +276,56 @@ print(ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 2 [Due on 2025-02-06, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 2 [Due on 2025-02-20, 23:59 IST ]</p>
 		<p>
-Write a Python program to calculate the arithmetic mean of n numbers, rounding the result to the nearest integer. The program should first take a single line of input containing n space-separated integer numbers, and then output the rounded mean of these numbers.
+Create a Python program that adds the transpose of a given matrix by a scalar. The program should prompt the user to input the dimensions of the matrix, the elements of the matrix, and the scalar value. The program should then compute the transpose of the matrix, add it by the scalar, and print the resulting matrix.
 
-Input Format:
-The input consists of a single line containing an integer n followed by n space-separated numbers.
+
+
+Input:
+The first input is an integer 𝑟 , the number of rows in the matrix.
+The second input is an integer 𝑐 , the number of columns in the matrix.
+The next 𝑟 lines each contain 𝑐 integers, representing the elements of the matrix.
+The final input is an integer 𝑠, representing the scalar value.
 
 Output Format:
-The output is the arithmetic mean of the input numbers, rounded to the nearest integer.
+The output consists of 𝑐 lines, each containing 𝑟 integers, representing the elements of the resulting matrix after adding the transpose of the original matrix by the scalar.
+
 
 Example:
+
 Input:
-5 10 15 20
+
+2
+3
+1 2 3
+4 5 6
+2
 
 Output:
-13
+
+3 6
+4 7
+5 8
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-n=[int(i) for i in input().split()]
-sum=0
-for x in n:
-  sum+=x
-print(round(sum/len(n)),end="") 
+def transpose_add_scalar(matrix, r, c, scalar):
+    ans_matrix = [[matrix[j][i] + scalar for j in range(r)] for i in range(c)]
+    return ans_matrix
+
+trows = int(input())
+tcols = int(input())
+tmatrix = [list(map(int, input().split())) for _ in range(trows)]
+scalar_value = int(input())
+
+ans_matrix = transpose_add_scalar(tmatrix, trows, tcols, scalar_value)
+
+for r in ans_matrix:
+    print(" ".join(map(str, r)))
 
 
                   
@@ -294,35 +339,53 @@ print(round(sum/len(n)),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 3 [Due on 2025-02-06, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 3 [Due on 2025-02-20, 23:59 IST ]</p>
 <p>
-Develop a Python program that determines the mode of a list of n numbers, assume only one mode exists in the provided test cases. The program should ask for a single line of input containing n, then n space-separated numbers, and output the mode.
-
+Create a Python program that checks whether a given square matrix is symmetric. A matrix is symmetric if its transpose is equal to the matrix itself. The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is symmetric and print 1 if it is, otherwise print 0.
 
 
 Input Format:
-The first line contains an integer n, followed by n space-separated numbers.
+The first input is an integer r , the number of rows and columns in the matrix.
+The next r lines each contain r integers, representing the elements of each row of the matrix.
+
 
 Output Format:
-The output is the mode of the list.
+The output is 1 if a matrix is symmetric, otherwise 0.
+
 
 Example:
+
 Input:
-5 1 2 2 3 4
+
+2
+1 2
+2 1
+
 
 Output:
-2
+1
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
-n=[int(i) for i in input().split()]
-dict={}
-for i in set(n):
-  dict[n.count(i)]=i 
-print(dict[max(dict.keys())],end="")
+def is_symmetric(CSK, MI):
+    for RCB in range(MI):
+        for KKR in range(MI):
+            if CSK[RCB][KKR] != CSK[KKR][RCB]:
+                return(0)
+    return(1)
+
+
+MI = int(input())
+CSK = []
+for _ in range(MI):
+    CSK.append(list(map(int, input().split())))
+
+
+print(is_symmetric(CSK, MI), end="")
+
 
 
        
