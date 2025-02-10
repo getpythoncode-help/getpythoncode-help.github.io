@@ -280,9 +280,8 @@ Here are some examples to show how flatten(l) should work.
 		    
 	    </div>
 	    <br>
-                <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">       
-																	
-  def rainaverage(l):
+                <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
+def rainaverage(l):
   raindata = dict()
   for (ci,r) in l:
     if ci in raindata.keys():
@@ -302,6 +301,7 @@ def flatten(l):
   for e in l:
     flatlist.extend(flatten(e))
   return(flatlist)
+																	
      
                 </textarea><br><br>
 	    
