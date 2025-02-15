@@ -249,7 +249,8 @@ Output:
  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
-        <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.</strong>
+        <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
+	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
@@ -282,6 +283,12 @@ print(is_diagonal_matrix(matrix, r),end="")
 
                 <a>The Joy of Computing using python week 4 programming answers</a>
                 <p> Week 4: Programming Assignment 2 [Due on 2025-02-20, 23:59 IST ]</p>
+		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Joy of Computing using Python week 4 Quiz correction : <br>
+        Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
+        <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
+	Check JOY week 4 Quiz Youtube Video for more details</strong>
+    </p>
 		<p>
 Create a Python program that adds the transpose of a given matrix by a scalar. The program should prompt the user to input the dimensions of the matrix, the elements of the matrix, and the scalar value. The program should then compute the transpose of the matrix, add it by the scalar, and print the resulting matrix.
 
@@ -371,6 +378,12 @@ Output:
 1
 
 </p>
+ <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Joy of Computing using Python week 4 Quiz correction : <br>
+        Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
+        <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
+	Check JOY week 4 Quiz Youtube Video for more details</strong>
+    </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
@@ -424,30 +437,62 @@ print(is_symmetric(CSK, MI), end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1   Due on 2025-02-13, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1   Due on 2025-02-27, 23:59 IST</p>
+		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+        Joy of Computing using Python week 4 Quiz correction : <br>
+        Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
+        <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
+	Check JOY week 4 Quiz Youtube Video for more details</strong>
+    </p>
 <p>
-Create a Python program that finds the second smallest number in a list of positive integers (including zero). The program should prompt the user to input a list of numbers, then compute and print the second smallest number in that list.
+The Mystery of Word Frequencies
 
-Input Format:
-The input consists of a single list of numbers, separated by spaces.
-Hint: Use .split() function to convert input to list.
+You are tasked with analyzing a mysterious message that was intercepted. The message seems to contain a series of repeated words, and the challenge is to count how many times each word appears. To solve this, you must write a Python program that takes a string of text and counts the frequency of each word.
 
-Output Format:
-The output consists of the second smallest number in the input list.
+Make sure your program is case-insensitive, as the secret message is a mix of upper and lower case letters.
 
-Example:
+After counting the occurrences of each word, display the results.
 
-Input:
-3 1 4 1 5 9 2 6 5 3 5
+
+Input Format:  A line of text
+
+Output format: For all the unique words in the sentence, word: followed by frequency.
+
+
+Example :
+
+Input :
+The quick brown fox jumped over the lazy dog. The quick fox jumped over the dog."
 
 Output:
-2
+
+the: 3
+
+quick: 2
+
+brown: 1
+
+fox: 2
+
+jumped: 2
+
+over: 2
+
+lazy: 1
+
+dog: 2
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-number=[int(i) for i in input().split()]
-print(sorted(list(set(number)))[1],end="")
+sentence=[i.lower() for i in input().split()]
+ans={}
+for i in sentence:
+  if i not in ans:
+    ans[i]=sentence.count(i)
+    
+for a in ans:
+  print(f"{a}: {ans[a]}")
 
   
 
@@ -462,48 +507,62 @@ print(sorted(list(set(number)))[1],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 2  Due on 2025-02-13, 23:59 IST </p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 2  Due on 2025-02-27, 23:59 IST </p>
 		<p>
-Create a Python program that removes even duplicate positive integer numbers(includes zero) from a list and prints the unique numbers in the order they first appeared.
-The program should prompt the user to input a list of numbers, then process the list to remove duplicates and print the resulting list of unique numbers.
+Merging Dictionaries
 
+You are required to write a Python function merge_dicts that takes two dictionaries as input and returns a new dictionary containing all the entries from both input dictionaries. The function should not modify the input dictionaries.
+
+The dictionaries will have strings as keys and numbers as values. In the case where the same key appears in both dictionaries, the corresponding value in the output dictionary should be the sum of the values from both dictionaries.
+
+
+You need to ensure the following:
+
+If a key exists in only one of the dictionaries, its value should remain the same in the result.
+
+If a key exists in both dictionaries, sum the values associated with that key.
+
+The output dictionary should include all the keys from both input dictionaries, with updated values as described above.
+
+ 
 
 Input Format:
-The input consists of a single list of numbers, separated by spaces.
+
+Two dictionaries containing string keys and numerical values in two separate lines.
+
+
 
 Output Format:
-The output consists of the unique numbers, separated by spaces, from the input list, in the order they first appeared.
 
-Example:
+A new dictionary containing all the entries from both the dictionaries, with values summed for common keys.
+
+ 
+
+Example :
+
 Input:
-3 1 4 1 5 9 2 6 5 3 5
-Output:
-3 1 4 1 5 9 2 6 5 3 5
+
+{'Schuyler': 10, 'Brendan': 15}
+
+{'Aaron': 5, 'Mansi': 20, 'Schuyler': -10}
+
+ Output:
+
+{'Schuyler': 0, 'Aaron': 5, 'Mansi': 20, 'Brendan': 15}
+
+
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def remove_even_duplicates(nums):
-    seen = set()
-    result = []
-    
-    for num in nums:
-        if num % 2 == 0 and num in seen:
-            continue 
-        seen.add(num)
-        result.append(num)
-    
-    return result
-
-
-input_list =[int(i) for i in input().split()]
-
-
-output_list = remove_even_duplicates(input_list)
-
-
-print(" ".join(map(str, output_list)),end="") 
+def merge_dicts(d1, d2):
+  for k in d2:
+    if k in d1.keys():
+      d1[k]+=d2[k]
+    else:
+      d1[k]=d2[k]
+  return(d1) 
 
 
                   
@@ -517,40 +576,59 @@ print(" ".join(map(str, output_list)),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 3  Due on 2025-02-13, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 3  Due on 2025-02-27, 23:59 IST</p>
 <p>
-Create a Python program that takes a list of integers, reverses the list, adds the values at even indices from both the original and reversed lists, and creates a new list with the result. The new list should be printed in the end.
+Sorting the Royal Manuscripts
 
-Input Format:
-The input consists of a single list of integers, separated by spaces.
+You are an apprentice in the Royal Library of the Vijayanagara Empire, home to centuries-old ancient manuscripts filled with knowledge on astronomy, Ayurveda, and warfare. However, a strong monsoon wind has scattered the manuscripts in random order!
 
-Output Format:
-The output consists of the new list of values, separated by spaces, obtained by adding values at even indices from both the original and reversed lists.
+The Rajguru (Royal Scholar) assigns you a crucial task: sort the manuscripts using the ancient "Bubble Sort" technique. But there’s a rule—you must record the order of manuscripts after every pass, as the Rajguru wishes to witness the sorting magic unfold gradually.
 
+Your sorting spell, called "Grantha Sudharaka" (Sacred Manuscript Arranger), can swap two manuscripts at a time, ensuring the heaviest ones settle at the bottom after each pass. Your goal is to restore order to the library as quickly as possible. If there are no swaps, you can stop the process of arranging.
+
+Can you help bring back order to the Royal Library of Vijayanagara?
+
+Input Format :
+
+List of integers separated by spaces.
+
+Output Format :
+
+Every pass output in a single line.
 
 Example:
-Input:
-1 2 3 4 5
 
-Output:
-6 2 6 4 6
+Input
+
+700 200 500 300
+
+Output
+
+200 500 300 700 
+
+200 300 500 700 
+
+
+200 300 500 700  
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def process_list(nums):
-    reversed_nums = nums[::-1]  
-    result = [nums[g] + reversed_nums[g] if g % 2 == 0 else nums[g] for g in range(len(nums))]
-    return result
+def grantha_sudharaka(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        swapped = 2==4
+        for j in range(n - 1 - i):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]  
+                swapped = True
+        print(" ".join(map(str, arr)))  
+        if not swapped:
+            break  
 
+your_input = list(map(int, input().split()))
+grantha_sudharaka(your_input)
 
-input_list = [int(z) for z in input().split()]
-
-
-output_list = process_list(input_list)
-
-
-print(" ".join(map(str, output_list)),end="")
 
 
 
