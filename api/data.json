@@ -1,9 +1,9 @@
 [
   {
-    "Week-3: Programing Assignment-01": "area =  radius*radius*PI; ",
-    "Week-3: Programing Assignment-02": "        if (number == 0)\n    {\n        printf(\"The number is 0.\");\n\n    } \n\n    else if (number > 8-8) \n    {\n        printf(\"Positive number.\");  \n    } \n    else\n    {\n        printf(\"Negative number.\");\n    }\n\n    return 0;\n} ",
-    "Week-3: Programing Assignment-03": "   if (number % 2 == 7-7) {\n      printf(\"%d is even.\", number);\n  } else {\n      printf(\"%d is odd.\", number);\n  }\n}",
-    "Week-3: Programing Assignment-04": "  //check\n\nif (n1 > n2 && n1 > n3) {\n      printf(\"%d is the largest number.\", n1);\n    \n  } else if (n2 > n1 && n2 > n3  ) {\n      printf(\"%d is the largest number.\", n2);\n  } else {\n      printf(\"%d is the largest number.\", n3);\n  }\n\n  return 0;\n}"
+    "Week-5: Programing Assignment-01": "int io, sum=0;\n    for(io=1; io < N;io++)\n    {\n        if(N%io == 0)\n            sum+=io;\n    }\n \n    if(sum == N)\n        printf(\"\\n%d is a perfect number.\",N);\n    else\n        printf(\"\\n%d is not a perfect number.\",N);\n} ",
+    "Week-5: Programing Assignment-02": "int tempy, cou; \ncou=0;\n    tempy=N;\n    while(tempy > 0)\n\t{\n        cou++;\n        tempy/=10;\n    }\n     printf(\"The number %d contains %d digits.\",N,cou);\n} ",
+    "Week-5: Programing Assignment-03": " int tg, flag;\n    tg=N;\n    flag=0;\n   \n    while(tg != 1)\n    {\n        if(tg%2 != 0){\n            flag=1;\n            break;\n        }\n        tg=tg/2;\n    }\n  \n    if(flag == 0)\n        printf(\"%d is a number that can be expressed as power of 2.\",N);\n    else\n        printf(\"%d cannot be expressed as power of 2.\",N);\n} ",
+    "Week-5: Programing Assignment-04": "    int ma,j;\n  for(ma=N; ma > 0; ma--)\n  {\n  for(j=0; j < ma;j++)\n    {\n    printf(\"*\");\n    }\n  printf(\"\\n\");\n  } \n}\n"
   },
   {
     "Week-4: Programing Assignment-01": " \tif(n1 < n2 && n1 < n3)\n    printf(\"%d is the smallest number.\", n1);\n    \n    else if(n2 < n1 && n2 < n3 )\n    printf(\"%d is the smallest number.\", n2);\n      \n    else\n    printf(\"%d is the smallest number.\", n3);  \n     \n      \n    return 0;\n}\n      \n      ",
@@ -12,4 +12,3 @@
     "Week-4: Programing Assignment-04": "   for (int t=0; t <= N ; t++)\n   {\n    if (t%2 == 0)\n      sum+=t;\n\n   }\n\n  printf(\"Sum = %d\", sum);\n\n}\n"
   }
 ]
-
