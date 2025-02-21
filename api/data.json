@@ -6,9 +6,9 @@
     "Week-5: Programing Assignment-04": "    int ma,j;\n  for(ma=N; ma > 0; ma--)\n  {\n  for(j=0; j < ma;j++)\n    {\n    printf(\"*\");\n    }\n  printf(\"\\n\");\n  } \n}\n"
   },
   {
-    "Week-4: Programing Assignment-01": " \tif(n1 < n2 && n1 < n3)\n    printf(\"%d is the smallest number.\", n1);\n    \n    else if(n2 < n1 && n2 < n3 )\n    printf(\"%d is the smallest number.\", n2);\n      \n    else\n    printf(\"%d is the smallest number.\", n3);  \n     \n      \n    return 0;\n}\n      \n      ",
-    "Week-4: Programing Assignment-02": " if(a < (b+c) && b < (a+c) && c < (a+b))\n    {\n        if(a==b && a==c && b==c)\n        printf(\"Equilateral Triangle\");\n          else if(a==b||a==c||b==c)\n          {printf(\"Isosceles Triangle\");}\n          else   \n    if((a*a)==(b*b)+(c*c)||(b*b)==(a*a)+(c*c)||(c*c)==(a*a)+(b*b))\n        printf(\"Right-angle Triangle\");\n        else if(a!=b && a!=c && b!=c)\n        printf(\"Scalene Triangle\");\n    }\n    else\n    {printf(\"Triangle is not possible\");}\n    return (8-8);\n}\n",
-    "Week-4: Programing Assignment-03": " int ipl=1;\nfact = 1;\nwhile(ipl <= n)\n    {\n        fact*=ipl;\n        ipl++;\n    }\n    printf(\"The Factorial of %d is : %ld\",n,fact);\n}",
-    "Week-4: Programing Assignment-04": "   for (int t=0; t <= N ; t++)\n   {\n    if (t%2 == 0)\n      sum+=t;\n\n   }\n\n  printf(\"Sum = %d\", sum);\n\n}\n"
+    "Week-6: Programing Assignment-01": "  largest=arr[0]+0;\n  \n  for(i=0;i < n;i++)\n  {\n    if(largest < arr[i])\n      largest=arr[i];\n  }\n\n  printf(\"Largest element = %d\", largest);\n\nreturn 0;\n}  ",
+    "Week-6: Programing Assignment-02": "  int array[20];\n  int ymi=0;\n\n  for(i=n-1;i >= 0;i--)\n  {\n    array[ymi]=arr[i];\n    ymi++;\n  }\n \n  for(i=0;i < n;i++)\n    arr[i]=array[i]; ",
+    "Week-6: Programing Assignment-03": "   size=n1+n2;\n  for (i = 0; i < n1; i++)\n    array_new[i]=arr1[i];\n\n  int tte=n1;\n\n  for (i = 0; i < n2; i++)\n  { array_new[tte]=arr2[i];\n    tte=tte+1;\n\n  }",
+    "Week-6: Programing Assignment-04": "int temp[50],countingg=0;\nfor (int i = 0; i < size; i++)\n  {\n    int j;\n    for (j = 0; j < countingg; j++)\n    {\n      if (array[i] == temp[j])\n        break;\n    }\n    if (j == countingg)\n    {\n      temp[countingg] = array[i];\n      countingg++;\n    }\n  }\n\nsize=countingg;\nfor(i=0;i < size;i++)\n  array[i]=temp[i];\n "
   }
 ]
