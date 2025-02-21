@@ -218,57 +218,54 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1 [Due on 2025-02-20, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1 [Due on 2025-03-06, 23:59 IST]</p>
 		<p>
-Create a Python program that checks whether a given square matrix is diagonal. A diagonal matrix is a square matrix (same number of rows and columns) where all the entries outside the main diagonal are zero. The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is diagonal and print 1 if it is, otherwise print 0.
+The Treasure Hunt
 
+You are part of an elite team of treasure hunters, and your latest mission is to find the hidden treasure in a mysterious ancient temple. Inside the temple, you discover a series of enchanted scrolls containing arrays of magical numbers. The numbers are encrypted in different arrays, and each scroll has a clue indicating which element in the array holds the key to the treasure.
 
-Input Format:
-The first input is an integer r , the number of rows and columns in the matrix.
-The next r lines each contain r integers, representing the elements of each row of the matrix.
+You are given one of these arrays, and the clue on the scroll tells you that the treasure is hidden inside the kth smallest number in that array. Your task is to figure out the kth smallest number from the array, where k is smaller than the size of the array, and return it as your answer.
 
-
-Output Format:
-The output is 1 if a matrix is diagonal, otherwise 0.
-
+The treasure hunters in your team trust you with this task, and the sooner you find the key, the sooner they can open the vault. So, be efficient and find the answer quickly!
 
 Example:
 
-Input:
+Imagine the scroll has the following magical array: 12 3 5 7 19 17 4
 
-2
-1 0
-0 1
+And the clue tells you that k = 4.
+
+ Your mission is to find the 4th smallest number in the array. Upon scanning the array, you discover that the 4th smallest number is 7.
+
+ Input:
+
+A list of n integers
+
+An integer k (where k <= n).
 
 Output:
-1
+
+Return the kth smallest element from the array.
+
+If k > n, then generate an error message, ‘The clue k should be smaller than or equal to the list size’
 
 
 	</p>
- <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+<!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
         <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
-    </p>
+    </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def is_diagonal_matrix(matrix, r):
-    for i in range(r):
-        for j in range(r):
-            if i != j and matrix[i][j] != 0:
-                return(0) 
-    return(1) 
+magic_array=[int(i) for i in input().split()]
+k=int(input())
+if k<=len(magic_array):
+	print(sorted(magic_array)[k-1],end="")
+else:
+    print("The clue k should be smaller than or equal to the list size",end="")
 
-  
-r = int(input())  
-matrix = []
-for k in range(r):
-    row = list(map(int, input().split()))
-    matrix.append(row)
-
-print(is_diagonal_matrix(matrix, r),end="")
 
 
                 </textarea><br><br>
@@ -281,62 +278,62 @@ print(is_diagonal_matrix(matrix, r),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2 [Due on 2025-02-20, 23:59 IST ]</p>
-		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 2 [Due on 2025-03-06, 23:59 IST ]</p>
+<!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
         <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
-    </p>
+    </p> -->
 		<p>
-Create a Python program that adds the transpose of a given matrix by a scalar. The program should prompt the user to input the dimensions of the matrix, the elements of the matrix, and the scalar value. The program should then compute the transpose of the matrix, add it by the scalar, and print the resulting matrix.
+The Binary Quest
 
+Alex, a young programmer, discovered a challenge: Convert a decimal number to binary using recursion! The rules were simple—no loops, no built-in functions —only the magic of recursion.
 
+ Steps to convert a decimal number to binary:
 
-Input:
-The first input is an integer 𝑟 , the number of rows in the matrix.
-The second input is an integer 𝑐 , the number of columns in the matrix.
-The next 𝑟 lines each contain 𝑐 integers, representing the elements of the matrix.
-The final input is an integer 𝑠, representing the scalar value.
+·       Divide the number by 2.
 
-Output Format:
-The output consists of 𝑐 lines, each containing 𝑟 integers, representing the elements of the resulting matrix after adding the transpose of the original matrix by the scalar.
+·       Store the remainder (0 or 1).
 
+·       Repeat with the quotient until it becomes 0.
 
-Example:
+·       Read the remainders in reverse order to get the binary number.
 
-Input:
+ For example, Consider a decimal number 13
 
-2
-3
-1 2 3
-4 5 6
-2
+13 ÷ 2 = 6, remainder 1
 
-Output:
+6 ÷ 2 = 3, remainder 0
 
-3 6
-4 7
-5 8
+3 ÷ 2 = 1, remainder 1
 
+1 ÷ 2 = 0, remainder 1
+
+Binary: 1101 (reading from bottom to top)
+
+ Input Format : A positive integer, n
+
+13
+
+Output Format : Binary number
+
+1101
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def transpose_add_scalar(matrix, r, c, scalar):
-    ans_matrix = [[matrix[j][i] + scalar for j in range(r)] for i in range(c)]
-    return ans_matrix
+def vk(msd):
+    if msd == 0:
+        return ""
+    return vk(msd // 2) + str(msd % 2)
 
-trows = int(input())
-tcols = int(input())
-tmatrix = [list(map(int, input().split())) for _ in range(trows)]
-scalar_value = int(input())
+ro = int(input())  
+dhoni = vk(ro)
 
-ans_matrix = transpose_add_scalar(tmatrix, trows, tcols, scalar_value)
+print(dhoni if dhoni else "0",end="")
 
-for r in ans_matrix:
-    print(" ".join(map(str, r)))
 
 
                   
@@ -350,58 +347,55 @@ for r in ans_matrix:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3 [Due on 2025-02-20, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 3 [Due on 2025-03-06, 23:59 IST ]</p>
 <p>
-Create a Python program that checks whether a given square matrix is symmetric. A matrix is symmetric if its transpose is equal to the matrix itself. The program should prompt the user to input the dimensions of the matrix and then input the matrix elements. The program should then determine whether the matrix is symmetric and print 1 if it is, otherwise print 0.
 
+Removing an element Recursively:
 
-Input Format:
-The first input is an integer r , the number of rows and columns in the matrix.
-The next r lines each contain r integers, representing the elements of each row of the matrix.
+Write a recursive function delete_elements in Python that removes all occurrences of a specified item from a list, creating and returning a new list without modifying the input list.
 
+ 
 
-Output Format:
-The output is 1 if a matrix is symmetric, otherwise 0.
-
-
-Example:
+Example :
 
 Input:
 
-2
-1 2
-2 1
+A list of integers (can contain duplicates)
 
+An integer item which represents the element to be removed from the list.
+
+4 5 6
+
+4
 
 Output:
-1
 
+Original list
+
+A new list with all occurrences of the item removed.
+
+4 5 6
+
+5 6
 </p>
- <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+<!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
         <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
-    </p>
+    </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
-def is_symmetric(CSK, MI):
-    for RCB in range(MI):
-        for KKR in range(MI):
-            if CSK[RCB][KKR] != CSK[KKR][RCB]:
-                return(0)
-    return(1)
+def delete_elements(lst, item):
+    #My answer code is starting here ok 
+    if not lst:
+        return list()
+    return delete_elements(lst[1:], item) if lst[0] == item else [lst[0]] + delete_elements(lst[1:], item)
 
 
-MI = int(input())
-CSK = []
-for _ in range(MI):
-    CSK.append(list(map(int, input().split())))
 
-
-print(is_symmetric(CSK, MI), end="")
 
 
 
