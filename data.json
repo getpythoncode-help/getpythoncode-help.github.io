@@ -1,10 +1,10 @@
 [
   {
-    "Java week 4 Question 1 code": "//Week 6 Q\npublic class W06_P1 extends Thread{\n\tpublic void run(){\n\t\tSystem.out.print(\"Thread is Running.\");\n\t}\n ",
-    "Java week 4 Question 2 code": " public class W06_P2 {\n    public static void main(String[] args) {\n        // Create an instance of ThreadRun\n        ThreadRun threadRun = new ThreadRun();\n        \n        //done  Create a Thread object and pass the Runnable object\n        Thread thread = new Thread(threadRun);\n        \n        // Start the thread ok \n        thread.start();\n    }\n}",
-    "Java week 4 Question 3 code": "  class MyThread extends B\n \n {\n\t\n\t  public void run() \n    {\n \t\tSystem.out.print(\"NPTEL Java\");\n        //priting message here ok \n\t}\n }\n",
-    "Java week 4 Question 4 code": " //Just add synchronized keYword as shown BELOW\nsynchronized void print(int n){\n   for(int i=1;i <= 5;i++){  \n     System.out.println(n*i);  \n     try{  \n      Thread.sleep(400);  \n     }catch(Exception e){\n        System.out.println(e);\n     }  \n   }\n }",
-    "Java week 4 Question 5 code": " // Write the necessary code below...\n\n// started the thread  \n  t.start();  \n// setting the name setName ....\n  t.setName(\"NPTEL\");"
+    "Java week 6 Question 1 code": "//Week 6 Q\npublic class W06_P1 extends Thread{\n\tpublic void run(){\n\t\tSystem.out.print(\"Thread is Running.\");\n\t}\n ",
+    "Java week 6 Question 2 code": " public class W06_P2 {\n    public static void main(String[] args) {\n        // Create an instance of ThreadRun\n        ThreadRun threadRun = new ThreadRun();\n        \n        //done  Create a Thread object and pass the Runnable object\n        Thread thread = new Thread(threadRun);\n        \n        // Start the thread ok \n        thread.start();\n    }\n}",
+    "Java week 6 Question 3 code": "  class MyThread extends B\n \n {\n\t\n\t  public void run() \n    {\n \t\tSystem.out.print(\"NPTEL Java\");\n        //priting message here ok \n\t}\n }\n",
+    "Java week 6 Question 4 code": " //Just add synchronized keYword as shown BELOW\nsynchronized void print(int n){\n   for(int i=1;i <= 5;i++){  \n     System.out.println(n*i);  \n     try{  \n      Thread.sleep(400);  \n     }catch(Exception e){\n        System.out.println(e);\n     }  \n   }\n }",
+    "Java week 6 Question 5 code": " // Write the necessary code below...\n\n// started the thread  \n  t.start();  \n// setting the name setName ....\n  t.setName(\"NPTEL\");"
 
   },
   {
