@@ -431,62 +431,74 @@ def delete_elements(lst, item):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1   Due on 2025-02-27, 23:59 IST</p>
-		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on 2025-03-13, 23:59 IST</p>
+<!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
         <strong>Reason - In option B matrix, if you carefully see, there is 2e in 3rd Row 4th column.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
-    </p>
+    </p> -->
 <p>
-The Mystery of Word Frequencies
+Magic Square
 
-You are tasked with analyzing a mysterious message that was intercepted. The message seems to contain a series of repeated words, and the challenge is to count how many times each word appears. To solve this, you must write a Python program that takes a string of text and counts the frequency of each word.
+A magic square of order n is a square arrangement of n2 numbers, typically distinct integers, where the sum of the n numbers in each row, each column, and both main diagonals is the same constant. It consists of the integers from 1 to .
 
-Make sure your program is case-insensitive, as the secret message is a mix of upper and lower case letters.
+The constant sum of each row, column, and diagonal in a magic square is known as the magic constant or magic sum, M. For a normal magic square, this constant depends solely on n and is given by the formula:
 
-After counting the occurrences of each word, display the results.
+M=(n(n2+1))/2
 
+For normal magic squares of order n = 3,4,5,...,
 
-Input Format:  A line of text
+the magic constants are: 15,34,65,111,175,260,...
 
-Output format: For all the unique words in the sentence, word: followed by frequency.
+Given a matrix, check whether it’s Magic Square or not.
 
+Input Format:
+An integer value for n (n>2)
+An nXn matrix
+
+Output Format:
+If the given matrix is magic square then print “Magic Matrix”, otherwise “Not a Magic Matrix
 
 Example :
+Input
+3
+2 7 6
+9 5 1
+4 3 8
 
-Input :
-The quick brown fox jumped over the lazy dog. The quick fox jumped over the dog."
+Output
+Magic Matrix
 
-Output:
-
-the: 3
-
-quick: 2
-
-brown: 1
-
-fox: 2
-
-jumped: 2
-
-over: 2
-
-lazy: 1
-
-dog: 2
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-sentence=[i.lower() for i in input().split()]
-ans={}
-for i in sentence:
-  if i not in ans:
-    ans[i]=sentence.count(i)
+def is_magic_square(matrix, n):
+    # Calculate the magic sum using the formula
+    magic_sum = n * (n**2 + 1) // 2
     
-for a in ans:
-  print(f"{a}: {ans[a]}")
+    # Check sum of each row
+    for row5 in matrix:
+        if sum(row5) != magic_sum:
+            return "Not a Magic Matrix"
+    
+    # Check sum of each column
+    for col6 in range(n):
+        if sum(matrix[row][col6] for row in range(n)) != magic_sum:
+            return "Not a Magic Matrix"
+    
+    # Check sum of main diagonal
+    if sum(matrix[i][i] for i in range(n)) != magic_sum:
+        return "Not a Magic Matrix"
+    
+    # Check sum of secondary diagonal
+    if sum(matrix[i][n-i-1] for i in range(n)) != magic_sum:
+        return "Not a Magic Matrix"
+    
+    return "Magic Matrix"
+
+
 
   
 
@@ -501,62 +513,60 @@ for a in ans:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2  Due on 2025-02-27, 23:59 IST </p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2  Due on 2025-03-13, 23:59 IST </p>
 		<p>
-Merging Dictionaries
+Median of Matrix
 
-You are required to write a Python function merge_dicts that takes two dictionaries as input and returns a new dictionary containing all the entries from both input dictionaries. The function should not modify the input dictionaries.
+You are given a row-wise sorted matrix of size n×m, where both the number of rows and the number of columns are always odd. Your task is to find the median of the matrix.
 
-The dictionaries will have strings as keys and numbers as values. In the case where the same key appears in both dictionaries, the corresponding value in the output dictionary should be the sum of the values from both dictionaries.
+The median is the middle number in a sorted list of numbers. In case the list has an even number of elements, the median is the leftmost of the two middle elements.
 
+The matrix is sorted row-wise, but the entire matrix is not necessarily sorted.
 
-You need to ensure the following:
-
-If a key exists in only one of the dictionaries, its value should remain the same in the result.
-
-If a key exists in both dictionaries, sum the values associated with that key.
-
-The output dictionary should include all the keys from both input dictionaries, with updated values as described above.
-
- 
+You need to find the median from the matrix when all the elements are sorted in ascending order.
 
 Input Format:
 
-Two dictionaries containing string keys and numerical values in two separate lines.
+The first line contains two integers n and m, representing the number of rows and columns in the matrix.
 
-
+The next n lines each contain m space-separated integers representing a row of the matrix.
 
 Output Format:
 
-A new dictionary containing all the entries from both the dictionaries, with values summed for common keys.
+Print the median of the matrix.
 
- 
-
+Constraints:
+3 ≤ n, m ≤ 100
+n and m are always odd.
 Example :
-
 Input:
+3 3
+1 3 5
+2 6 9
+3 6 9
+Output:
+5
 
-{'Schuyler': 10, 'Brendan': 15}
-
-{'Aaron': 5, 'Mansi': 20, 'Schuyler': -10}
-
- Output:
-
-{'Schuyler': 0, 'Aaron': 5, 'Mansi': 20, 'Brendan': 15}
-
-
-
+Explanation:
+The elements in sorted order: [1,2,3,3,5,6,6,9,9].
+The total number of elements is 9, so the median is the element at 5th location, which is 5.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def merge_dicts(d1, d2):
-  for k in d2:
-    if k in d1.keys():
-      d1[k]+=d2[k]
-    else:
-      d1[k]=d2[k]
-  return(d1) 
+def find_median(ind, up, mp):
+    # Flatten the matrix into a single sorted list
+    sorted_list = sorted([num for row in ind for num in row])
+    
+    # Find the median index
+    median_index = (up * mp) // 2  # Since up*mp is always odd, this gives the middle index
+    
+    return sorted_list[median_index]
+
+# Input handling
+up, mp = map(int, input().split())
+ind = [list(map(int, input().split())) for _ in range(up)]
+print(find_median(ind, up, mp),end="")
 
 
                   
@@ -570,58 +580,73 @@ def merge_dicts(d1, d2):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 3  Due on 2025-02-27, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3  Due on 2025-03-13, 23:59 IST</p>
 <p>
-Sorting the Royal Manuscripts
+Rotate a Rectangular Image by 90 Degrees Clockwise
 
-You are an apprentice in the Royal Library of the Vijayanagara Empire, home to centuries-old ancient manuscripts filled with knowledge on astronomy, Ayurveda, and warfare. However, a strong monsoon wind has scattered the manuscripts in random order!
+You are given an image represented by an m x n matrix. Your task is to rotate the image by 90 degrees in the clockwise direction. After rotation, the dimensions of the result matrix will be n x m, as the number of rows and columns will be swapped.
 
-The Rajguru (Royal Scholar) assigns you a crucial task: sort the manuscripts using the ancient "Bubble Sort" technique. But there’s a rule—you must record the order of manuscripts after every pass, as the Rajguru wishes to witness the sorting magic unfold gradually.
-
-Your sorting spell, called "Grantha Sudharaka" (Sacred Manuscript Arranger), can swap two manuscripts at a time, ensuring the heaviest ones settle at the bottom after each pass. Your goal is to restore order to the library as quickly as possible. If there are no swaps, you can stop the process of arranging.
-
-Can you help bring back order to the Royal Library of Vijayanagara?
-
-Input Format :
-
-List of integers separated by spaces.
-
-Output Format :
-
-Every pass output in a single line.
-
-Example:
-
-Input
-
-700 200 500 300
-
-Output
-
-200 500 300 700 
-
-200 300 500 700 
+⎡⎣⎢246357⎤⎦⎥→after..rotaion→[674523]
 
 
-200 300 500 700  
+Input Format
 
+Two integers m and n
+
+A matrix of integers of dimension m X n
+
+Output Format
+
+A matrix of integers of dimension n X m
+
+
+Example :
+
+Input:
+
+4 4
+
+1  2  3  4
+
+5  6  7  8
+
+9  10 11 12
+
+13 14 15 16
+
+ 
+
+Output:
+
+13   9   5   1
+
+14  10   6   2
+
+15  11   7   3
+
+16  12   8   4
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def grantha_sudharaka(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        swapped = 2==4
-        for j in range(n - 1 - i):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]  
-                swapped = True
-        print(" ".join(map(str, arr)))  
-        if not swapped:
-            break  
+def rotate_matrix_90(rcb, mi, csk):
+    # Create a new matrix with swapped dimensions csk x mi
+    rotated = [[0] * mi for _ in range(csk)]
+    
+    # Rotate the matrix 90 degrees clockwise
+    for kkr in range(mi):
+        for dc in range(csk):
+            rotated[dc][mi - 1 - kkr] = rcb[kkr][dc]
+    
+    return rotated
 
-your_input = list(map(int, input().split()))
-grantha_sudharaka(your_input)
+# Input handling
+mi, csk = map(int, input().split())
+rcb = [list(map(int, input().split())) for _ in range(mi)]
+rotated_image = rotate_matrix_90(rcb, mi, csk)
+
+# Print the rotated matrix
+for row in rotated_image:
+    print(*row)
 
 
 
