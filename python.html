@@ -218,36 +218,37 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1 [Due on 2025-03-06, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1 [Due on 2025-03-20, 23:59 IST]</p>
 		<p>
-The Treasure Hunt
+Remove Strings from a List of Tuples
 
-You are part of an elite team of treasure hunters, and your latest mission is to find the hidden treasure in a mysterious ancient temple. Inside the temple, you discover a series of enchanted scrolls containing arrays of magical numbers. The numbers are encrypted in different arrays, and each scroll has a clue indicating which element in the array holds the key to the treasure.
+You are given a list of tuples, where each tuple contains a mix of integers and strings. Your task is to remove all string elements from each tuple while keeping the original structure of the list.
 
-You are given one of these arrays, and the clue on the scroll tells you that the treasure is hidden inside the kth smallest number in that array. Your task is to figure out the kth smallest number from the array, where k is smaller than the size of the array, and return it as your answer.
+·       If a tuple becomes empty after removing strings, it should be represented as an empty tuple ().
 
-The treasure hunters in your team trust you with this task, and the sooner you find the key, the sooner they can open the vault. So, be efficient and find the answer quickly!
+·       The number of tuples in the output list must be the same as in the input list.
 
-Example:
+Input Format:
 
-Imagine the scroll has the following magical array: 12 3 5 7 19 17 4
+A list of tuples
 
-And the clue tells you that k = 4.
+Output Format:
 
- Your mission is to find the 4th smallest number in the array. Upon scanning the array, you discover that the 4th smallest number is 7.
+A list of tuples with all string elements removed.
 
- Input:
+ 
 
-A list of n integers
+Example :
 
-An integer k (where k <= n).
+Input:
+
+[('string', ‘hello’), (2, 225), (3, '111')]
 
 Output:
 
-Return the kth smallest element from the array.
 
-If k > n, then generate an error message, ‘The clue k should be smaller than or equal to the list size’
+[(), (2, 225), (3,)]
 
 
 	</p>
@@ -259,12 +260,14 @@ If k > n, then generate an error message, ‘The clue k should be smaller than o
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-magic_array=[int(i) for i in input().split()]
-k=int(input())
-if k<=len(magic_array):
-	print(sorted(magic_array)[k-1],end="")
-else:
-    print("The clue k should be smaller than or equal to the list size",end="")
+def remove_strings(lst):
+    return [tuple(item for item in tup if not isinstance(item, str)) for tup in lst]
+
+input_list3 = eval(input())
+
+MY_output_list = remove_strings(input_list3)
+print(MY_output_list,end="")
+
 
 
 
@@ -278,8 +281,8 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2 [Due on 2025-03-06, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2 [Due on 2025-03-20, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -287,53 +290,46 @@ else:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-The Binary Quest
+Remove Anagram Duplicates and Sort
 
-Alex, a young programmer, discovered a challenge: Convert a decimal number to binary using recursion! The rules were simple—no loops, no built-in functions —only the magic of recursion.
+You are given a sequence of words. Two words are anagrams if they contain the same letters in a different order. Your task is to remove any word that is an anagram of an earlier word while keeping the first occurrence. Finally, print the remaining words in sorted order.
 
- Steps to convert a decimal number to binary:
+Input Format:
 
-·       Divide the number by 2.
+A single line containing space-separated words, where each word consists of lowercase letters only.
 
-·       Store the remainder (0 or 1).
+Output Format:
 
-·       Repeat with the quotient until it becomes 0.
+A single line containing the remaining words in sorted order, space-separated.
 
-·       Read the remainders in reverse order to get the binary number.
+Example:
 
- For example, Consider a decimal number 13
+Input:
 
-13 ÷ 2 = 6, remainder 1
+code doce ecod framer frame
 
-6 ÷ 2 = 3, remainder 0
+Output:
 
-3 ÷ 2 = 1, remainder 1
-
-1 ÷ 2 = 0, remainder 1
-
-Binary: 1101 (reading from bottom to top)
-
- Input Format : A positive integer, n
-
-13
-
-Output Format : Binary number
-
-1101
+code frame framer
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def vk(msd):
-    if msd == 0:
-        return ""
-    return vk(msd // 2) + str(msd % 2)
+def remove_anagram_duplicates(words):
+    seenkya = set()
+    unique_words = []
 
-ro = int(input())  
-dhoni = vk(ro)
+    for word in words:
+        sorted_word = ''.join(sorted(word))
+        if sorted_word not in seenkya:
+            seenkya.add(sorted_word)
+            unique_words.append(word)
 
-print(dhoni if dhoni else "0",end="")
+    return sorted(unique_words)
 
+words = input().split()
+output = remove_anagram_duplicates(words)
+print(" ".join(output),end="")
 
 
                   
@@ -347,37 +343,45 @@ print(dhoni if dhoni else "0",end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3 [Due on 2025-03-06, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3 [Due on 2025-03-20, 23:59 IST ]</p>
 <p>
 
-Removing an element Recursively:
+Multiply Adjacent Elements in a Tuple
 
-Write a recursive function delete_elements in Python that removes all occurrences of a specified item from a list, creating and returning a new list without modifying the input list.
+In many data processing tasks, cumulative operations like summation or multiplication of adjacent elements are required. This problem focuses on adjacent element multiplication, where each pair of consecutive elements in a given tuple is multiplied to generate a new tuple. The input tuple can contain both positive and negative integers, and the goal is to compute a resultant tuple where each element is the product of two adjacent elements in the original tuple.
 
  
 
-Example :
+Input Format:
+
+A tuple of integers T with n elements (n ≥ 2)
+
+Output Format:
+
+A new tuple R of size (n - 1) where each element R[i] is the product of T[i] and T[i+1].
+
+ 
+
+Example:
 
 Input:
 
-A list of integers (can contain duplicates)
-
-An integer item which represents the element to be removed from the list.
-
-4 5 6
-
-4
+(1, -5, 7, 8, -10)
 
 Output:
 
-Original list
+(-5, -35, 56, -80)
 
-A new list with all occurrences of the item removed.
+Explanation:
 
-4 5 6
+·       1 × (-5) = -5
 
-5 6
+·       (-5) × 7 = -35
+
+·       7 × 8 = 56
+
+·       8 × (-10) = -80
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -388,11 +392,13 @@ A new list with all occurrences of the item removed.
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
-def delete_elements(lst, item):
-    #My answer code is starting here ok 
-    if not lst:
-        return list()
-    return delete_elements(lst[1:], item) if lst[0] == item else [lst[0]] + delete_elements(lst[1:], item)
+def multiply_adjacent_elements(t):
+    return tuple(t[i] * t[i + 1] for i in range(len(t) - 1))
+
+ttte = eval(input()) 
+output = multiply_adjacent_elements(ttte)
+print(output,end="")
+
 
 
 
