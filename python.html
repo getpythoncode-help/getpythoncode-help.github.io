@@ -218,38 +218,17 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1 [Due on 2025-03-20, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 1 [Due on 2025-04-03, 23:59 IST]</p>
 		<p>
-Remove Strings from a List of Tuples
 
-You are given a list of tuples, where each tuple contains a mix of integers and strings. Your task is to remove all string elements from each tuple while keeping the original structure of the list.
+Emma is a budding software developer working on a signal detection system. One day, her mentor gives her a special list called nums. This list only contains two types of signals:
 
-·       If a tuple becomes empty after removing strings, it should be represented as an empty tuple ().
+1 represents a strong signal.
+0 represents a weak signal.
+Emma's task is to find out the longest streak of consecutive strong signals (1s) in the list, which will help her identify the best time period for stable communication.
 
-·       The number of tuples in the output list must be the same as in the input list.
-
-Input Format:
-
-A list of tuples
-
-Output Format:
-
-A list of tuples with all string elements removed.
-
- 
-
-Example :
-
-Input:
-
-[('string', ‘hello’), (2, 225), (3, '111')]
-
-Output:
-
-
-[(), (2, 225), (3,)]
-
+Can you help Emma write a Python function that takes the list nums as input and returns the maximum number of consecutive strong signals in the list?
 
 	</p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
@@ -260,13 +239,18 @@ Output:
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def remove_strings(lst):
-    return [tuple(item for item in tup if not isinstance(item, str)) for tup in lst]
+def findMaxConsecutiveOnes(nums):
+    max_streak14 = 0
+    current_streak = 0
 
-input_list3 = eval(input())
+    for num in nums:
+        if num == 1:
+            current_streak += 1
+            max_streak14 = max(max_streak14, current_streak)
+        else:
+            current_streak = 0  
 
-MY_output_list = remove_strings(input_list3)
-print(MY_output_list,end="")
+    return(max_streak14)
 
 
 
@@ -281,8 +265,8 @@ print(MY_output_list,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 2 [Due on 2025-03-20, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 2 [Due on 2025-04-03, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -290,46 +274,33 @@ print(MY_output_list,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Remove Anagram Duplicates and Sort
+In the ancient land of Lexiconia, hidden messages are locked behind a common magical prefix. Only those who can decipher the longest common prefix will unveil the wisdom of the lost texts.
 
-You are given a sequence of words. Two words are anagrams if they contain the same letters in a different order. Your task is to remove any word that is an anagram of an earlier word while keeping the first occurrence. Finally, print the remaining words in sorted order.
+Your task is to create a function that accepts a list of words, finds the longest common prefix, and prints the result.
 
-Input Format:
+Write a function longest_common_prefix(st) that:
 
-A single line containing space-separated words, where each word consists of lowercase letters only.
-
-Output Format:
-
-A single line containing the remaining words in sorted order, space-separated.
-
-Example:
-
-Input:
-
-code doce ecod framer frame
-
-Output:
-
-code frame framer
+Accepts a list of strings as input.
+Returns the longest common prefix among all the strings.
+If there is no common prefix, return an empty string "".
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def remove_anagram_duplicates(words):
-    seenkya = set()
-    unique_words = []
 
-    for word in words:
-        sorted_word = ''.join(sorted(word))
-        if sorted_word not in seenkya:
-            seenkya.add(sorted_word)
-            unique_words.append(word)
+def longestCommonPrefix(st):
+    if not st:
+        return ""
 
-    return sorted(unique_words)
+    prefix = st[0]  
 
-words = input().split()
-output = remove_anagram_duplicates(words)
-print(" ".join(output),end="")
+    for worddy in st[1:]:
+        while not worddy.startswith(prefix):
+            prefix = prefix[:-1]  
+            if not prefix:
+                return "\"\""  
+
+    return (f"\"{prefix}\"")
 
 
                   
@@ -343,45 +314,43 @@ print(" ".join(output),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 3 [Due on 2025-03-20, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 3 [Due on 2025-04-03, 23:59 IST ]</p>
 <p>
+Once upon a time in the land of Isomorphia, there were two ancient scrolls written in different languages. The wise king of Isomorphia wanted to know if these scrolls conveyed the same message or if they were completely different. He summoned his greatest coder, who had the magical power of Isomorphic Translation.
 
-Multiply Adjacent Elements in a Tuple
+The challenge was to determine if every symbol in the first scroll could be mapped to exactly one symbol in the second scroll, without any two symbols sharing the same mapping. However, the order of symbols in both scrolls had to be preserved.
 
-In many data processing tasks, cumulative operations like summation or multiplication of adjacent elements are required. This problem focuses on adjacent element multiplication, where each pair of consecutive elements in a given tuple is multiplied to generate a new tuple. The input tuple can contain both positive and negative integers, and the goal is to compute a resultant tuple where each element is the product of two adjacent elements in the original tuple.
+The coder had to write a function to check if the two scrolls were isomorphic or not.
 
- 
+Examples:
 
-Input Format:
+Input : s = "egg" , t = "add"
 
-A tuple of integers T with n elements (n ≥ 2)
+Output : true
 
-Output Format:
+Explanation : The 'e' in string s can be replaced with 'a' of string t.
 
-A new tuple R of size (n - 1) where each element R[i] is the product of T[i] and T[i+1].
+The 'g' in string s can be replaced with 'd' of t.
 
- 
+Hence all characters in s can be replaced to get t.
 
-Example:
+Input : s = "apple" , t = "bbnbm"
 
-Input:
+Output : false
 
-(1, -5, 7, 8, -10)
+Explanation : One possible try can be:
 
-Output:
+The 'a' in string s can be replaced with 'n' of string t.
 
-(-5, -35, 56, -80)
+The 'p' in string s can be replaced by 'b' of string t.
 
-Explanation:
+The 'l' in string s can be replaced by 'm' of string t.
 
-·       1 × (-5) = -5
+The 'e' in string s cannot be replaced by any character of string t as all the characters in string t are already mapped.
 
-·       (-5) × 7 = -35
+Hence all characters in s cannot be replaced to get t by this try. It can be proved that no solution exists for this example.
 
-·       7 × 8 = 56
-
-·       8 × (-10) = -80
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -392,14 +361,35 @@ Explanation:
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
 
-def multiply_adjacent_elements(t):
-    return tuple(t[i] * t[i + 1] for i in range(len(t) - 1))
-
-ttte = eval(input()) 
-output = multiply_adjacent_elements(ttte)
-print(output,end="")
 
 
+
+
+def is_Isomorphic(s, t):
+    if len(s) != len(t):
+        return False 
+    
+    map_s_to_t = {}  
+    map_t_to_s = {} 
+
+    for char_s, char_t in zip(s, t):
+        if char_s in map_s_to_t:
+            if map_s_to_t[char_s] != char_t:
+                return False  
+        else:
+            map_s_to_t[char_s] = char_t  
+
+        if char_t in map_t_to_s:
+            if map_t_to_s[char_t] != char_s:
+                return False  
+        else:
+            map_t_to_s[char_t] = char_s  
+
+    return True  
+  
+egg1=input()
+egg2=input()
+print(is_Isomorphic(egg1, egg2))
 
 
 
