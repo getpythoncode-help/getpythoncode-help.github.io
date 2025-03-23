@@ -1,10 +1,10 @@
 [
   {
-    "Java week 8 Question 1 code": "        int ans_sum=0;\n\t\twhile(number > 0){\n          ans_sum+=number%10;\n          number/=10;\n          \n        }\n        System.out.print(ans_sum);\n ",
-    "Java week 8 Question 2 code": "        int fact_ka_ans=1;\n        for(int jk=n; jk > 0; jk--){\n          fact_ka_ans*=jk;\n          \n        }\n        System.out.print(fact_ka_ans); ",
-    "Java week 8 Question 3 code": "         int my_r_ans=0;\n        while(number > 0){\n      \n          my_r_ans=my_r_ans*10+number%10;\n          number/=10;\n          \n        }\n        System.out.print(my_r_ans);",
-    "Java week 8 Question 4 code": "         int fact_c=1;\n        if (number==2){\n          System.out.print(\"Prime\");    \n        }\n        else if (number < 2)\n          System.out.print(\"Not Prime\");\n        else{\n          for(int as=2; as <= number/2; as++)\n            if (number%as == 0){\n            fact_c=2;\n            break;\n          }\n          if (fact_c==2)\n            System.out.print(\"Not Prime\");\n          else\n            System.out.print(\"Prime\");\n            \n        }",
-    "Java week 8 Question 5 code": " // Check if matrix multiplication is possible\n        if (cols1 != rows2) {\n            System.out.println(\"Multiplication Not Possible\");\n            return;\n        }\n        \n        // Initialize result matrix\n        int[][] result = new int[rows1][cols2];\n        \n        // Perform matrix multiplication\n        for (int ipl_25 = 0; ipl_25 < rows1; ipl_25++) {\n            for (int j = 0; j < cols2; j++) {\n                for (int k = 0; k < cols1; k++) {\n                    result[ipl_25][j] += matrix1[ipl_25][k] * matrix2[k][j];\n                }\n            }\n        }\n        \n        // Print the resultant matrix\n        for (int i = 0; i < rows1; i++) {\n            for (int j = 0; j < cols2; j++) {\n                System.out.print(result[i][j]);\n                if (j < cols2 - 1) {\n                    System.out.print(\" \");\n                }\n            }\n            System.out.println();\n        }\n        \n\n"
+    "Java week 10 Question 1 code": "import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\n//This is my ans ",
+    "Java week 10 Question 2 code": "            Class.forName(\"org.sqlite.JDBC\");\n\n// This is ur answer\n\n            ",
+    "Java week 10 Question 3 code": "            conn = DriverManager.getConnection(DB_URL);\n\n            // I hope it will work\n ",
+    "Java week 10 Question 4 code": "            // This workload for only made for you \n            stmt.executeUpdate(sql);\n\n ",
+    "Java week 10 Question 5 code": "            //Your Home Work is done enjoy\n\n\n            pstmt.executeUpdate(); "
 
   },
   {
