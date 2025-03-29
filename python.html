@@ -427,8 +427,8 @@ print(is_Isomorphic(egg1, egg2))
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1   Due on 2025-03-27, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1   Due on  2025-04-10, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -436,46 +436,24 @@ print(is_Isomorphic(egg1, egg2))
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-  We represent scores of batsmen across a sequence of matches in a two-level dictionary as follows:
 
-{'match1’: {'player1':57, 'player2':38}, 'match2’: {'player3':9, 'player1':42}, 'match3’: {'player2':41, 'player4':63, 'player3':91}
+You are given a list of n distinct integers in the range [0, n] (inclusive). This means exactly one number from this range is missing. Your task is to determine and return the missing number.
+Input: A list nums containing n distinct integers from 0 to n.
+Output: The missing integer in the range [0, n]
+Examples:
+Input: nums = [0, 2, 3, 1, 4]
+Output: 5
+The list contains {0, 1, 2, 3, 4}, so 5 is missing.
 
-Each match is identified by a string, as is each player. The scores are all integers. The names associated with the matches are not fixed (here they are 'match1', 'match2', 'match3'), nor are the names of the players. A player need not have a score recorded in all matches.
-
-Define a Python function orangecap(d) that reads a dictionary d of this form and identifies the player with the highest total score. Your function should return a pair (playername, topscore) where playername is a string, the name of the player with the highest score, and topscore is an integer, the total score of playername.
-
-The input will be such that there are never any ties for highest total score.
-
-For Example :
-
-Input 
-
-{'match1’: {'player1':57, 'player2':38}, 'match2':{'player3':9, 'player1':42}, 'match3':{'player2':41, 'player4':63, 'player3':91}}
-
-Output
-
-('player3', 100)
-
-Input
-{'test1':{'Pant':84, 'Kohli':120}, 'test2':{'Pant':59, 'Gill':42}}
-
-Output
-
-('Pant', 143)
+Input: nums = [0, 1, 2, 4, 5, 6]
+Output: 3
+The list contains {0, 1, 2, 4, 5, 6}, so 3 is missing.
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def orangecap(d):
-    scores = dict()
-
-    for ma in d.values():
-        for player, runs in ma.items():
-            scores[player] = scores.get(player, 0) + runs
-
-    top_player = max(scores, key=scores.get)
-    
-    return (top_player, scores[top_player]) 
+def missingNumber(nums):
+    return(sum(range(len(nums)+1))-sum(nums))
       
                 </textarea><br><br>
 
@@ -487,23 +465,48 @@ def orangecap(d):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 2  Due on 2025-03-27, 23:59 IST </p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 2  Due on  2025-04-10, 23:59 IST </p>
 		<p>
-    A positive integer m can be expressed as the sum of three squares if it is of the form p + q + r where p, q, r ≥ 0, and p, q, r are all perfect squares. For instance,
-2 can be written as 0+1+1 but 7 cannot be expressed as the sum of three squares. The first numbers that cannot be expressed as the sum of three squares are 7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, …(see Legendre's three-square theorem).
+Given a list of integers nums and an integer k, write a Python function to check whether there exists a subsequence (a non-contiguous subset of the list) such that the sum of its elements equals k. Return True if such a subsequence exists, otherwise False.
+Example 1 :
+Input:
+nums = [1, 2, 3, 4, 5]
+k = 8
+Output:
+True
 
-       Write a Python function threesquares(m) that takes an integer m as a parameter and returns True if m can be expressed as the sum of three squares and False otherwise.   (If m is not positive, your function should return False.)
+Example 2 : 
+Input:
+nums = [4, 3, 9, 2]
+k = 10
+
+Output:
+False
+
+Constraints :
+
+1<=len(nums)<=20
+1<=nums[i]<=100
+1<=k<=2000
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def threesquares(m):
-    for a in range(m):
-        for b in range(m):
-            if (m == (8*b + 7)*4**a):
-                return False
-    else:
-        return 100==100
+def checkSubsequenceSum(nums, k):
+    n = len(nums)
+    
+    def dfsss(index, current_sum, memo):
+        if current_sum == k:
+            return True
+        if index == n or current_sum > k:
+            return False
+        if (index, current_sum) in memo:
+            return memo[(index, current_sum)]
+        
+        memo[(index, current_sum)] = dfsss(index + 1, current_sum + nums[index], memo) or dfsss(index + 1, current_sum, memo)
+        return memo[(index, current_sum)]
+    
+    return dfsss(0, 0, {})
 
                 </textarea><br><br>
 
@@ -515,43 +518,61 @@ def threesquares(m):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 3  Due on 2025-03-27, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 3  Due on  2025-04-10, 23:59 IST</p>
 <p>
-A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, where each of the sequences is of length at least two. Similarly, a list of numbers is said to be a valley if it consists of an descending sequence followed by an ascending sequence. You can assume that consecutive numbers in the input sequence are always different from each other.
+Given a string s representing a large integer, return the largest-valued odd integer (as a string) that is a substring of s.
+
+Note:
+
+The result should not contain any leading zeros.
+The input string s may contain leading zeros.
+Constraints :
+1 <= s.length <= 10^3
+'0' <= s[i] <= '9'
+Examples:
+Example 1:
+Input:
+s = "5347"
+
+Output:
+"5347"
+
+Explanation:
+
+All possible odd numbers: {5, 3, 53, 347, 5347}
+The largest odd number is "5347".
 
 
-Write a Python function hillvalley(l) that takes a list l of integers and returns True if it is a hill or a valley, and False otherwise.
+Example 2:
+Input:
+s = "0214638"
 
-Here are some examples to show how your function should work.
+Output:
+"21463"
+
+Explanation:
+Valid odd numbers: {1, 3, 21, 63, 463, 1463, 21463}
+Leading zeros cannot be included.
+The largest odd number is "21463".
 
 
->>> hillvalley([1,2,3,5,4])
-True
+Example 3:
+Input:
+s = "0032579"
 
->>> hillvalley([1,2,3,4,5])
-False
+Output:
+"32579"
 
->>> hillvalley([5,4,1,2,3])
-True
 
->>> hillvalley([5,4,3,2,1])
-False
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def hillvalley(l):
-    na = len(l)
-    if na == 0 or na == 1 or na == 2:
-        return False
-    valley, hill = 0, 0
-    for i in range(1, na-1):
-        # if its valley
-        if l[i-1] > l[i] < l[i+1]:
-            valley+=1
-        # if its hill
-        if l[i-1] < l[i] > l[i+1]:
-            hill+=1
-    return (valley == 1 and hill == 0) or (valley == 0 and hill == 1)
+def largeOddNum(s):
+        for i in range(len(s) - 1, -1, -1):
+            if int(s[i]) % 2 != 0:
+                return f'"{int(s[:i+1])}"'
+        return '"' +  '"'
+
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
