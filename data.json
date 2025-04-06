@@ -1,10 +1,10 @@
 [
   {
-    "Java week 10 Question 1 code": "import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.SQLException;\n\n//This is my ans ",
-    "Java week 10 Question 2 code": "            Class.forName(\"org.sqlite.JDBC\");\n\n// This is ur answer\n\n            ",
-    "Java week 10 Question 3 code": "            conn = DriverManager.getConnection(DB_URL);\n\n            // I hope it will work\n ",
-    "Java week 10 Question 4 code": "            // This workload for only made for you \n            stmt.executeUpdate(sql);\n\n ",
-    "Java week 10 Question 5 code": "            //Your Home Work is done enjoy\n\n\n            pstmt.executeUpdate(); "
+    "Java week 12 Question 1 code": "\t\tfor(int apple=0; apple < seq.length; apple++)\n        {\n\t\t\tseq[apple]=gui_map(seq[apple]);\n\t\t   if (seq[apple]=='R' || seq[apple]=='S' || seq[apple]=='F' ||seq[apple]=='C')\n\t\t\t\tbreak;\n\t\t}\n\t\t ",
+    "Java week 12 Question 2 code": "       //IPL is over now \n       System.out.print(mapFunction(key));  ",
+    "Java week 12 Question 3 code": "       //Plz check this once\n        System.out.print(operate(a, b, op));\n ",
+    "Java week 12 Question 4 code": "        //This 3rd questions done\n        System.out.println(extractDigits(input));\n",
+    "Java week 12 Question 5 code": "        //Bye see you next time\n        System.out.print(formatExpression(expression)); "
 
   },
   {
