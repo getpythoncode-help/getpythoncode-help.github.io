@@ -218,17 +218,24 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1 [Due on 2025-04-03, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1 [Due on 2025-04-17, 23:59 IST]</p>
 		<p>
 
-Emma is a budding software developer working on a signal detection system. One day, her mentor gives her a special list called nums. This list only contains two types of signals:
-
-1 represents a strong signal.
-0 represents a weak signal.
-Emma's task is to find out the longest streak of consecutive strong signals (1s) in the list, which will help her identify the best time period for stable communication.
-
-Can you help Emma write a Python function that takes the list nums as input and returns the maximum number of consecutive strong signals in the list?
+Given a sorted list nums in non-decreasing order, where every element appears twice except for one unique element, find and return the single number.
+Example 1:
+Input
+nums = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6]
+Output
+4
+Example 2 :
+Input 
+nums = [1, 1, 3, 5, 5]
+Output
+3
+Constraints:
+n==len(nums)
+1<=n<=104
 
 	</p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
@@ -239,18 +246,11 @@ Can you help Emma write a Python function that takes the list nums as input and 
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def findMaxConsecutiveOnes(nums):
-    max_streak14 = 0
-    current_streak = 0
-
-    for num in nums:
-        if num == 1:
-            current_streak += 1
-            max_streak14 = max(max_streak14, current_streak)
-        else:
-            current_streak = 0  
-
-    return(max_streak14)
+def singleNonDuplicate(nums):
+   for i in nums:
+      if nums.count(i)==1:
+     	 break
+   return(i)
 
 
 
@@ -265,8 +265,8 @@ def findMaxConsecutiveOnes(nums):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 2 [Due on 2025-04-03, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 2 [Due on 2025-04-17, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -274,33 +274,55 @@ def findMaxConsecutiveOnes(nums):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-In the ancient land of Lexiconia, hidden messages are locked behind a common magical prefix. Only those who can decipher the longest common prefix will unveil the wisdom of the lost texts.
+You are given a string s consisting of only lowercase English letters. Your task is to return a list of unique characters from the string, sorted in descending order based on their frequency of occurrence.
 
-Your task is to create a function that accepts a list of words, finds the longest common prefix, and prints the result.
+If two or more characters have the same frequency, they should be sorted in alphabetical order.
+Input:
 
-Write a function longest_common_prefix(st) that:
+A string s
+The string consists of only lowercase English characters ('a' to 'z').
+Output:
 
-Accepts a list of strings as input.
-Returns the longest common prefix among all the strings.
-If there is no common prefix, return an empty string "".
+A list of unique characters sorted by frequency (highest to lowest).
+If characters have the same frequency, they should appear in alphabetical order.
+Example 1:
+
+Input: s = "tree"
+
+Output: ['e', 'r', 't']
+
+Example 2 :
+
+Input: s = "bbccddaaa"
+
+Output: ['a', 'b', 'c', 'd']
+
+Explanation:
+
+The frequency of each character:
+
+'a' → 3
+'b' → 2
+'c' → 2
+'d' → 2
+
+Since 'b', 'c', and 'd' have the same frequency, they are sorted alphabetically.
+
+
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-
-def longestCommonPrefix(st):
-    if not st:
-        return ""
-
-    prefix = st[0]  
-
-    for worddy in st[1:]:
-        while not worddy.startswith(prefix):
-            prefix = prefix[:-1]  
-            if not prefix:
-                return "\"\""  
-
-    return (f"\"{prefix}\"")
+def frequencySort(s):
+    freqe = {}
+    for char in s:
+        if char in freqe:
+            freqe[char] += 1
+        else:
+            freqe[char] = 1
+    sorted_items = sorted(freqe.items(), key=lambda x: (-x[1], x[0]))
+    result = [char for char, count in sorted_items]
+    return(result)
 
 
                   
@@ -314,42 +336,24 @@ def longestCommonPrefix(st):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 3 [Due on 2025-04-03, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 3 [Due on 2025-04-17, 23:59 IST ]</p>
 <p>
-Once upon a time in the land of Isomorphia, there were two ancient scrolls written in different languages. The wise king of Isomorphia wanted to know if these scrolls conveyed the same message or if they were completely different. He summoned his greatest coder, who had the magical power of Isomorphic Translation.
 
-The challenge was to determine if every symbol in the first scroll could be mapped to exactly one symbol in the second scroll, without any two symbols sharing the same mapping. However, the order of symbols in both scrolls had to be preserved.
+Write a Python function subsequence(l1,l2) that takes two sorted lists as arguments and returns True if the the first list is a subsequence of the second list, and returns False otherwise.
 
-The coder had to write a function to check if the two scrolls were isomorphic or not.
+A subsequence of a list is obtained by dropping some values. Thus, [2,3,4] and [2,2,5] are subsequences of [2,2,3,4,5], but [2,4,4] and [2,4,3] are not.
 
-Examples:
+For Example : 
 
-Input : s = "egg" , t = "add"
+Input :
 
-Output : true
+subsequence([2,2,5],[2,2,3,4,5])
 
-Explanation : The 'e' in string s can be replaced with 'a' of string t.
+Output :
 
-The 'g' in string s can be replaced with 'd' of t.
+True 
 
-Hence all characters in s can be replaced to get t.
-
-Input : s = "apple" , t = "bbnbm"
-
-Output : false
-
-Explanation : One possible try can be:
-
-The 'a' in string s can be replaced with 'n' of string t.
-
-The 'p' in string s can be replaced by 'b' of string t.
-
-The 'l' in string s can be replaced by 'm' of string t.
-
-The 'e' in string s cannot be replaced by any character of string t as all the characters in string t are already mapped.
-
-Hence all characters in s cannot be replaced to get t by this try. It can be proved that no solution exists for this example.
 
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
@@ -359,37 +363,18 @@ Hence all characters in s cannot be replaced to get t by this try. It can be pro
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
+def subsequence(l1, l2):
+    ii = 0  
+    ju = 0  
+    while ii < len(l1) and ju < len(l2):
+        if l1[ii] == l2[ju]:
+            ii += 1  
+        ju += 1  
+    return ii == len(l1)
 
 
 
 
-
-
-def is_Isomorphic(s, t):
-    if len(s) != len(t):
-        return False 
-    
-    map_s_to_t = {}  
-    map_t_to_s = {} 
-
-    for char_s, char_t in zip(s, t):
-        if char_s in map_s_to_t:
-            if map_s_to_t[char_s] != char_t:
-                return False  
-        else:
-            map_s_to_t[char_s] = char_t  
-
-        if char_t in map_t_to_s:
-            if map_t_to_s[char_t] != char_s:
-                return False  
-        else:
-            map_t_to_s[char_t] = char_s  
-
-    return True  
-  
-egg1=input()
-egg2=input()
-print(is_Isomorphic(egg1, egg2))
 
 
 
