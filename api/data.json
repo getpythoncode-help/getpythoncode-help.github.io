@@ -1,13 +1,13 @@
 [
   {
-    "Week-1: Programing Assignment-01": " #include <stdio.h>\n\nint main() {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    int LARgest_number;\n\n    if ((a > b && a < c) || (a > c && a < b)) {\n        LARgest_number = a;\n    } else if ((b > a && b < c) || (b > c && b < a)) {\n        LARgest_number = b;\n    } else {\n        LARgest_number = c;\n    }\n\n    printf(\"%d\", LARgest_number);\n    return 0;\n}\n",
-    "Week-1: Programing Assignment-02": " #include <stdio.h>\n\nint main() {\n    int cm;\n    int feet;\n    float inches;\n\n    scanf(\"%d\", &cm);\n\n    \n     feet = cm / 30.48;  \n     float remaining_cmss= cm - (feet * 30.48);\n     inches = remaining_cmss / 2.54;\n    \n    printf(\"%d %.2f\", feet, inches);\n\n    return 0;\n}",
-    "Week-1: Programing Assignment-03": " #include <stdio.h>\n\nint main() {\n    int lengthS;\n    int breathS;\n\n\n    scanf(\"%d %d\", &lengthS,&breathS);\n\n    \n    printf(\"%d\", lengthS*breathS);\n\n    return 0;\n}"
+    "Week-1: Programing Assignment-01": " #include &lt;stdio.h&gt;\n\nint main() {\n    int a, b, c;\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    int LARgest_number;\n\n    if ((a &gt; b && a &lt; c) || (a &gt; c && a &lt; b)) {\n        LARgest_number = a;\n    } else if ((b &gt; a && b &lt; c) || (b &gt; c && b &lt; a)) {\n        LARgest_number = b;\n    } else {\n        LARgest_number = c;\n    }\n\n    printf(\"%d\", LARgest_number);\n    return 0;\n}",
+    "Week-1: Programing Assignment-02": " #include &lt;stdio.h&gt;\n\nint main() {\n    int cm;\n    int feet;\n    float inches;\n\n    scanf(\"%d\", &cm);\n\n    \n     feet = cm / 30.48;  \n     float remaining_cmss= cm - (feet * 30.48);\n     inches = remaining_cmss / 2.54;\n    \n    printf(\"%d %.2f\", feet, inches);\n\n    return 0;\n}",
+    "Week-1: Programing Assignment-03": " #include &lt;stdio.h&gt;\n\nint main() {\n    int lengthS;\n    int breathS;\n\n\n    scanf(\"%d %d\", &lengthS,&breathS);\n\n    \n    printf(\"%d\", lengthS*breathS);\n\n    return 0;\n}"
   },
   {
-    "Week-2 Programing Assignment-01": " #include <stdio.h>\n\nint main() {\n    int kohli = -1, dhoni, rohit = 0;\n\n    while (1) {\n        scanf(\"%d\", &dhoni);\n        if (dhoni == -1) break;\n\n        if (dhoni != kohli) {\n            rohit++;\n            kohli = dhoni;\n        }\n    }\n\n    printf(\"%d\", rohit);\n    return 0;\n}\n",
-    "Week-2 Programing Assignment-02": " #include <stdio.h>\n\nint main() {\n    int N;\n    \n    scanf(\"%d\",&N);\n  \n    for(int SQ = 1; SQ < N; SQ++)\n    {\n      printf(\"%d\\n\",SQ*SQ);\n    }\n    printf(\"%d\",(N)*(N));\n    return 0;\n}",
-    "Week-2 Programing Assignment-03": " #include <stdio.h>\n\nint main() {\n    int N;\n    int faltu=1;\n    scanf(\"%d\",&N);\n  \n    for(int SQ = N; SQ > 1; SQ--)\n    {\n      faltu=faltu*SQ;\n      \n    }\n    printf(\"%d\",faltu);\n    return 0;\n}"
+    "Week-2 Programing Assignment-01": " #include &lt;stdio.h&gt;\n\nint main() {\n    int kohli = -1, dhoni, rohit = 0;\n\n    while (1) {\n        scanf(\"%d\", &dhoni);\n        if (dhoni == -1) break;\n\n        if (dhoni != kohli) {\n            rohit++;\n            kohli = dhoni;\n        }\n    }\n\n    printf(\"%d\", rohit);\n    return 0;\n}\n",
+    "Week-2 Programing Assignment-02": " #include &lt;stdio.h&gt;\n\nint main() {\n    int N;\n    \n    scanf(\"%d\",&N);\n  \n    for(int SQ = 1; SQ &lt; N; SQ++)\n    {\n      printf(\"%d\\n\",SQ*SQ);\n    }\n    printf(\"%d\",(N)*(N));\n    return 0;\n}",
+    "Week-2 Programing Assignment-03": " #include &lt;stdio.h&gt;\n\nint main() {\n    int N;\n    int faltu=1;\n    scanf(\"%d\",&N);\n  \n    for(int SQ = N; SQ &gt; 1; SQ--)\n    {\n      faltu=faltu*SQ;\n      \n    }\n    printf(\"%d\",faltu);\n    return 0;\n}"
   }
 ]
 
