@@ -229,7 +229,7 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 8 programming answers[Due on 2025-03-20, 23:59 IST]</a>
+	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers[Due on 2025-08-07, 23:59 IST]</a>
 	   
                 <p> Week 2: Programming Assignment</p>
  <div>
@@ -293,7 +293,7 @@ Here are some examples to show how your function should work.
 [0, 1, 3, 5]
 	    </div>
 	    <br>
-	    <div>
+<!-- 	    <div>
 		  Solution hint
 Number the dragons 1,2,…,D in ascending order of rows. Let mindist(i,j) denote the minimum distance travelled when the jth dragon killed is dragon i. Recall the constraint that there is no dragon at (0,0). Use dynamic programming to compute mindist(i,j) for all values of i and j, then find the minimum among mindist(i,K) for all i ≥ K.
 
@@ -316,45 +316,51 @@ Sample Input:
 2 3
 Sample Output:
 7
-	    </div>
+	    </div> -->
 	    <br>
 	    <div> -->
 		    
 	    </div>
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def dist(i,j):
-    
-    xx = abs(dragons[i][0] - dragons[j][0])
-    yz = abs(dragons[i][1] - dragons[j][1])
-    return(xx+yz)
 
-(rstr,cstr,kstr,dstr) = input().strip().split()
+def primeproduct(m):
+    Pen=list()  
+    if m>=2:
+        for k in range(2,m):
+            if m%k==0:                
+                Pen=Pen+[k]            
+        if len(Pen)==2:
+            if m==Pen[0]*Pen[1]:
+                if Pen[1]%Pen[0]==0:
+                    return(False)
+                return(True)
+        elif len(Pen)==1:
+            if m==Pen[0]*Pen[0]:
+                return(True)
+        else:   
+            return(False)     
+    else:
+        return(False)
+        
 
-(r,c,k,d) = (int(rstr),int(cstr),int(kstr),int(dstr))
-
-dragons = [(0,0)]
-
-for i in range(d):
-   (xstr,ystr) = input().strip().split()
-   (xx,yz) = (int(xstr),int(ystr))
-   dragons.append((xx,yz))
-
-dragons.sort()
-
-killed = [[0 for col in range(k+1)] for row in range(d+1)]
-
-for row in range(d+1):
-   for col in range(k+1):
-      if col != row:
-         killed[row][col] = r*c+1
-
-for dragon in range(1,d+1):
-   for victim in range(1,min(dragon+1,k+1)):
-       killed[dragon][victim] = min([ killed[i][victim-1] + dist(i,dragon) for i in range(victim-1,dragon) ])
-
-optimum = min( [ killed[i][k] for i in range(dragon+1) ])
-print(optimum,end="")   
+def delchar(s,c):
+    if len(c)==1:
+        s=s.replace(c,'')  
+        ans=s
+    else:
+        ans=s
+    return(ans)    
+  
+def shuffle(l1,l2):
+    ans99=[]
+    if len(l1)!=0 and len(l2)!=0:
+      for q in range(min(len(l1), len(l2))):
+        ans99.extend([l1[q],l2[q]])      
+      ans99.extend(l1[q+1:] or l2[q+1:])
+    else:
+      ans99.extend(l1[0:] or l2[0:])      
+    return(ans99)  
 																	
      
                 </textarea><br><br>
