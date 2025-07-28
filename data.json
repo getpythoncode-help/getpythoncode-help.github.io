@@ -8,11 +8,11 @@
 
   },
   {
-    "Java week 2 Question 1 code": " Questions not released yet  ",
-    "Java week 2 Question 2 code": "  Questions not released yet  ",
-    "Java week 2 Question 3 code": " Questions not released yet   ",
-    "Java week 2 Question 4 code": "  Questions not released yet   ",
-    "Java week 2 Question 5 code": "  Questions not released yet   "
+    "Java week 2 Question 1 code": "        //please support me \n         int area=length*width; ",
+    "Java week 2 Question 2 code": "         //I really worked hard \n        int perimeter = 2 *(length + width);\n        ",
+    "Java week 2 Question 3 code": "         for(int jiju=1; jiju < n ; jiju++){\n          if(arr[jiju] > max)\n            max=arr[jiju];\n        }\n          ",
+    "Java week 2 Question 4 code": "          //Am I your friend?\n         System.out.print(\"Sum of length and width is: \" +(rect.length+rect.width ));",
+    "Java week 2 Question 5 code": "          //You will remember me one day\n             Circle(int radius) {\n            this.radius = radius;\n        }\n    "
   },
   {
     "Java week 3 Question 1 code": " Questions not released yet   ",
