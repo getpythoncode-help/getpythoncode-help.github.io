@@ -8,6 +8,11 @@
     "Week-2 Programing Assignment-01": " #include &lt;stdio.h&gt;\n\nint main() {\n    int kohli = -1, dhoni, rohit = 0;\n\n    while (1) {\n        scanf(\"%d\", &dhoni);\n        if (dhoni == -1) break;\n\n        if (dhoni != kohli) {\n            rohit++;\n            kohli = dhoni;\n        }\n    }\n\n    printf(\"%d\", rohit);\n    return 0;\n}\n",
     "Week-2 Programing Assignment-02": " #include &lt;stdio.h&gt;\n\nint main() {\n    int N;\n    \n    scanf(\"%d\",&N);\n  \n    for(int SQ = 1; SQ &lt; N; SQ++)\n    {\n      printf(\"%d\\n\",SQ*SQ);\n    }\n    printf(\"%d\",(N)*(N));\n    return 0;\n}",
     "Week-2 Programing Assignment-03": " #include &lt;stdio.h&gt;\n\nint main() {\n    int N;\n    int faltu=1;\n    scanf(\"%d\",&N);\n  \n    for(int SQ = N; SQ &gt; 1; SQ--)\n    {\n      faltu=faltu*SQ;\n      \n    }\n    printf(\"%d\",faltu);\n    return 0;\n}"
+  },
+  {
+    "Week-3 Programing Assignment-01": "#include &lt;stdio.h&gt;\n\nint main() {\n    int totalCount, currentValue, maxValue;\n    scanf(\"%d\", &totalCount);\n\n    scanf(\"%d\", &currentValue);\n    maxValue = currentValue;\n\n    for (int index3 = 1; index3 < totalCount; index3++) {\n        scanf(\"%d\", &currentValue);\n        if (currentValue > maxValue) {\n            maxValue = currentValue;\n        }\n    }\n\n    printf(\"%d\", maxValue);\n    return 0;\n}\n ",
+    "Week-3 Programing Assignment-02": " #include &lt;stdio.h&gt;\n\n\nint is_prime(int n) {\n    if (n <= 1) return 0;\n    for (int j = 2; j * j <= n; j++) {\n        if (n % j == 0) return 0;\n    }\n    return 1;\n}\n\nint main() {\n    int n, num;\n    scanf(\"%d\", &n);\n  \n    int flag = 0;\n  \n    for (int in = 0; in < n; in++) {\n        scanf(\"%d\", &num);\n        \n        if (is_prime(num)) {\n            if (flag == 0) {\n                printf(\"%d\", num);\n                flag = 1;     \n            } else {\n                printf(\" %d\", num);\n            }\n        }\n    }\n\n    return 0;\n}\n",
+    "Week-3 Programing Assignment-03": "#include &lt;stdio.h&gt;\n\nint main() {\n    char inputChar123;\n    scanf(\"%c\", &inputChar123);\n\n    char shiftedChar = ((inputChar123 - 'a' + 3) % 26) + 'a';\n\n    printf(\"%c\", shiftedChar);\n\n    return 0;\n}\n"
   }
 ]
 
