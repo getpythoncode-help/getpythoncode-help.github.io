@@ -365,159 +365,111 @@ def shuffle(l1,l2):
      
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 5 programming answers [Due on 2025-02-27, 23:59 IST]</a>
-                <p> Week 5: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2025-08-14, 23:59 IST]</a>
+                <p> Week 3: Programming Assignment</p>
 	    <p>
 
-For this assignment, you have to write a complete Python program. Paste your code in the window below.
-
+Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
-In all cases you may assume that the input to your program has the expected format, so your program does not have to check for malformed inputs.
-There are some public test cases and some (hidden) private test cases.
+In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
+For each function, there are normally some public test cases and some (hidden) private test cases.
 "Compile and run" will evaluate your submission against the public test cases.
-"Submit" will evaluate your submission against the hidden private test cases. There are 6 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+"Submit" will evaluate your submission against the hidden private test cases. There are 12 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-The academic office at the Hogwarts School of Witchcraft and Wizardry has compiled data about students' grades. The data is provided as text from standard input in three parts: information about courses, information about students and information about grades. Each part has a specific line format, described below..
+Write a function expanding(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements strictly increases.
 
-Information about courses
-Line format: Course Code~Course Name~Semester~Year~Instructor
-Information about students
-Line format: Roll Number~Full Name
-Information about grades
-Line format: Course Code~Semester~Year~Roll Number~Grade
-The possible grades are A, AB, B, BC, C, CD, D with corresponding grade points 10, 9, 8, 7, 6, 5 and 4. The grade point average of a student is the sum of his/her grade points divided by the number of courses. For instance, if a student has taken two courses with grades A and C, the grade point average is 8.50 = (10+7)÷2. If a student has not completed any courses, the grade point average is defined to be 0.
+Here are some examples of how your function should work.
 
-You may assume that the data is internally consistent. For every grade, there is a corresponding course code and roll number in the input data.
+  >>> expanding([1,3,7,2,9])
+  True
+Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 9-2 = 7.
 
-Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Courses. The second section begins with a line containing Students. The third section begins with a line containing Grades. The end of the input is marked by a line containing EndOfInput.
+  >>> expanding([1,3,7,2,-3]) 
+  False
+Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 2-(-3) = 5, so not strictly increasing.
 
-Write a Python program to read the data as described above and print out a line listing the grade point average for each student in the following format:
+  >>> expanding([1,3,7,10])
+  False
+Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 10-7 = 3, so not increasing.
 
-Roll Number~Full Name~Grade Point Average
-Your output should be sorted by Roll Number. The grade point average should be rounded off to 2 digits after the decimal point. Use the built-in function round().
+Write a Python function sumsquare(l) that takes a nonempty list of integers and returns a list [odd,even], where odd is the sum of squares all the odd numbers in l and even is the sum of squares of all the even numbers in l.
 
-Here is a sample input and its corresponding output.
+Here are some examples to show how your function should work.
 
-Sample Input
+>>> sumsquare([1,3,5])
+[35, 0]
 
-Courses
-TRAN~Transfiguration~1~2011-2012~Minerva McGonagall
-CHAR~Charms~1~2011-2012~Filius Flitwick
-Students
-SLY2301~Hannah Abbott
-SLY2302~Euan Abercrombie
-SLY2303~Stewart Ackerley
-SLY2304~Bertram Aubrey
-SLY2305~Avery
-SLY2306~Malcolm Baddock
-SLY2307~Marcus Belby
-SLY2308~Katie Bell
-SLY2309~Sirius Orion Black
-Grades
-TRAN~1~2011-2012~SLY2301~AB
-TRAN~1~2011-2012~SLY2302~B
-TRAN~1~2011-2012~SLY2303~B
-TRAN~1~2011-2012~SLY2305~A
-TRAN~1~2011-2012~SLY2306~BC
-TRAN~1~2011-2012~SLY2308~A
-TRAN~1~2011-2012~SLY2309~AB
-CHAR~1~2011-2012~SLY2301~A
-CHAR~1~2011-2012~SLY2302~BC
-CHAR~1~2011-2012~SLY2303~B
-CHAR~1~2011-2012~SLY2305~BC
-CHAR~1~2011-2012~SLY2306~C
-CHAR~1~2011-2012~SLY2307~B
-CHAR~1~2011-2012~SLY2308~AB
-EndOfInput
-Sample Output
+>>> sumsquare([2,4,6])
+[0, 56]
 
-SLY2301~Hannah Abbott~9.5
-SLY2302~Euan Abercrombie~7.5
-SLY2303~Stewart Ackerley~8.0
-SLY2304~Bertram Aubrey~0
-SLY2305~Avery~8.5
-SLY2306~Malcolm Baddock~6.5
-SLY2307~Marcus Belby~8.0
-SLY2308~Katie Bell~9.5
-SLY2309~Sirius Orion Black~9.0
+>>> sumsquare([-1,-2,3,7])
+[59, 4]
+A two dimensional matrix can be represented in Python row-wise, as a list of lists: each inner list represents one row of the matrix. For instance, the matrix
+
+1  2  3  4
+5  6  7  8
+would be represented as [[1, 2, 3, 4], [5, 6, 7, 8]].
+
+The transpose of a matrix converts each row into a column. The transpose of the matrix above is:
+
+1  5
+2  6
+3  7
+4  8
+which would be represented as [[1, 5], [2, 6], [3, 7], [4, 8]].
+
+Write a Python function transpose(m) that takes as input a two dimensional matrix m and returns the transpose of m. The argument m should remain undisturbed by the function.
+
+Here are some examples to show how your function should work. You may assume that the input to the function is always a non-empty matrix.
+
+>>> transpose([[1,2,3],[4,5,6]])
+[[1, 4], [2, 5], [3, 6]]
+
+>>> transpose([[1],[2],[3]])
+[[1, 2, 3]]
+
+>>> transpose([[3]])
+[[3]]
+
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def Gvalue(code1):
-        if code1=="A":
-                return(10)
-        if code1=="AB":
-                return(9)
-        if code1=="B":
-                return(8)
-        if code1=="BC":
-                return(7)
-        if code1=="C":
-                return(6)
-        if code1=="CD":
-                return(5)
-        if code1=="D":
-                return(4)
-        
-# varibles used for storing data
+def expanding(l):
+    if len(l) <= 2:
+        return(True)
+    diff00 = abs(l[1]-l[0])
+    return(diff00 < abs(l[2]-l[1]) and expanding(l[1:]))
 
-ROLL_GRADEsum={}
-Roll_course_count={}
-Roll_name={}
+def expanding_loop(l):
+    if len(l) <= 2:
+        return(True)
+    olddiff1 = abs(l[1]-l[0])
+    for i3 in range(2,len(l)):
+        newdiff = abs(l[i3]-l[i3-1])
+        if newdiff <= olddiff1:
+            return(False)
+        olddiff1 = newdiff
+    return(True)
 
-#COURSES INPUT SECTION
-
-type_course=input()
-enter_course_detail=input()
-next_input=input()
-while(next_input!="Students"):
-        next_input=input()
-
-#STUDENT INPUT SECTION
-        
-#if it fails in courses section then 
-#it will automatically enter students
-#contact us 
-        
-roll,name=input().split('~')
-Roll_name[roll]=name
-ROLL_GRADEsum[roll]=0
-Roll_course_count[roll]=0
-next_input=input()
-while('~' in next_input):
-    roll,name=next_input.split('~')
-    Roll_name[roll]=name
-    ROLL_GRADEsum[roll]=0
-    Roll_course_count[roll]=0
-    next_input=input()
-
-#GRADES INPUT SECTION
-
-code,sem,year,Rnum,grade=input().split('~')
-if Rnum in ROLL_GRADEsum.keys():
-    ROLL_GRADEsum[Rnum]=ROLL_GRADEsum[Rnum]+Gvalue(grade)
-    Roll_course_count[Rnum]=Roll_course_count[Rnum]+1
-next_input=input()
-while(next_input!="EndOfInput"):
-    code,sem,year,Rnum3,grade=next_input.split('~')
-    if Rnum3 in ROLL_GRADEsum.keys():
-        ROLL_GRADEsum[Rnum3]=ROLL_GRADEsum[Rnum3]+Gvalue(grade)
-        Roll_course_count[Rnum3]=Roll_course_count[Rnum3]+1
-    next_input=input()
-    
-#print(Roll_course_count)
-#print(ROLL_GRADEsum)
-#print(Roll_name)
-
-#RESULT COMPUTATION
-    
-Sort_roll=sorted(Roll_name)
-for k9 in Sort_roll:
-    if ROLL_GRADEsum[k9]!=0:
-        ans=round((ROLL_GRADEsum[k9]/Roll_course_count[k9]),2)
-        print(k9+"~"+Roll_name[k9]+"~"+str(ans))
+  
+def sumsquare(l):
+  (odd_sum,even_sum)=(0,0)
+  for aaja in l:
+    if aaja%2!=0:
+      odd_sum+=aaja*aaja
     else:
-        print(k9+"~"+Roll_name[k9]+"~"+"0")  
+      even_sum+=aaja*aaja
+  return([odd_sum,even_sum])
+
+
+def transpose(m):
+  ans1=list()
+  for ip in range(len(m[0])):
+    a=list()
+    for j in range(len(m)):
+      a.append(m[j][ip])
+    ans1.append(a)
+  return(ans1)  
                 </textarea><br><br>	    
 	    
 	    
@@ -640,3 +592,4 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
