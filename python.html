@@ -128,7 +128,7 @@
 
                 <ul class="text" style="font-family: apple;">
                   <li>Motivation for Computing</li>
-                  <li>Welcome to Programming!!</li>
+                  <li>Welcome to Programming!!</li> 
                   <li>Variables and Expressions : Design your own calculator</li>
                   <li>Loops and Conditionals : Hopscotch once again</li>
                   <li>Lists, Tuples and Conditionals : Lets go on a trip</li>
@@ -370,8 +370,8 @@ print(len(list_of_v),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1   Due on  2025-04-10, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 1   Due on  2025-08-14, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -380,23 +380,21 @@ print(len(list_of_v),end="")
     </p> -->
 <p>
 
-You are given a list of n distinct integers in the range [0, n] (inclusive). This means exactly one number from this range is missing. Your task is to determine and return the missing number.
-Input: A list nums containing n distinct integers from 0 to n.
-Output: The missing integer in the range [0, n]
-Examples:
-Input: nums = [0, 2, 3, 1, 4]
-Output: 5
-The list contains {0, 1, 2, 3, 4}, so 5 is missing.
+In the land of Codeville, young programmers discover an ancient scroll containing a list of mysterious words — each one part of a secret prefix code used by the town’s old network of messengers. Legend says that hidden among these words is one with special power: the longest word in the list. But there’s a twist — if more than one word shares the longest length, the scroll reveals only the one that appears last in the list.The town’s Code Scribe, Pixel, needs your help. She wants you to write a program that will search through this list and identify the special word according to the rules.
+Write a program that:
 
-Input: nums = [0, 1, 2, 4, 5, 6]
-Output: 3
-The list contains {0, 1, 2, 4, 5, 6}, so 3 is missing.
+Accepts a single line of input containing a comma-separated list of words from the ancient prefix code.
+
+Finds and prints:   (a) The longest word in the list.   (b) If multiple words share the maximum length, print the one that appears right-most in the list.
+
+
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def missingNumber(nums):
-    return(sum(range(len(nums)+1))-sum(nums))
+sentence=sorted(input().split(",") ,key=len)
+print(sentence[-1],end="")
+
       
                 </textarea><br><br>
 
@@ -408,48 +406,20 @@ def missingNumber(nums):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 2  Due on  2025-04-10, 23:59 IST </p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 2  Due on  2025-08-14, 23:59 IST </p>
 		<p>
-Given a list of integers nums and an integer k, write a Python function to check whether there exists a subsequence (a non-contiguous subset of the list) such that the sum of its elements equals k. Return True if such a subsequence exists, otherwise False.
-Example 1 :
-Input:
-nums = [1, 2, 3, 4, 5]
-k = 8
-Output:
-True
-
-Example 2 : 
-Input:
-nums = [4, 3, 9, 2]
-k = 10
-
-Output:
-False
-
-Constraints :
-
-1<=len(nums)<=20
-1<=nums[i]<=100
-1<=k<=2000
+At AeroPort-X, a futuristic logistics hub, drones are used to transport cargo based on weight. A team of engineers is working on a system that reads incoming weight values for parcels — often given as real numbers due to sensitive sensors. However,to fit them into standardized cargo containers, each weight must be rounded down to the nearest whole number — in other words, converted to the greatest integer less than or equal to it. Once converted, the numbers are displayed on a screen, separated by commas, for the loading team to arrange parcels efficiently.You are asked to build the logic for this conversion process.
+Write a program that:
+(a) Accepts a space-separated sequence of positive real numbers representing parcel
+weights.
+(b) Converts each number to the greatest integer less than or equal to it.
+(c) Outputs the resulting integers, separated by commas.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def checkSubsequenceSum(nums, k):
-    n = len(nums)
-    
-    def dfsss(index, current_sum, memo):
-        if current_sum == k:
-            return True
-        if index == n or current_sum > k:
-            return False
-        if (index, current_sum) in memo:
-            return memo[(index, current_sum)]
-        
-        memo[(index, current_sum)] = dfsss(index + 1, current_sum + nums[index], memo) or dfsss(index + 1, current_sum, memo)
-        return memo[(index, current_sum)]
-    
-    return dfsss(0, 0, {})
+List_of_numbers=[str(int(float(q))) for q in input().split()]
+print(",".join(List_of_numbers),end="")
 
                 </textarea><br><br>
 
@@ -461,60 +431,60 @@ def checkSubsequenceSum(nums, k):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 3  Due on  2025-04-10, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 3  Due on  2025-08-14, 23:59 IST</p>
 <p>
-Given a string s representing a large integer, return the largest-valued odd integer (as a string) that is a substring of s.
+At Orbital Station Vega, mission control systems rely heavily on matrix-based data to process flight paths, control modules, and compute system interactions. Two key matrices, A and B, represent critical control parameters: one for navigation weights and another for response modifiers. Before any launch, the control AI must compute the product matrix AB, which defines the final control grid used during takeoff. The engineers receive the data from satellite input systems in the following format:
 
-Note:
+The first line contains the integer n, representing the size of the square matrices.
 
-The result should not contain any leading zeros.
-The input string s may contain leading zeros.
-Constraints :
-1 <= s.length <= 10^3
-'0' <= s[i] <= '9'
-Examples:
-Example 1:
-Input:
-s = "5347"
+The next n lines each contain a row of matrix A, represented as comma-separated
+integers.
+The following n lines each contain a row of matrix B, again as comma-separated
+integers.
 
-Output:
-"5347"
+Your task is to help the AI compute the matrix product AB, and output it in the
+correct format:
+n lines, each containing a row of the resulting matrix, as comma-separated integers.
 
-Explanation:
-
-All possible odd numbers: {5, 3, 53, 347, 5347}
-The largest odd number is "5347".
-
-
-Example 2:
-Input:
-s = "0214638"
-
-Output:
-"21463"
-
-Explanation:
-Valid odd numbers: {1, 3, 21, 63, 463, 1463, 21463}
-Leading zeros cannot be included.
-The largest odd number is "21463".
-
-
-Example 3:
-Input:
-s = "0032579"
-
-Output:
-"32579"
-
+Write a program that:
+(a) Accepts an integer n followed by 2n lines as input.
+(b) Each of the first n lines contains a row of matrix A (comma-separated integers).
+(c) Each of the next n lines contains a row of matrix B (comma-separated integers).
+(d) Computes the matrix product AB.
+(e) Outputs the resulting matrix as n lines, with each line showing a row of the
+product as comma-separated integers.
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def largeOddNum(s):
-        for i in range(len(s) - 1, -1, -1):
-            if int(s[i]) % 2 != 0:
-                return f'"{int(s[:i+1])}"'
-        return '"' +  '"'
+def read_matrix(day_count):
+    matrix = []
+    for _ in range(day_count):
+        row = list(map(int, input().strip().split(',')))
+        matrix.append(row)
+    return matrix
+
+def multiply_matrices(mon, tue, day_count):
+    wed = [[0] * day_count for _ in range(day_count)]
+    for thu in range(day_count):
+        for fri in range(day_count):
+            for sat in range(day_count):
+                wed[thu][fri] += mon[thu][sat] * tue[sat][fri]
+    return wed
+
+def print_matrix(sun):
+    for idx, row in enumerate(sun):
+        end_char = '' if idx == len(sun) - 1 else '\n'
+        print(','.join(map(str, row)), end=end_char)
+
+
+day_count = int(input())
+mon = read_matrix(day_count)
+tue = read_matrix(day_count)
+sun = multiply_matrices(mon, tue, day_count)
+print_matrix(sun)
+
+
 
                 </textarea><br><br>
 
