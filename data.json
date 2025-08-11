@@ -1,25 +1,25 @@
 [
   {
-    "Java week 1 Question 1 code": "// Check the Sample solution and trust me \n      if(number>0)\n        System.out.print(\"Positive\");\n      else\n      {System.out.print(\"Negative\");}",
-    "Java week 1 Question 2 code": "        //Just keep supporting me \n        double volume=Math.PI*radius*height*radius; ",
-    "Java week 1 Question 3 code": "       // lets have a blast \n\n      for(int pg=1; pg < 4; pg++)\n      System.out.printf(\"%d x %d = %d\\n\",number, pg, number*pg);\n      \n      System.out.printf(\"%d x %d = %d\",number, 4, number*4);\n       ",
-    "Java week 1 Question 4 code": "      //enjoyeee \n   \n      System.out.printf(\"The Quotient is = %d\\n\",x/y);\n      System.out.printf(\"The Remainder is = %d\",x%y); ",
-    "Java week 1 Question 5 code": "        // its so simple bro \n       double perimeter=(height+width)*2;\n       double area=width*height; "
+    "Java week 3 Question 1 code": "for (int ki = n; ki >= 1; ki--) {\n            for (int j = 1; j <= ki; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        }\n\n \n        for (int i = 2; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        } ",
+    "Java week 3 Question 2 code": "         for (int ijk = 1; ijk  <= num; ijk++) {\n            if (num % ijk == 0) {\n                System.out.print(ijk + \" \");\n            }\n        }\n",
+    "Java week 3 Question 3 code": "         int county = 0;\n        int tempy = num;\n\n        if (tempy == 0) {\n            county = 1; // 0 has 1 digit\n        } else {\n            while (tempy > 0) {\n                tempy = tempy / 10;\n                county++;\n            }\n        }\n\n        System.out.print(county); ",
+    "Java week 3 Question 4 code": "     //Plz support me\n\n    // Parameterized constructor\n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    // Getter for name\n    public String getName() {\n        return name;\n    }\n\n    // Setter for name\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    // Getter for age\n    public int getAge() {\n        return age;\n    }\n\n    // Setter for age\n    public void setAge(int age) {\n        this.age = age;\n    } ",
+    "Java week 3 Question 5 code": "  //Please like us \n\nclass cls2 extends cls1 {\n    // Method for multiplication given for help\n    void mul(int a, int b) {\n        System.out.println(a * b);\n    }\n\n    // Method for sum of squares taken for help \n    void task(int a, int b) {\n        System.out.println((a * a) + (b * b));\n    }\n}"
 
   },
   {
-    "Java week 2 Question 1 code": "        //please support me \n         int area=length*width; ",
-    "Java week 2 Question 2 code": "         //I really worked hard \n        int perimeter = 2 *(length + width);\n        ",
-    "Java week 2 Question 3 code": "         for(int jiju=1; jiju < n ; jiju++){\n          if(arr[jiju] > max)\n            max=arr[jiju];\n        }\n          ",
-    "Java week 2 Question 4 code": "          //Am I your friend?\n         System.out.print(\"Sum of length and width is: \" +(rect.length+rect.width ));",
-    "Java week 2 Question 5 code": "          //You will remember me one day\n             Circle(int radius) {\n            this.radius = radius;\n        }\n    "
+    "Java week 4 Question 1 code": "         //Help me to get help \n \n        System.out.print(\"Roll Number is: \"+s.rollNo); ",
+    "Java week 4 Question 2 code": "       //Want support ? Support me \n\n      System.out.print(\"Speed is: \"+c.speed); ",
+    "Java week 4 Question 3 code": "          public int getBalance() {\n            return balance;\n        }\n    ",
+    "Java week 4 Question 4 code": "         //Welcome to my world\n\n        m.salary = s;\n\n        // Print the salary\n        System.out.print(\"Salary is: \"+m.salary);",
+    "Java week 4 Question 5 code": "       // Enjoyee\n\n        private int add(int a, int b, int c) {\n            return a + b + c;\n        }\n\n "
   },
   {
-    "Java week 3 Question 1 code": " Questions not released yet   ",
-    "Java week 3 Question 2 code": "  Questions not released yet  ",
-    "Java week 3 Question 3 code": "  Questions not released yet  ",
-    "Java week 3 Question 4 code": "  Questions not released yet  ",
-    "Java week 3 Question 5 code": "  Questions not released yet  "
+    "Java week 5 Question 1 code": " Questions not released yet   ",
+    "Java week 5 Question 2 code": "  Questions not released yet  ",
+    "Java week 5 Question 3 code": "  Questions not released yet  ",
+    "Java week 5 Question 4 code": "  Questions not released yet  ",
+    "Java week 5 Question 5 code": "  Questions not released yet  "
   }
 
 ]
