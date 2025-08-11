@@ -218,19 +218,54 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p>Week 2: Programming Assignment 2 [Due on 2025-08-07, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 1 [Due on 2025-08-21, 23:59 IST]</p>
 		<p>
 
 
-Gautam Gambhir, freshly appointed head coach for India’s 2025 away Test series against England, has asked the new analyst, Aryan, to keep a quirky statistic:
-“At the end of each day’s play,” Gambhir says, “tell me the total runs we scored in every odd-numbered over—1st, 3rd, 5th … all the way up to the last over bowled that day. It helps me spot momentum in the sessions where bowlers are freshest.”
-Aryan realises the job boils down to simple maths: if n is the last over of the day (always a positive integer), he just needs the sum of all odd integers from 1 through n.
-Your task is to step into Aryan’s shoes and automate this little ritual.
-Input Format:
-A single integer
-Output Format:
-A single integer: the sum of all odd numbers from 1 to n
+At Insight Analytics, the DataOps team is responsible for maintaining data quality across real-time dashboards, reports, and AI pipelines.
+To streamline data handling across various components, you are tasked with implementing a unified utility function that simplifies basic list operations. This function will be used across multiple internal scripts to ensure consistent list behavior and efficient processing.
+
+Problem Statement
+Write a single Python function named list_util that performs different operations on a list based on a specified command.
+
+Function Signature
+
+def list_util(L, command):
+
+    ...
+
+Parameters:
+L: A list of elements.
+
+command: A string representing the operation to perform. It can be one of:
+
+"is_empty" – Check if the list is empty.
+
+"first" – Get the first element of the list.
+
+"last" – Get the last element of the list.
+
+"init" – Get all elements except the last.
+
+"rest" – Get all elements except the first.
+
+Depending on the value of command, the function should perform one of the following:
+
+If command is "is_empty", return True if the list is empty, and False otherwise.
+
+If command is "first", return the first element of the list if it’s non-empty; otherwise return None.
+
+If command is "last", return the last element of the list if it’s non-empty; otherwise return None.
+
+If command is "rest", return a list of all elements except the first one, if the list is non-empty. If the list has only one element, return an empty list. If the list is empty, return None.
+Example Usage:
+list_util([], "is_empty")       ➞ True  
+list_util([1, 2, 3], "first")   ➞ 1  
+list_util([1, 2, 3], "last")    ➞ 3  
+list_util([1], "init")          ➞ []  
+list_util([], "rest")           ➞ None  
+
 
 
 	</p>
@@ -242,11 +277,28 @@ A single integer: the sum of all odd numbers from 1 to n
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-n=int(input())
-ans_week_2=0
-for i in range(1,n+1,2):
-  ans_week_2+=i
-print(ans_week_2, end="")  
+def list_util(L, command):
+    if command == "is_empty":
+        return (len(L) == 0)
+
+    elif command == "first":
+        return L[0] if L else None
+
+    elif command == "last":
+        return L[-1] if L else None
+
+    elif command == "init":
+        return (L[:-1] if L else [])
+
+    elif command == "rest":
+        if not L:
+            return None
+        return L[1:] if len(L) > 1 else []
+
+    else:
+        raise ValueError("Invalid command")
+
+
 
 
 
@@ -262,8 +314,8 @@ print(ans_week_2, end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 2 [Due on 2025-08-07, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 2 [Due on 2025-08-21, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -272,22 +324,36 @@ print(ans_week_2, end="")
     </p> -->
 		<p>
 
-A high-security vault uses a custom PIN authentication mechanism. To reduce the chances of brute-force attacks, the system only allows PINs that are Neon Numbers.
-The rule is:
-A PIN is valid if the sum of the digits of its square equals the PIN itself.
-Your Task: Write a Python program that reads a numeric PIN input by the user and validates whether it is a Neon Number or not.
+In the mystical realm of Numbertown, numbers are not just mathematical entities — they possess personalities. Among them, Perfect Numbers are considered rare and noble.
+
+A perfect number is one whose value is equal to the sum of all its proper divisors (excluding itself).
+For example:
+
+6 = 1 + 2 + 3
+
+Function Requirements
+Write a Python function named is_perfect that:
+
+Accepts a positive integer n as input.
+
+Returns True if n is a perfect number.
+
+Returns False otherwise.
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-PIN_CODE=int(input())
-pin_digit=[int(pin) for pin in list(str(PIN_CODE**2))]
-if sum(pin_digit)==PIN_CODE:
-  print("Neon Number",end="")
-else:
-  print("Not Neon Number",end="")
+def is_perfect(num):
+    if num <= 0:
+        return False
 
+    divisors_sum = 0
+    for ist in range(1, num):
+        if num % ist== 0:
+            divisors_sum += ist
+
+    return divisors_sum == num
 
                   
                 </textarea><br><br>
@@ -300,21 +366,37 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 3 [Due on 2025-08-07, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 3 [Due on 2025-08-21, 23:59 IST ]</p>
 <p>
 
 
-While analysing intercepted communications, TASC officer Srikant Tiwari suspects that some messages might be carrying hidden signals. One of the red flags used by the agency is the density of vowels in a message — unusually high vowel counts may indicate a coded alert.
-To assist in screening these messages quickly, a script is needed to count the number of vowels in any given string.
-Write a Python program that:
-Takes a message as input.
-Counts the number of vowels (a, e, i, o, u — both uppercase and lowercase).
-Prints the vowel count.
-Input Format:
-A single line containing a string .
-Output Format:
-A single integer — the count of vowels (A, E, I, O, U in both uppercase and lowercase).
+In the year 2525, the Galactic Registry maintains records of citizens from various planets. Each citizen is registered with:
+
+A name, and
+
+A birthdate, represented by a number from 1 to 365, indicating the day of the year they were born.
+
+The Interstellar Census Department is looking to identify "Birthday Twins" — citizens who share the same day of birth.
+
+Input:
+The function will take the following two inputs:
+
+A string of comma-separated names (e.g., "alice,bob,charlie"),
+
+A string of comma-separated integers (each from 1 to 365), representing the birthdates corresponding to the names above.
+
+Task:
+Identify all unique pairs of names where both individuals share the same birthday.
+
+For each such pair, create a list in the form: [name1, name2], where name1 comes before name2 alphabetically.
+
+Store all such pairs in a list called common.
+
+Notes:
+Only the order within each pair matters — the overall order of pairs in common is not important.
+
+You can assume that at least one birthday twin pair will exist in any test case.
 
 
 
@@ -326,9 +408,37 @@ A single integer — the count of vowels (A, E, I, O, U in both uppercase and lo
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-vowelS=input()
-list_of_v=[v for v in list(vowelS) if v in "AEIOUaeiou"]
-print(len(list_of_v),end="")
+def birthday_twins():
+    names_str = input().strip()
+    bdays_str = input().strip()
+
+    names = names_str.split(",")
+    bdays = list(map(int, bdays_str.split(",")))
+
+    birthday_map = dict()
+    for name, bday in zip(names, bdays):
+        birthday_map.setdefault(bday, []).append(name)
+
+    common = list()
+    for same_day_names3 in birthday_map.values():
+        if len(same_day_names3) > 1:
+            same_day_names3.sort()
+            for i in range(len(same_day_names3)):
+                for j in range(i + 1, len(same_day_names3)):
+                    common.append((same_day_names3[i], same_day_names3[j]))
+
+    # Sort pairs alphabetically
+    common.sort()
+
+    # Print without extra newline at the end
+    for idx53, pair in enumerate(common):
+        end_char = "" if idx53 == len(common) - 1 else "\n"
+        print(f"{pair[0]},{pair[1]}", end=end_char)
+
+
+
+birthday_twins()
+
 
 
 
