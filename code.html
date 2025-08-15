@@ -345,42 +345,88 @@ Sample Output:
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
 
-def histogram(l):
-    countlo = 0
-    ans=list()
-    k=list()
-    for i in range(len(l)):
-        index=i
-        countlo=0
-        for j in range(index,len(l)):
-            if l[index] == l[j] and l[index] not in k :
-                countlo =countlo + 1
-        k = k + [l[index]] 
-        if (countlo != 0): 
-            ans = ans + [(l[index], countlo)]
-    ans.sort()
-    ans=sorted(ans,key=lambda ans:ans[1])
-    return ans 
-  
-  
-def transcript(coursedetails, studentdetails, grades):
-    ans = list()
-    studentdetails.sort()
-    coursedetails.sort()
-    grades.sort()
-    for studentdet in studentdetails:
-        tuple = studentdet
-        inlist = []
-        for grade in grades:
-            if studentdet[0] == grade[0]:
-                for cdetail in coursedetails:
-                    if grade[1] == cdetail[0]:
-                        intuple = cdetail
-                        intuple = intuple + (grade[2],)
-                        inlist.append(intuple)
-        tuple = tuple + (inlist,)
-        ans.append(tuple)
-    return ans
+#!/usr/bin/env python3
+import sys
+
+def main():
+    lines = [line123.rstrip("\n") for line123 in sys.stdin]
+    i = 0
+    n = len(lines)
+
+    # grade to points mapping
+    grade_points = {
+        "A": 10,
+        "AB": 9,
+        "B": 8,
+        "BC": 7,
+        "C": 6,
+        "CD": 5,
+        "D": 4
+    }
+
+    students = {}          # roll -> full name
+    points_sum = {}        # roll -> sum of grade points
+    courses_count = {}     # roll -> number of courses
+
+    # walk through lines and parse sections
+    while i < n:
+        line = lines[i].strip()
+        i += 1
+        if not line:
+            continue
+        if line == "Courses":
+            # skip course lines until next section keyword
+            while i < n and lines[i].strip() not in ("Students", "Grades", "EndOfInput"):
+                i += 1
+        elif line == "Students":
+            while i < n:
+                s = lines[i].strip()
+                if s in ("Courses", "Grades", "EndOfInput"):
+                    break
+                if s:
+                    parts = s.split("~", 1)
+                    if len(parts) == 2:
+                        roll, name = parts
+                        students[roll] = name
+                        # initialize accumulators
+                        points_sum.setdefault(roll, 0)
+                        courses_count.setdefault(roll, 0)
+                i += 1
+        elif line == "Grades":
+            while i < n:
+                s = lines[i].strip()
+                if s in ("Courses", "Students", "EndOfInput"):
+                    break
+                if s:
+                    parts = s.split("~")
+                    # Course Code~Semester~Year~Roll Number~Grade
+                    if len(parts) == 5:
+                        _, _, _, roll, grade = parts
+                        gp = grade_points.get(grade, 0)
+                        points_sum[roll] = points_sum.get(roll, 0) + gp
+                        courses_count[roll] = courses_count.get(roll, 0) + 1
+                i += 1
+        elif line == "EndOfInput":
+            break
+        else:
+            # ignore unexpected lines (safety)
+            continue
+
+    # Ensure students with no grades are included (already initialized)
+    # Output sorted by roll number
+    for roll in sorted(students.keys()):
+        name = students[roll]
+        cnt = courses_count.get(roll, 0)
+        if cnt == 0:
+            gpa = 0
+        else:
+            gpa = round(points_sum.get(roll, 0) / cnt, 2)
+        # print in required format
+        print(f"{roll}~{name}~{gpa}")
+
+if __name__ == "__main__":
+    main()
+
 
 
 
@@ -608,6 +654,7 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
 
 
