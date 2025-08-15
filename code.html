@@ -345,45 +345,44 @@ Sample Output:
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
 
-gp = {"A":10,"AB":9,"B":8,"BC":7,"C":6,"CD":5,"D":4}
-stu = {}
-pts = {}
-cnt = {}
-lns = []
-while True:
-    try:
-        s = input().strip()
-        lns.append(s)
-        if s == "EndOfInput": break
-    except: break
+def histogram(l):
+    countlo = 0
+    ans=list()
+    k=list()
+    for i in range(len(l)):
+        index=i
+        countlo=0
+        for j in range(index,len(l)):
+            if l[index] == l[j] and l[index] not in k :
+                countlo =countlo + 1
+        k = k + [l[index]] 
+        if (countlo != 0): 
+            ans = ans + [(l[index], countlo)]
+    ans.sort()
+    ans=sorted(ans,key=lambda ans:ans[1])
+    return ans 
+  
+  
+def transcript(coursedetails, studentdetails, grades):
+    ans = list()
+    studentdetails.sort()
+    coursedetails.sort()
+    grades.sort()
+    for studentdet in studentdetails:
+        tuple = studentdet
+        inlist = []
+        for grade in grades:
+            if studentdet[0] == grade[0]:
+                for cdetail in coursedetails:
+                    if grade[1] == cdetail[0]:
+                        intuple = cdetail
+                        intuple = intuple + (grade[2],)
+                        inlist.append(intuple)
+        tuple = tuple + (inlist,)
+        ans.append(tuple)
+    return ans
 
-i = 0
-while i < len(lns):
-    if lns[i] == "Courses":
-        i += 1
-        while i < len(lns) and lns[i] not in ("Students","Grades","EndOfInput"):
-            i += 1
-    elif lns[i] == "Students":
-        i += 1
-        while i < len(lns) and lns[i] not in ("Courses","Grades","EndOfInput"):
-            r, n = lns[i].split("~",1)
-            stu[r] = n
-            pts[r] = 0
-            cnt[r] = 0
-            i += 1
-    elif lns[i] == "Grades":
-        i += 1
-        while i < len(lns) and lns[i] not in ("Courses","Students","EndOfInput"):
-            _,_,_,r,g = lns[i].split("~")
-            pts[r] = pts.get(r,0) + gp[g]
-            cnt[r] = cnt.get(r,0) + 1
-            i += 1
-    elif lns[i] == "EndOfInput":
-        break
 
-for r in sorted(stu):
-    c = cnt[r]
-    print(f"{r}~{stu[r]}~{0 if c==0 else round(pts[r]/c,2)}")
 
                 </textarea><br><br>
 	    
@@ -609,5 +608,6 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
 
