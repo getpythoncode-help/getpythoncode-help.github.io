@@ -229,9 +229,9 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers[Due on 2025-08-07, 23:59 IST]</a>
+	    <a>The Programming Data Structure And Algorithm using python week 5 programming answers[Due on 2025-08-28, 23:59 IST]</a>
 	   
-                <p> Week 2: Programming Assignment</p>
+                <p> Week 5: Programming Assignment</p>
  <div>
 	Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
@@ -249,48 +249,69 @@ Ignore warnings about "Presentation errors".
 	    <br>
 	    <div>
 
-		    A positive integer m is a prime product if it can be written as p×q, where p and q are both primes. .
+The academic office at the Hogwarts School of Witchcraft and Wizardry has compiled data about students' grades. The data is provided as text from standard input in three parts: information about courses, information about students and information about grades. Each part has a specific line format, described below..
 
-Write a Python function primeproduct(m) that takes an integer m as input and returns True if m is a prime product and False otherwise. (If m is not positive, your function should return False.)
+Information about courses
+Line format: Course Code~Course Name~Semester~Year~Instructor
+Information about students
+Line format: Roll Number~Full Name
+Information about grades
+Line format: Course Code~Semester~Year~Roll Number~Grade
+The possible grades are A, AB, B, BC, C, CD, D with corresponding grade points 10, 9, 8, 7, 6, 5 and 4. The grade point average of a student is the sum of his/her grade points divided by the number of courses. For instance, if a student has taken two courses with grades A and C, the grade point average is 8.50 = (10+7)÷2. If a student has not completed any courses, the grade point average is defined to be 0.
 
-Here are some examples of how your function should work.
+You may assume that the data is internally consistent. For every grade, there is a corresponding course code and roll number in the input data.
 
->>> primeproduct(6)
-True
+Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Courses. The second section begins with a line containing Students. The third section begins with a line containing Grades. The end of the input is marked by a line containing EndOfInput.
 
->>> primeproduct(188)
-False
+Write a Python program to read the data as described above and print out a line listing the grade point average for each student in the following format:
 
->>> primeproduct(202)
-True
-Write a function delchar(s,c) that takes as input strings s and c, where c has length 1 (i.e., a single character), and returns the string obtained by deleting all occurrences of c in s. If c has length other than 1, the function should return s
+Roll Number~Full Name~Grade Point Average
+Your output should be sorted by Roll Number. The grade point average should be rounded off to 2 digits after the decimal point. Use the built-in function round().
 
-Here are some examples to show how your function should work.
+Here is a sample input and its corresponding output.
 
- 
->>> delchar("banana","b")
-'anana'
+Sample Input
 
->>> delchar("banana","a")
-'bnn'
+Courses
+TRAN~Transfiguration~1~2011-2012~Minerva McGonagall
+CHAR~Charms~1~2011-2012~Filius Flitwick
+Students
+SLY2301~Hannah Abbott
+SLY2302~Euan Abercrombie
+SLY2303~Stewart Ackerley
+SLY2304~Bertram Aubrey
+SLY2305~Avery
+SLY2306~Malcolm Baddock
+SLY2307~Marcus Belby
+SLY2308~Katie Bell
+SLY2309~Sirius Orion Black
+Grades
+TRAN~1~2011-2012~SLY2301~AB
+TRAN~1~2011-2012~SLY2302~B
+TRAN~1~2011-2012~SLY2303~B
+TRAN~1~2011-2012~SLY2305~A
+TRAN~1~2011-2012~SLY2306~BC
+TRAN~1~2011-2012~SLY2308~A
+TRAN~1~2011-2012~SLY2309~AB
+CHAR~1~2011-2012~SLY2301~A
+CHAR~1~2011-2012~SLY2302~BC
+CHAR~1~2011-2012~SLY2303~B
+CHAR~1~2011-2012~SLY2305~BC
+CHAR~1~2011-2012~SLY2306~C
+CHAR~1~2011-2012~SLY2307~B
+CHAR~1~2011-2012~SLY2308~AB
+EndOfInput
+Sample Output
 
->>> delchar("banana","n")
-'baaa'
-
->>> delchar("banana","an")
-'banana'
-Write a function shuffle(l1,l2) that takes as input two lists, 11 and l2, and returns a list consisting of the first element in l1, then the first element in l2, then the second element in l1, then the second element in l2, and so on. If the two lists are not of equal length, the remaining elements of the longer list are appended at the end of the shuffled output.
-
-Here are some examples to show how your function should work.
-
->>> shuffle([0,2,4],[1,3,5])
-[0, 1, 2, 3, 4, 5]
-
->>> shuffle([0,2,4],[1])
-[0, 1, 2, 4]
-
->>> shuffle([0],[1,3,5])
-[0, 1, 3, 5]
+SLY2301~Hannah Abbott~9.5
+SLY2302~Euan Abercrombie~7.5
+SLY2303~Stewart Ackerley~8.0
+SLY2304~Bertram Aubrey~0
+SLY2305~Avery~8.5
+SLY2306~Malcolm Baddock~6.5
+SLY2307~Marcus Belby~8.0
+SLY2308~Katie Bell~9.5
+SLY2309~Sirius Orion Black~9.0
 	    </div>
 	    <br>
 <!-- 	    <div>
@@ -324,152 +345,148 @@ Sample Output:
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
 
-def primeproduct(m):
-    Pen=list()  
-    if m>=2:
-        for k in range(2,m):
-            if m%k==0:                
-                Pen=Pen+[k]            
-        if len(Pen)==2:
-            if m==Pen[0]*Pen[1]:
-                if Pen[1]%Pen[0]==0:
-                    return(False)
-                return(True)
-        elif len(Pen)==1:
-            if m==Pen[0]*Pen[0]:
-                return(True)
-        else:   
-            return(False)     
-    else:
-        return(False)
-        
+gp = {"A":10,"AB":9,"B":8,"BC":7,"C":6,"CD":5,"D":4}
+stu = {}
+pts = {}
+cnt = {}
+lns = []
+while True:
+    try:
+        s = input().strip()
+        lns.append(s)
+        if s == "EndOfInput": break
+    except: break
 
-def delchar(s,c):
-    if len(c)==1:
-        s=s.replace(c,'')  
-        ans=s
-    else:
-        ans=s
-    return(ans)    
-  
-def shuffle(l1,l2):
-    ans99=[]
-    if len(l1)!=0 and len(l2)!=0:
-      for q in range(min(len(l1), len(l2))):
-        ans99.extend([l1[q],l2[q]])      
-      ans99.extend(l1[q+1:] or l2[q+1:])
-    else:
-      ans99.extend(l1[0:] or l2[0:])      
-    return(ans99)  
-																	
-     
+i = 0
+while i < len(lns):
+    if lns[i] == "Courses":
+        i += 1
+        while i < len(lns) and lns[i] not in ("Students","Grades","EndOfInput"):
+            i += 1
+    elif lns[i] == "Students":
+        i += 1
+        while i < len(lns) and lns[i] not in ("Courses","Grades","EndOfInput"):
+            r, n = lns[i].split("~",1)
+            stu[r] = n
+            pts[r] = 0
+            cnt[r] = 0
+            i += 1
+    elif lns[i] == "Grades":
+        i += 1
+        while i < len(lns) and lns[i] not in ("Courses","Students","EndOfInput"):
+            _,_,_,r,g = lns[i].split("~")
+            pts[r] = pts.get(r,0) + gp[g]
+            cnt[r] = cnt.get(r,0) + 1
+            i += 1
+    elif lns[i] == "EndOfInput":
+        break
+
+for r in sorted(stu):
+    c = cnt[r]
+    print(f"{r}~{stu[r]}~{0 if c==0 else round(pts[r]/c,2)}")
+
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2025-08-14, 23:59 IST]</a>
-                <p> Week 3: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 4 programming answers [Due on 2025-08-21, 23:59 IST]</a>
+                <p> Week 4: Programming Assignment</p>
 	    <p>
 
-Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
+Write two Python functions as specified below. Paste the text for both functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
+
 You may define additional auxiliary functions as needed.
 In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
 For each function, there are normally some public test cases and some (hidden) private test cases.
 "Compile and run" will evaluate your submission against the public test cases.
-"Submit" will evaluate your submission against the hidden private test cases. There are 12 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+"Submit" will evaluate your submission against the hidden private test cases. There are 10 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-Write a function expanding(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements strictly increases.
+Write a Python function histogram(l) that takes as input a list of integers with repetitions and returns a list of pairs as follows:.
 
-Here are some examples of how your function should work.
+for each number n that appears in l, there should be exactly one pair (n,r) in the list returned by the function, where r is the number of repetitions of n in l.
 
-  >>> expanding([1,3,7,2,9])
-  True
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 9-2 = 7.
+the final list should be sorted in ascending order by r, the number of repetitions. For numbers that occur with the same number of repetitions, arrange the pairs in ascending order of the value of the number.
 
-  >>> expanding([1,3,7,2,-3]) 
-  False
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 2-(-3) = 5, so not strictly increasing.
+For instance:
 
-  >>> expanding([1,3,7,10])
-  False
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 10-7 = 3, so not increasing.
+>>> histogram([13,12,11,13,14,13,7,7,13,14,12])
+[(11, 1), (7, 2), (12, 2), (14, 2), (13, 4)]
 
-Write a Python function sumsquare(l) that takes a nonempty list of integers and returns a list [odd,even], where odd is the sum of squares all the odd numbers in l and even is the sum of squares of all the even numbers in l.
+>>> histogram([7,12,11,13,7,11,13,14,12])
+[(14, 1), (7, 2), (11, 2), (12, 2), (13, 2)]
 
-Here are some examples to show how your function should work.
+>>> histogram([13,7,12,7,11,13,14,13,7,11,13,14,12,14,14,7])
+[(11, 2), (12, 2), (7, 4), (13, 4), (14, 4)]
+A college maintains academic information about students in three separate lists
 
->>> sumsquare([1,3,5])
-[35, 0]
+Course details: A list of pairs of form (coursecode,coursename), where both entries are strings. For instance,
+[ ("MA101","Calculus"),("PH101","Mechanics"),("HU101","English") ]
 
->>> sumsquare([2,4,6])
-[0, 56]
+Student details: A list of pairs of form (rollnumber,name), where both entries are strings. For instance,
+[ ("UGM2018001","Rohit Grewal"),("UGP2018132","Neha Talwar") ]
 
->>> sumsquare([-1,-2,3,7])
-[59, 4]
-A two dimensional matrix can be represented in Python row-wise, as a list of lists: each inner list represents one row of the matrix. For instance, the matrix
+A list of triples of the form (rollnumber,coursecode,grade), where all entries are strings. For instance,
+[ ("UGM2018001", "MA101", "AB"), ("UGP2018132", "PH101", "B"), ("UGM2018001", "PH101", "B") ]. You may assume that each roll number and course code in the grade list appears in the student details and course details, respectively.
 
-1  2  3  4
-5  6  7  8
-would be represented as [[1, 2, 3, 4], [5, 6, 7, 8]].
+Your task is to write a function transcript (coursedetails,studentdetails,grades) that takes these three lists as input and produces consolidated grades for each student. Each of the input lists may have its entries listed in arbitrary order. Each entry in the returned list should be a tuple of the form
 
-The transpose of a matrix converts each row into a column. The transpose of the matrix above is:
+(rollnumber, name,[(coursecode_1,coursename_1,grade_1),...,(coursecode_k,coursename_k,grade_k)])
 
-1  5
-2  6
-3  7
-4  8
-which would be represented as [[1, 5], [2, 6], [3, 7], [4, 8]].
+where the student has grades for k ≥ 1 courses reported in the input list grades.
 
-Write a Python function transpose(m) that takes as input a two dimensional matrix m and returns the transpose of m. The argument m should remain undisturbed by the function.
+The output list should be organized as follows.
 
-Here are some examples to show how your function should work. You may assume that the input to the function is always a non-empty matrix.
+The tuples shold sorted in ascending order by rollnumber
 
->>> transpose([[1,2,3],[4,5,6]])
-[[1, 4], [2, 5], [3, 6]]
+Each student's grades should sorted in ascending order by coursecode
 
->>> transpose([[1],[2],[3]])
-[[1, 2, 3]]
+For instance
 
->>> transpose([[3]])
-[[3]]
+ 
+>>>transcript([("MA101","Calculus"),("PH101","Mechanics"),("HU101","English")],[("UGM2021001","Rohit Grewal"),("UGP2021132","Neha Talwar")],[("UGM2021001","MA101","AB"),("UGP2021132","PH101","B"),("UGM2021001","PH101","B")])
+
+[('UGM2021001', 'Rohit Grewal', [('MA101', 'Calculus', 'AB'), ('PH101', 'Mechanics', 'B')]), ('UGP2021132', 'Neha Talwar', [('PH101', 'Mechanics', 'B')])]
+
+>>>transcript([("T1","Test 1"),("T2","Test 2"),("T3","Test 3")],[("Captain","Rohit Sharma"),("Batsman","Virat Kohli"),("No3","Cheteshwar Pujara")],[("Batsman","T1","14"),("Captain","T1","33"),("No3","T1","30"),("Batsman","T2","55") ,("Captain","T2","158"),("No3","T2","19"), ("Batsman","T3","33"),("Captain","T3","95"),("No3","T3","51")])
+
+[('Batsman', 'Virat Kohli', [('T1', 'Test 1', '14'), ('T2', 'Test 2', '55'), ('T3', 'Test 3', '33')]), ('Captain', 'Rohit Sharma', [('T1', 'Test 1', '33'), ('T2', 'Test 2', '158'), ('T3', 'Test 3', '95')]),('No3', 'Cheteshwar Pujara', [('T1', 'Test 1', '30'), ('T2', 'Test 2', '19'), ('T3', 'Test 3', '51')])]
 
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def expanding(l):
-    if len(l) <= 2:
-        return(True)
-    diff00 = abs(l[1]-l[0])
-    return(diff00 < abs(l[2]-l[1]) and expanding(l[1:]))
-
-def expanding_loop(l):
-    if len(l) <= 2:
-        return(True)
-    olddiff1 = abs(l[1]-l[0])
-    for i3 in range(2,len(l)):
-        newdiff = abs(l[i3]-l[i3-1])
-        if newdiff <= olddiff1:
-            return(False)
-        olddiff1 = newdiff
-    return(True)
-
+def histogram(l):
+    count = 0
+    ans_g=list()
+    k=list()
+    for i in range(len(l)):
+        index=i
+        count=0
+        for j in range(index,len(l)):
+            if l[index] == l[j] and l[index] not in k :
+                count =count + 1
+        k = k + [l[index]] 
+        if (count != 0): 
+            ans_g=ans_g +  [(l[index], count)]
+    ans_g.sort()
+    ans_g=sorted(ans_g,key=lambda ans_g:ans_g[1])
+    return ans_g
   
-def sumsquare(l):
-  (odd_sum,even_sum)=(0,0)
-  for aaja in l:
-    if aaja%2!=0:
-      odd_sum+=aaja*aaja
-    else:
-      even_sum+=aaja*aaja
-  return([odd_sum,even_sum])
-
-
-def transpose(m):
-  ans1=list()
-  for ip in range(len(m[0])):
-    a=list()
-    for j in range(len(m)):
-      a.append(m[j][ip])
-    ans1.append(a)
-  return(ans1)  
+def transcript(coursedetails, studentdetails, grades):
+    ans_g= list()
+    studentdetails.sort()
+    coursedetails.sort()
+    grades.sort()
+    for studentdet in studentdetails:
+        tuple = studentdet
+        inlist = []
+        for grade in grades:
+            if studentdet[0] == grade[0]:
+                for cdetail in coursedetails:
+                    if grade[1] == cdetail[0]:
+                        intuple = cdetail
+                        intuple = intuple + (grade[2],)
+                        inlist.append(intuple)
+        tuple = tuple + (inlist,)
+        ans_g.append(tuple)
+    return ans_g 
                 </textarea><br><br>	    
 	    
 	    
@@ -592,4 +609,5 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
