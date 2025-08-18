@@ -488,8 +488,8 @@ birthday_twins()
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1   Due on  2025-08-14, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1   Due on  2025-08-28, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -498,20 +498,107 @@ birthday_twins()
     </p> -->
 <p>
 
-In the land of Codeville, young programmers discover an ancient scroll containing a list of mysterious words — each one part of a secret prefix code used by the town’s old network of messengers. Legend says that hidden among these words is one with special power: the longest word in the list. But there’s a twist — if more than one word shares the longest length, the scroll reveals only the one that appears last in the list.The town’s Code Scribe, Pixel, needs your help. She wants you to write a program that will search through this list and identify the special word according to the rules.
-Write a program that:
+The Magical Factors of Numerya
+In the ancient city of Numerya, mathematicians and scholars explore the mystical properties of numbers. The Number Lore Library holds priceless scrolls about factors, which are believed to unlock numeric harmony.
 
-Accepts a single line of input containing a comma-separated list of words from the ancient prefix code.
+You are the newly appointed Royal Scribe of Computation, and the scholars have entrusted you with building tools to help them. You must write a program that:
 
-Finds and prints:   (a) The longest word in the list.   (b) If multiple words share the maximum length, print the one that appears right-most in the list.
+Finds all factors of a given positive integer.
+
+Finds common factors of two positive integers.
+
+Lists the factors for all numbers from 1 up to a given integer.
+
+Your program will work based on a mode of operation chosen by the user:
+
+Input Format:
+
+First line: An integer choice (1, 2, or 3) indicating the operation:
+
+1 → Find all factors of a given number.
+
+2 → Find common factors of two given numbers.
+
+3 → List factors for all numbers from 1 to a given number.
+
+Based on the choice:
+
+If choice = 1 → Read a single integer n.
+
+If choice = 2 →  Read two integers a and b on separate lines (first enter a, press Enter, then enter b).
+
+If choice = 3 → Read a single integer n.
+
+Output Format:
+
+If choice = 1 → Print a list of all positive factors of n (sorted ascending).
+
+If choice = 2 → Print a list of common factors of a and b (sorted ascending).
+
+If choice = 3 → Print a dictionary where:
+
+Keys = integers from 1 to n
+
+Values = lists of positive factors of each key (sorted ascending).
+
+Example 1:
+
+Input  
+1  
+12  
+
+Output  
+[1, 2, 3, 4, 6, 12]
+Example 2:
+
+Input  
+2  
+12 
+18  
+
+Output  
+[1, 2, 3, 6]
+Example 3:
+
+Input  
+3  
+4  
+
+Output  
+{1: [1], 2: [1, 2], 3: [1, 3], 4: [1, 2, 4]}
 
 
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-sentence=sorted(input().split(",") ,key=len)
-print(sentence[-1],end="")
+def factors(n):
+    """Return all positive factors of n."""
+    return [iii for iii in range(1, n + 1) if n % iii == 0]
+
+# Read choice
+choice = int(input().strip())
+
+if choice == 1:
+    n = int(input().strip())
+    print(factors(n))
+
+elif choice == 2:
+    a = int(input().strip())
+    b = int(input().strip())
+    fa = factors(a)
+    fb = factors(b)
+    common = sorted(set(fa) & set(fb))
+    print(common)
+
+elif choice == 3:
+    n = int(input().strip())
+    factor_dict = {i: factors(i) for i in range(1, n + 1)}
+    print(factor_dict)
+
+else:
+    print("Invalid choice")
+
 
       
                 </textarea><br><br>
@@ -524,20 +611,72 @@ print(sentence[-1],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 2  Due on  2025-08-14, 23:59 IST </p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 2  Due on  2025-08-28, 23:59 IST </p>
 		<p>
-At AeroPort-X, a futuristic logistics hub, drones are used to transport cargo based on weight. A team of engineers is working on a system that reads incoming weight values for parcels — often given as real numbers due to sensitive sensors. However,to fit them into standardized cargo containers, each weight must be rounded down to the nearest whole number — in other words, converted to the greatest integer less than or equal to it. Once converted, the numbers are displayed on a screen, separated by commas, for the loading team to arrange parcels efficiently.You are asked to build the logic for this conversion process.
-Write a program that:
-(a) Accepts a space-separated sequence of positive real numbers representing parcel
-weights.
-(b) Converts each number to the greatest integer less than or equal to it.
-(c) Outputs the resulting integers, separated by commas.
+Managing Train Arrivals at Hogsmeade Station
+The station master at Hogsmeade Station is responsible for recording details of the various magical and non-magical trains that stop there — including the number of compartments and the number of passengers in each compartment.
+
+You have been hired as a student intern from Hogwarts School of Witchcraft and Wizardry to assist in organizing this data using Python.
+
+(a) You have to take the following inputs:
+An integer n, the number of trains that stop at the station.
+
+For each train:
+
+The train name (a string).
+
+An integer m, the number of compartments in the train.
+
+m lines of input, each containing:
+
+The name of a compartment, and
+
+The number of passengers in it (comma-separated).
+
+(b) Your task is to:
+Create a nested dictionary called station_dict.
+
+The outer dictionary should use the train name as the key.
+
+The value for each train should be another dictionary, where:
+
+Keys are compartment names.
+
+Values are the number of passengers in that compartment (as integers, not strings).
+
+(c) Example Output:
+After processing the input, your dictionary may look like:
+
+{
+  'Hogwarts Express': {
+    'C1': 15,
+    'C2': 20,
+    'C3': 12
+  },
+  'Knight Rider': {
+    'C1': 8,
+    'C2': 18
+  }
+}
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-List_of_numbers=[str(int(float(q))) for q in input().split()]
-print(",".join(List_of_numbers),end="")
+n = int(input().strip())
+station_dict = {}
+
+for baba in range(n):
+    train_name = input().strip()
+    m = int(input().strip())
+    compartments = {}
+    for _ in range(m):
+        comp, passengers = input().strip().split(",")
+        compartments[comp] = int(passengers)
+    station_dict[train_name] = compartments
+
+# Print in sorted order of train names
+print({k: station_dict[k] for k in sorted(station_dict)})
+
 
                 </textarea><br><br>
 
@@ -549,58 +688,45 @@ print(",".join(List_of_numbers),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 3  Due on  2025-08-14, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 3  Due on  2025-08-28, 23:59 IST</p>
 <p>
-At Orbital Station Vega, mission control systems rely heavily on matrix-based data to process flight paths, control modules, and compute system interactions. Two key matrices, A and B, represent critical control parameters: one for navigation weights and another for response modifiers. Before any launch, the control AI must compute the product matrix AB, which defines the final control grid used during takeoff. The engineers receive the data from satellite input systems in the following format:
+Text Analysis at LitVerse Publishing
+At LitVerse, an online platform for writers and editors, the content moderation team is building tools to analyze and summarize large blocks of text.
 
-The first line contains the integer n, representing the size of the square matrices.
+One of the tools they’re developing aims to check whether any specific word appears an exact number of times in a paragraph.
 
-The next n lines each contain a row of matrix A, represented as comma-separated
-integers.
-The following n lines each contain a row of matrix B, again as comma-separated
-integers.
+You are part of the development team, and your task is to write a utility function to support this feature.
 
-Your task is to help the AI compute the matrix product AB, and output it in the
-correct format:
-n lines, each containing a row of the resulting matrix, as comma-separated integers.
+Task
+(a) Write a Python function named exact_count that accepts the following:
 
-Write a program that:
-(a) Accepts an integer n followed by 2n lines as input.
-(b) Each of the first n lines contains a row of matrix A (comma-separated integers).
-(c) Each of the next n lines contains a row of matrix B (comma-separated integers).
-(d) Computes the matrix product AB.
-(e) Outputs the resulting matrix as n lines, with each line showing a row of the
-product as comma-separated integers.
+para – a string containing a sequence of space-separated words, all in lowercase, with no special characters or punctuation.
+
+n – a positive integer.
+
+(b) The function should return True if there is at least one word in the paragraph that occurs exactly n times. It should return False otherwise.
+
+(c) You do not need to accept input from the user or print output to the console. Simply define the function as described.
+
+Example
+para = "hello world hello code"
+n = 2
+exact_count(para, n)  # returns True because "hello" appears exactly 2 times
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def read_matrix(day_count):
-    matrix = []
-    for _ in range(day_count):
-        row = list(map(int, input().strip().split(',')))
-        matrix.append(row)
-    return matrix
-
-def multiply_matrices(mon, tue, day_count):
-    wed = [[0] * day_count for _ in range(day_count)]
-    for thu in range(day_count):
-        for fri in range(day_count):
-            for sat in range(day_count):
-                wed[thu][fri] += mon[thu][sat] * tue[sat][fri]
-    return wed
-
-def print_matrix(sun):
-    for idx, row in enumerate(sun):
-        end_char = '' if idx == len(sun) - 1 else '\n'
-        print(','.join(map(str, row)), end=end_char)
-
-
-day_count = int(input())
-mon = read_matrix(day_count)
-tue = read_matrix(day_count)
-sun = multiply_matrices(mon, tue, day_count)
-print_matrix(sun)
+def exact_count(para, n):
+    # Split paragraph into words
+    words = para.split()
+    
+    # Count frequencies
+    freq = {}
+    for wind in words:
+        freq[wind] = freq.get(wind, 0) + 1
+    
+    # Check if any word count == n
+    return any(count == n for count in freq.values())
 
 
 
