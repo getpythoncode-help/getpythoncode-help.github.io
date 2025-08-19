@@ -15,11 +15,12 @@
     "Java week 4 Question 5 code": "       // Enjoyee\n\n        private int add(int a, int b, int c) {\n            return a + b + c;\n        }\n\n "
   },
   {
-    "Java week 5 Question 1 code": " Questions not released yet   ",
-    "Java week 5 Question 2 code": "  Questions not released yet  ",
-    "Java week 5 Question 3 code": "  Questions not released yet  ",
-    "Java week 5 Question 4 code": "  Questions not released yet  ",
-    "Java week 5 Question 5 code": "  Questions not released yet  "
+    "Java week 5 Question 1 code": " //Just simple method ok \n\nclass A implements Number {\n    public int findSqr(int i) {\n        return (i * i);\n    }\n}  ",
+    "Java week 5 Question 2 code": " class B implements GCD {\n    int n1,n2;\n        \n    //#Create a method to calculate GCD take my help \n  \n    public int findGCD(int n1, int n2){\n        if(n1 < 0 || n2 < 0) {\n            return -1;   \n        }\n        if(n1==0 && n2==0) {\n            return 0;    // both zero\n        }\n        else if(n2 == 0){\n            return n1;   // gcd(n1,0) = n1\n        }\n        else {\n          return findGCD(n2, n1 % n2); } // recursive step\n        \n    }\n}  ",
+    "Java week 5 Question 3 code": "  try {\n            result = a / b;\n            System.out.print(result);\n        }\n        // # catch block to catch the ArithmeticException\n        //Follow this only \n        catch (ArithmeticException e) {\n          System.out.print(\"Exception caught: Division by zero.\"); }\n         ",
+    "Java week 5 Question 4 code": " //Just needed to add this try \n\ntry {\n          // traverse the array to find the total sum of the array\n          for (int i = 0; i < length; i++) {\n              name[i] = sc.nextInt();\n              sum += name[i];\n          }\n          System.out.print(sum);\n      }\n      catch(InputMismatchException e) {\n          System.out.print(\"You entered bad data.\");\n      }\n  ",
+    "Java week 5 Question 5 code": "           try {\n              switch (i) {\n                  case 0 : \n                      int zero = 0; \n                      j = 92 / zero; \t\t\n                      break;\n                  case 1: \n                      //This int b[ ] will be blank only ok \n                      int b[ ] = null; \n                      j = b[0]; \t\n                      break;\n                  default:\n                      System.out.print(\"No exception\");\n              }\n          } \n          catch (Exception g) {\n            System.out.print(g);}\n          \n  "
   }
 
 ]
+
