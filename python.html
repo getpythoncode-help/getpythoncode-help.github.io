@@ -421,25 +421,42 @@ search(L, k)   # Output: True
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def search(L, k):
+def multiply_matrices(A, B):
     """
-    We are using recursive function
+    Helper function to multiply two square matrices.
     """
+    n = len(A)
+    C = [[0 for my in range(n)] for my in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                C[i][j] += A[i][k] * B[k][j]
+    return C
+
+def power(A, m):
+
+    n = len(A)
+
+    # Base case for m = 1
+    if m == 1:
+        return A
     
+    # Base case for m = 0
+    if m == 0:
+        identity_matrix = [[0 for ss in range(n)] for ss in range(n)]
+        for i in range(n):
+            identity_matrix[i][i] = 1
+        return identity_matrix
 
-    if not L:
-        return False
-
-    mid = len(L) // 2
-
-    if L[mid] == k:
-        return 0==0
-
-    elif k < L[mid]:
-        return search(L[:mid], k)
-
+    # Recursive step for even exponent
+    if m % 2 == 0:
+        half_power = power(A, m // 2)
+        return multiply_matrices(half_power, half_power)
+    
+    # Recursive step for odd exponent
     else:
-        return search(L[mid+1:], k)
+        return multiply_matrices(A, power(A, m - 1))
+
 
 
                 </textarea><br><br>
