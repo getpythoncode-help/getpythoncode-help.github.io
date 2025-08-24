@@ -218,57 +218,48 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1 [Due on 2025-08-21, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1 [Due on 2025-09-04, 23:59 IST]</p>
 		<p>
 
 
-At Insight Analytics, the DataOps team is responsible for maintaining data quality across real-time dashboards, reports, and AI pipelines.
-To streamline data handling across various components, you are tasked with implementing a unified utility function that simplifies basic list operations. This function will be used across multiple internal scripts to ensure consistent list behavior and efficient processing.
+Problem: Robot Arithmetic Module – Engineering Constraint
+At RoboCore Labs, engineers are developing an embedded system for a low-power educational robot.
+Due to hardware limitations, the robot’s control unit cannot use the built-in multiplication operation.
 
-Problem Statement
-Write a single Python function named list_util that performs different operations on a list based on a specified command.
+As a member of the firmware team, your task is to implement a function that computes the product of two positive integers without using the * operator.
 
-Function Signature
-
-def list_util(L, command):
-
-    ...
+Requirements:
+Function Name: multiply
 
 Parameters:
-L: A list of elements.
 
-command: A string representing the operation to perform. It can be one of:
+a (positive integer)
 
-"is_empty" – Check if the list is empty.
+b (positive integer)
 
-"first" – Get the first element of the list.
+Constraints:
 
-"last" – Get the last element of the list.
+You may only use the + (addition) and - (subtraction) operators.
 
-"init" – Get all elements except the last.
+The * (multiplication) operator is strictly forbidden.
 
-"rest" – Get all elements except the first.
+Return Value:
 
-Depending on the value of command, the function should perform one of the following:
+The function should return the product of a and b.
 
-If command is "is_empty", return True if the list is empty, and False otherwise.
+Implementation:
 
-If command is "first", return the first element of the list if it’s non-empty; otherwise return None.
+The solution must be implemented using recursion.
 
-If command is "last", return the last element of the list if it’s non-empty; otherwise return None.
+Note:
 
-If command is "rest", return a list of all elements except the first one, if the list is non-empty. If the list has only one element, return an empty list. If the list is empty, return None.
-Example Usage:
-list_util([], "is_empty")       ➞ True  
-list_util([1, 2, 3], "first")   ➞ 1  
-list_util([1, 2, 3], "last")    ➞ 3  
-list_util([1], "init")          ➞ []  
-list_util([], "rest")           ➞ None  
+Do not read input from the user.
+
+Do not print output to the console.
 
 
-
-	</p>
+<!-- 	</p>
  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         
@@ -282,34 +273,15 @@ https://drive.google.com/file/d/1BSjRfQGE_cWWZ1zkpAtstCZmaMPu8pQC/view?usp=shari
 They’re not asking which output is impossible — they’re asking which one gives the least challenge to the player.
 In that case, "Yoda" is the answer, because it’s exactly the original word and doesn’t challenge the user at all..
 	</strong>
-    </p> 
+    </p>  -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def list_util(L, command):
-    if command == "is_empty":
-        return (len(L) == 0)
-
-    elif command == "first":
-        return L[0] if L else None
-
-    elif command == "last":
-        return L[-1] if L else None
-
-    elif command == "init":
-        return (L[:-1] if L else [])
-
-    elif command == "rest":
-        if not L:
-            return None
-        return L[1:] if len(L) > 1 else []
-
-    else:
-        raise ValueError("Invalid command")
-
-
-
-
-
+def multiply(a, b):
+  #done finally 
+  if b == 0:
+    return(0)
+  else:
+    return a + multiply(a, b - 1)
 
 
                 </textarea><br><br>
@@ -322,8 +294,8 @@ def list_util(L, command):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2 [Due on 2025-08-21, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment 2 [Due on 2025-09-04, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -332,36 +304,65 @@ def list_util(L, command):
     </p> -->
 		<p>
 
-In the mystical realm of Numbertown, numbers are not just mathematical entities — they possess personalities. Among them, Perfect Numbers are considered rare and noble.
+Problem: Searching Patient Records in a Health Analytics System
+The hospital network MedNexus maintains a centralized database of patient record IDs.
+These IDs are stored in sorted order to enable fast lookups.
 
-A perfect number is one whose value is equal to the sum of all its proper divisors (excluding itself).
-For example:
+You are part of the software development team tasked with optimizing the search functionality.
+Since the system follows a recursive design pattern, you must implement a recursive version of the search algorithm to determine whether a given patient ID exists in the records.
 
-6 = 1 + 2 + 3
+Requirements
+Function Name: search
 
-Function Requirements
-Write a Python function named is_perfect that:
+Parameters:
 
-Accepts a positive integer n as input.
+L → A sorted list of integers (patient record IDs).
 
-Returns True if n is a perfect number.
+k → An integer representing the ID to search for.
 
-Returns False otherwise.
+Return Value:
 
+Return True if k is present in L.
+
+Return False if k is not present.
+
+Constraints:
+
+Must use recursion.
+
+No need to accept input from the user.
+
+No need to print output to the console. Only the function definition is required.
+
+Example
+L = [101, 203, 307, 402, 509]
+k = 307
+search(L, k)   # Output: True
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def is_perfect(num):
-    if num <= 0:
+def search(L, k):
+    """
+    We are using recursive function
+    """
+    
+
+    if not L:
         return False
 
-    divisors_sum = 0
-    for ist in range(1, num):
-        if num % ist== 0:
-            divisors_sum += ist
+    mid = len(L) // 2
 
-    return divisors_sum == num
+    if L[mid] == k:
+        return 0==0
+
+    elif k < L[mid]:
+        return search(L[:mid], k)
+
+    else:
+        return search(L[mid+1:], k)
+
+
 
                   
                 </textarea><br><br>
@@ -374,39 +375,43 @@ def is_perfect(num):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3 [Due on 2025-08-21, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p> Week 5: Programming Assignment 3 [Due on 2025-09-04, 23:59 IST ]</p>
 <p>
+Problem: Searching Patient Records in a Health Analytics System
+The hospital network MedNexus maintains a centralized database of patient record IDs.
+These IDs are stored in sorted order to enable fast lookups.
 
+You are part of the software development team tasked with optimizing the search functionality.
+Since the system follows a recursive design pattern, you must implement a recursive version of the search algorithm to determine whether a given patient ID exists in the records.
 
-In the year 2525, the Galactic Registry maintains records of citizens from various planets. Each citizen is registered with:
+Requirements
+Function Name: search
 
-A name, and
+Parameters:
 
-A birthdate, represented by a number from 1 to 365, indicating the day of the year they were born.
+L → A sorted list of integers (patient record IDs).
 
-The Interstellar Census Department is looking to identify "Birthday Twins" — citizens who share the same day of birth.
+k → An integer representing the ID to search for.
 
-Input:
-The function will take the following two inputs:
+Return Value:
 
-A string of comma-separated names (e.g., "alice,bob,charlie"),
+Return True if k is present in L.
 
-A string of comma-separated integers (each from 1 to 365), representing the birthdates corresponding to the names above.
+Return False if k is not present.
 
-Task:
-Identify all unique pairs of names where both individuals share the same birthday.
+Constraints:
 
-For each such pair, create a list in the form: [name1, name2], where name1 comes before name2 alphabetically.
+Must use recursion.
 
-Store all such pairs in a list called common.
+No need to accept input from the user.
 
-Notes:
-Only the order within each pair matters — the overall order of pairs in common is not important.
+No need to print output to the console. Only the function definition is required.
 
-You can assume that at least one birthday twin pair will exist in any test case.
-
-
+Example
+L = [101, 203, 307, 402, 509]
+k = 307
+search(L, k)   # Output: True
 
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
@@ -416,48 +421,27 @@ You can assume that at least one birthday twin pair will exist in any test case.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def birthday_twins():
-    names_str = input().strip()
-    bdays_str = input().strip()
+def search(L, k):
+    """
+    We are using recursive function
+    """
+    
 
-    names = names_str.split(",")
-    bdays = list(map(int, bdays_str.split(",")))
+    if not L:
+        return False
 
-    birthday_map = dict()
-    for name, bday in zip(names, bdays):
-        birthday_map.setdefault(bday, []).append(name)
+    mid = len(L) // 2
 
-    common = list()
-    for same_day_names3 in birthday_map.values():
-        if len(same_day_names3) > 1:
-            same_day_names3.sort()
-            for i in range(len(same_day_names3)):
-                for j in range(i + 1, len(same_day_names3)):
-                    common.append((same_day_names3[i], same_day_names3[j]))
+    if L[mid] == k:
+        return 0==0
 
-    # Sort pairs alphabetically
-    common.sort()
+    elif k < L[mid]:
+        return search(L[:mid], k)
 
-    # Print without extra newline at the end
-    for idx53, pair in enumerate(common):
-        end_char = "" if idx53 == len(common) - 1 else "\n"
-        print(f"{pair[0]},{pair[1]}", end=end_char)
+    else:
+        return search(L[mid+1:], k)
 
 
-
-birthday_twins()
-
-
-
-
-
-
-
-
-
-
-       
-                  
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
