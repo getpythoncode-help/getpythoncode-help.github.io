@@ -489,8 +489,8 @@ def power(A, m):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1   Due on  2025-08-28, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on  2025-09-11, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -498,110 +498,55 @@ def power(A, m):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
+Problem 1: Image Noise Isolation in Data Analysis
+At a medical research lab, image preprocessing involves working with square matrices that represent pixel intensity grids extracted from medical images.
 
-The Magical Factors of Numerya
-In the ancient city of Numerya, mathematicians and scholars explore the mystical properties of numbers. The Number Lore Library holds priceless scrolls about factors, which are believed to unlock numeric harmony.
+Sometimes, due to faulty sensor data, certain rows and columns must be eliminated to isolate sub-regions of the matrix.
 
-You are the newly appointed Royal Scribe of Computation, and the scholars have entrusted you with building tools to help them. You must write a program that:
+Your task is to implement a function that removes a specified row and column from a square matrix to produce a minor matrix.
 
-Finds all factors of a given positive integer.
+Requirements
+Function Name: minor_matrix
 
-Finds common factors of two positive integers.
+Parameters:
 
-Lists the factors for all numbers from 1 up to a given integer.
+M: A square matrix (list of lists).
 
-Your program will work based on a mode of operation chosen by the user:
+i: Index of the row to remove (0-based).
 
-Input Format:
+j: Index of the column to remove (0-based).
 
-First line: An integer choice (1, 2, or 3) indicating the operation:
+Return Value:
 
-1 → Find all factors of a given number.
+A new matrix with the i-th row and j-th column removed.
 
-2 → Find common factors of two given numbers.
+Constraints:
 
-3 → List factors for all numbers from 1 to a given number.
+The matrix M is always square (n × n).
 
-Based on the choice:
+M has at least 3 rows and columns.
 
-If choice = 1 → Read a single integer n.
+Indexing is zero-based.
 
-If choice = 2 →  Read two integers a and b on separate lines (first enter a, press Enter, then enter b).
+No input/output required — just define the function.
 
-If choice = 3 → Read a single integer n.
+Example
+M = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
 
-Output Format:
-
-If choice = 1 → Print a list of all positive factors of n (sorted ascending).
-
-If choice = 2 → Print a list of common factors of a and b (sorted ascending).
-
-If choice = 3 → Print a dictionary where:
-
-Keys = integers from 1 to n
-
-Values = lists of positive factors of each key (sorted ascending).
-
-Example 1:
-
-Input  
-1  
-12  
-
-Output  
-[1, 2, 3, 4, 6, 12]
-Example 2:
-
-Input  
-2  
-12 
-18  
-
-Output  
-[1, 2, 3, 6]
-Example 3:
-
-Input  
-3  
-4  
-
-Output  
-{1: [1], 2: [1, 2], 3: [1, 3], 4: [1, 2, 4]}
-
-
+minor_matrix(M, 0, 1)
+# Expected output:
+# [[4, 6],
+#  [7, 9]]
 
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def factors(n):
-    """Return all positive factors of n."""
-    return [iii for iii in range(1, n + 1) if n % iii == 0]
+def minor_matrix(M, i, j):
+    return [ [rowse[col] for col in range(len(M)) if col != j] 
+             for r, rowse in enumerate(M) if r != i ]
 
-# Read choice
-choice = int(input().strip())
-
-if choice == 1:
-    n = int(input().strip())
-    print(factors(n))
-
-elif choice == 2:
-    a = int(input().strip())
-    b = int(input().strip())
-    fa = factors(a)
-    fb = factors(b)
-    common = sorted(set(fa) & set(fb))
-    print(common)
-
-elif choice == 3:
-    n = int(input().strip())
-    factor_dict = {i: factors(i) for i in range(1, n + 1)}
-    print(factor_dict)
-
-else:
-    print("Invalid choice")
-
-
-      
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -612,71 +557,85 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2  Due on  2025-08-28, 23:59 IST </p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2  Due on  2025-09-11, 23:59 IST </p>
 		<p>
-Managing Train Arrivals at Hogsmeade Station
-The station master at Hogsmeade Station is responsible for recording details of the various magical and non-magical trains that stop there — including the number of compartments and the number of passengers in each compartment.
+Problem: Generating the IPL Points Table
+You are part of the analytics team at the Indian Premier League (IPL) headquarters.
+This year, a special edition of the tournament was organized as a round-robin event where each team played exactly one match against every other team. There were no ties — every match resulted in a clear winner and loser.
 
-You have been hired as a student intern from Hogwarts School of Witchcraft and Wizardry to assist in organizing this data using Python.
+Eight teams participated in this format:
+CSK, DC, KKR, MI, PK, RR, RCB, SH
 
-(a) You have to take the following inputs:
-An integer n, the number of trains that stop at the station.
+The tournament officials recorded match outcomes in a specific format. For each team (in a fixed order), they listed the names of the teams it defeated. The lines follow this order:
+CSK, DC, KKR, MI, PK, RR, RCB, SH
 
-For each train:
+Example:
 
-The train name (a string).
+CSK,MI,DC,PK
+indicates that CSK won against MI, DC, and PK, and lost its remaining matches.
 
-An integer m, the number of compartments in the train.
+If a line only contains the team’s name (e.g., RCB), it means that team lost all its matches.
 
-m lines of input, each containing:
+Your Task
+(a) Process the 8 lines of input and compute the total number of matches won by each team.
+(b) Prepare the final IPL points table in descending order of number of wins.
+(c) If two or more teams have the same number of wins, sort them in alphabetical order.
+(d) Print each entry in the format:
 
-The name of a compartment, and
+<team name>:<wins>
+with no spaces and one entry per line.
 
-The number of passengers in it (comma-separated).
+Constraints
+Input always follows the described format.
 
-(b) Your task is to:
-Create a nested dictionary called station_dict.
+Every team plays exactly 7 matches.
 
-The outer dictionary should use the train name as the key.
+No drawn or tied games.
 
-The value for each train should be another dictionary, where:
+Example Input
+CSK,MI,DC,PK
+DC,MI,SH
+KKR,CSK,RR
+MI
+PK,RR,MI
+RR,MI
+RCB,DC
+SH,PK
+Example Output
+CSK:3
+DC:2
+KKR:3
+MI:0
+PK:2
+RR:1
+RCB:1
+SH:2
 
-Keys are compartment names.
-
-Values are the number of passengers in that compartment (as integers, not strings).
-
-(c) Example Output:
-After processing the input, your dictionary may look like:
-
-{
-  'Hogwarts Express': {
-    'C1': 15,
-    'C2': 20,
-    'C3': 12
-  },
-  'Knight Rider': {
-    'C1': 8,
-    'C2': 18
-  }
-}
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-n = int(input().strip())
-station_dict = {}
+def ipl_points_table():
+    teams = ["CSK", "DC", "KKR", "MI", "PK", "RR", "RCB", "SH"]
+    wins = {team: 0 for team in teams}
+    
+    # Read 8 lines of input
+    for check_kar in range(8):
+        line = input().strip()
+        parts = line.split(",")
+        winner = parts[0]
+        wins[winner] += len(parts) - 1  # winner beat all listed teams
+    
+    # Sort: by wins (descending), then by team name (alphabetical)
+    sorted_table = sorted(wins.items(), key=lambda x: (-x[1], x[0]))
+    
+    # Print results
+    for team, w in sorted_table:
+        print(f"{team}:{w}")
 
-for baba in range(n):
-    train_name = input().strip()
-    m = int(input().strip())
-    compartments = {}
-    for _ in range(m):
-        comp, passengers = input().strip().split(",")
-        compartments[comp] = int(passengers)
-    station_dict[train_name] = compartments
 
-# Print in sorted order of train names
-print({k: station_dict[k] for k in sorted(station_dict)})
+# Run the function
+ipl_points_table()
 
 
                 </textarea><br><br>
@@ -689,47 +648,55 @@ print({k: station_dict[k] for k in sorted(station_dict)})
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 3  Due on  2025-08-28, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3  Due on  2025-09-11, 23:59 IST</p>
 <p>
-Text Analysis at LitVerse Publishing
-At LitVerse, an online platform for writers and editors, the content moderation team is building tools to analyze and summarize large blocks of text.
+Problem Statement: Symmetric Double Pyramid Pattern
+Objective:
+Write a program to print a symmetric star pattern based on a given integer input n.
 
-One of the tools they’re developing aims to check whether any specific word appears an exact number of times in a paragraph.
+ Input:
+A single integer n (1 ≤ n ≤ 100), representing the number of rows in the upper half of the pattern.
 
-You are part of the development team, and your task is to write a utility function to support this feature.
+Output:
+Print a pattern consisting of 2n - 1 rows.
 
-Task
-(a) Write a Python function named exact_count that accepts the following:
+Each row should contain stars and spaces arranged symmetrically according to the value of n.
 
-para – a string containing a sequence of space-separated words, all in lowercase, with no special characters or punctuation.
+Example:
+Input:
 
-n – a positive integer.
+4
+Output:
 
-(b) The function should return True if there is at least one word in the paragraph that occurs exactly n times. It should return False otherwise.
+*      *
+**    **
+***  ***
+********
+***  ***
+**    **
+*      *
 
-(c) You do not need to accept input from the user or print output to the console. Simply define the function as described.
-
-Example
-para = "hello world hello code"
-n = 2
-exact_count(para, n)  # returns True because "hello" appears exactly 2 times
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def exact_count(para, n):
-    # Split paragraph into words
-    words = para.split()
+def pattern(n):
+    # Upper half including middle row
+    for ipls2 in range(1, n + 1):
+        stars = "*" * ipls2
+        spaces = " " * (2 * (n - ipls2))
+        print(stars + spaces + stars)
     
-    # Count frequencies
-    freq = {}
-    for wind in words:
-        freq[wind] = freq.get(wind, 0) + 1
-    
-    # Check if any word count == n
-    return any(count == n for count in freq.values())
+    # Lower half (mirror, excluding middle row)
+    for i in range(n - 1, 0, -1):
+        stars = "*" * i
+        spaces = " " * (2 * (n - i))
+        print(stars + spaces + stars)
 
 
+# Example run
+n = int(input())
+pattern(n)
 
                 </textarea><br><br>
 
