@@ -1,10 +1,10 @@
 [
   {
-    "Java week 3 Question 1 code": "for (int ki = n; ki >= 1; ki--) {\n            for (int j = 1; j <= ki; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        }\n\n \n        for (int i = 2; i <= n; i++) {\n            for (int j = 1; j <= i; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        } ",
-    "Java week 3 Question 2 code": "         for (int ijk = 1; ijk  <= num; ijk++) {\n            if (num % ijk == 0) {\n                System.out.print(ijk + \" \");\n            }\n        }\n",
-    "Java week 3 Question 3 code": "         int county = 0;\n        int tempy = num;\n\n        if (tempy == 0) {\n            county = 1; // 0 has 1 digit\n        } else {\n            while (tempy > 0) {\n                tempy = tempy / 10;\n                county++;\n            }\n        }\n\n        System.out.print(county); ",
-    "Java week 3 Question 4 code": "     //Plz support me\n\n    // Parameterized constructor\n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    // Getter for name\n    public String getName() {\n        return name;\n    }\n\n    // Setter for name\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    // Getter for age\n    public int getAge() {\n        return age;\n    }\n\n    // Setter for age\n    public void setAge(int age) {\n        this.age = age;\n    } ",
-    "Java week 3 Question 5 code": "  //Please like us \n\nclass cls2 extends cls1 {\n    // Method for multiplication given for help\n    void mul(int a, int b) {\n        System.out.println(a * b);\n    }\n\n    // Method for sum of squares taken for help \n    void task(int a, int b) {\n        System.out.println((a * a) + (b * b));\n    }\n}"
+    "Java week 6 Question 1 code": "       int result_for_Q1 = num1/num2; \n      System.out.print(\"Result is: \"+result_for_Q1);",
+    "Java week 6 Question 2 code": "         int result_for_Q2=num1/num2;\n        System.out.println(\"Division successful\");\n        System.out.print(\"Result is: \"+result_for_Q2);",
+    "Java week 6 Question 3 code": "         int result_for_Q3=num1/num2;\n        System.out.println(\"Division successful\");\n        System.out.print(\"Result is: \"+result_for_Q3);",
+    "Java week 6 Question 4 code": "        int result_for_Q4= num1/num2;\n       System.out.println(\"Result is: \"+result_for_Q4);",
+    "Java week 6 Question 5 code": "     if(num<0){\n    throw new Exception(\"Negative Number\");\n    }\n    return Math.sqrt(num+0);"
 
   },
   {
@@ -23,4 +23,3 @@
   }
 
 ]
-
