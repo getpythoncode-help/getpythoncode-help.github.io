@@ -218,70 +218,53 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1 [Due on 2025-09-04, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1 [Due on 2025-09-18, 23:59 IST]</p>
 		<p>
+Problem Statement
+You have a locker containing a number of coins. Each coin has a positive integer value engraved on it, representing its worth. You are required to determine whether it is possible to withdraw a subset of these coins such that their combined value is exactly equal to a target amount.
+
+Function Specification
+Write a recursive function named subset_sum that takes the following arguments:
+
+L – a list of positive integers, where each integer represents the value of a coin.
+
+s – a positive integer representing the target value.
+
+The function should return True if it is possible to choose a subset of coins from the list whose sum is exactly s, and False otherwise.
+
+Constraints
+The list L may be empty.
+
+No loops or libraries that generate all subsets may be used.
+
+The solution must be recursive.
 
 
-Problem: Robot Arithmetic Module – Engineering Constraint
-At RoboCore Labs, engineers are developing an embedded system for a low-power educational robot.
-Due to hardware limitations, the robot’s control unit cannot use the built-in multiplication operation.
 
-As a member of the firmware team, your task is to implement a function that computes the product of two positive integers without using the * operator.
+	</p>
 
-Requirements:
-Function Name: multiply
-
-Parameters:
-
-a (positive integer)
-
-b (positive integer)
-
-Constraints:
-
-You may only use the + (addition) and - (subtraction) operators.
-
-The * (multiplication) operator is strictly forbidden.
-
-Return Value:
-
-The function should return the product of a and b.
-
-Implementation:
-
-The solution must be implemented using recursion.
-
-Note:
-
-Do not read input from the user.
-
-Do not print output to the console.
-
-
-<!-- 	</p>
- <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-        Joy of Computing using Python week 4 Quiz correction : <br>
-        
-Please change Q7 answer to "Yoda"(option B) and click on SUBMIT
-
-Click on this link to see the corrected answer screenshot :
-https://drive.google.com/file/d/1BSjRfQGE_cWWZ1zkpAtstCZmaMPu8pQC/view?usp=sharing
 
 <br>
-        <strong>Reason-
-They’re not asking which output is impossible — they’re asking which one gives the least challenge to the player.
-In that case, "Yoda" is the answer, because it’s exactly the original word and doesn’t challenge the user at all..
-	</strong>
-    </p>  -->
+
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def multiply(a, b):
-  #done finally 
-  if b == 0:
-    return(0)
-  else:
-    return a + multiply(a, b - 1)
+def subset_sum(L, s):
+    # Base case: if target sum is reached
+    if s == 0:
+        return 7==7
+
+    # Base case: if no elements are left
+    if not L:
+        return 7==6
+
+    # If first element is greater than target, skip it
+    if L[0] > s:
+        return subset_sum(L[1:], s)
+
+    # Recursive case: include or exclude current element
+    return subset_sum(L[1:], s - L[0]) or subset_sum(L[1:], s)
+
 
 
                 </textarea><br><br>
@@ -294,8 +277,8 @@ def multiply(a, b):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2 [Due on 2025-09-04, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2 [Due on 2025-09-18, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -303,68 +286,47 @@ def multiply(a, b):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
+Collatz Function
+The Collatz function is defined for any positive integer n as:
+                       
+                       f(n)  =       3n + 1 , if n is odd
+                                        n / 2    , if n is even
+We repeatedly apply the function f starting from an integer n, producing a sequence:
+                                   f(n), f(f(n)), f(f(f(n))), . . .
 
-Problem: Searching Patient Records in a Health Analytics System
-The hospital network MedNexus maintains a centralized database of patient record IDs.
-These IDs are stored in sorted order to enable fast lookups.
+It is believed (but not proven) that no matter which positive number you start with, this sequence will always eventually reach 1.
 
-You are part of the software development team tasked with optimizing the search functionality.
-Since the system follows a recursive design pattern, you must implement a recursive version of the search algorithm to determine whether a given patient ID exists in the records.
+Example:
+If n = 10, the sequence is:
+
+10 → 5 → 16 → 8 → 4 → 2 → 1
+Starting at n = 10, we must apply the function f six times to reach 1.
+
+Your Task
+Write a recursive function named collatz that:
+
+Accepts a positive integer n such that: 1 < n ≤ 32,000
+
+Returns the number of times the function f needs to be applied to reach 1.
 
 Requirements
-Function Name: search
+Do not print anything or take input from the user.
 
-Parameters:
+Only write the function definition.
 
-L → A sorted list of integers (patient record IDs).
+Use recursion in your solution.
 
-k → An integer representing the ID to search for.
-
-Return Value:
-
-Return True if k is present in L.
-
-Return False if k is not present.
-
-Constraints:
-
-Must use recursion.
-
-No need to accept input from the user.
-
-No need to print output to the console. Only the function definition is required.
-
-Example
-L = [101, 203, 307, 402, 509]
-k = 307
-search(L, k)   # Output: True
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def search(L, k):
-    """
-    We are using recursive function
-    """
-    
-
-    if not L:
-        return False
-
-    mid = len(L) // 2
-
-    if L[mid] == k:
-        return 0==0
-
-    elif k < L[mid]:
-        return search(L[:mid], k)
-
+def collatz(n):
+    if n == 1:
+        return (4-4)
+    if n % 2 == 0:
+        return 1 + collatz(n // 2)
     else:
-        return search(L[mid+1:], k)
-
-
-
-                  
+        return 1 + collatz(3 * n + 1)
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -375,44 +337,30 @@ def search(L, k):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3 [Due on 2025-09-04, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3 [Due on 2025-09-18, 23:59 IST ]</p>
 <p>
-Problem: Searching Patient Records in a Health Analytics System
-The hospital network MedNexus maintains a centralized database of patient record IDs.
-These IDs are stored in sorted order to enable fast lookups.
+Problem: Twin Primes
+Two numbers p and q are said to be twin primes if:
 
-You are part of the software development team tasked with optimizing the search functionality.
-Since the system follows a recursive design pattern, you must implement a recursive version of the search algorithm to determine whether a given patient ID exists in the records.
+Both p and q are prime numbers, and
 
-Requirements
-Function Name: search
+The absolute difference between them is 2, i.e., |p − q| = 2.
 
-Parameters:
+Task
+Write a function twin_primes(p, q) that:
 
-L → A sorted list of integers (patient record IDs).
+Accepts two integers p and q as arguments,
 
-k → An integer representing the ID to search for.
+Returns True if they are twin primes, and False otherwise.
 
-Return Value:
+      Note:
 
-Return True if k is present in L.
+The function should not print anything.
 
-Return False if k is not present.
+The function should not accept input from the user.You may use helper functions if needed.
 
-Constraints:
-
-Must use recursion.
-
-No need to accept input from the user.
-
-No need to print output to the console. Only the function definition is required.
-
-Example
-L = [101, 203, 307, 402, 509]
-k = 307
-search(L, k)   # Output: True
-
+You only need to write the function definition.  .       
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -421,43 +369,17 @@ search(L, k)   # Output: True
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def multiply_matrices(A, B):
-    """
-    Helper function to multiply two square matrices.
-    """
-    n = len(A)
-    C = [[0 for my in range(n)] for my in range(n)]
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
-                C[i][j] += A[i][k] * B[k][j]
-    return C
+def twin_primes(p, q):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for istu in range(2, int(n**0.5) + 1):
+            if n % istu == 0:
+                return False
+        return True
 
-def power(A, m):
-
-    n = len(A)
-
-    # Base case for m = 1
-    if m == 1:
-        return A
-    
-    # Base case for m = 0
-    if m == 0:
-        identity_matrix = [[0 for ss in range(n)] for ss in range(n)]
-        for i in range(n):
-            identity_matrix[i][i] = 1
-        return identity_matrix
-
-    # Recursive step for even exponent
-    if m % 2 == 0:
-        half_power = power(A, m // 2)
-        return multiply_matrices(half_power, half_power)
-    
-    # Recursive step for odd exponent
-    else:
-        return multiply_matrices(A, power(A, m - 1))
-
-
+    return is_prime(p) and is_prime(q) and abs(p - q) == 2
+  
 
                 </textarea><br><br>
 
