@@ -1,10 +1,10 @@
 [
   {
-    "Java week 6 Question 1 code": "       int result_for_Q1 = num1/num2; \n      System.out.print(\"Result is: \"+result_for_Q1);",
-    "Java week 6 Question 2 code": "         int result_for_Q2=num1/num2;\n        System.out.println(\"Division successful\");\n        System.out.print(\"Result is: \"+result_for_Q2);",
-    "Java week 6 Question 3 code": "         int result_for_Q3=num1/num2;\n        System.out.println(\"Division successful\");\n        System.out.print(\"Result is: \"+result_for_Q3);",
-    "Java week 6 Question 4 code": "        int result_for_Q4= num1/num2;\n       System.out.println(\"Result is: \"+result_for_Q4);",
-    "Java week 6 Question 5 code": "     if(num<0){\n    throw new Exception(\"Negative Number\");\n    }\n    return Math.sqrt(num+0);"
+    "Java week 7 Question 1 code": "     // Method to find the longest word in a given text\n    public static String findLongestWord(String text) {\n        String longestWord_IS = \"\";\n        \n        // Split the text into words based on whitespace\n        String[] words = text.split(\"\\\\s+\");\n        \n        // Iterate through each word to find the longest one\n        for (String word : words) {\n            if (word.length()  >  longestWord_IS.length()) {\n                longestWord_IS = word;\n            }\n        }\n        \n        return longestWord_IS;\n    }\n\n",
+    "Java week 7 Question 2 code": "         // program to remove all occurrences of an element from array in Java.\n        public static int[] removeAll(int[] array, int elementToRemove) {\n               int[] result = new int[array.length];\n               int indexxx = 0;\n\n               // Iterate through the original array\n               for (int value : array) {\n                   // Copy only if the current element is not equal to the element to be removed\n                   if (value != elementToRemove) {\n                       result[indexxx++] = value;\n                   }\n               }\n\n               // If the resulting array is smaller than the original, resize it\n               return Arrays.copyOf(result, indexxx);\n        }\n",
+    "Java week 7 Question 3 code": "//Code to create function primesum(), compute the sum of all prime numbers in a given range.\npublic static int primeSum(int x, int y) {\n    int sum = 0;\n    for (int iyi = x; iyi <= y; iyi++) {\n        if (isPrime(iyi)) {\n            sum += iyi;\n        }\n    }\n    return sum;\n}\n\nprivate static boolean isPrime(int num) {\n    if (num < 2) return false;\n    for (int i = 2; i * i <= num; i++) {\n        if (num % i == 0) return false;\n    }\n    return true;\n}\n ",
+    "Java week 7 Question 4 code": "private int start;\nprivate int end;\n\npublic PrintNumbers(int start, int end) {\n    this.start = start;\n    this.end = end;\n}\n\n@Override\npublic void run() {\n    for (int lolo = start; lolo <= end; lolo += 2) {\n        System.out.println(Thread.currentThread().getName() + \": \" + lolo);\n    }\n}\n ",
+    "Java week 7 Question 5 code": "public boolean isValidPassword(String password) {\n    // Step 1: Check if the password length is at least 8 characters\n    if (password.length() < 8) {\n        return false;\n    }\n\n    // Flag to track if there is an uppercase letter\n    boolean hasUpperCase7 = false;\n    // Flag to track if there is a number\n    boolean hasDigit = false;\n\n    // Step 2: Loop through each character in the password\n    for (char ch : password.toCharArray()) {\n        if (Character.isUpperCase(ch)) {\n            hasUpperCase7 = true; // Found an uppercase letter\n        }\n        if (Character.isDigit(ch)) {\n            hasDigit = true; // Found a number\n        }\n\n        // If both conditions are met, no need to check further\n        if (hasUpperCase7 && hasDigit) {\n            return true;\n        }\n    }\n\n    // Step 3: If either condition is not met, return false\n    return false;\n}\n "
 
   },
   {
@@ -23,3 +23,4 @@
   }
 
 ]
+
