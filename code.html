@@ -189,7 +189,7 @@
 		String processing<br>
 		</a></div>
 		<!--  -->
-		<div style="margin: 16px;"><a><b>Week 6 :</b>
+		<div style="margin: 16px;"><a><b>Week 8 :</b>
 	    Backtracking: N Queens, recording all solutions<br>
 		Scope in Python: local, global, nonlocal names<br>
 		Nested functions<br>
@@ -229,9 +229,9 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 5 programming answers[Due on 2025-08-28, 23:59 IST]</a>
+	    <a>The Programming Data Structure And Algorithm using python week 8 programming answers[Due on 2025-09-18, 23:59 IST]</a>
 	   
-                <p> Week 5: Programming Assignment</p>
+                <p> Week 8: Programming Assignment</p>
  <div>
 	Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
@@ -249,94 +249,77 @@ Ignore warnings about "Presentation errors".
 	    <br>
 	    <div>
 
-The academic office at the Hogwarts School of Witchcraft and Wizardry has compiled data about students' grades. The data is provided as text from standard input in three parts: information about courses, information about students and information about grades. Each part has a specific line format, described below..
+Dividing Sequences
+(IARCS OPC Archive, K Narayan Kumar, CMI)
+This problem is about sequences of positive integers a1,a2,…,aN. A subsequence of a sequence is anything obtained by dropping some of the elements. For example, 3,7,11,3 is a subsequence of 6,3,11,5,7,4,3,11,5,3 , but 3,3,7 is not a subsequence of 6,3,11,5,7,4,3,11,5,3 .
 
-Information about courses
-Line format: Course Code~Course Name~Semester~Year~Instructor
-Information about students
-Line format: Roll Number~Full Name
-Information about grades
-Line format: Course Code~Semester~Year~Roll Number~Grade
-The possible grades are A, AB, B, BC, C, CD, D with corresponding grade points 10, 9, 8, 7, 6, 5 and 4. The grade point average of a student is the sum of his/her grade points divided by the number of courses. For instance, if a student has taken two courses with grades A and C, the grade point average is 8.50 = (10+7)÷2. If a student has not completed any courses, the grade point average is defined to be 0.
+A fully dividing sequence is a sequence a1,a2,…,aN where ai divides aj whenever i < j. For example, 3,15,60,720 is a fully dividing sequence.
 
-You may assume that the data is internally consistent. For every grade, there is a corresponding course code and roll number in the input data.
+Given a sequence of integers your aim is to find the length of the longest fully dividing subsequence of this sequence.
 
-Each section of the input starts with a line containing a single keyword. The first section begins with a line containing Courses. The second section begins with a line containing Students. The third section begins with a line containing Grades. The end of the input is marked by a line containing EndOfInput.
+Consider the sequence 2,3,7,8,14,39,145,76,320
 
-Write a Python program to read the data as described above and print out a line listing the grade point average for each student in the following format:
+It has a fully dividing sequence of length 3, namely 2,8,320, but none of length 4 or greater.
 
-Roll Number~Full Name~Grade Point Average
-Your output should be sorted by Roll Number. The grade point average should be rounded off to 2 digits after the decimal point. Use the built-in function round().
+Consider the sequence 2,11,16,12,36,60,71,17,29,144,288,129,432,993 .
 
-Here is a sample input and its corresponding output.
+It has two fully dividing subsequences of length 5,
 
-Sample Input
+2,11,16,12,36,60,71,17,29,144,288,129,432,993 and
+2,11,16,12,36,60,71,17,29,144,288,129,432,993
+and none of length 6 or greater.
 
-Courses
-TRAN~Transfiguration~1~2011-2012~Minerva McGonagall
-CHAR~Charms~1~2011-2012~Filius Flitwick
-Students
-SLY2301~Hannah Abbott
-SLY2302~Euan Abercrombie
-SLY2303~Stewart Ackerley
-SLY2304~Bertram Aubrey
-SLY2305~Avery
-SLY2306~Malcolm Baddock
-SLY2307~Marcus Belby
-SLY2308~Katie Bell
-SLY2309~Sirius Orion Black
-Grades
-TRAN~1~2011-2012~SLY2301~AB
-TRAN~1~2011-2012~SLY2302~B
-TRAN~1~2011-2012~SLY2303~B
-TRAN~1~2011-2012~SLY2305~A
-TRAN~1~2011-2012~SLY2306~BC
-TRAN~1~2011-2012~SLY2308~A
-TRAN~1~2011-2012~SLY2309~AB
-CHAR~1~2011-2012~SLY2301~A
-CHAR~1~2011-2012~SLY2302~BC
-CHAR~1~2011-2012~SLY2303~B
-CHAR~1~2011-2012~SLY2305~BC
-CHAR~1~2011-2012~SLY2306~C
-CHAR~1~2011-2012~SLY2307~B
-CHAR~1~2011-2012~SLY2308~AB
-EndOfInput
-Sample Output
+Solution hint
+Let the input be a1, a2, …, aN. Let us define Best(i) to be the length of longest dividing sequence in a1,a2,…ai that includes ai.
 
-SLY2301~Hannah Abbott~9.5
-SLY2302~Euan Abercrombie~7.5
-SLY2303~Stewart Ackerley~8.0
-SLY2304~Bertram Aubrey~0
-SLY2305~Avery~8.5
-SLY2306~Malcolm Baddock~6.5
-SLY2307~Marcus Belby~8.0
-SLY2308~Katie Bell~9.5
-SLY2309~Sirius Orion Black~9.0
-	    </div>
-	    <br>
-<!-- 	    <div>
-		  Solution hint
-Number the dragons 1,2,…,D in ascending order of rows. Let mindist(i,j) denote the minimum distance travelled when the jth dragon killed is dragon i. Recall the constraint that there is no dragon at (0,0). Use dynamic programming to compute mindist(i,j) for all values of i and j, then find the minimum among mindist(i,K) for all i ≥ K.
+Write an expression for Best(i) in terms of Best(j) with j<i, with base case Best(1) = 1. Solve this recurrence using dynamic programming.
 
+Full solution
+
+.
 Input format
-Line 1 : Four space-separated integers, R, C, K and D.
-Lines 2 to D+1 : Each line has two-space separated integers r and c, the row and column of the corresponding dragon.
-Output format
-A single integer, the minimum total distance travelled to kill K dragons.
+The first line of input contains a single positive integer N indicating the length of the input sequence. Lines 2,…,N+1 contain one integer each. The integer on line i+1 is ai.
 
-Test Data:
-In all testcases, K ≤ D ≤ R, and, for each dragon position (r,c), 0 ≤ r < R, and 0 ≤ c < C.
-In all testcases, 1 ≤ K,D ≤ 300.
-In 60% of the testcases, 1 ≤ R,C ≤ 300. In the remaining testcases, 1 ≤ R,C ≤ 100000.
-No two dragons will be on the same row.
-No dragon will be at position (0,0).
-Sample Input:
-5 5 2 3
-1 4
-4 4
-2 3
-Sample Output:
-7
+Output format
+Your output should consist of a single integer indicating the length of the longest fully dividing subsequence of the input sequence.
+
+Test Data
+You may assume that N ≤ 2500.
+
+Example:
+Here are the inputs and outputs corresponding to the two examples discussed above.
+
+Sample input 1:
+9
+2 
+3 
+7 
+8 
+14 
+39 
+145 
+76 
+320
+Sample output 1:
+3
+Sample input 2:
+14
+2
+11 
+16 
+12 
+36 
+60 
+71 
+17 
+29 
+144 
+288 
+129 
+432 
+993
+Sample output 2:
+5
 	    </div> -->
 	    <br>
 	    <div> -->
@@ -345,89 +328,24 @@ Sample Output:
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
 
-#!/usr/bin/env python3
-import sys
+n = int(input())
+LGG = list()
+bestvals =list()
+best_stored = list()
+for x in range(n):
+  LGG.append(int(input()))
+  best_stored.append(0)
 
-def main():
-    lines = [line123.rstrip("\n") for line123 in sys.stdin]
-    i = 0
-    n = len(lines)
+best_stored[0] = 1
 
-    # grade to points mapping
-    grade_points = {
-        "A": 10,
-        "AB": 9,
-        "B": 8,
-        "BC": 7,
-        "C": 6,
-        "CD": 5,
-        "D": 4
-    }
+for i in range(n):
+  maxval = 1
+  for j in range(i):
+    if LGG[i] % LGG[j] == 0:
+      maxval = max(maxval,(best_stored[j])+1)
+  best_stored[i] = maxval
 
-    students = {}          # roll -> full name
-    points_sum = {}        # roll -> sum of grade points
-    courses_count = {}     # roll -> number of courses
-
-    # walk through lines and parse sections
-    while i < n:
-        line = lines[i].strip()
-        i += 1
-        if not line:
-            continue
-        if line == "Courses":
-            # skip course lines until next section keyword
-            while i < n and lines[i].strip() not in ("Students", "Grades", "EndOfInput"):
-                i += 1
-        elif line == "Students":
-            while i < n:
-                s = lines[i].strip()
-                if s in ("Courses", "Grades", "EndOfInput"):
-                    break
-                if s:
-                    parts = s.split("~", 1)
-                    if len(parts) == 2:
-                        roll, name = parts
-                        students[roll] = name
-                        # initialize accumulators
-                        points_sum.setdefault(roll, 0)
-                        courses_count.setdefault(roll, 0)
-                i += 1
-        elif line == "Grades":
-            while i < n:
-                s = lines[i].strip()
-                if s in ("Courses", "Students", "EndOfInput"):
-                    break
-                if s:
-                    parts = s.split("~")
-                    # Course Code~Semester~Year~Roll Number~Grade
-                    if len(parts) == 5:
-                        _, _, _, roll, grade = parts
-                        gp = grade_points.get(grade, 0)
-                        points_sum[roll] = points_sum.get(roll, 0) + gp
-                        courses_count[roll] = courses_count.get(roll, 0) + 1
-                i += 1
-        elif line == "EndOfInput":
-            break
-        else:
-            # ignore unexpected lines (safety)
-            continue
-
-    # Ensure students with no grades are included (already initialized)
-    # Output sorted by roll number
-    for roll in sorted(students.keys()):
-        name = students[roll]
-        cnt = courses_count.get(roll, 0)
-        if cnt == 0:
-            gpa = 0
-        else:
-            gpa = round(points_sum.get(roll, 0) / cnt, 2)
-        # print in required format
-        print(f"{roll}~{name}~{gpa}")
-
-if __name__ == "__main__":
-    main()
-
-
+print(max(best_stored),end="")
 
 
                 </textarea><br><br>
