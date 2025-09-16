@@ -411,8 +411,8 @@ def twin_primes(p, q):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1   Due on  2025-09-11, 23:59 IST</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 1   Due on  2025-09-25, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -420,54 +420,47 @@ def twin_primes(p, q):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Problem 1: Image Noise Isolation in Data Analysis
-At a medical research lab, image preprocessing involves working with square matrices that represent pixel intensity grids extracted from medical images.
+Problem Statement: Merge Two Dictionaries
+Write a function named merge that merges two dictionaries D1 and D2 into a new dictionary D following these rules:
 
-Sometimes, due to faulty sensor data, certain rows and columns must be eliminated to isolate sub-regions of the matrix.
+Each key-value pair in D must come from either D1 or D2.
 
-Your task is to implement a function that removes a specified row and column from a square matrix to produce a minor matrix.
+Every key from both D1 and D2 must be present in D.
 
-Requirements
-Function Name: minor_matrix
+If a key appears in both D1 and D2, the value to retain depends on the argument priority:
 
-Parameters:
+If priority is "first", retain the value from D1.
 
-M: A square matrix (list of lists).
+If priority is "second", retain the value from D2.
 
-i: Index of the row to remove (0-based).
-
-j: Index of the column to remove (0-based).
-
-Return Value:
-
-A new matrix with the i-th row and j-th column removed.
+All keys in the resulting dictionary D must be sorted in alphabetical order.
 
 Constraints:
 
-The matrix M is always square (n × n).
+Do not print anything.
 
-M has at least 3 rows and columns.
-
-Indexing is zero-based.
-
-No input/output required — just define the function.
-
-Example
-M = [[1, 2, 3],
-     [4, 5, 6],
-     [7, 8, 9]]
-
-minor_matrix(M, 0, 1)
-# Expected output:
-# [[4, 6],
-#  [7, 9]]
-
+Do not accept input from the user. Only define the function.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def minor_matrix(M, i, j):
-    return [ [rowse[col] for col in range(len(M)) if col != j] 
-             for r, rowse in enumerate(M) if r != i ]
+def merge(D1, D2, priority):
+    merged_dict = {}
+
+    # Add from D1
+    for keys, valueg in D1.items():
+        merged_dict[keys] = valueg
+
+    # Add from D2 with conflict handling
+    for key, value in D2.items():
+        if key in merged_dict:
+            if priority == "second":
+                merged_dict[key] = value
+        else:
+            merged_dict[key] = value
+
+    # Return dictionary sorted by keys
+    return dict(sorted(merged_dict.items()))
+
 
                 </textarea><br><br>
 
@@ -479,86 +472,34 @@ def minor_matrix(M, i, j):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 2  Due on  2025-09-11, 23:59 IST </p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 2  Due on  2025-09-25, 23:59 IST </p>
 		<p>
-Problem: Generating the IPL Points Table
-You are part of the analytics team at the Indian Premier League (IPL) headquarters.
-This year, a special edition of the tournament was organized as a round-robin event where each team played exactly one match against every other team. There were no ties — every match resulted in a clear winner and loser.
+Problem Statement
+You are given a 2-dimensional list mat that represents a matrix.
 
-Eight teams participated in this format:
-CSK, DC, KKR, MI, PK, RR, RCB, SH
+Write a function rotate(mat) that returns a new matrix rotated 90° clockwise.
 
-The tournament officials recorded match outcomes in a specific format. For each team (in a fixed order), they listed the names of the teams it defeated. The lines follow this order:
-CSK, DC, KKR, MI, PK, RR, RCB, SH
+The input mat is a list of lists, where each inner list represents a row.
 
-Example:
+You do not need to handle input/output.
 
-CSK,MI,DC,PK
-indicates that CSK won against MI, DC, and PK, and lost its remaining matches.
+Hint / Approach:
 
-If a line only contains the team’s name (e.g., RCB), it means that team lost all its matches.
+First, compute the transpose of the matrix.
 
-Your Task
-(a) Process the 8 lines of input and compute the total number of matches won by each team.
-(b) Prepare the final IPL points table in descending order of number of wins.
-(c) If two or more teams have the same number of wins, sort them in alphabetical order.
-(d) Print each entry in the format:
-
-<team name>:<wins>
-with no spaces and one entry per line.
-
-Constraints
-Input always follows the described format.
-
-Every team plays exactly 7 matches.
-
-No drawn or tied games.
-
-Example Input
-CSK,MI,DC,PK
-DC,MI,SH
-KKR,CSK,RR
-MI
-PK,RR,MI
-RR,MI
-RCB,DC
-SH,PK
-Example Output
-CSK:3
-DC:2
-KKR:3
-MI:0
-PK:2
-RR:1
-RCB:1
-SH:2
-
+Then, reverse each row of the transposed matrix.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def ipl_points_table():
-    teams = ["CSK", "DC", "KKR", "MI", "PK", "RR", "RCB", "SH"]
-    wins = {team: 0 for team in teams}
-    
-    # Read 8 lines of input
-    for check_kar in range(8):
-        line = input().strip()
-        parts = line.split(",")
-        winner = parts[0]
-        wins[winner] += len(parts) - 1  # winner beat all listed teams
-    
-    # Sort: by wins (descending), then by team name (alphabetical)
-    sorted_table = sorted(wins.items(), key=lambda x: (-x[1], x[0]))
-    
-    # Print results
-    for team, w in sorted_table:
-        print(f"{team}:{w}")
+def rotate(mat):
+    # Step 1: Transpose the matrix
+    transposed = list(zip(*mat))
 
+    # Step 2: Reverse each row of the transposed matrix
+    rotated_ans = [list(row)[::-1] for row in transposed]
 
-# Run the function
-ipl_points_table()
-
+    return rotated_ans
 
                 </textarea><br><br>
 
@@ -570,55 +511,37 @@ ipl_points_table()
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 3  Due on  2025-09-11, 23:59 IST</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 3  Due on  2025-09-25, 23:59 IST</p>
 <p>
-Problem Statement: Symmetric Double Pyramid Pattern
-Objective:
-Write a program to print a symmetric star pattern based on a given integer input n.
+Problem Statement
+You are working on a text analysis tool that groups words based on their frequency in a given list. For example, you might want to find all words that appear exactly once, all words that appear twice, and so on.
 
- Input:
-A single integer n (1 ≤ n ≤ 100), representing the number of rows in the upper half of the pattern.
+Write a function freq_to_words that accepts a list of lowercase words as input and returns a dictionary with the following structure:
 
-Output:
-Print a pattern consisting of 2n - 1 rows.
+Key: Frequency (positive integer) of the words
 
-Each row should contain stars and spaces arranged symmetrically according to the value of n.
+Value: List of all words that occur exactly that many times in the input
 
-Example:
-Input:
-
-4
-Output:
-
-*      *
-**    **
-***  ***
-********
-***  ***
-**    **
-*      *
-
+You do not need to accept any input from the user or print anything to the console. Just write the function definition.
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def pattern(n):
-    # Upper half including middle row
-    for ipls2 in range(1, n + 1):
-        stars = "*" * ipls2
-        spaces = " " * (2 * (n - ipls2))
-        print(stars + spaces + stars)
-    
-    # Lower half (mirror, excluding middle row)
-    for i in range(n - 1, 0, -1):
-        stars = "*" * i
-        spaces = " " * (2 * (n - i))
-        print(stars + spaces + stars)
+def freq_to_words(words):
+    freq_dict = dict()
 
+    # Count frequencies of words
+    for word in words:
+        freq_dict[word] = freq_dict.get(word, 0) + 1
 
-# Example run
-n = int(input())
-pattern(n)
+    # Build dictionary mapping frequency -> list of words
+    result = {}
+    for wordy, freqi in freq_dict.items():
+        if freqi not in result:
+            result[freqi] = []
+        result[freqi].append(wordy)
+
+    return result
 
                 </textarea><br><br>
 
