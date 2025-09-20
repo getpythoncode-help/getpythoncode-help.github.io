@@ -218,28 +218,51 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1 [Due on 2025-09-18, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 1 [Due on 2025-10-02, 23:59 IST]</p>
 		<p>
-Problem Statement
-You have a locker containing a number of coins. Each coin has a positive integer value engraved on it, representing its worth. You are required to determine whether it is possible to withdraw a subset of these coins such that their combined value is exactly equal to a target amount.
+You are working with a dataset named scores_dataset, which is a list of dictionaries.
+Each dictionary contains information about a student’s name, gender, city, and their scores in various subjects.
 
-Function Specification
-Write a recursive function named subset_sum that takes the following arguments:
+Example entry:
 
-L – a list of positive integers, where each integer represents the value of a coin.
+{
+    'SeqNo': 1,
+    'Name': 'Devika',
+    'Gender': 'F',
+    'City': 'Bengaluru',
+    'Mathematics': 85,
+    'Physics': 100,
+    'Chemistry': 79,
+    'Biology': 75,
+    'Computer Science': 88,
+    'History': 60,
+    'Civics': 88,
+    'Philosophy': 95
+}
+Two students X and Y are said to be in a mentorship relation in a given subject if:
 
-s – a positive integer representing the target value.
+10 ≤ X.subject − Y.subject ≤ 20
+That is, student X can mentor student Y in a subject if their score difference lies between 10 and 20 (inclusive) and X’s score is higher.
 
-The function should return True if it is possible to choose a subset of coins from the list whose sum is exactly s, and False otherwise.
+Constraints:
 
-Constraints
-The list L may be empty.
+A student cannot mentor themselves.
 
-No loops or libraries that generate all subsets may be used.
+If a student cannot mentor anyone, the list should be empty.
 
-The solution must be recursive.
+Function Signature
+Write a function named mentors that accepts:
 
+scores_dataset: a list of student records
+
+subject: a string representing the subject
+
+The function should return a dictionary:
+
+Key: SeqNo of a student
+
+Value: List of SeqNo values of students that can be mentored by this student in the given subject
 
 
 	</p>
@@ -249,22 +272,26 @@ The solution must be recursive.
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def subset_sum(L, s):
-    # Base case: if target sum is reached
-    if s == 0:
-        return 7==7
+def mentors(scores_dataset, subject):
+    mentorships = {}
 
-    # Base case: if no elements are left
-    if not L:
-        return 7==6
+    for mentorG in scores_dataset:
+        mentor_seq = mentorG['SeqNo']
+        mentor_score = mentorG.get(subject)
+        mentees = []
 
-    # If first element is greater than target, skip it
-    if L[0] > s:
-        return subset_sum(L[1:], s)
+        for mentee in scores_dataset:
+            mentee_seq = mentee['SeqNo']
+            mentee_score = mentee.get(subject)
 
-    # Recursive case: include or exclude current element
-    return subset_sum(L[1:], s - L[0]) or subset_sum(L[1:], s)
+            if mentor_seq != mentee_seq:
+                diff = mentor_score - mentee_score
+                if 10 <= diff <= 20:
+                    mentees.append(mentee_seq)
 
+        mentorships[mentor_seq] = mentees
+
+    return mentorships
 
 
                 </textarea><br><br>
@@ -277,8 +304,8 @@ def subset_sum(L, s):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 2 [Due on 2025-09-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 2 [Due on 2025-10-02, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -286,47 +313,37 @@ def subset_sum(L, s):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Collatz Function
-The Collatz function is defined for any positive integer n as:
-                       
-                       f(n)  =       3n + 1 , if n is odd
-                                        n / 2    , if n is even
-We repeatedly apply the function f starting from an integer n, producing a sequence:
-                                   f(n), f(f(n)), f(f(f(n))), . . .
+IIT Ropar has a campus store called RoparMart. Each transaction is recorded as a dictionary with:
 
-It is believed (but not proven) that no matter which positive number you start with, this sequence will always eventually reach 1.
+"TID": Unique transaction ID (string)
 
-Example:
-If n = 10, the sequence is:
+"Items": List of dictionaries for each item with:
 
-10 → 5 → 16 → 8 → 4 → 2 → 1
-Starting at n = 10, we must apply the function f six times to reach 1.
+"Name": Name of the item
 
-Your Task
-Write a recursive function named collatz that:
+"Price": Price per unit
 
-Accepts a positive integer n such that: 1 < n ≤ 32,000
+"Qty": Quantity purchased
 
-Returns the number of times the function f needs to be applied to reach 1.
+Task: Write a function get_summary(trans) that computes the total cost of each transaction and returns a summary list.
 
-Requirements
-Do not print anything or take input from the user.
+Function Signature:
 
-Only write the function definition.
-
-Use recursion in your solution.
-
+def get_summary(trans):
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def collatz(n):
-    if n == 1:
-        return (4-4)
-    if n % 2 == 0:
-        return 1 + collatz(n // 2)
-    else:
-        return 1 + collatz(3 * n + 1)
+def get_summary(trans):
+    summ = []
+
+    for txn in trans:
+        tid = txn['TID']
+        cost = sum(item['Price'] * item['Qty'] for item in txn['Items'])
+        summ.append({'TID': tid, 'Cost': cost})
+
+    return summ
+
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -337,30 +354,24 @@ def collatz(n):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 3 [Due on 2025-09-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 3 [Due on 2025-10-02, 23:59 IST ]</p>
 <p>
-Problem: Twin Primes
-Two numbers p and q are said to be twin primes if:
+Problem Statement: Run-Length Encoding for Hostel Notice Board
+The hostel manager at IIT Ropar maintains a digital notice board accessible to all students. Notices are uploaded as plain text, but as the number of notices grows, server space usage increases.
 
-Both p and q are prime numbers, and
+To reduce storage, the IT admin wants a basic compression algorithm that can shrink repetitive characters in each notice.
 
-The absolute difference between them is 2, i.e., |p − q| = 2.
+Compression Logic
+The admin proposes using a simple form of Run-Length Encoding (RLE):
 
-Task
-Write a function twin_primes(p, q) that:
+Consecutive repetitions of a character are replaced with the character followed by the count of its occurrences.
 
-Accepts two integers p and q as arguments,
+If a character appears only once consecutively, it remains unchanged.
 
-Returns True if they are twin primes, and False otherwise.
+Example:
 
-      Note:
-
-The function should not print anything.
-
-The function should not accept input from the user.You may use helper functions if needed.
-
-You only need to write the function definition.  .       
+"aaabbc" → "a3b2c".       
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -369,17 +380,25 @@ You only need to write the function definition.  .
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def twin_primes(p, q):
-    def is_prime(n):
-        if n < 2:
-            return False
-        for istu in range(2, int(n**0.5) + 1):
-            if n % istu == 0:
-                return False
-        return True
+def compress(notice):
+    if not notice:
+        return ""
 
-    return is_prime(p) and is_prime(q) and abs(p - q) == 2
-  
+    result = []
+    count = 1
+
+    for it in range(1, len(notice)):
+        if notice[it] == notice[it - 1]:
+            count += 1
+        else:
+            result.append(notice[it - 1] + (str(count) if count > 1 else ''))
+            count = 1
+
+    # Handle the last character group
+    result.append(notice[-1] + (str(count) if count > 1 else ''))
+
+    return ''.join(result)
+
 
                 </textarea><br><br>
 
