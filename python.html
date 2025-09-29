@@ -430,8 +430,8 @@ def compress(notice):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1   Due on  2025-09-25, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1   Due on  2025-10-09, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -439,47 +439,63 @@ def compress(notice):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Problem Statement: Merge Two Dictionaries
-Write a function named merge that merges two dictionaries D1 and D2 into a new dictionary D following these rules:
+Goldbach’s Conjecture
+Problem Statement:
+Goldbach’s conjecture is one of the oldest and best-known unsolved problems in number theory. It states that every even number greater than 2 is the sum of two prime numbers.
 
-Each key-value pair in D must come from either D1 or D2.
+Your Task:
+Write a function Goldbach(n) where n is a positive even number (n > 2) that returns a list of tuples. Each tuple (a, b) should satisfy:
 
-Every key from both D1 and D2 must be present in D.
+a ≤ b
 
-If a key appears in both D1 and D2, the value to retain depends on the argument priority:
+Both a and b are prime numbers
 
-If priority is "first", retain the value from D1.
+a + b = n
 
-If priority is "second", retain the value from D2.
+The tuples should be returned in sorted order.
 
-All keys in the resulting dictionary D must be sorted in alphabetical order.
+Notes:
 
-Constraints:
+n will always be an even integer greater than 2.
 
-Do not print anything.
+Both numbers in a tuple must be prime.
 
-Do not accept input from the user. Only define the function.
+Return the tuples in sorted order.
+
+You need to take the input n from the user.
+
+Print the output.      
+
+Examples:
+
+# Example 1
+Input: 12
+Output: [(5, 7)]
+
+# Example 2
+Input: 26
+Output: [(3, 23), (7, 19), (13, 13)]
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def merge(D1, D2, priority):
-    merged_dict = {}
+def is_prime(num):
+    if num < 2:
+        return False
+    for dk in range(2, int(num**0.5) + 1):
+        if num % dk == 0:
+            return False
+    return True
 
-    # Add from D1
-    for keys, valueg in D1.items():
-        merged_dict[keys] = valueg
+def Goldbach(n):
+    result = []
+    for a in range(2, n // 2 + 1):
+        b = n - a
+        if is_prime(a) and is_prime(b):
+            result.append((a, b))
+    return result
 
-    # Add from D2 with conflict handling
-    for key, value in D2.items():
-        if key in merged_dict:
-            if priority == "second":
-                merged_dict[key] = value
-        else:
-            merged_dict[key] = value
-
-    # Return dictionary sorted by keys
-    return dict(sorted(merged_dict.items()))
-
+n = int(input())
+print(Goldbach(n),end="")
 
                 </textarea><br><br>
 
@@ -491,34 +507,65 @@ def merge(D1, D2, priority):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 2  Due on  2025-09-25, 23:59 IST </p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 2  Due on  2025-10-09, 23:59 IST </p>
 		<p>
-Problem Statement
-You are given a 2-dimensional list mat that represents a matrix.
+Problem: Selecting Athletes for a Balanced Team
+A national sports committee is selecting players for an upcoming championship.
+The goal is to form a balanced team where the performance scores of the selected players are as close as possible.
 
-Write a function rotate(mat) that returns a new matrix rotated 90° clockwise.
+Task
+Write a function find_Min_Difference(L, P) that determines the smallest possible difference between the highest and lowest scores among any valid selection of P players from the list L.
 
-The input mat is a list of lists, where each inner list represents a row.
+Function Details
+Input:
 
-You do not need to handle input/output.
+L: A list of integers representing the performance scores of athletes.
 
-Hint / Approach:
+P: An integer, the number of athletes to be selected (P < len(L)).
 
-First, compute the transpose of the matrix.
+Output:
 
-Then, reverse each row of the transposed matrix.
+An integer representing the smallest possible difference between the maximum and minimum scores of any group of P selected athletes.
+
+Notes
+The scores may not be sorted.
+
+Multiple selections may yield the same minimum difference.
+
+The function should return the minimum possible difference.
+
+Example
+Input:
+
+L = [3, 4, 1, 9, 56, 7, 9, 12, 13]
+P = 5
+Possible selections:
+
+[3, 4, 7, 9, 9] → 9 - 3 = 6
+
+[7, 9, 9, 12, 13] → 13 - 7 = 6
+
+Output:
+
+6
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def rotate(mat):
-    # Step 1: Transpose the matrix
-    transposed = list(zip(*mat))
+def find_Min_Difference(L, P):
+    # Sort the list first
+    L.sort()
+    
+    min_diff = float('inf')  
+    for ino in range(len(L) - P + 1):
+        current_diff = L[ino + P - 1] - L[ino]
+        if current_diff < min_diff:
+            min_diff = current_diff
+    
+    return min_diff
 
-    # Step 2: Reverse each row of the transposed matrix
-    rotated_ans = [list(row)[::-1] for row in transposed]
 
-    return rotated_ans
+
 
                 </textarea><br><br>
 
@@ -530,37 +577,66 @@ def rotate(mat):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 3  Due on  2025-09-25, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 3  Due on  2025-10-09, 23:59 IST</p>
 <p>
-Problem Statement
-You are working on a text analysis tool that groups words based on their frequency in a given list. For example, you might want to find all words that appear exactly once, all words that appear twice, and so on.
+Problem: Secure Communication for Disaster Response Teams
+During emergency situations such as natural disasters, communication between rescue teams must remain confidential to prevent misuse of critical information.
+To achieve this, messages are encrypted using a Caesar Cipher before transmission.
 
-Write a function freq_to_words that accepts a list of lowercase words as input and returns a dictionary with the following structure:
+The Caesar Cipher works by shifting each letter in the message by a fixed number of positions in the alphabet.
 
-Key: Frequency (positive integer) of the words
+Example (Shift = 3):
+ATTACK → DWWDFN
+Here, A → D, T → W, Z → C (letters wrap around).
 
-Value: List of all words that occur exactly that many times in the input
+Only uppercase alphabets (A–Z) are encrypted.
 
-You do not need to accept any input from the user or print anything to the console. Just write the function definition.
+Spaces and punctuation remain unchanged.
+
+Task
+Write a program to encrypt a given message using Caesar Cipher.
+
+You must define the function:
+
+def encrypt_message(message, shift):
+    # Your code here
+Input Format
+The first line of input contains the message (string, may include spaces).
+
+The second line contains the shift value (integer).
+
+Output Format
+Print the encrypted message after applying the Caesar Cipher.
+
+Example
+Input:
+
+HELLO
+3
+Output:
+
+KHOOR
 
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def freq_to_words(words):
-    freq_dict = dict()
+def encrypt_message(message, shift):
+    encrypted = ""
+    for chargt in message:
+        if 'A' <= chargt <= 'Z':  
+            new_char = chr((ord(chargt) - ord('A') + shift) % 26 + ord('A'))
+            encrypted += new_char
+        else:
+            encrypted += chargt  
+    return encrypted
 
-    # Count frequencies of words
-    for word in words:
-        freq_dict[word] = freq_dict.get(word, 0) + 1
+# Read input
+message = input()
+shift = int(input())
 
-    # Build dictionary mapping frequency -> list of words
-    result = {}
-    for wordy, freqi in freq_dict.items():
-        if freqi not in result:
-            result[freqi] = []
-        result[freqi].append(wordy)
+# Encrypt and print
+print(encrypt_message(message, shift),end="")
 
-    return result
 
                 </textarea><br><br>
 
