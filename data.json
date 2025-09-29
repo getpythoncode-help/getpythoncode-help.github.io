@@ -8,11 +8,11 @@
 
   },
   {
-    "Java week 4 Question 1 code": "         //Help me to get help \n \n        System.out.print(\"Roll Number is: \"+s.rollNo); ",
-    "Java week 4 Question 2 code": "       //Want support ? Support me \n\n      System.out.print(\"Speed is: \"+c.speed); ",
-    "Java week 4 Question 3 code": "          public int getBalance() {\n            return balance;\n        }\n    ",
-    "Java week 4 Question 4 code": "         //Welcome to my world\n\n        m.salary = s;\n\n        // Print the salary\n        System.out.print(\"Salary is: \"+m.salary);",
-    "Java week 4 Question 5 code": "       // Enjoyee\n\n        private int add(int a, int b, int c) {\n            return a + b + c;\n        }\n\n "
+    "Java week 10 Question 1 code": "//Work is done enjoy\nimport java.sql.Connection;\nimport java.sql.DriverManager; ",
+    "Java week 10 Question 2 code": "//see it worked \n\nString url = \"jdbc:sqlite:test.db\"; ",
+    "Java week 10 Question 3 code": " // Happy Jounney\n         String sql = \"INSERT INTO students (id, name) VALUES (1, 'Alice');\";",
+    "Java week 10 Question 4 code": " // This is done finally\n\n   String sql = \"SELECT * FROM students;\";",
+    "Java week 10 Question 5 code": " // All ok\n\n        String sql = \"UPDATE students SET name = 'Bob' WHERE id = 1;\";"
   },
   {
     "Java week 5 Question 1 code": " //Just simple method ok \n\nclass A implements Number {\n    public int findSqr(int i) {\n        return (i * i);\n    }\n}  ",
@@ -23,4 +23,3 @@
   }
 
 ]
-
