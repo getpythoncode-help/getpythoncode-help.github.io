@@ -218,51 +218,49 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1 [Due on 2025-10-02, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1 [Due on 2025-10-16, 23:59 IST]</p>
 		<p>
-You are working with a dataset named scores_dataset, which is a list of dictionaries.
-Each dictionary contains information about a student’s name, gender, city, and their scores in various subjects.
+Autonomous Warehouse Robot Inventory Update
+In a modern automated warehouse, an autonomous robot manages a sorted list of product IDs to keep track of available stock. Whenever a new product arrives, the robot must insert its ID into the correct position in the sorted list to maintain order.
 
-Example entry:
+However, due to limited programming capabilities on the robot’s chip, only append() and remove() methods are available for list operations — all other built-in list methods are restricted.
 
-{
-    'SeqNo': 1,
-    'Name': 'Devika',
-    'Gender': 'F',
-    'City': 'Bengaluru',
-    'Mathematics': 85,
-    'Physics': 100,
-    'Chemistry': 79,
-    'Biology': 75,
-    'Computer Science': 88,
-    'History': 60,
-    'Civics': 88,
-    'Philosophy': 95
-}
-Two students X and Y are said to be in a mentorship relation in a given subject if:
+Your Task
+Write a function:
 
-10 ≤ X.subject − Y.subject ≤ 20
-That is, student X can mentor student Y in a subject if their score difference lies between 10 and 20 (inclusive) and X’s score is higher.
+def insert(L, x)
+that:
 
-Constraints:
+Takes a sorted list of integers L representing product IDs.
 
-A student cannot mentor themselves.
+Takes an integer x representing the new product ID to be inserted.
 
-If a student cannot mentor anyone, the list should be empty.
+Returns a new sorted list with x inserted at the correct position without modifying the original list.
 
-Function Signature
-Write a function named mentors that accepts:
+Input Format
+You do not need to take input from the user.
 
-scores_dataset: a list of student records
+The function insert(L, x) will be called directly with:
 
-subject: a string representing the subject
+L: a sorted list of integers
 
-The function should return a dictionary:
+x: a single integer to insert
 
-Key: SeqNo of a student
+Output Format
+The function should return the new sorted list after inserting x.
 
-Value: List of SeqNo values of students that can be mentored by this student in the given subject
+Constraints
+Do not use any list methods except append() and remove().
+
+The list L will always be sorted in ascending order.
+
+Example
+# Example function call
+print(insert([10, 20, 30, 40], 25))
+Output
+
+[10, 20, 25, 30, 40]
 
 
 	</p>
@@ -272,26 +270,11 @@ Value: List of SeqNo values of students that can be mentored by this student in 
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def mentors(scores_dataset, subject):
-    mentorships = {}
-
-    for mentorG in scores_dataset:
-        mentor_seq = mentorG['SeqNo']
-        mentor_score = mentorG.get(subject)
-        mentees = []
-
-        for mentee in scores_dataset:
-            mentee_seq = mentee['SeqNo']
-            mentee_score = mentee.get(subject)
-
-            if mentor_seq != mentee_seq:
-                diff = mentor_score - mentee_score
-                if 10 <= diff <= 20:
-                    mentees.append(mentee_seq)
-
-        mentorships[mentor_seq] = mentees
-
-    return mentorships
+def insert(L, x):
+  l=[]
+  l.append(x)
+  L=L+l
+  return(sorted(L))
 
 
                 </textarea><br><br>
@@ -304,8 +287,8 @@ def mentors(scores_dataset, subject):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 2 [Due on 2025-10-02, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 2 [Due on 2025-10-16, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -313,36 +296,48 @@ def mentors(scores_dataset, subject):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-IIT Ropar has a campus store called RoparMart. Each transaction is recorded as a dictionary with:
+Secure Sensor Data Analysis
+In a secure data monitoring system, a network of sensors records values periodically. The values are stored in a list L, where each position in the list corresponds to a time slot.
 
-"TID": Unique transaction ID (string)
+To ensure data integrity, a special check is performed:
+We identify all prime-numbered time slots (based on zero-indexing) and then count how many of those slots contain prime numbers themselves.
 
-"Items": List of dictionaries for each item with:
+Your Task
+Write a function:
 
-"Name": Name of the item
+def primes_galore(L)
+that:
 
-"Price": Price per unit
+Accepts a list L of non-negative integers.
 
-"Qty": Quantity purchased
+Finds all indices in L that are prime numbers (considering zero-based indexing).
 
-Task: Write a function get_summary(trans) that computes the total cost of each transaction and returns a summary list.
+Counts how many of those prime indices store prime numbers.
 
-Function Signature:
+Returns this count.
 
-def get_summary(trans):
+ You may define and use helper functions (e.g., to check whether a number is prime).
+
+Input Format
+You do not need to take input from the user.
+
+The function primes_galore(L) will be called directly with a list of integers.
+
+Output Format
+The function should return an integer: the count of prime indices that store prime numbers.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def get_summary(trans):
-    summ = []
-
-    for txn in trans:
-        tid = txn['TID']
-        cost = sum(item['Price'] * item['Qty'] for item in txn['Items'])
-        summ.append({'TID': tid, 'Cost': cost})
-
-    return summ
+def primes_galore(L):
+  prime_number_list=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
+                     31, 37, 41, 43, 47, 53, 59, 61, 67, 
+                     71, 73, 79, 83, 89, 97]
+  my_count=0
+  for i in range(len(L)):
+    if i in prime_number_list and L[i] in prime_number_list:
+      my_count+=1
+  return(my_count)    
 
                 </textarea><br><br>
 
@@ -354,24 +349,31 @@ def get_summary(trans):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 3 [Due on 2025-10-02, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 3 [Due on 2025-10-16, 23:59 IST ]</p>
 <p>
-Problem Statement: Run-Length Encoding for Hostel Notice Board
-The hostel manager at IIT Ropar maintains a digital notice board accessible to all students. Notices are uploaded as plain text, but as the number of notices grows, server space usage increases.
+Validating Nested Bracket Sequences
+In a code analysis system, source files may contain multiple types of brackets: round ( ), square [ ], and curly { }. To ensure correct syntax structure, the system must verify that the brackets are balanced.
 
-To reduce storage, the IT admin wants a basic compression algorithm that can shrink repetitive characters in each notice.
+A bracket sequence is considered balanced if:
 
-Compression Logic
-The admin proposes using a simple form of Run-Length Encoding (RLE):
+The number of opening and closing brackets of each type is the same.
 
-Consecutive repetitions of a character are replaced with the character followed by the count of its occurrences.
+An opening bracket cannot be immediately followed by a closing bracket of a different type.
 
-If a character appears only once consecutively, it remains unchanged.
+Every opening bracket must eventually be closed by a bracket of the same type.
 
-Example:
+Your Task
+Write a function:
 
-"aaabbc" → "a3b2c".       
+def balanced(word):
+that:
+
+Accepts a string word (containing only the characters { } [ ] ( )).
+
+Returns True if the string is balanced, and False otherwise.
+
+You do not need to take input from the user. The function will be called directly with a string argument.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -380,24 +382,19 @@ Example:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def compress(notice):
-    if not notice:
-        return ""
+def balanced(word):
+    stack_box = []
+    matching = {')': '(', ']': '[', '}': '{'}
 
-    result = []
-    count = 1
-
-    for it in range(1, len(notice)):
-        if notice[it] == notice[it - 1]:
-            count += 1
-        else:
-            result.append(notice[it - 1] + (str(count) if count > 1 else ''))
-            count = 1
-
-    # Handle the last character group
-    result.append(notice[-1] + (str(count) if count > 1 else ''))
-
-    return ''.join(result)
+    for char in word:
+        if char in '([{':
+            stack_box.append(char)
+        elif char in ')]}':
+            if not stack_box:
+                return False
+            if stack_box.pop() != matching[char]:
+                return False
+    return not stack_box 
 
 
                 </textarea><br><br>
