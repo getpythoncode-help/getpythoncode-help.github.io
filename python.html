@@ -218,49 +218,47 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1 [Due on 2025-10-16, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 01 programming answers</a>
+                <p>Week 01: Programming Assignment 1 [Due on 2026-02-05, 23:59 IST]</p>
 		<p>
-Autonomous Warehouse Robot Inventory Update
-In a modern automated warehouse, an autonomous robot manages a sorted list of product IDs to keep track of available stock. Whenever a new product arrives, the robot must insert its ID into the correct position in the sorted list to maintain order.
+Energy Readings at Solar Valley
+At Solar Valley Research Station, engineers record daily energy readings from solar panels. Each reading represents the amount of power generated on a particular day. To assess performance, analysts compare individual readings against the overall average.
 
-However, due to limited programming capabilities on the robot’s chip, only append() and remove() methods are available for list operations — all other built-in list methods are restricted.
-
-Your Task
-Write a function:
-
-def insert(L, x)
-that:
-
-Takes a sorted list of integers L representing product IDs.
-
-Takes an integer x representing the new product ID to be inserted.
-
-Returns a new sorted list with x inserted at the correct position without modifying the original list.
+Problem Statement
+Given a sequence of daily energy readings, determine how many readings are strictly greater than the average of all readings.
 
 Input Format
-You do not need to take input from the user.
+A single line containing space-separated positive integers (each integer represents the energy generated on a day).
 
-The function insert(L, x) will be called directly with:
-
-L: a sorted list of integers
-
-x: a single integer to insert
 
 Output Format
-The function should return the new sorted list after inserting x.
+Print a single integer:
+the count of numbers strictly greater than the average of the given sequence.
 
 Constraints
-Do not use any list methods except append() and remove().
+All input numbers are positive integers.
 
-The list L will always be sorted in ascending order.
+At least one number is present in the input.
 
-Example
-# Example function call
-print(insert([10, 20, 30, 40], 25))
-Output
+Computation Details
+Compute the average of all given numbers.
 
-[10, 20, 25, 30, 40]
+Count how many numbers are greater than (not equal to) the average.
+
+Print the count.
+
+Sample Input
+10 20 30 40 50
+Sample Output
+2
+Explanation
+Average = (10 + 20 + 30 + 40 + 50) / 5 = 30
+
+Numbers strictly greater than 30 are 40 and 50
+
+Count = 2
+
+
 
 
 	</p>
@@ -270,13 +268,13 @@ Output
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
 
-def insert(L, x):
-  l=[]
-  l.append(x)
-  L=L+l
-  return(sorted(L))
-
-
+amar_number=[int(i) for i in input().split()]
+amar_avg=sum(amar_number)//len(amar_number)
+c=0
+for i in amar_number:
+  if i>amar_avg:
+    c=c+1
+print(c,end="")    
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -287,8 +285,8 @@ def insert(L, x):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 2 [Due on 2025-10-16, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 1 programming answers</a>
+                <p> Week 2: Programming Assignment 2 [Due on 2026-02-05, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -296,48 +294,32 @@ def insert(L, x):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Secure Sensor Data Analysis
-In a secure data monitoring system, a network of sensors records values periodically. The values are stored in a list L, where each position in the list corresponds to a time slot.
+Temperature Alert System
+ClimateWatch monitors daily temperature readings collected from different regions.
+To ensure safety, the system must flag temperatures that exceed the permissible limit.
 
-To ensure data integrity, a special check is performed:
-We identify all prime-numbered time slots (based on zero-indexing) and then count how many of those slots contain prime numbers themselves.
+Problem Description
+You are given a single line of input containing space-separated integers, where each integer represents a temperature reading for a particular region.
 
-Your Task
-Write a function:
-
-def primes_galore(L)
-that:
-
-Accepts a list L of non-negative integers.
-
-Finds all indices in L that are prime numbers (considering zero-based indexing).
-
-Counts how many of those prime indices store prime numbers.
-
-Returns this count.
-
- You may define and use helper functions (e.g., to check whether a number is prime).
+A temperature is considered unsafe if it is strictly greater than 50.
 
 Input Format
-You do not need to take input from the user.
-
-The function primes_galore(L) will be called directly with a list of integers.
+A single line containing space-separated integers representing temperature readings.
 
 Output Format
-The function should return an integer: the count of prime indices that store prime numbers.
+If one or more temperatures are strictly greater than 50, print all such temperatures in the same order as input, separated by spaces.
+
+If no temperature exceeds 50, print 0.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
 
-def primes_galore(L):
-  prime_number_list=[2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
-                     31, 37, 41, 43, 47, 53, 59, 61, 67, 
-                     71, 73, 79, 83, 89, 97]
-  my_count=0
-  for i in range(len(L)):
-    if i in prime_number_list and L[i] in prime_number_list:
-      my_count+=1
-  return(my_count)    
+amar_number=[int(i) for i in input().split()]
+ans=[i for i in amar_number if i>50]
+if len(ans)>1:
+	print(*ans,end="")
+else:
+  print(0,end="")  
 
                 </textarea><br><br>
 
@@ -349,31 +331,31 @@ def primes_galore(L):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 3 [Due on 2025-10-16, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 1 programming answers</a>
+                <p> Week 2: Programming Assignment 3 [Due on 2026-02-05, 23:59 IST ]</p>
 <p>
-Validating Nested Bracket Sequences
-In a code analysis system, source files may contain multiple types of brackets: round ( ), square [ ], and curly { }. To ensure correct syntax structure, the system must verify that the brackets are balanced.
+Signal Stability Checker
+Signal processors analyze sequences of numerical measurements to determine whether a signal is consistently increasing over time.
 
-A bracket sequence is considered balanced if:
+Problem Description
+You are given a sequence of integers representing signal measurements taken over time.
 
-The number of opening and closing brackets of each type is the same.
+A signal is said to be strictly increasing if every element is greater than the previous one.
 
-An opening bracket cannot be immediately followed by a closing bracket of a different type.
+Input Format
+A single line containing space-separated integers representing signal measurements.
 
-Every opening bracket must eventually be closed by a bracket of the same type.
+Output Format
+Print True if the sequence is strictly increasing.
 
-Your Task
-Write a function:
+Otherwise, print False.
 
-def balanced(word):
-that:
+     The program must always print exactly one Boolean value.
 
-Accepts a string word (containing only the characters { } [ ] ( )).
+Constraints
+Input contains at least one integer.
 
-Returns True if the string is balanced, and False otherwise.
-
-You do not need to take input from the user. The function will be called directly with a string argument.
+All values are integers.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -382,21 +364,16 @@ You do not need to take input from the user. The function will be called directl
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def balanced(word):
-    stack_box = []
-    matching = {')': '(', ']': '[', '}': '{'}
-
-    for char in word:
-        if char in '([{':
-            stack_box.append(char)
-        elif char in ')]}':
-            if not stack_box:
-                return False
-            if stack_box.pop() != matching[char]:
-                return False
-    return not stack_box 
-
-
+amar_number=[int(i) for i in input().split()]
+gf=0
+for i in range(len(amar_number)-1):
+  if amar_number[i+1]-amar_number[i] <=0:
+    #print(amar_number[i]-amar_number[i+1])
+    gf=1
+if gf==0:
+  print(True,end="")
+else:
+  print(False,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
