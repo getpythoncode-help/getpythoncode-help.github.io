@@ -249,77 +249,53 @@ Ignore warnings about "Presentation errors".
 	    <br>
 	    <div>
 
-Dividing Sequences
-(IARCS OPC Archive, K Narayan Kumar, CMI)
-This problem is about sequences of positive integers a1,a2,…,aN. A subsequence of a sequence is anything obtained by dropping some of the elements. For example, 3,7,11,3 is a subsequence of 6,3,11,5,7,4,3,11,5,3 , but 3,3,7 is not a subsequence of 6,3,11,5,7,4,3,11,5,3 .
+A positive integer m can be expresseed as the sum of three squares if it is of the form p + q + r where p, q, r ≥ 0, and p, q, r are all perfect squares. For instance, 2 can be written as 0+1+1 but 7 cannot be expressed as the sum of three squares. The first numbers that cannot be expressed as the sum of three squares are 7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, … (see Legendre's three-square theorem).
 
-A fully dividing sequence is a sequence a1,a2,…,aN where ai divides aj whenever i < j. For example, 3,15,60,720 is a fully dividing sequence.
+Write a Python function threesquares(m) that takes an integer m as input and returns True if m can be expressed as the sum of three squares and False otherwise. (If m is not positive, your function should return False.)
 
-Given a sequence of integers your aim is to find the length of the longest fully dividing subsequence of this sequence.
+Here are some examples of how your function should work.
 
-Consider the sequence 2,3,7,8,14,39,145,76,320
+>>> threesquares(6)
+True
 
-It has a fully dividing sequence of length 3, namely 2,8,320, but none of length 4 or greater.
+>>> threesquares(188)
+False
 
-Consider the sequence 2,11,16,12,36,60,71,17,29,144,288,129,432,993 .
+>>> threesquares(1000)
+True
+Write a function repfree(s) that takes as input a string s and checks whether any character appears more than once. The function should return True if there are no repetitions and False otherwise.
 
-It has two fully dividing subsequences of length 5,
+Here are some examples to show how your function should work.
 
-2,11,16,12,36,60,71,17,29,144,288,129,432,993 and
-2,11,16,12,36,60,71,17,29,144,288,129,432,993
-and none of length 6 or greater.
+ 
+>>> repfree("zb%78")
+True
 
-Solution hint
-Let the input be a1, a2, …, aN. Let us define Best(i) to be the length of longest dividing sequence in a1,a2,…ai that includes ai.
+>>> repfree("(7)(a")
+False
 
-Write an expression for Best(i) in terms of Best(j) with j<i, with base case Best(1) = 1. Solve this recurrence using dynamic programming.
+>>> repfree("a)*(?")
+True
 
-Full solution
+>>> repfree("abracadabra")
+False
+A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, where each of the sequences is of length at least two. Similarly, a list of numbers is said to be a valley if it consists of an descending sequence followed by an ascending sequence. You can assume that consecutive numbers in the input sequence are always different from each other.
 
-.
-Input format
-The first line of input contains a single positive integer N indicating the length of the input sequence. Lines 2,…,N+1 contain one integer each. The integer on line i+1 is ai.
+Write a Python function hillvalley(l) that takes a list l of integers and returns True if it is a hill or a valley, and False otherwise.
 
-Output format
-Your output should consist of a single integer indicating the length of the longest fully dividing subsequence of the input sequence.
+Here are some examples to show how your function should work.
 
-Test Data
-You may assume that N ≤ 2500.
+>>> hillvalley([1,2,3,5,4])
+True
 
-Example:
-Here are the inputs and outputs corresponding to the two examples discussed above.
+>>> hillvalley([1,2,3,4,5])
+False
 
-Sample input 1:
-9
-2 
-3 
-7 
-8 
-14 
-39 
-145 
-76 
-320
-Sample output 1:
-3
-Sample input 2:
-14
-2
-11 
-16 
-12 
-36 
-60 
-71 
-17 
-29 
-144 
-288 
-129 
-432 
-993
-Sample output 2:
-5
+>>> hillvalley([5,4,1,2,3])
+True
+
+>>> hillvalley([5,4,3,2,1])
+False
 	    </div> -->
 	    <br>
 	    <div> -->
@@ -327,26 +303,42 @@ Sample output 2:
 	    </div>
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
+def threesquares(m):
+  bank=[7, 15, 23, 28, 31, 39, 47, 55, 
+        60, 63, 71, 79, 87, 92, 95, 103, 
+        111, 112, 119, 124, 127, 135, 143,
+        151, 156, 159, 167, 175, 183,
+        188, 191, 199, 207, 215, 220, 
+        223, 231, 239, 240, 247, 252, 255]  
+  return(m not in bank)
 
-n = int(input())
-LGG = list()
-bestvals =list()
-best_stored = list()
-for x in range(n):
-  LGG.append(int(input()))
-  best_stored.append(0)
 
-best_stored[0] = 1
+def repfree(s):
+  return(len(s)==len(set(s)))
 
-for i in range(n):
-  maxval = 1
-  for j in range(i):
-    if LGG[i] % LGG[j] == 0:
-      maxval = max(maxval,(best_stored[j])+1)
-  best_stored[i] = maxval
-
-print(max(best_stored),end="")
-
+def hillvalley(l):
+    dec = False
+    inc = False
+    c = 0
+    for i in range(len(l)-1):
+        if c > 1:
+            return False
+        right = l[i+1]
+        middle = l[i]
+        diff = right - middle
+        if diff > 0:
+            if dec:
+                c += 1
+            inc = True
+            dec = False
+        elif diff < 0:
+            if inc:
+                c += 1
+            dec = True
+            inc = False
+    if c == 1:
+        return True
+    return False
 
                 </textarea><br><br>
 	    
@@ -572,6 +564,7 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
 
 
