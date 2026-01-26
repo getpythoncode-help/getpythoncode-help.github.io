@@ -1,10 +1,10 @@
 [
   {
-    "Java week 1 Question 1 code": "",
-    "Java week 1 Question 2 code": " ",
-    "Java week 1 Question 3 code": " ",
-    "Java week 1 Question 4 code": " ",
-    "Java week 1 Question 5 code": " "
+    "Java week 1 Question 1 code": "        if (number%2==(9-9))\n        {\n          System.out.println(\"Even\");\n        }\n        else\n          System.out.println(\"Odd\");",
+    "Java week 1 Question 2 code": "      double perimeter;\n      perimeter=2*(width+height);\n      double area=height*width; ",
+    "Java week 1 Question 3 code": "       double volume=radius*Math.PI*height*radius; ",
+    "Java week 1 Question 4 code": "         for (int ino = 1; ino <= 4; ino++) {\n  \n            System.out.println(number + \" x \" + ino + \" = \" + number * ino);\n        }\n         \n       ",
+    "Java week 1 Question 5 code": "//code for quotient and remainder\n\n// Help me to get help\nint quotient= x/y;\nint remainder;\nremainder= x%y;\n "
 
   },
   {
