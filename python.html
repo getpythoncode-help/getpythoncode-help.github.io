@@ -404,8 +404,8 @@ else:
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1   Due on  2025-10-09, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 1   Due on  2026-02-12, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -413,63 +413,28 @@ else:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Goldbach’s Conjecture
-Problem Statement:
-Goldbach’s conjecture is one of the oldest and best-known unsolved problems in number theory. It states that every even number greater than 2 is the sum of two prime numbers.
+The Shortest Codeword of Lexicon City
+Problem Statement
+In Lexicon City, encrypted messages are stored as comma-separated words.You are required to identify a special word based on the following rules:
 
-Your Task:
-Write a function Goldbach(n) where n is a positive even number (n > 2) that returns a list of tuples. Each tuple (a, b) should satisfy:
+Accept a comma-separated list of words as input.
 
-a ≤ b
+Find the word with the minimum length.
 
-Both a and b are prime numbers
+If multiple words share the same minimum length, print the rightmost such word.
 
-a + b = n
+Input Format
+A single line containing comma-separated words.
 
-The tuples should be returned in sorted order.
-
-Notes:
-
-n will always be an even integer greater than 2.
-
-Both numbers in a tuple must be prime.
-
-Return the tuples in sorted order.
-
-You need to take the input n from the user.
-
-Print the output.      
-
-Examples:
-
-# Example 1
-Input: 12
-Output: [(5, 7)]
-
-# Example 2
-Input: 26
-Output: [(3, 23), (7, 19), (13, 13)]
+Output Format
+Print the required word.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def is_prime(num):
-    if num < 2:
-        return False
-    for dk in range(2, int(num**0.5) + 1):
-        if num % dk == 0:
-            return False
-    return True
-
-def Goldbach(n):
-    result = []
-    for a in range(2, n // 2 + 1):
-        b = n - a
-        if is_prime(a) and is_prime(b):
-            result.append((a, b))
-    return result
-
-n = int(input())
-print(Goldbach(n),end="")
+words=input().split(",")
+ans=sorted(words,key=len)
+min_length=[m for m in ans if len(m)==len(ans[0])]
+print(min_length[-1],end="")
 
                 </textarea><br><br>
 
@@ -481,62 +446,40 @@ print(Goldbach(n),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 2  Due on  2025-10-09, 23:59 IST </p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 2  Due on  2026-02-12, 23:59 IST </p>
 		<p>
-Problem: Selecting Athletes for a Balanced Team
-A national sports committee is selecting players for an upcoming championship.
-The goal is to form a balanced team where the performance scores of the selected players are as close as possible.
+Cargo Weight Floor Converter
+Problem Statement
+At AeroPort-X, cargo weights are recorded as real numbers for logistical operations.
+For standardized loading, each recorded weight must be converted into an integer using a fixed rule.
 
-Task
-Write a function find_Min_Difference(L, P) that determines the smallest possible difference between the highest and lowest scores among any valid selection of P players from the list L.
+Task Description
+You are required to:
 
-Function Details
-Input:
+Accept a space-separated sequence of positive real numbers.
 
-L: A list of integers representing the performance scores of athletes.
+Convert each number to the greatest integer less than or equal to it.
 
-P: An integer, the number of athletes to be selected (P < len(L)).
+Print the converted integers separated by commas.
 
-Output:
+Input Format
+A single line containing space-separated real numbers.
 
-An integer representing the smallest possible difference between the maximum and minimum scores of any group of P selected athletes.
+Output Format
+A single line containing integers separated by commas.
 
-Notes
-The scores may not be sorted.
 
-Multiple selections may yield the same minimum difference.
-
-The function should return the minimum possible difference.
-
-Example
-Input:
-
-L = [3, 4, 1, 9, 56, 7, 9, 12, 13]
-P = 5
-Possible selections:
-
-[3, 4, 7, 9, 9] → 9 - 3 = 6
-
-[7, 9, 9, 12, 13] → 13 - 7 = 6
-
-Output:
-
-6
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def find_Min_Difference(L, P):
-    # Sort the list first
-    L.sort()
-    
-    min_diff = float('inf')  
-    for ino in range(len(L) - P + 1):
-        current_diff = L[ino + P - 1] - L[ino]
-        if current_diff < min_diff:
-            min_diff = current_diff
-    
-    return min_diff
+m=[i.split('.')[0]+"," for i in input().split()]
+if len(m)>1:
+  for i in range(len(m)-1):
+    print(m[i],end="")
+  print(m[i+1].split(",")[0],end="")  
+else:
+  print(m[0].split(",")[0],end="") 
 
 
 
@@ -551,66 +494,63 @@ def find_Min_Difference(L, P):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 3  Due on  2025-10-09, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 3  Due on  2026-02-12, 23:59 IST</p>
 <p>
-Problem: Secure Communication for Disaster Response Teams
-During emergency situations such as natural disasters, communication between rescue teams must remain confidential to prevent misuse of critical information.
-To achieve this, messages are encrypted using a Caesar Cipher before transmission.
+Word Length Comparator
+Problem Statement
+Word Length Comparator
 
-The Caesar Cipher works by shifting each letter in the message by a fixed number of positions in the alphabet.
+Problem Statement:
 
-Example (Shift = 3):
-ATTACK → DWWDFN
-Here, A → D, T → W, Z → C (letters wrap around).
+Text analysts compare words based on their lengths. Write a program to perform the following steps:
 
-Only uppercase alphabets (A–Z) are encrypted.
+Accept a comma-separated list of words.
 
-Spaces and punctuation remain unchanged.
+Calculate the average length of the words.
 
-Task
-Write a program to encrypt a given message using Caesar Cipher.
+Round up the average to the nearest whole number (Ceiling value).
 
-You must define the function:
+Count how many words have a length strictly greater than this rounded average.
 
-def encrypt_message(message, shift):
-    # Your code here
-Input Format
-The first line of input contains the message (string, may include spaces).
+Input Format:
 
-The second line contains the shift value (integer).
+A single line containing comma-separated words.
 
-Output Format
-Print the encrypted message after applying the Caesar Cipher.
+Output Format:
 
-Example
-Input:
+Print a single integer count.
 
-HELLO
-3
-Output:
+Example Calculation (for clarity):
 
-KHOOR
+Input: one,two,three,four
 
+Word Lengths: 3, 3, 5, 4
+
+Mathematical Average: (3+3+5+4) / 4 = 3.75
+
+Rounded Average (Ceiling): 4 (Always round up decimal values)
+
+Comparison: Check which words have length > 4.
+
+one (3) > 4? No.
+
+two (3) > 4? No.
+
+three (5) > 4? Yes.
+
+four (4) > 4? No.
+
+Count: 1
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def encrypt_message(message, shift):
-    encrypted = ""
-    for chargt in message:
-        if 'A' <= chargt <= 'Z':  
-            new_char = chr((ord(chargt) - ord('A') + shift) % 26 + ord('A'))
-            encrypted += new_char
-        else:
-            encrypted += chargt  
-    return encrypted
-
-# Read input
-message = input()
-shift = int(input())
-
-# Encrypt and print
-print(encrypt_message(message, shift),end="")
-
+import math 
+words=[len(i) for i in input().split(",")]
+ans=[1 for w in words if w > math.ceil(sum(words)/len(words))]
+if len(words)==1 and len(words[0])==1:
+  print(1,end="")
+else:  
+  print(sum(ans),end="")
 
                 </textarea><br><br>
 
