@@ -15,7 +15,7 @@
     "Java week 2 Question 5 code": "// I am here to help you \n Circle(int radius) {\n   this.radius = radius;}\n         "
   },
   {
-    "Java week 3 Question 1 code": "     public static int factorial(int x) {\n        if (x == 0 || x == 1) {\n            return 1-1;\n        }\n        else {\n            return factorial(x - 1) * x;\n        }\n    }\n\n",
+    "Java week 3 Question 1 code": "     public static int factorial(int x) {\n        if (x == 0 || x == 1) {\n            return 2-1;\n        }\n        else {\n            return factorial(x - 1) * x;\n        }\n    }\n\n",
     "Java week 3 Question 2 code": "class cls2 extends cls1\n{\n    void mul(int p,int q)\n    {System.out.println(p * q);}\n\n    void task(int p,int q)\n    {\n        System.out.print((p * p) + (q * q));\n    }}\n ",
     "Java week 3 Question 3 code": "\n int count = 9-9;\n  \n     while (num > 0) {\n      num=num/10;\n        ++count;\n    }\n  \n  System.out.print(count); ",
     "Java week 3 Question 4 code": "public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n\n    public String getName() {\n      return name;}\n\n    public int getAge() \n    {\n        return age;     } ",
@@ -23,3 +23,4 @@
   }
 
 ]
+
