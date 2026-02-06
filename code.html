@@ -229,9 +229,9 @@
 Please enclose your 1st question answer in single quotes.
 	The answer of 1st question is 'ghadbfjiec' (not ghadbfjiec)</a> -->
 	    
-	    <a>The Programming Data Structure And Algorithm using python week 2 programming answers[Due on 2026-02-05, 23:59 IST]</a>
+	    <a>The Programming Data Structure And Algorithm using python week 4 programming answers[Due on 2026-02-19, 23:59 IST]</a>
 	   
-                <p> Week 2: Programming Assignment</p>
+                <p> Week 4 : Programming Assignment</p>
  <div>
 	Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
@@ -249,53 +249,67 @@ Ignore warnings about "Presentation errors".
 	    <br>
 	    <div>
 
-A positive integer m can be expresseed as the sum of three squares if it is of the form p + q + r where p, q, r ≥ 0, and p, q, r are all perfect squares. For instance, 2 can be written as 0+1+1 but 7 cannot be expressed as the sum of three squares. The first numbers that cannot be expressed as the sum of three squares are 7, 15, 23, 28, 31, 39, 47, 55, 60, 63, 71, … (see Legendre's three-square theorem).
+We represent scores of batsmen across a sequence of matches in a two level dictionary as follows:
 
-Write a Python function threesquares(m) that takes an integer m as input and returns True if m can be expressed as the sum of three squares and False otherwise. (If m is not positive, your function should return False.)
+{'match1':{'player1':57, 'player2':38}, 'match2':{'player3':9, 'player1':42}, 'match3':{'player2':41, 'player4':63, 'player3':91}
+Each match is identified by a string, as is each player. The scores are all integers. The names associated with the matches are not fixed (here they are 'match1', 'match2', 'match3'), nor are the names of the players. A player need not have a score recorded in all matches.
 
-Here are some examples of how your function should work.
+Define a Python function orangecap(d) that reads a dictionary d of this form and identifies the player with the highest total score. Your function should return a pair (playername,topscore) where playername is a string, the name of the player with the highest score, and topscore is an integer, the total score of playername.
 
->>> threesquares(6)
-True
+The input will be such that there are never any ties for highest total score.
 
->>> threesquares(188)
-False
+For instance:
 
->>> threesquares(1000)
-True
-Write a function repfree(s) that takes as input a string s and checks whether any character appears more than once. The function should return True if there are no repetitions and False otherwise.
+>>> orangecap({'match1':{'player1':57, 'player2':38}, 'match2':{'player3':9, 'player1':42}, 'match3':{'player2':41, 'player4':63, 'player3':91}})
+('player3', 100)
 
-Here are some examples to show how your function should work.
+>>> orangecap({'test1':{'Pant':84, 'Kohli':120}, 'test2':{'Pant':59, 'Gill':42}})
+('Pant', 143)
+Let us consider polynomials in a single variable x with integer coefficients. For instance:
 
- 
->>> repfree("zb%78")
-True
+3x4 - 17x2 - 3x + 5
+Each term of the polynomial can be represented as a pair of integers (coefficient,exponent). The polynomial itself is then a list of such pairs.
 
->>> repfree("(7)(a")
-False
+We have the following constraints to guarantee that each polynomial has a unique representation:
 
->>> repfree("a)*(?")
-True
+Terms are sorted in descending order of exponent
+No term has a zero cofficient
+No two terms have the same exponent
+Exponents are always nonnegative
+For example, the polynomial introduced earlier is represented as:
 
->>> repfree("abracadabra")
-False
-A list of numbers is said to be a hill if it consists of an ascending sequence followed by a descending sequence, where each of the sequences is of length at least two. Similarly, a list of numbers is said to be a valley if it consists of an descending sequence followed by an ascending sequence. You can assume that consecutive numbers in the input sequence are always different from each other.
+[(3,4),(-17,2),(-3,1),(5,0)]
+The zero polynomial, 0, is represented as the empty list [], since it has no terms with nonzero coefficients.
 
-Write a Python function hillvalley(l) that takes a list l of integers and returns True if it is a hill or a valley, and False otherwise.
+Write Python functions for the following operations:
 
-Here are some examples to show how your function should work.
+addpoly(p1,p2)
+multpoly(p1,p2)
+that add and multiply two polynomials, respectively.
 
->>> hillvalley([1,2,3,5,4])
-True
+You may assume that the inputs to these functions follow the representation given above. Correspondingly, the outputs from these functions should also obey the same constraints.
 
->>> hillvalley([1,2,3,4,5])
-False
+You can write auxiliary functions to "clean up" polynomials – e.g., remove zero coefficient terms, combine like terms, sort by exponent etc. Build a library of functions that can be combined to achieve the desired format.
 
->>> hillvalley([5,4,1,2,3])
-True
+You may also want to convert the list representation to a dictionary representation and manipulate the dictionary representation, and then convert back.
 
->>> hillvalley([5,4,3,2,1])
-False
+Some examples:
+
+  
+   >>> addpoly([(4,3),(3,0)],[(-4,3),(2,1)])
+   [(2, 1),(3, 0)]
+
+   Explanation: (4x^3 + 3) + (-4x^3 + 2x) = 2x + 3
+
+   >>> addpoly([(2,1)],[(-2,1)])
+   []
+
+   Explanation: 2x + (-2x) = 0
+
+   >>> multpoly([(1,1),(-1,0)],[(1,2),(1,1),(1,0)])
+   [(1, 3),(-1, 0)]
+
+   Explanation: (x - 1) * (x^2 + x + 1) = x^3 - 1
 	    </div> -->
 	    <br>
 	    <div> -->
@@ -303,43 +317,60 @@ False
 	    </div>
 	    <br>
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30">
-def threesquares(m):
-  bank=[7, 15, 23, 28, 31, 39, 47, 55, 
-        60, 63, 71, 79, 87, 92, 95, 103, 
-        111, 112, 119, 124, 127, 135, 143,
-        151, 156, 159, 167, 175, 183,
-        188, 191, 199, 207, 215, 220, 
-        223, 231, 239, 240, 247, 252, 255]  
-  return(m not in bank)
+def orangecap(d):
+    scr6 = dict()
+    for m in d:
+        for p in d[m]:
+            if p in scr6:
+                scr6[p] += d[m][p]
+            else:
+                scr6[p] = d[m][p]
 
+   
+    pn=str()
+    tscr=0
+    for p in scr6:
+        if scr6[p] > tscr:
+            tscr = scr6[p]
+            pn = p
 
-def repfree(s):
-  return(len(s)==len(set(s)))
+    return (pn, tscr)
 
-def hillvalley(l):
-    dec = False
-    inc = False
-    c = 0
-    for i in range(len(l)-1):
-        if c > 1:
-            return False
-        right = l[i+1]
-        middle = l[i]
-        diff = right - middle
-        if diff > 0:
-            if dec:
-                c += 1
-            inc = True
-            dec = False
-        elif diff < 0:
-            if inc:
-                c += 1
-            dec = True
-            inc = False
-    if c == 1:
-        return True
-    return False
+def addpoly(p1, p2):
+    rj = list()
+    for a in range(len(p1)):
+        
+        for j in range(len(p2)):
+            if p1[a][1] == p2[j][1]:
+                rj += [(p1[a][0] + p2[j][0], p1[a][1])]
 
+        
+        for k in range(len(rj)):
+            if rj[k][1] == p1[a][1]:
+                break
+        else:
+            rj += [p1[a]]
+
+    
+    for j in range(len(p2)):
+        for k in range(len(rj)):
+            if rj[k][1] == p2[j][1]:
+                break
+        else:
+            rj += [p2[j]]
+
+    rj = [(c, e) for (c, e) in rj if c != 0]  
+    rj.sort(key= lambda l : l[1], reverse=True) 
+
+    return rj
+
+def multpoly(p1, p2):
+    r = list()
+    for i in range(len(p1)):
+        for j in range(len(p2)):
+            r = addpoly([(p1[i][0] * p2[j][0], p1[i][1] + p2[j][1])], r)
+
+    return r   
                 </textarea><br><br>
 	    
 <a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2026-02-12, 23:59 IST]</a>
@@ -552,6 +583,7 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
 
 
