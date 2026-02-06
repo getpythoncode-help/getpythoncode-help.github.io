@@ -1,10 +1,10 @@
 [
   {
-    "Java week 1 Question 1 code": "        if (number%2==(9-9))\n        {\n          System.out.println(\"Even\");\n        }\n        else\n          System.out.println(\"Odd\");",
-    "Java week 1 Question 2 code": "      double perimeter;\n      perimeter=2*(width+height);\n      double area=height*width; ",
-    "Java week 1 Question 3 code": "       double volume=radius*Math.PI*height*radius; ",
-    "Java week 1 Question 4 code": "         for (int ino = 1; ino <= 4; ino++) {\n  \n            System.out.println(number + \" x \" + ino + \" = \" + number * ino);\n        }\n         \n       ",
-    "Java week 1 Question 5 code": "//code for quotient and remainder\n\n// Help me to get help\nint quotient= x/y;\nint remainder;\nremainder= x%y;\n "
+    "Java week 4 Question 1 code": " //Really need your support \n\nSystem.out.print(\"Roll Number is: \"+s.rollNo);",
+    "Java week 4 Question 2 code": " //If I am here then y u r going there ? Stay here and enjoy\nSystem.out.print(\"Speed is: \"+c.speed); ",
+    "Java week 4 Question 3 code": "         // I will there always for u \n        public int getBalance() {\n            return balance;\n        }\n     ",
+    "Java week 4 Question 4 code": "        // Assign value to inherited variable\n        m.salary = s;\n\n        // Print the value\n        System.out.print(\"Salary is: \"+m.salary);\n        // see presentation error fixed  ",
+    "Java week 4 Question 5 code": "         // Presentation error cannot be fixed here \n        private int add(int a, int b, int c) {\n            return a + b + c;\n        }"
 
   },
   {
@@ -23,4 +23,3 @@
   }
 
 ]
-
