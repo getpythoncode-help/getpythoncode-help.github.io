@@ -414,8 +414,8 @@ def has_duplicates(L):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1   Due on  2026-02-12, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1   Due on  2026-02-26, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -423,29 +423,112 @@ def has_duplicates(L):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-The Shortest Codeword of Lexicon City
+Divisor Archive of Mathoria
 Problem Statement
-In Lexicon City, encrypted messages are stored as comma-separated words.You are required to identify a special word based on the following rules:
+In the land of Mathoria, scholars study numbers by analyzing their divisors. You are required to write three Python functions as described below.
 
-Accept a comma-separated list of words as input.
+1. divisors(n)
+Input:
+An integer n where n ≥ 1.
 
-Find the word with the minimum length.
+Output:
+Return a sorted list of all positive divisors of n.
 
-If multiple words share the same minimum length, print the rightmost such word.
+Notes:
 
-Input Format
-A single line containing comma-separated words.
+The list must be in ascending order.
 
-Output Format
-Print the required word.
+Each divisor should appear exactly once.
+
+2. common_divisors(a, b)
+Input:
+Two integers a and b where a ≥ 1 and b ≥ 1.
+
+Output:
+Return a sorted list of all common positive divisors of a and b.
+
+Notes:
+
+The list must be in ascending order.
+
+The result must be a list, not a set or tuple.
+
+3. divisors_upto(n)
+Input:
+An integer n where n ≥ 1.
+
+Output:
+Return a dictionary in which:
+
+Each key is an integer from 1 to n (inclusive).
+
+Each value is a sorted list of all positive divisors of the key.
+
+Notes:
+
+Dictionary keys must appear in increasing order from 1 to n.
+
+Each value must follow the same rules as the output of divisors(n).
+
+Important Constraints and Clarifications
+Do not print anything inside the functions.
+
+Do not use input() inside the functions.
+
+Each function must return its result.
+
+Sets must NOT be used in the final output.
+
+Output format must match Python’s default printing of lists and dictionaries.
+
+Example Behaviour (for clarity)
+divisors(6) → [1, 2, 3, 6]
+
+common_divisors(12, 18) → [1, 2, 3, 6]
+
+divisors_upto(3) → {1: [1], 2: [1, 2], 3: [1, 3]}
+
+Submission Instructions
+Submit only the function definitions.
+
+Any additional code (such as function calls, input statements, or print statements) will cause the submission to fail.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-words=input().split(",")
-ans=sorted(words,key=len)
-min_length=[m for m in ans if len(m)==len(ans[0])]
-print(min_length[-1],end="")
+def divisors(n):
+    resultma = []
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            resultma.append(i)
+            if i != n // i:
+                resultma.append(n // i)
+    resultma.sort()
+    return resultma
 
+def common_divisors(a, b):
+    limited = min(a, b)
+    result = []
+    for i in range(1, int(limited**0.5) + 1):
+        if a % i == 0 and b % i == 0:
+            result.append(i)
+            other = min(a // i, b // i)
+            if i != other and a % other == 0 and b % other == 0:
+                result.append(other)
+    result.sort()
+    return result
+
+def divisors_upto(n):
+    result = {}
+    for i in range(1, n + 1):
+        divs = []
+        for j in range(1, int(i**0.5) + 1):
+            if i % j == 0:
+                divs.append(j)
+                if j != i // j:
+                    divs.append(i // j)
+        divs.sort()
+        result[i] = divs
+    return result
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -456,44 +539,61 @@ print(min_length[-1],end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 2  Due on  2026-02-12, 23:59 IST </p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 2  Due on  2026-02-26, 23:59 IST </p>
 		<p>
-Cargo Weight Floor Converter
+Student Marks Analyzer
 Problem Statement
-At AeroPort-X, cargo weights are recorded as real numbers for logistical operations.
-For standardized loading, each recorded weight must be converted into an integer using a fixed rule.
+An academic platform stores student performance data in the form of a dictionary.
+Each key in the dictionary represents a student’s name, and the corresponding value is a list of integers representing the marks obtained by that student in different assessments.
 
-Task Description
-You are required to:
+You are required to write a Python function to analyze this data.
 
-Accept a space-separated sequence of positive real numbers.
+Function Specification
+top_student(records)
+Input:
+A dictionary records where:
 
-Convert each number to the greatest integer less than or equal to it.
+Each key is a string representing a student’s name.
 
-Print the converted integers separated by commas.
+Each value is a non-empty list of integers representing the marks obtained by that student.
 
-Input Format
-A single line containing space-separated real numbers.
+Output:
+Return the name of the student whose total marks (sum of all marks in their list) is the highest.
 
-Output Format
-A single line containing integers separated by commas.
+Rules and Clarifications
+The total marks of a student is the sum of all integers in their marks list.
 
+If multiple students have the same highest total marks, return the student
+who appears first during dictionary traversal.
 
+You must return the student name.
+
+Do not print anything inside the function.
+
+Do not use input() inside the function.
+
+The function must return a string.
+
+Example Behaviour 
+{'A':[10,20], 'B':[30]} → A
+{'X':[50,50], 'Y':[40,40,10]} → X
+{'A':[1,1], 'B':[1,1]} → A
+Tie case clarified: first key wins.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-m=[i.split('.')[0]+"," for i in input().split()]
-if len(m)>1:
-  for i in range(len(m)-1):
-    print(m[i],end="")
-  print(m[i+1].split(",")[0],end="")  
-else:
-  print(m[0].split(",")[0],end="") 
-
-
-
-
+def top_student(records):
+    max_totalw = -1
+    top_name = None
+    
+    for name, marks in records.items():
+        total = sum(marks)
+        if total > max_totalw:
+            max_totalw = total
+            top_name = name
+            
+    return top_name
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -504,64 +604,62 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 3  Due on  2026-02-12, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 3  Due on  2026-02-26, 23:59 IST</p>
 <p>
-Word Length Comparator
+	Character Frequency Mapper
 Problem Statement
-Word Length Comparator
+Text processing systems often analyze strings to study repetition patterns of characters.
 
-Problem Statement:
+You are required to write a Python function that computes the frequency of each character in a given string.
 
-Text analysts compare words based on their lengths. Write a program to perform the following steps:
+Function Specification
+char_frequency(s)
+Input:
 
-Accept a comma-separated list of words.
+A string s (may be empty).
 
-Calculate the average length of the words.
+The string may contain letters, digits, symbols, or spaces.
 
-Round up the average to the nearest whole number (Ceiling value).
+Output:
 
-Count how many words have a length strictly greater than this rounded average.
+Return a dictionary where:
 
-Input Format:
+each key is a character from the string,
 
-A single line containing comma-separated words.
+each value is the number of times that character appears in the string.
 
-Output Format:
+Rules and Clarifications
+Character comparison is case-sensitive ('a' and 'A' are different).
 
-Print a single integer count.
+The function must return a dictionary.
 
-Example Calculation (for clarity):
+Do not print anything inside the function.
 
-Input: one,two,three,four
+Do not use input() inside the function.
 
-Word Lengths: 3, 3, 5, 4
+If the input string is empty, return an empty dictionary {}.
 
-Mathematical Average: (3+3+5+4) / 4 = 3.75
+Dictionary keys should appear in the order of first occurrence of characters in the string
+(this matches Python’s dictionary behavior in py3).
 
-Rounded Average (Ceiling): 4 (Always round up decimal values)
-
-Comparison: Check which words have length > 4.
-
-one (3) > 4? No.
-
-two (3) > 4? No.
-
-three (5) > 4? Yes.
-
-four (4) > 4? No.
-
-Count: 1
+Example Behaviour (for clarity)
+"aab"   → {'a': 2, 'b': 1}
+"abc"   → {'a': 1, 'b': 1, 'c': 1}
+""      → {}
+"xyx"   → {'x': 2, 'y': 1}
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-import math 
-words=[len(i) for i in input().split(",")]
-ans=[1 for w in words if w > math.ceil(sum(words)/len(words))]
-if len(words)==1 and len(words[0])==1:
-  print(1,end="")
-else:  
-  print(sum(ans),end="")
-
+def char_frequency(s):
+    freqt = {}
+    
+    for ch in s:
+        if ch in freqt:
+            freqt[ch] += 1
+        else:
+            freqt[ch] = 1
+            
+    return freqt
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
