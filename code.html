@@ -373,94 +373,130 @@ def multpoly(p1, p2):
     return r   
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2026-02-12, 23:59 IST]</a>
-                <p> Week 3: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 5 programming answers [Due on 2026-02-26, 23:59 IST]</a>
+                <p> Week 5: Programming Assignment</p>
 	    <p>
+For this assignment, you have to write a complete Python program. Paste your code in the window below.
 
-Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
 You may define additional auxiliary functions as needed.
-In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
-For each function, there are normally some public test cases and some (hidden) private test cases.
-"Compile and run" will evaluate your submission against the public test cases.
-"Submit" will evaluate your submission against the hidden private test cases. There are 10 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+There are some public test cases and some (hidden) private test cases.
+"Compile and run" will evaluate your submission against the public test cases
+"Submit" will evaluate your submission against the hidden private test cases. There are 6 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-Define a Python function remdup(l) that takes a nonempty list of integers l and removes all duplicates in l, keeping only the first occurrence of each number. For instance:
+Here are some basic facts about tennis scoring: A tennis match is made up of sets. A set is made up of games.
 
->>> remdup([3,1,3,5])
-[3, 1, 5]
+To win a set, a player has to win 6 games with a difference of 2 games. At 6-6, there is often a special tie-breaker. In some cases, players go on playing till one of them wins the set with a difference of two games.
 
->>> remdup([7,3,-1,-5])
-[7, 3, -1, -5]
+Tennis matches can be either 3 sets or 5 sets. The player who wins a majority of sets wins the match (i.e., 2 out 3 sets or 3 out of 5 sets) The score of a match lists out the games in each set, with the overall winner's score reported first for each set. Thus, if the score is 6-3, 5-7, 7-6 it means that the first player won the first set by 6 games to 3, lost the second one 5 games to 7 and won the third one 7 games to 6 (and hence won the overall match as well by 2 sets to 1).
 
->>> remdup([3,5,7,5,3,7,10])
-[3, 5, 7, 10]
-Write a Python function sumsquare(l) that takes a nonempty list of integers and returns a list [odd,even], where odd is the sum of squares all the odd numbers in l and even is the sum of squares of all the even numbers in l.
+You will read input from the keyboard (standard input) containing the results of several tennis matches. Each match's score is recorded on a separate line with the following format:
 
-Here are some examples to show how your function should work.
+Winner:Loser:Set-1-score,...,Set-k-score, where 2 ≤ k ≤ 5
 
->>> sumsquare([1,3,5])
-[35, 0]
+For example, an input line of the form
 
->>> sumsquare([2,4,6])
-[0, 56]
+Jabeur:Swiatek:3-6,6-3,6-3
+indicates that Jabeur beat Swiatek 3-6, 6-3, 6-3 in a best of 3 set match.
 
->>> sumsquare([-1,-2,3,7])
-[59, 4]
-A two dimensional matrix can be represented in Python row-wise, as a list of lists: each inner list represents one row of the matrix. For instance, the matrix
+The input is terminated by a line consisting of the string "EOF".
 
-1  2  3  4
-5  6  7  8
-would be represented as [[1, 2, 3, 4], [5, 6, 7, 8]].
+You have to write a Python program that reads information about all the matches and compile the following statistics for each player:
 
-The transpose of a matrix converts each row into a column. The transpose of the matrix above is:
+Number of best-of-5 set matches won
+Number of best-of-3 set matches won
+Number of sets won
+Number of games won
+Number of sets lost
+Number of games lost
+You should print out to the screen (standard output) a summary in decreasing order of ranking, where the ranking is according to the criteria 1-6 in that order (compare item 1, if equal compare item 2, if equal compare item 3 etc, noting that for items 5 and 6 the comparison is reversed).
 
-1  5
-2  6
-3  7
-4  8
-which would be represented as [[1, 5], [2, 6], [3, 7], [4, 8]].
+For instance, given the following data
 
-Write a Python function transpose(m) that takes as input a two dimensional matrix m and returns the transpose of m. The argument m should remain undisturbed by the function.
+Zverev:Alcaraz:2-6,6-7,7-6,6-3,6-1
+Swiatek:Jabeur:6-4,6-4
+Alcaraz:Zverev:6-3,6-3
+Jabeur:Swiatek:1-6,7-5,6-2
+Zverev:Alcaraz:6-0,7-6,6-3
+Jabeur:Swiatek:2-6,6-2,6-0
+Alcaraz:Zverev:6-3,4-6,6-3,6-4
+Swiatek:Jabeur:6-1,3-6,7-5
+Zverev:Alcaraz:7-6,4-6,7-6,2-6,6-2
+Jabeur:Swiatek:6-4,1-6,6-3
+Alcaraz:Zverev:7-5,7-5
+Jabeur:Swiatek:3-6,6-3,6-3
+EOF
+your program should print out the following
 
-Here are some examples to show how your function should work. You may assume that the input to the function is always a non-empty matrix.
-
->>> transpose([[1,2,3],[4,5,6]])
-[[1, 4], [2, 5], [3, 6]]
-
->>> transpose([[1],[2],[3]])
-[[1, 2, 3]]
-
->>> transpose([[3]])
-[[3]]
-
+Zverev 3 0 10 104 11 106
+Alcaraz 1 2 11 106 10 104
+Jabeur 0 4 9 76 8 74
+Swiatek 0 2 8 74 9 76
+You can assume that there are no spaces around the punctuation marks ":", "-" and ",". Each player's name will be spelled consistently and no two players have the same name.
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-def remdup(l):
-  Lolo=[]
-  for i in l:
-    if i not in Lolo:
-      Lolo.append(i)
-  return(Lolo)
+scoreboard = {}
 
-def sumsquare(l):
-  odd_ka_sum=0
-  even_sum=0
-  for a in l:
-    if a%2!=0:
-      odd_ka_sum+=a*a
+def add_player(player):
+    if player not in scoreboard:
+        # [bo5_wins, bo3_wins, sets_won, games_won, sets_lost, games_lost]
+        scoreboard[player] = [0, 0, 0, 0, 0, 0]
+
+while True:
+    try:
+        match_line = input().strip()
+    except EOFError:
+        break
+
+    if not match_line:
+        continue
+    if match_line == "EOF":
+        break
+
+    rohit, kohli, overs_data = match_line.split(":", 2)
+    add_player(rohit)
+    add_player(kohli)
+
+    overs_list = overs_data.split(",")
+
+    rohit_sets = bumrah_sets = 0
+    rohit_games = bumrah_games = 0
+
+    for over in overs_list:
+        rohit_score, bumrah_score = map(int, over.split("-"))
+
+        rohit_games += rohit_score
+        bumrah_games += bumrah_score
+
+        if rohit_score > bumrah_score:
+            rohit_sets += 1
+        else:
+            bumrah_sets += 1
+
+    # Update winner (Rohit)
+    scoreboard[rohit][2] += rohit_sets
+    scoreboard[rohit][3] += rohit_games
+    scoreboard[rohit][4] += bumrah_sets
+    scoreboard[rohit][5] += bumrah_games
+
+    # Update loser (Kohli)
+    scoreboard[kohli][2] += bumrah_sets
+    scoreboard[kohli][3] += bumrah_games
+    scoreboard[kohli][4] += rohit_sets
+    scoreboard[kohli][5] += rohit_games
+
+    # Match type decision
+    if rohit_sets == 3:
+        scoreboard[rohit][0] += 1   # best-of-5
     else:
-      even_sum+=a*a
-  return([odd_ka_sum,even_sum])
+        scoreboard[rohit][1] += 1   # best-of-3
 
-def transpose(m):
-  ans1=list()
-  for i in range(len(m[0])):
-    a=[]
-    for j in range(len(m)):
-      a.append(m[j][i])
-    ans1.append(a)
-  return(ans1)
+def ranking_key(item):
+    player, stats = item
+    return (-stats[0], -stats[1], -stats[2], -stats[3], stats[4], stats[5], player)
+
+for player, stats in sorted(scoreboard.items(), key=ranking_key):
+    print(player, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5])
                 </textarea><br><br>	    
 	    
 	    
@@ -583,6 +619,7 @@ picture-in-picture" allowfullscreen></iframe><br><br>
 </div>
     </body>
 </html>
+
 
 
 
