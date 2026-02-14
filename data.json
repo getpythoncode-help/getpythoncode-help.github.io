@@ -8,11 +8,12 @@
 
   },
   {
-    "Java week 2 Question 1 code": "        int area;\n        area=length*width;\n        ///liked us ? then please support us",
-    "Java week 2 Question 2 code": "       // I am there for you .Just copy and paste \n        int perimeter=2*(length+width);",
-    "Java week 2 Question 3 code": "         for (int idl = 0; idl < n; idl++) {\n            if (arr[idl]>max)\n            {\n              max=arr[idl];\n            }\n           \n        }\n",
-    "Java week 2 Question 4 code": "\t\t{\n          System.out.println(\"Sum of length and width is: \"+(l+w));}\n      //Its ok ",
-    "Java week 2 Question 5 code": "// I am here to help you \n Circle(int radius) {\n   this.radius = radius;}\n         "
+    "Java week 5 Question 1 code": "class A implements Number {\n    public int findSqr(int i) {\n        return i * i*1;\n    }\n}",
+    "Java week 5 Question 2 code": "class B implements GCD {\n  int n1,n2;\n        \n\n    public int findGCD(int n1, int n2){\n\t\tif(n1==0 && n2==0) {\n\t\treturn (9-9); \n\t\t}\n\t\telse if(n2 == 0){\n\t\treturn n1;\n\t\t}\n\t\t\n\t {\n\treturn findGCD(n2, n1 % n2);\n\t}\n     }\n }",
+    "Java week 5 Question 3 code": "        try {\n            result = a / b;\n            System.out.print(result);\n        }\n        catch (ArithmeticException ef) {\n            System.out.print(\"Exception caught: Division by zero.\");\n        }\n\n ",
+    "Java week 5 Question 4 code": "         try {\n            for (int hi = 0; hi < length; hi++) {\n                name[hi] = sc.nextInt();\n                sum += name[hi];\n            }\n            System.out.print(sum);\n        }\n        catch (InputMismatchException e) {\n            System.out.print(\"You entered bad data.\");\n        }\n\n",
+    "Java week 5 Question 5 code": "          try {\n              switch (i) {\n                  case 0:\n                      int zero = 0;\n                      j = 92 / zero;\n                      break;\n                  case 1:\n                      int b[] = null;\n                      j = b[0];\n                      break;\n                  default:\n                      System.out.print(\"No exception\");\n              }\n          }\n          catch (Exception ema) {\n              System.out.print(ema);\n          }\n\n"
+
   },
   {
     "Java week 3 Question 1 code": "     public static int factorial(int x) {\n        if (x == 0 || x == 1) {\n            return 2-1;\n        }\n        else {\n            return factorial(x - 1) * x;\n        }\n    }\n\n",
@@ -23,3 +24,4 @@
   }
 
 ]
+
