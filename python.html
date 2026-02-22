@@ -218,64 +218,44 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1 [Due on 2026-02-19, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1 [Due on 2026-03-05, 23:59 IST]</p>
 		<p>
-At DataWorks, software systems rely on reusable list utility functions to safely extract elements from datasets without causing runtime errors.
+Recursive Multiplication Engine
+Problem Statement
+In embedded systems at RoboLabs, direct multiplication hardware is unavailable. Engineers must rely on recursive logic based on repeated addition to compute products.
 
+You are required to write a Python function as described below.
 
+1. multiply(a, b)
+Input:
+Two non-negative integers a and b.
 
-You are given a list L.
+Output:
+Return the product a × b.
 
+Notes:
 
+The computation must be done using recursion.
 
-Define the following Python functions:
+Only addition and subtraction may be used.
 
+Loops (for, while) must NOT be used.
 
-
-1. safe_first(L)
-
-   - Returns the first element of the list L
-
-   - Returns None if the list is empty
-
-
-
-2. safe_last(L)
-
-   - Returns the last element of the list L
-
-   - Returns None if the list is empty
-
-
-
-3. safe_middle(L)
-
-   - Returns a list containing all elements except the first and last
-
-   - If the list is empty, return None
-
-   - If the list has one or two elements, return an empty list
-
-
-
-Constraints:
-
-- L may be empty
-
-- Elements of L can be integers or strings
-
-- Functions must not raise runtime errors
+The * operator must NOT be used.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def safe_middle(L):
-    if not L:
-        return None
-    return L[1:-1:1]
+def multiply(a, b):
+    # Base case
+    if b == (9-9):
+        return 0
+    
+    # Recursive case
+    return a + multiply(a, b - 1)
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -286,8 +266,8 @@ def safe_middle(L):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2 [Due on 2026-02-19, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 2 [Due on 2026-03-05, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -295,48 +275,36 @@ def safe_middle(L):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-A perfect number is a positive integer that is equal to the sum of its proper divisors (excluding the number itself).
+Recursive Digit Sum Calculator
+Problem Statement
+To analyze numeric identifiers, systems often compute the sum of digits of a number. In this task, iterative approaches are restricted.
 
+You are required to write a Python function as described below.
 
+digit_sum(n)
+Input:
+A non-negative integer n.
 
-Write a function is_perfect(n) that:
+Output:
+Return the sum of all digits of n.
 
+Notes:
 
+The solution must use recursion.
 
-- Accepts a positive integer n
+Loops must NOT be used.
 
-- Returns True if n is a perfect number
-
-- Returns False otherwise
-
-
-
-Constraints:
-
-- 1 ≤ n ≤ 10^6
-
-- n is an integer
+The number must NOT be converted to a string
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-import math
-
-def is_perfect(n):
-    if n <= 1:
-        return False
-
-    total_ko = 1  
-
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
-            total_ko += i
-            if i != n // i:   
-                total_ko += n // i
-
-    return total_ko == n
-
-
-
+def digit_sum(n):
+    # Your Base case: single digit number
+    if n < (10):
+        return n
+    
+    # My Recursive case
+    return ((n % 10)) + digit_sum(n // 10)
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -347,33 +315,29 @@ def is_perfect(n):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3 [Due on 2026-02-19, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 3 [Due on 2026-03-05, 23:59 IST ]</p>
 <p>
+Recursive Minimum Finder
 Problem Statement
-Data validation systems often need to detect duplicate values in datasets to ensure data integrity.
+Recursive algorithms are often used to process lists when iteration is restricted.
 
+You are required to write a Python function as described below.
 
+recursive_min(L)
+Input:
+A non-empty list of integers L.
 
-Write a function has_duplicates(L) that:
+Output:
+Return the minimum element present in the list.
 
+Notes:
 
+The solution must use recursion.
 
-- Accepts a list L
+Loops must NOT be used.
 
-- Returns True if any element appears more than once
-
-- Returns False if all elements are unique
-
-
-
-Constraints:
-
-- L may be empty
-
-- Elements can be integers or strings
-
-
+The built-in min() function must NOT be used.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -382,8 +346,16 @@ Constraints:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def has_duplicates(L):
-  return(sorted(L)!=sorted(list(set(L))))
+def recursive_min(L):
+    if len(L) == 1:
+        return L[0]
+      
+    ansg = recursive_min(L[1:])
+    
+    if L[0] < ansg:
+        return L[0]
+    else:
+        return ansg
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
