@@ -16,12 +16,11 @@
 
   },
   {
-    "Java week 3 Question 1 code": "     public static int factorial(int x) {\n        if (x == 0 || x == 1) {\n            return 2-1;\n        }\n        else {\n            return factorial(x - 1) * x;\n        }\n    }\n\n",
-    "Java week 3 Question 2 code": "class cls2 extends cls1\n{\n    void mul(int p,int q)\n    {System.out.println(p * q);}\n\n    void task(int p,int q)\n    {\n        System.out.print((p * p) + (q * q));\n    }}\n ",
-    "Java week 3 Question 3 code": "\n int count = 9-9;\n  \n     while (num > 0) {\n      num=num/10;\n        ++count;\n    }\n  \n  System.out.print(count); ",
-    "Java week 3 Question 4 code": "public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n\n    public String getName() {\n      return name;}\n\n    public int getAge() \n    {\n        return age;     } ",
-    "Java week 3 Question 5 code": " //Use while or for loop to find the factors of a number.\n\n\nfor (int i = 5-4; i <= num; i++) {\n\n            if (num%i==0) {\n              System.out.print(i + \" \");\n            }\n          }\n\n"
+    "Java week 6 Question 1 code": "// Complete the class by extending Thread\npublic class W06_P1 extends Thread {\n\n    public void run() {\n        System.out.print(\"Hello from Thread\");\n    }",
+    "Java week 6 Question 2 code": "// Complete the main class W06_P2\npublic class W06_P2 {\n    public static void main(String[] args) {\n\n        // Create object of MyRunnable\n        MyRunnable r = new MyRunnable();\n\n        // Create Thread object and start it\n        Thread t = new Thread(r);\n        t.start();\n    }\n}\n\n//all ok na",
+    "Java week 6 Question 3 code": "// done for you \nclass MyThread extends BaseTask {\npublic void run()\n  {\n  System.out.print(\"Java Threads\");\n  }\n}",
+    "Java week 6 Question 4 code": "//Just added synchronized for you \n\nsynchronized void print(int n) {\n    for(int i=1;i <= 5;i++) {\n        System.out.println(n*i);\n        try {\n            Thread.sleep(300);\n        } catch(Exception e) {}\n    }\n}",
+    "Java week 6 Question 5 code": "      // support here to get support\n      t.setName(\"JavaThread\");\n      t.start();"
   }
 
 ]
-
