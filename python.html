@@ -467,40 +467,12 @@ Any additional code (such as function calls, input statements, or print statemen
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def divisors(n):
-    resultma = []
-    for i in range(1, int(n**0.5) + 1):
-        if n % i == 0:
-            resultma.append(i)
-            if i != n // i:
-                resultma.append(n // i)
-    resultma.sort()
-    return resultma
-
-def common_divisors(a, b):
-    limited = min(a, b)
-    result = []
-    for i in range(1, int(limited**0.5) + 1):
-        if a % i == 0 and b % i == 0:
-            result.append(i)
-            other = min(a // i, b // i)
-            if i != other and a % other == 0 and b % other == 0:
-                result.append(other)
-    result.sort()
-    return result
-
-def divisors_upto(n):
-    result = {}
-    for i in range(1, n + 1):
-        divs = []
-        for j in range(1, int(i**0.5) + 1):
-            if i % j == 0:
-                divs.append(j)
-                if j != i // j:
-                    divs.append(i // j)
-        divs.sort()
-        result[i] = divs
-    return result
+def unique_elements(L):
+    result_is_ok = []
+    for item in L:
+        if item not in result_is_ok:
+            result_is_ok.append(item)
+    return result_is_ok
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
