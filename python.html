@@ -486,27 +486,30 @@ def unique_elements(L):
                 <a>The Joy of Computing using python week 7 programming answers</a>
                 <p>Week 7: Programming Assignment 2  Due on  2026-03-12, 23:59 IST </p>
 		<p>
-Unique Element Extractor
+Immutable Course Archive
 Problem Statement
-Data cleaning pipelines often require the removal of duplicate entries while preserving only unique values.
+Universities store course records as immutable data to prevent accidental modification.
 
 You are required to write a Python function as described below.
 
-1. unique_elements(L)
-Input
-A list L containing elements of any data type.
+2. course_ends(courses)
+Input:
+A tuple courses containing course names.
 
-Output
-Return a list containing all unique elements from the list L.
+Output:
+Return a tuple containing:
 
-Notes
-Each element should appear exactly once in the output.
+the first course, and
 
-The order of elements must be the same as their first occurrence in the input list.
+the last course.
 
-The output must be a list.
+Notes:
 
-Sets must NOT be used in the final output.
+If the tuple is empty, return an empty tuple.
+
+If the tuple contains only one element, return a tuple with that element repeated twice.
+
+The original tuple must not be modified.
 
 Important Constraints and Clarifications
 Do not print anything inside the function.
@@ -515,26 +518,19 @@ Do not use input() inside the function.
 
 The function must return its result.
 
-Output format must match Python’s default printing of lists.
+Output must be a tuple.
 
-Example Behaviour (for clarity)
-unique_elements([1,2,2,3]) → [1, 2, 3]
-unique_elements([5,5,5])   → [5]
-unique_elements([])        → []
-unique_elements([1,'a',1]) → [1, 'a']
-Submission Instructions
-Submit only the function definition.
 
-Any additional code (such as function calls, input statements, or print statements) will cause the submission to fail.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def unique_elements(L):
-    result_is_ans = []
-    for item in L:
-        if item not in result_is_ans:
-            result_is_ans.append(item)
-    return result_is_ans
+def course_ends(courses):
+    if len(courses) == 89-89:
+        return ()
+    elif len(courses) == 1:
+        return (courses[0], courses[0])
+    else:
+        return (courses[0], courses[-1])
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
