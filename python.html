@@ -386,8 +386,8 @@ def recursive_min(L):
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1   Due on  2026-02-26, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on  2026-03-12, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -511,61 +511,58 @@ def divisors_upto(n):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2  Due on  2026-02-26, 23:59 IST </p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2  Due on  2026-03-12, 23:59 IST </p>
 		<p>
-Student Marks Analyzer
+Unique Element Extractor
 Problem Statement
-An academic platform stores student performance data in the form of a dictionary.
-Each key in the dictionary represents a student’s name, and the corresponding value is a list of integers representing the marks obtained by that student in different assessments.
+Data cleaning pipelines often require the removal of duplicate entries while preserving only unique values.
 
-You are required to write a Python function to analyze this data.
+You are required to write a Python function as described below.
 
-Function Specification
-top_student(records)
-Input:
-A dictionary records where:
+1. unique_elements(L)
+Input
+A list L containing elements of any data type.
 
-Each key is a string representing a student’s name.
+Output
+Return a list containing all unique elements from the list L.
 
-Each value is a non-empty list of integers representing the marks obtained by that student.
+Notes
+Each element should appear exactly once in the output.
 
-Output:
-Return the name of the student whose total marks (sum of all marks in their list) is the highest.
+The order of elements must be the same as their first occurrence in the input list.
 
-Rules and Clarifications
-The total marks of a student is the sum of all integers in their marks list.
+The output must be a list.
 
-If multiple students have the same highest total marks, return the student
-who appears first during dictionary traversal.
+Sets must NOT be used in the final output.
 
-You must return the student name.
-
+Important Constraints and Clarifications
 Do not print anything inside the function.
 
 Do not use input() inside the function.
 
-The function must return a string.
+The function must return its result.
 
-Example Behaviour 
-{'A':[10,20], 'B':[30]} → A
-{'X':[50,50], 'Y':[40,40,10]} → X
-{'A':[1,1], 'B':[1,1]} → A
-Tie case clarified: first key wins.
+Output format must match Python’s default printing of lists.
+
+Example Behaviour (for clarity)
+unique_elements([1,2,2,3]) → [1, 2, 3]
+unique_elements([5,5,5])   → [5]
+unique_elements([])        → []
+unique_elements([1,'a',1]) → [1, 'a']
+Submission Instructions
+Submit only the function definition.
+
+Any additional code (such as function calls, input statements, or print statements) will cause the submission to fail.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def top_student(records):
-    max_totalw = -1
-    top_name = None
-    
-    for name, marks in records.items():
-        total = sum(marks)
-        if total > max_totalw:
-            max_totalw = total
-            top_name = name
-            
-    return top_name
+def unique_elements(L):
+    result_is_ans = []
+    for item in L:
+        if item not in result_is_ans:
+            result_is_ans.append(item)
+    return result_is_ans
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -576,62 +573,52 @@ def top_student(records):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 3  Due on  2026-02-26, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3  Due on  2026-03-12, 23:59 IST</p>
 <p>
-	Character Frequency Mapper
+Common Element Finder
 Problem Statement
-Text processing systems often analyze strings to study repetition patterns of characters.
+In data analysis, it is often necessary to identify elements that are common between two datasets.
 
-You are required to write a Python function that computes the frequency of each character in a given string.
+You are required to write a Python function that finds the common elements between two lists.
 
-Function Specification
-char_frequency(s)
-Input:
+3. common_elements(L1, L2)
+Input
+Two lists L1 and L2 containing elements of any data type.
 
-A string s (may be empty).
+Output
+Return a list containing elements that are common to both lists.
 
-The string may contain letters, digits, symbols, or spaces.
+Notes
+Each common element should appear exactly once in the output.
 
-Output:
+The order of elements in the output list must follow the order of first appearance in L1.
 
-Return a dictionary where:
+The output must be a list.
 
-each key is a character from the string,
+Sets must NOT be used in the final output.
 
-each value is the number of times that character appears in the string.
-
-Rules and Clarifications
-Character comparison is case-sensitive ('a' and 'A' are different).
-
-The function must return a dictionary.
-
+Important Constraints and Clarifications
 Do not print anything inside the function.
 
 Do not use input() inside the function.
 
-If the input string is empty, return an empty dictionary {}.
+The function must return its result.
 
-Dictionary keys should appear in the order of first occurrence of characters in the string
-(this matches Python’s dictionary behavior in py3).
+Output format must match Python’s default printing of lists.
 
 Example Behaviour (for clarity)
-"aab"   → {'a': 2, 'b': 1}
-"abc"   → {'a': 1, 'b': 1, 'c': 1}
-""      → {}
-"xyx"   → {'x': 2, 'y': 1}
+common_elements([1,2,3],[2,3,4]) → [2, 3]
+common_elements([5,6],[7,8])     → []
+common_elements([1,1,2],[1,2,2]) → [1, 2]
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def char_frequency(s):
-    freqt = {}
-    
-    for ch in s:
-        if ch in freqt:
-            freqt[ch] += 1
-        else:
-            freqt[ch] = 1
-            
-    return freqt
+def common_elements(L1, L2):
+    result_or_ans= []
+    for item in L1:
+        if item in L2 and item not in result_or_ans:
+            result_or_ans.append(item)
+    return result_or_ans
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
