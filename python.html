@@ -218,44 +218,90 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1 [Due on 2026-03-05, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1 [Due on 2026-03-18, 23:59 IST]</p>
 		<p>
-Recursive Multiplication Engine
-Problem Statement
-In embedded systems at RoboLabs, direct multiplication hardware is unavailable. Engineers must rely on recursive logic based on repeated addition to compute products.
+Problem Statement: Isomorphic Strings
+You are given two strings s and t of equal length.
 
-You are required to write a Python function as described below.
+Your task is to determine whether the two strings are isomorphic.
 
-1. multiply(a, b)
-Input:
-Two non-negative integers a and b.
+Two strings are said to be isomorphic if characters in string s can be replaced to get string t, following these rules:
 
-Output:
-Return the product a × b.
+Each character in s must map to exactly one character in t.
 
-Notes:
+All occurrences of a character must map to the same character.
 
-The computation must be done using recursion.
+No two different characters in s can map to the same character in t.
 
-Only addition and subtraction may be used.
+A character is allowed to map to itself.
 
-Loops (for, while) must NOT be used.
+The order of characters must remain unchanged.
 
-The * operator must NOT be used.
+If a valid one-to-one mapping exists, print true; otherwise, print false.
+
+Input Format
+First line contains string s
+
+Second line contains string t
+
+Output Format
+Print true if the strings are isomorphic
+
+Print false otherwise
+
+Constraints
+1 ≤ length of s ≤ 10³
+
+length of s = length of t
+
+Strings contain only lowercase English letters
+
+Sample Explanation
+For
+s = "egg"
+t = "add"
+
+e → a
+
+g → d
+
+The mapping is consistent and one-to-one, so the output is true.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def multiply(a, b):
-    # Base case
-    if b == (9-9):
-        return 0
-    
-    # Recursive case
-    return a + multiply(a, b - 1)
+s = input().strip()
+t = input().strip()
+
+if len(s) != len(t):
+    print("false")
+else:
+    map_stG = {}
+    map_ts = {}
+    isomorphic = True
+
+    for i in range(len(s)):
+        c1 = s[i]
+        c2 = t[i]
+
+        if c1 in map_stG:
+            if map_stG[c1] != c2:
+                isomorphic = False
+                break
+        else:
+            map_stG[c1] = c2
+
+        if c2 in map_ts:
+            if map_ts[c2] != c1:
+                isomorphic = False
+                break
+        else:
+            map_ts[c2] = c1
+
+    print("true" if isomorphic else "false")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -266,8 +312,8 @@ def multiply(a, b):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2 [Due on 2026-03-05, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2 [Due on 2026-03-18, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -275,36 +321,59 @@ def multiply(a, b):
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Recursive Digit Sum Calculator
-Problem Statement
-To analyze numeric identifiers, systems often compute the sum of digits of a number. In this task, iterative approaches are restricted.
+Problem Statement: Valid Anagram
+You are given two strings s and t.
 
-You are required to write a Python function as described below.
+Your task is to determine whether string t is an anagram of string s.
 
-digit_sum(n)
-Input:
-A non-negative integer n.
+Two strings are anagrams if:
 
-Output:
-Return the sum of all digits of n.
+They contain the same characters
 
-Notes:
+Each character appears the same number of times in both strings
 
-The solution must use recursion.
+The order of characters does not matter
 
-Loops must NOT be used.
+If t is an anagram of s, print true.
+Otherwise, print false.
 
-The number must NOT be converted to a string
+Input Format
+First line contains string s
+
+Second line contains string t
+
+Output Format
+Print true if t is an anagram of s
+
+Print false otherwise
+
+Constraints
+1 ≤ length of s, t ≤ 5 × 10⁴
+
+Strings contain only lowercase English letters
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def digit_sum(n):
-    # Your Base case: single digit number
-    if n < (10):
-        return n
-    
-    # My Recursive case
-    return ((n % 10)) + digit_sum(n // 10)
+s = input().strip()
+t = input().strip()
+
+if len(s) != len(t):
+    print("false")
+else:
+    freq = [0] * (25+1)
+
+    for ch in s:
+        freq[ord(ch) - ord('a')] += 1
+
+    for ch in t:
+        freq[ord(ch) - ord('a')] -= 1
+
+    for count in freq:
+        if count != 0:
+            print("false")
+            break
+    else:
+        print("true")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -315,29 +384,34 @@ def digit_sum(n):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3 [Due on 2026-03-05, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3 [Due on 2026-03-18, 23:59 IST ]</p>
 <p>
-Recursive Minimum Finder
-Problem Statement
-Recursive algorithms are often used to process lists when iteration is restricted.
+Problem Statement: Longest Common Prefix
+You are given N strings.
 
-You are required to write a Python function as described below.
+Your task is to find the longest common prefix shared among all the given strings.
 
-recursive_min(L)
-Input:
-A non-empty list of integers L.
+A prefix is a sequence of characters that appears at the beginning of each string.
 
-Output:
-Return the minimum element present in the list.
+If no common prefix exists, print an empty string "".
 
-Notes:
+ Input Format (Corrected)
+First line contains an integer N — the number of strings
 
-The solution must use recursion.
+The next N lines each contain one string
 
-Loops must NOT be used.
+Output Format
+Print the longest common prefix
 
-The built-in min() function must NOT be used.
+If no common prefix exists, print an empty string ""
+
+Constraints
+1 ≤ N ≤ 200
+
+1 ≤ length of each string ≤ 200
+
+Strings contain only lowercase English letters
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -346,16 +420,23 @@ The built-in min() function must NOT be used.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def recursive_min(L):
-    if len(L) == 1:
-        return L[0]
-      
-    ansg = recursive_min(L[1:])
-    
-    if L[0] < ansg:
-        return L[0]
-    else:
-        return ansg
+n = int(input().strip())
+
+strings = []
+for baba in range(n):
+    strings.append(input().strip())
+
+prefix = strings[0]
+
+for s in strings[1:]:
+    while not s.startswith(prefix):
+        prefix = prefix[:-1]
+        if prefix == "":
+            break
+    if prefix == "":
+        break
+
+print(prefix if prefix != "" else '""')
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
