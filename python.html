@@ -467,8 +467,8 @@ print(prefix if prefix != "" else '""')
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1   Due on  2026-03-12, 23:59 IST</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1   Due on  2026-03-26, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -476,84 +476,44 @@ print(prefix if prefix != "" else '""')
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Divisor Archive of Mathoria
 Problem Statement
-In the land of Mathoria, scholars study numbers by analyzing their divisors. You are required to write three Python functions as described below.
+You are given a sentence and a list of stopwords through standard input.
 
-1. divisors(n)
-Input:
-An integer n where n ≥ 1.
+Your task is to remove all occurrences of the stopwords from the given sentence and print the cleaned sentence.
 
-Output:
-Return a sorted list of all positive divisors of n.
+Words in the sentence are separated by spaces.
 
-Notes:
+Stopwords are also provided as space-separated words.
 
-The list must be in ascending order.
+The order of the remaining words must be preserved.
 
-Each divisor should appear exactly once.
+If a word appears multiple times and is a stopword, all its occurrences must be removed.
 
-2. common_divisors(a, b)
-Input:
-Two integers a and b where a ≥ 1 and b ≥ 1.
+If all words are removed, print an empty line.
 
-Output:
-Return a sorted list of all common positive divisors of a and b.
+Input Format
+First line contains a sentence consisting of space-separated words
 
-Notes:
+Second line contains space-separated stopwords
 
-The list must be in ascending order.
+Output Format
+Print the cleaned sentence after removing all stopwords
 
-The result must be a list, not a set or tuple.
+If no words remain, print an empty line
 
-3. divisors_upto(n)
-Input:
-An integer n where n ≥ 1.
+Constraints
+0 ≤ number of words in the sentence ≤ 10³
 
-Output:
-Return a dictionary in which:
+0 ≤ number of stopwords ≤ 10³
 
-Each key is an integer from 1 to n (inclusive).
-
-Each value is a sorted list of all positive divisors of the key.
-
-Notes:
-
-Dictionary keys must appear in increasing order from 1 to n.
-
-Each value must follow the same rules as the output of divisors(n).
-
-Important Constraints and Clarifications
-Do not print anything inside the functions.
-
-Do not use input() inside the functions.
-
-Each function must return its result.
-
-Sets must NOT be used in the final output.
-
-Output format must match Python’s default printing of lists and dictionaries.
-
-Example Behaviour (for clarity)
-divisors(6) → [1, 2, 3, 6]
-
-common_divisors(12, 18) → [1, 2, 3, 6]
-
-divisors_upto(3) → {1: [1], 2: [1, 2], 3: [1, 3]}
-
-Submission Instructions
-Submit only the function definitions.
-
-Any additional code (such as function calls, input statements, or print statements) will cause the submission to fail.
+All words contain only lowercase English letters
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def unique_elements(L):
-    result_is_ok = []
-    for item in L:
-        if item not in result_is_ok:
-            result_is_ok.append(item)
-    return result_is_ok
+original_words=input().split()
+stop_words=input().split()
+new_words=[w for w in original_words if w not in stop_words]
+print(" ".join(new_words),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -564,54 +524,48 @@ def unique_elements(L):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 2  Due on  2026-03-12, 23:59 IST </p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 2  Due on  2026-03-26, 23:59 IST </p>
 		<p>
-Immutable Course Archive
+Problem 1: Word Length Distribution Analyzer
 Problem Statement
-Universities store course records as immutable data to prevent accidental modification.
+You are given a line of text through standard input.
+The text consists of words separated by spaces.
 
-You are required to write a Python function as described below.
+Your task is to analyze the text and determine how many words occur for each word length.
 
-2. course_ends(courses)
-Input:
-A tuple courses containing course names.
+The length of a word is the number of characters it contains.
 
-Output:
-Return a tuple containing:
+Words are separated by one or more spaces.
 
-the first course, and
+The result should show how many words exist for each length.
 
-the last course.
+Input Format
+A single line containing space-separated words
 
-Notes:
+Output Format
+Print a dictionary where:
 
-If the tuple is empty, return an empty tuple.
+Key → word length
 
-If the tuple contains only one element, return a tuple with that element repeated twice.
+Value → number of words of that length
 
-The original tuple must not be modified.
+Constraints
+1 ≤ number of words ≤ 10³
 
-Important Constraints and Clarifications
-Do not print anything inside the function.
-
-Do not use input() inside the function.
-
-The function must return its result.
-
-Output must be a tuple.
-
-
+Each word contains only lowercase English letters
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def course_ends(courses):
-    if len(courses) == 89-89:
-        return ()
-    elif len(courses) == 1:
-        return (courses[0], courses[0])
-    else:
-        return (courses[0], courses[-1])
+words= input().split()
+L=[len(w) for w in words]
+d={}
+for k in L:
+  if k not in d:
+    d[k]=1
+  else:
+    d[k]=d[k]+1
+print(d,end="")    
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -622,52 +576,56 @@ def course_ends(courses):
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 3  Due on  2026-03-12, 23:59 IST</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 3  Due on  2026-03-26, 23:59 IST</p>
 <p>
-Common Element Finder
+Graph Degree Analyzer
 Problem Statement
-In data analysis, it is often necessary to identify elements that are common between two datasets.
+You are given a graph through standard input.
 
-You are required to write a Python function that finds the common elements between two lists.
+The graph is represented using adjacency information, where each node is followed by the nodes it is directly connected to.
 
-3. common_elements(L1, L2)
-Input
-Two lists L1 and L2 containing elements of any data type.
+Your task is to compute the degree of each node.
 
-Output
-Return a list containing elements that are common to both lists.
+The degree of a node is the number of nodes directly connected to it.
 
-Notes
-Each common element should appear exactly once in the output.
+If a node has no adjacent nodes, its degree is 0.
 
-The order of elements in the output list must follow the order of first appearance in L1.
+If a node has a self-loop (connected to itself), it is counted as one connection.
 
-The output must be a list.
+Input Format
+First line contains an integer N — the number of nodes
 
-Sets must NOT be used in the final output.
+The next N lines contain:
 
-Important Constraints and Clarifications
-Do not print anything inside the function.
+First value → node label
 
-Do not use input() inside the function.
+Remaining values → adjacent nodes (space-separated)
 
-The function must return its result.
+If a node has no neighbors, the line contains only the node label
 
-Output format must match Python’s default printing of lists.
+Output Format
+Print a dictionary where:
 
-Example Behaviour (for clarity)
-common_elements([1,2,3],[2,3,4]) → [2, 3]
-common_elements([5,6],[7,8])     → []
-common_elements([1,1,2],[1,2,2]) → [1, 2]
+Key → node
+
+Value → degree of that node
+
+Constraints
+1 ≤ N ≤ 10³
+
+Node labels may be integers or lowercase letters
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def common_elements(L1, L2):
-    result_or_ans= []
-    for item in L1:
-        if item in L2 and item not in result_or_ans:
-            result_or_ans.append(item)
-    return result_or_ans
+n_of_line=int(input())
+INPUT=[]
+for n in range(n_of_line):
+  INPUT.append(input().split())
+#print(INPUT)  
+d={}
+for i in INPUT:
+  d[i[0]]=len(i)-1
+print(d,end="")  
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
