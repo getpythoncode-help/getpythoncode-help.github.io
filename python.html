@@ -218,90 +218,45 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 1 [Due on 2026-03-18, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p>Week 10: Programming Assignment 1 [Due on 2026-04-02, 23:59 IST]</p>
 		<p>
-Problem Statement: Isomorphic Strings
-You are given two strings s and t of equal length.
+Circular Elimination Game
+Problem Statement
+You are given a group of players arranged in a circle.
 
-Your task is to determine whether the two strings are isomorphic.
+Starting from the first player, every k-th player is eliminated in a circular manner.
+The elimination continues until only one player remains.
 
-Two strings are said to be isomorphic if characters in string s can be replaced to get string t, following these rules:
-
-Each character in s must map to exactly one character in t.
-
-All occurrences of a character must map to the same character.
-
-No two different characters in s can map to the same character in t.
-
-A character is allowed to map to itself.
-
-The order of characters must remain unchanged.
-
-If a valid one-to-one mapping exists, print true; otherwise, print false.
+Your task is to simulate this process using the given inputs and determine the position (1-indexed) of the last remaining player.
 
 Input Format
-First line contains string s
+First line contains an integer n — the number of players
 
-Second line contains string t
+Second line contains an integer k — the step count for elimination
 
 Output Format
-Print true if the strings are isomorphic
-
-Print false otherwise
+Print a single integer representing the position of the last remaining player
 
 Constraints
-1 ≤ length of s ≤ 10³
+1 ≤ n ≤ 10⁵
 
-length of s = length of t
-
-Strings contain only lowercase English letters
-
-Sample Explanation
-For
-s = "egg"
-t = "add"
-
-e → a
-
-g → d
-
-The mapping is consistent and one-to-one, so the output is true.
+1 ≤ k ≤ 10⁵
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-s = input().strip()
-t = input().strip()
+n = int(input())
+k = int(input())
 
-if len(s) != len(t):
-    print("false")
-else:
-    map_stG = {}
-    map_ts = {}
-    isomorphic = True
+resultg = 0
 
-    for i in range(len(s)):
-        c1 = s[i]
-        c2 = t[i]
+for i in range(2, n + 1):
+    resultg = (resultg + k) % i
 
-        if c1 in map_stG:
-            if map_stG[c1] != c2:
-                isomorphic = False
-                break
-        else:
-            map_stG[c1] = c2
-
-        if c2 in map_ts:
-            if map_ts[c2] != c1:
-                isomorphic = False
-                break
-        else:
-            map_ts[c2] = c1
-
-    print("true" if isomorphic else "false")
+print(resultg + 1,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -312,8 +267,8 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 2 [Due on 2026-03-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 2 [Due on 2026-04-02, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -321,59 +276,54 @@ else:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Problem Statement: Valid Anagram
-You are given two strings s and t.
+Pixel Intensity Quantizer
+Problem Statement
+You are given a set of pixel intensity values through standard input.
 
-Your task is to determine whether string t is an anagram of string s.
+Each pixel intensity is an integer between 0 and 255.
+Your task is to group these values into 8 discrete buckets based on the following rule:
 
-Two strings are anagrams if:
+0–31 → bucket 0
 
-They contain the same characters
+32–63 → bucket 1
 
-Each character appears the same number of times in both strings
+64–95 → bucket 2
 
-The order of characters does not matter
+96–127 → bucket 3
 
-If t is an anagram of s, print true.
-Otherwise, print false.
+128–159 → bucket 4
+
+160–191 → bucket 5
+
+192–223 → bucket 6
+
+224–255 → bucket 7
+
+For each input value, determine its bucket and print the resulting list.
 
 Input Format
-First line contains string s
+First line contains an integer n — number of intensity values
 
-Second line contains string t
+Second line contains n space-separated integers representing pixel intensities
 
 Output Format
-Print true if t is an anagram of s
+Print a list of integers representing the bucket value for each input intensity
 
-Print false otherwise
+The order of elements must be preserved
 
 Constraints
-1 ≤ length of s, t ≤ 5 × 10⁴
+1 ≤ n ≤ 10⁵
 
-Strings contain only lowercase English letters
+0 ≤ intensity value ≤ 255
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-s = input().strip()
-t = input().strip()
+n = int(input())
+arr = list(map(int, input().split()))
 
-if len(s) != len(t):
-    print("false")
-else:
-    freq = [0] * (25+1)
+result = [exe // 32 for exe in arr]
 
-    for ch in s:
-        freq[ord(ch) - ord('a')] += 1
-
-    for ch in t:
-        freq[ord(ch) - ord('a')] -= 1
-
-    for count in freq:
-        if count != 0:
-            print("false")
-            break
-    else:
-        print("true")
+print(result,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -384,34 +334,39 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p> Week 8: Programming Assignment 3 [Due on 2026-03-18, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 10 programming answers</a>
+                <p> Week 10: Programming Assignment 3 [Due on 2026-04-02, 23:59 IST ]</p>
 <p>
-Problem Statement: Longest Common Prefix
-You are given N strings.
+Automated Message Counter
+Problem Statement
+You are given a collection of text messages and a keyword through standard input.
 
-Your task is to find the longest common prefix shared among all the given strings.
+Your task is to count how many messages contain the given keyword as a substring.
 
-A prefix is a sequence of characters that appears at the beginning of each string.
+A message is counted if the keyword appears anywhere inside it.
 
-If no common prefix exists, print an empty string "".
+Matching is case-sensitive.
 
- Input Format (Corrected)
-First line contains an integer N — the number of strings
+Each message is checked independently.
 
-The next N lines each contain one string
+Finally, print the total count.
+
+Input Format
+First line contains an integer n — number of messages
+
+Next n lines each contain one message (string)
+
+Last line contains the keyword
 
 Output Format
-Print the longest common prefix
-
-If no common prefix exists, print an empty string ""
+Print a single integer representing the number of messages that contain the keyword
 
 Constraints
-1 ≤ N ≤ 200
+1 ≤ n ≤ 10³
 
-1 ≤ length of each string ≤ 200
+Each message contains printable characters
 
-Strings contain only lowercase English letters
+Keyword is a non-empty string
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -420,23 +375,18 @@ Strings contain only lowercase English letters
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-n = int(input().strip())
+n = int(input())
 
-strings = []
-for baba in range(n):
-    strings.append(input().strip())
+messages = [input() for sona in range(n)]
+keyword = input()
 
-prefix = strings[0]
+count = 0
 
-for s in strings[1:]:
-    while not s.startswith(prefix):
-        prefix = prefix[:-1]
-        if prefix == "":
-            break
-    if prefix == "":
-        break
+for msg in messages:
+    if keyword in msg:
+        count += 1
 
-print(prefix if prefix != "" else '""')
+print(count,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
