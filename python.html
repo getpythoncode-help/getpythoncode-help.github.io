@@ -417,8 +417,8 @@ print(count,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 1   Due on  2026-03-26, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 1   Due on  2026-04-09, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -426,44 +426,45 @@ print(count,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
+Character Reduction Game
 Problem Statement
-You are given a sentence and a list of stopwords through standard input.
+You are given two strings through standard input.
 
-Your task is to remove all occurrences of the stopwords from the given sentence and print the cleaned sentence.
+Your task is to remove all common characters between the two strings by applying the following rule:
 
-Words in the sentence are separated by spaces.
+If a character appears in both strings, remove one occurrence of that character from each string.
 
-Stopwords are also provided as space-separated words.
+This process continues until no common characters remain.
 
-The order of the remaining words must be preserved.
+After all possible removals, count the total number of remaining characters in both strings.
 
-If a word appears multiple times and is a stopword, all its occurrences must be removed.
-
-If all words are removed, print an empty line.
+Finally, print this total count.
 
 Input Format
-First line contains a sentence consisting of space-separated words
+First line contains string s1
 
-Second line contains space-separated stopwords
+Second line contains string s2
 
 Output Format
-Print the cleaned sentence after removing all stopwords
-
-If no words remain, print an empty line
+Print a single integer representing the total number of remaining characters
 
 Constraints
-0 ≤ number of words in the sentence ≤ 10³
+1 ≤ length of each string ≤ 10³
 
-0 ≤ number of stopwords ≤ 10³
-
-All words contain only lowercase English letters
+Strings contain only lowercase English letters
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-original_words=input().split()
-stop_words=input().split()
-new_words=[w for w in original_words if w not in stop_words]
-print(" ".join(new_words),end="")
+string_1=list(input())
+string_2=list(input())
+t=len(string_1)+len(string_2)
+c=0
+for s in string_1:
+  if s in string_2 and s !="*":
+    c=c+2
+    string_2[string_2.index(s)]="*"
+    string_1[string_1.index(s)]="*"
+print(t-c,end="")    
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -474,48 +475,51 @@ print(" ".join(new_words),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 2  Due on  2026-03-26, 23:59 IST </p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 2  Due on  2026-04-09, 23:59 IST </p>
 		<p>
-Problem 1: Word Length Distribution Analyzer
+Academic Date Gap Calculator
 Problem Statement
-You are given a line of text through standard input.
-The text consists of words separated by spaces.
+You are given two dates through standard input.
 
-Your task is to analyze the text and determine how many words occur for each word length.
+Each date is provided in the format YYYY-MM-DD.
 
-The length of a word is the number of characters it contains.
+Your task is to calculate the absolute number of days between the two dates and print the result.
 
-Words are separated by one or more spaces.
+The order of dates does not matter.
 
-The result should show how many words exist for each length.
+Leap years must be handled correctly.
+
+If both dates are the same, the result should be 0.
 
 Input Format
-A single line containing space-separated words
+First line contains the first date in YYYY-MM-DD format
+
+Second line contains the second date in YYYY-MM-DD format
 
 Output Format
-Print a dictionary where:
-
-Key → word length
-
-Value → number of words of that length
+Print a single integer representing the absolute difference in days between the two dates
 
 Constraints
-1 ≤ number of words ≤ 10³
+Years are in the range supported by the Python datetime module
 
-Each word contains only lowercase English letters
+Dates are guaranteed to be valid
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-words= input().split()
-L=[len(w) for w in words]
-d={}
-for k in L:
-  if k not in d:
-    d[k]=1
-  else:
-    d[k]=d[k]+1
-print(d,end="")    
+from datetime import datetime
+
+date_str1 = input()
+date_str2 = input()
+
+# Convert strings to datetime objects
+d1 = datetime.strptime(date_str1, "%Y-%m-%d")
+d2 = datetime.strptime(date_str2, "%Y-%m-%d")
+
+# Subtracting gives a timedelta object
+diff = d2 - d1
+print(f"{diff.days}",end="")
+  
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -526,56 +530,39 @@ print(d,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 9 programming answers</a>
-                <p>Week 9: Programming Assignment 3  Due on  2026-03-26, 23:59 IST</p>
+                <a>The Joy of Computing using python week 11 programming answers</a>
+                <p>Week 11: Programming Assignment 3  Due on  2026-04-09, 23:59 IST</p>
 <p>
-Graph Degree Analyzer
+Monthly Calendar Generator
 Problem Statement
-You are given a graph through standard input.
+You are given a year and a month through standard input.
 
-The graph is represented using adjacency information, where each node is followed by the nodes it is directly connected to.
+Your task is to generate and display the calendar for the given month and year.
 
-Your task is to compute the degree of each node.
+The calendar should follow the standard Gregorian calendar format.
 
-The degree of a node is the number of nodes directly connected to it.
+Weekdays should be displayed from Monday to Sunday.
 
-If a node has no adjacent nodes, its degree is 0.
-
-If a node has a self-loop (connected to itself), it is counted as one connection.
+The output should match the standard calendar layout.
 
 Input Format
-First line contains an integer N — the number of nodes
+First line contains an integer year
 
-The next N lines contain:
-
-First value → node label
-
-Remaining values → adjacent nodes (space-separated)
-
-If a node has no neighbors, the line contains only the node label
+Second line contains an integer month (1 to 12)
 
 Output Format
-Print a dictionary where:
-
-Key → node
-
-Value → degree of that node
+Print the calendar for the given month and year
 
 Constraints
-1 ≤ N ≤ 10³
+1 ≤ year ≤ 9999
 
-Node labels may be integers or lowercase letters
+1 ≤ month ≤ 12
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-n_of_line=int(input())
-INPUT=[]
-for n in range(n_of_line):
-  INPUT.append(input().split())
-#print(INPUT)  
-d={}
-for i in INPUT:
-  d[i[0]]=len(i)-1
-print(d,end="")  
+import calendar
+years_is=int(input())
+m=int(input())
+print(calendar.month(years_is, m),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
