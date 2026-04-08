@@ -218,45 +218,66 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p>Week 10: Programming Assignment 1 [Due on 2026-04-02, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p>Week 12: Programming Assignment 1 [Due on 2026-04-16, 23:59 IST]</p>
 		<p>
-Circular Elimination Game
-Problem Statement
-You are given a group of players arranged in a circle.
+Dictionary Consistency Checker 
+ Problem Statement
+A system stores data in a dictionary named records, where:
 
-Starting from the first player, every k-th player is eliminated in a circular manner.
-The elimination continues until only one player remains.
+Each key is a string.
 
-Your task is to simulate this process using the given inputs and determine the position (1-indexed) of the last remaining player.
+Each value is a list of integers.
 
-Input Format
-First line contains an integer n — the number of players
+A key is said to be consistent if the list associated with it satisfies both conditions:
 
-Second line contains an integer k — the step count for elimination
+The list is strictly increasing.
 
-Output Format
-Print a single integer representing the position of the last remaining player
+The difference between every pair of consecutive elements is the same.
 
-Constraints
-1 ≤ n ≤ 10⁵
+Your task is to:
 
-1 ≤ k ≤ 10⁵
+Count how many keys in the dictionary are consistent.
+
+Print the count.
+
+Notes:
+A list with 0 or 1 element is considered consistent.
+
+You have to take the input.
+
+Print only an integer.
+
+
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-n = int(input())
-k = int(input())
+recordsi = eval(input())
 
-resultg = 0
+count = 0
 
-for i in range(2, n + 1):
-    resultg = (resultg + k) % i
+for key in recordsi:
+    arr = recordsi[key]
+    
+    if len(arr) <= 1:
+        count += 1
+        continue
+    
+    diff = arr[1] - arr[0]
+    is_consistent = True
+    
+    for i in range(1, len(arr)):
+        if arr[i] <= arr[i-1] or (arr[i] - arr[i-1]) != diff:
+            is_consistent = False
+            break
+    
+    if is_consistent:
+        count += 1
 
-print(resultg + 1,end="")
+print(count,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -267,8 +288,8 @@ print(resultg + 1,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 2 [Due on 2026-04-02, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 2 [Due on 2026-04-16, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -276,54 +297,77 @@ print(resultg + 1,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Pixel Intensity Quantizer
-Problem Statement
-You are given a set of pixel intensity values through standard input.
+Score Conservation Checker
+You are given a directed graph and an initial score for each node through standard input.
 
-Each pixel intensity is an integer between 0 and 255.
-Your task is to group these values into 8 discrete buckets based on the following rule:
+Your task is to perform one step of influence distribution using the same rules as Problem 1, and then check whether the total influence is conserved.
 
-0–31 → bucket 0
+Rules for influence distribution:
 
-32–63 → bucket 1
+If a node has outgoing edges, it splits its score equally among its outgoing neighbors.
 
-64–95 → bucket 2
+If a node has no outgoing edges, it keeps its entire score.
 
-96–127 → bucket 3
+All incoming influence is accumulated.
 
-128–159 → bucket 4
+After performing one distribution step:
 
-160–191 → bucket 5
+Compute the sum of all node scores before distribution
 
-192–223 → bucket 6
+Compute the sum of all node scores after distribution
 
-224–255 → bucket 7
-
-For each input value, determine its bucket and print the resulting list.
+Print True if the total score is conserved, otherwise print False
 
 Input Format
-First line contains an integer n — number of intensity values
+First line contains integer N — number of nodes
 
-Second line contains n space-separated integers representing pixel intensities
+Next N lines:
+
+Node followed by outgoing neighbors
+
+Next N lines:
+
+Node followed by its score
 
 Output Format
-Print a list of integers representing the bucket value for each input intensity
+Print True if total score before and after distribution is the same
 
-The order of elements must be preserved
-
-Constraints
-1 ≤ n ≤ 10⁵
-
-0 ≤ intensity value ≤ 255
+Otherwise, print False
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-n = int(input())
-arr = list(map(int, input().split()))
+dhoni = int(input())
 
-result = [exe // 32 for exe in arr]
+virat = {}
+for rohit in range(dhoni):
+    hardik = input().split()
+    bumrah = hardik[0]
+    jadeja = hardik[1:] if len(hardik) > 1 else []
+    virat[bumrah] = jadeja
 
-print(result,end="")
+kohli = {}
+for klrahul in range(dhoni):
+    surya, pant = input().split()
+    kohli[surya] = float(pant)
+
+msd = sum(kohli.values())
+
+raina = {player: 0 for player in virat}
+
+for ashwin in virat:
+    shardul = kohli[ashwin]
+    chahal = virat[ashwin]
+    
+    if len(chahal) == 0:
+        raina[ashwin] += shardul
+    else:
+        sky = shardul / len(chahal)
+        for kishan in chahal:
+            raina[kishan] += sky
+
+yuvi = sum(raina.values())
+
+print(abs(msd - yuvi) < 1e-9,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -334,39 +378,38 @@ print(result,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 10 programming answers</a>
-                <p> Week 10: Programming Assignment 3 [Due on 2026-04-02, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 12 programming answers</a>
+                <p> Week 12: Programming Assignment 3 [Due on 2026-04-16, 23:59 IST ]</p>
 <p>
-Automated Message Counter
+
+Longest Consecutive Sequence Finder
 Problem Statement
-You are given a collection of text messages and a keyword through standard input.
+You are given a list of integers named nums.
+The integers may appear in any order and may include duplicates.
 
-Your task is to count how many messages contain the given keyword as a substring.
+Your task is to determine the length of the longest sequence of consecutive integers that can be formed using elements from the list.
 
-A message is counted if the keyword appears anywhere inside it.
+Important Notes:
+Consecutive numbers must differ by exactly 1.
 
-Matching is case-sensitive.
+The sequence can be formed regardless of the order of elements in the list.
 
-Each message is checked independently.
+Duplicate values should be considered only once.
 
-Finally, print the total count.
+You must print only the length of the longest consecutive sequence.
 
-Input Format
-First line contains an integer n — number of messages
+You need to take input.
 
-Next n lines each contain one message (string)
+Do not use functions.
 
-Last line contains the keyword
+   Input Format
+A list of integers nums (single line input).
 
-Output Format
-Print a single integer representing the number of messages that contain the keyword
+Example:
 
-Constraints
-1 ≤ n ≤ 10³
-
-Each message contains printable characters
-
-Keyword is a non-empty string
+[100, 4, 200, 1, 3, 2]
+   Output Format
+Print a single integer — the length of the longest consecutive sequence.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -375,18 +418,30 @@ Keyword is a non-empty string
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-n = int(input())
+rohit_input = input().strip()
 
-messages = [input() for sona in range(n)]
-keyword = input()
+if rohit_input == "[]":
+    rohit = []
+else:
+    rohit = list(map(int, rohit_input.strip('[]').split(',')))
 
-count = 0
+virat = set(rohit)
 
-for msg in messages:
-    if keyword in msg:
-        count += 1
+dhoni = 0
 
-print(count,end="")
+for kohli in virat:
+    if kohli - 1 not in virat:
+        raina = kohli
+        msd = 1
+        
+        while raina + 1 in virat:
+            raina += 1
+            msd += 1
+        
+        if msd > dhoni:
+            dhoni = msd
+
+print(dhoni,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
