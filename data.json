@@ -1,10 +1,10 @@
 [
   {
-    "Java Week 10 Question 1 code": "import java.sql.Connection;\nimport java.sql.DriverManager;\n\n// all done for you  ",
-    "Java Week 10 Question 2 code": "Class.forName(\"org.sqlite.JDBC\");\n\n// Like me ? Support me !!\n ",
-    "Java Week 10 Question 3 code": "conn = DriverManager.getConnection(DB_URL);\n\n//all ok \n ",
-    "Java Week 10 Question 4 code": "stmt.executeUpdate(sql);\n\n// just add this line and enjoy\n ",
-    "Java Week 10 Question 5 code": " pstmt.executeUpdate();\n\n// help me to get help\n"
+    "Java Week 12 Question 1 code": "for (int ipl26 = 0; ipl26 < seq.length; ipl26++) {\n    seq[ipl26] = gui_map(seq[ipl26]);\n}",
+    "Java Week 12 Question 2 code": "// r u ok with me ? support \nSystem.out.println(mapFunction(key));",
+    "Java Week 12 Question 3 code": "// My todo done and your's ?\nSystem.out.println(operate(a, b, op)); ",
+    "Java Week 12 Question 4 code": "// last help and last chance to support me \nSystem.out.println(extractDigits(input)); ",
+    "Java Week 12 Question 5 code": " // I know u did it and u will do it now \n\nSystem.out.println(formatExpression(expression));"
 
   },
   {
