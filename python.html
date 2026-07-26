@@ -223,66 +223,33 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p>Week 12: Programming Assignment 1 [Due on 2026-04-16, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p>Week 2: Programming Assignment 1 [Due on 2026-08-05, 23:59 IST]</p>
 		<p>
-Dictionary Consistency Checker 
- Problem Statement
-A system stores data in a dictionary named records, where:
+TechMart is running a 10% discount sale on all products. When a
+customer purchases an item, the cashier enters the original price into
+the billing system. The system calculates the final price after applying
+the discount and displays it to the customer. (output with one decimal
+place printed - not a hard constraint to handle this. program will still
+work)
 
-Each key is a string.
+Write a Python program that:
 
-Each value is a list of integers.
+(a) Accepts the original price of an item as input.
 
-A key is said to be consistent if the list associated with it satisfies both conditions:
+(b) Converts the entered value into a number.
 
-The list is strictly increasing.
+(c) Calculates the final price after applying a 10% discount.
 
-The difference between every pair of consecutive elements is the same.
-
-Your task is to:
-
-Count how many keys in the dictionary are consistent.
-
-Print the count.
-
-Notes:
-A list with 0 or 1 element is considered consistent.
-
-You have to take the input.
-
-Print only an integer.
-
-
+(d) Prints the discounted price.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-recordsi = eval(input())
-
-count = 0
-
-for key in recordsi:
-    arr = recordsi[key]
-    
-    if len(arr) <= 1:
-        count += 1
-        continue
-    
-    diff = arr[1] - arr[0]
-    is_consistent = True
-    
-    for i in range(1, len(arr)):
-        if arr[i] <= arr[i-1] or (arr[i] - arr[i-1]) != diff:
-            is_consistent = False
-            break
-    
-    if is_consistent:
-        count += 1
-
-print(count,end="")
+price=int(input())
+print((90/100)*price,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -293,8 +260,8 @@ print(count,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 2 [Due on 2026-04-16, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 2 [Due on 2026-08-05, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -302,77 +269,27 @@ print(count,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Score Conservation Checker
-You are given a directed graph and an initial score for each node through standard input.
+Q. Library Book Filter
 
-Your task is to perform one step of influence distribution using the same rules as Problem 1, and then check whether the total influence is conserved.
+A school library maintains a list of the number of pages in newly arrived books. To help
+younger students, the librarian wants to identify books that have more than 300 pages,
+as these are recommended only for senior students. There is at least one book in given
+input that has more than 300 pages.
 
-Rules for influence distribution:
+Write a Python program that:
 
-If a node has outgoing edges, it splits its score equally among its outgoing neighbors.
+(a) Accepts a space-separated list of integers representing the number of pages in each
+book.
 
-If a node has no outgoing edges, it keeps its entire score.
+(b) Identifies all books with more than 300 pages.
 
-All incoming influence is accumulated.
-
-After performing one distribution step:
-
-Compute the sum of all node scores before distribution
-
-Compute the sum of all node scores after distribution
-
-Print True if the total score is conserved, otherwise print False
-
-Input Format
-First line contains integer N — number of nodes
-
-Next N lines:
-
-Node followed by outgoing neighbors
-
-Next N lines:
-
-Node followed by its score
-
-Output Format
-Print True if total score before and after distribution is the same
-
-Otherwise, print False
+(c) Prints the page counts of these books, separated by spaces.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-dhoni = int(input())
-
-virat = {}
-for rohit in range(dhoni):
-    hardik = input().split()
-    bumrah = hardik[0]
-    jadeja = hardik[1:] if len(hardik) > 1 else []
-    virat[bumrah] = jadeja
-
-kohli = {}
-for klrahul in range(dhoni):
-    surya, pant = input().split()
-    kohli[surya] = float(pant)
-
-msd = sum(kohli.values())
-
-raina = {player: 0 for player in virat}
-
-for ashwin in virat:
-    shardul = kohli[ashwin]
-    chahal = virat[ashwin]
-    
-    if len(chahal) == 0:
-        raina[ashwin] += shardul
-    else:
-        sky = shardul / len(chahal)
-        for kishan in chahal:
-            raina[kishan] += sky
-
-yuvi = sum(raina.values())
-
-print(abs(msd - yuvi) < 1e-9,end="")
+get_numbers=[int(i) for i in input().split()]
+ans=[i for i in get_numbers if i>300]
+print(*ans,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -383,38 +300,19 @@ print(abs(msd - yuvi) < 1e-9,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 12 programming answers</a>
-                <p> Week 12: Programming Assignment 3 [Due on 2026-04-16, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 2 programming answers</a>
+                <p> Week 2: Programming Assignment 3 [Due on 2026-08-05, 23:59 IST ]</p>
 <p>
+Q.
 
-Longest Consecutive Sequence Finder
-Problem Statement
-You are given a list of integers named nums.
-The integers may appear in any order and may include duplicates.
+Even Number Counter
 
-Your task is to determine the length of the longest sequence of consecutive integers that can be formed using elements from the list.
-
-Important Notes:
-Consecutive numbers must differ by exactly 1.
-
-The sequence can be formed regardless of the order of elements in the list.
-
-Duplicate values should be considered only once.
-
-You must print only the length of the longest consecutive sequence.
-
-You need to take input.
-
-Do not use functions.
-
-   Input Format
-A list of integers nums (single line input).
-
-Example:
-
-[100, 4, 200, 1, 3, 2]
-   Output Format
-Print a single integer — the length of the longest consecutive sequence.
+A teacher is conducting a classroom activity on number patterns. Students are asked to
+enter a list of numbers, and the computer counts how many of them are even.
+Write a Python program that:
+(a) Accepts a space-separated list of integers.
+(b) Counts how many numbers are even.
+(c) Prints the count.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -423,30 +321,9 @@ Print a single integer — the length of the longest consecutive sequence.
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-rohit_input = input().strip()
-
-if rohit_input == "[]":
-    rohit = []
-else:
-    rohit = list(map(int, rohit_input.strip('[]').split(',')))
-
-virat = set(rohit)
-
-dhoni = 0
-
-for kohli in virat:
-    if kohli - 1 not in virat:
-        raina = kohli
-        msd = 1
-        
-        while raina + 1 in virat:
-            raina += 1
-            msd += 1
-        
-        if msd > dhoni:
-            dhoni = msd
-
-print(dhoni,end="")
+my_integrs=[int(i) for i in input().split()]
+is_even=[e for e in my_integrs if e%2==0]
+print(len(is_even),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
