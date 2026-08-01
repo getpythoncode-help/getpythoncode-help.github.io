@@ -354,8 +354,8 @@ print(len(is_even),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 1   Due on  2026-04-09, 23:59 IST</p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 1   Due on  2026-08-13, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -363,45 +363,17 @@ print(len(is_even),end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Character Reduction Game
-Problem Statement
-You are given two strings through standard input.
+During a school sports meet, the finishing times (in seconds) of runners are recorded. A
+lower time indicates a faster runner.
 
-Your task is to remove all common characters between the two strings by applying the following rule:
-
-If a character appears in both strings, remove one occurrence of that character from each string.
-
-This process continues until no common characters remain.
-
-After all possible removals, count the total number of remaining characters in both strings.
-
-Finally, print this total count.
-
-Input Format
-First line contains string s1
-
-Second line contains string s2
-
-Output Format
-Print a single integer representing the total number of remaining characters
-
-Constraints
-1 ≤ length of each string ≤ 10³
-
-Strings contain only lowercase English letters
+(a) Accept a space-separated list of positive real numbers representing finishing times.
+(b) Find the minimum finishing time.
+(c) Print the fastest finishing time.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-string_1=list(input())
-string_2=list(input())
-t=len(string_1)+len(string_2)
-c=0
-for s in string_1:
-  if s in string_2 and s !="*":
-    c=c+2
-    string_2[string_2.index(s)]="*"
-    string_1[string_1.index(s)]="*"
-print(t-c,end="")    
+R_num=[float(i) for i in input().split()]
+print(min(R_num),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -412,51 +384,19 @@ print(t-c,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 2  Due on  2026-04-09, 23:59 IST </p>
+                <a>The Joy of Computing using python week 3 programming answers</a>
+                <p>Week 3: Programming Assignment 2  Due on  2026-08-13, 23:59 IST </p>
 		<p>
-Academic Date Gap Calculator
-Problem Statement
-You are given two dates through standard input.
+A weather station records daily temperatures as decimal values.
 
-Each date is provided in the format YYYY-MM-DD.
-
-Your task is to calculate the absolute number of days between the two dates and print the result.
-
-The order of dates does not matter.
-
-Leap years must be handled correctly.
-
-If both dates are the same, the result should be 0.
-
-Input Format
-First line contains the first date in YYYY-MM-DD format
-
-Second line contains the second date in YYYY-MM-DD format
-
-Output Format
-Print a single integer representing the absolute difference in days between the two dates
-
-Constraints
-Years are in the range supported by the Python datetime module
-
-Dates are guaranteed to be valid
+(a) Accept a space-separated sequence of real numbers.
+(b) Convert each temperature to its integer part.
+(c) Print the sum of all converted integer values.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-from datetime import datetime
-
-date_str1 = input()
-date_str2 = input()
-
-# Convert strings to datetime objects
-d1 = datetime.strptime(date_str1, "%Y-%m-%d")
-d2 = datetime.strptime(date_str2, "%Y-%m-%d")
-
-# Subtracting gives a timedelta object
-diff = d2 - d1
-print(f"{diff.days}",end="")
-  
+R_num_t=[int(float(i)) for i in input().split()]
+print(sum(R_num_t),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -467,39 +407,26 @@ print(f"{diff.days}",end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 11 programming answers</a>
-                <p>Week 11: Programming Assignment 3  Due on  2026-04-09, 23:59 IST</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 3  Due on  2026-08-13, 23:59 IST</p>
 <p>
-Monthly Calendar Generator
-Problem Statement
-You are given a year and a month through standard input.
+Week 03 - Programming Assignment 03
+Your last recorded submission was on 2026-08-01, 18:40 IST.
 
-Your task is to generate and display the calendar for the given month and year.
+Q. A courier company records package weights (in kg).
 
-The calendar should follow the standard Gregorian calendar format.
-
-Weekdays should be displayed from Monday to Sunday.
-
-The output should match the standard calendar layout.
-
-Input Format
-First line contains an integer year
-
-Second line contains an integer month (1 to 12)
-
-Output Format
-Print the calendar for the given month and year
-
-Constraints
-1 ≤ year ≤ 9999
-
-1 ≤ month ≤ 12
+(a) Accept a space-separated list of positive real numbers.
+(b) Compute the average package weight.
+(c) Count how many package weights are greater than the average.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-import calendar
-years_is=int(input())
-m=int(input())
-print(calendar.month(years_is, m),end="")
+R_num=[float(i) for i in input().split()]
+avg_r=sum(R_num)/len(R_num)
+count=0
+for r in R_num:
+  if r> avg_r:
+    count=count+1
+print(count,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
