@@ -318,130 +318,131 @@ def sumprimes(l):
     return sum(num for num in l if is_prime(num))
                 </textarea><br><br>
 	    
-<a>The Programming Data Structure And Algorithm using python week 5 programming answers [Due on 2026-02-26, 23:59 IST]</a>
-                <p> Week 5: Programming Assignment</p>
+<a>The Programming Data Structure And Algorithm using python week 3 programming answers [Due on 2026-08-13, 23:59 IST]</a>
+                <p> Week 3: Programming Assignment</p>
 	    <p>
-For this assignment, you have to write a complete Python program. Paste your code in the window below.
+Below are the three questions exactly as shown in your images.
 
-You may define additional auxiliary functions as needed.
-There are some public test cases and some (hidden) private test cases.
-"Compile and run" will evaluate your submission against the public test cases
-"Submit" will evaluate your submission against the hidden private test cases. There are 6 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
-Ignore warnings about "Presentation errors".
-Here are some basic facts about tennis scoring: A tennis match is made up of sets. A set is made up of games.
+---
 
-To win a set, a player has to win 6 games with a difference of 2 games. At 6-6, there is often a special tie-breaker. In some cases, players go on playing till one of them wins the set with a difference of two games.
+## **Question 1**
 
-Tennis matches can be either 3 sets or 5 sets. The player who wins a majority of sets wins the match (i.e., 2 out 3 sets or 3 out of 5 sets) The score of a match lists out the games in each set, with the overall winner's score reported first for each set. Thus, if the score is 6-3, 5-7, 7-6 it means that the first player won the first set by 6 games to 3, lost the second one 5 games to 7 and won the third one 7 games to 6 (and hence won the overall match as well by 2 sets to 1).
+**1.** Write a function `contracting(l)` that takes as input a list of integer `l` and returns `True` if the absolute difference between each adjacent pair of elements strictly decreases.
 
-You will read input from the keyboard (standard input) containing the results of several tennis matches. Each match's score is recorded on a separate line with the following format:
+Here are some examples of how your function should work.
 
-Winner:Loser:Set-1-score,...,Set-k-score, where 2 ≤ k ≤ 5
+```python
+>>> contracting([9,2,7,3,1])
+True
+```
 
-For example, an input line of the form
+```python
+>>> contracting([-2,3,7,2,-1])
+False
+```
 
-Jabeur:Swiatek:3-6,6-3,6-3
-indicates that Jabeur beat Swiatek 3-6, 6-3, 6-3 in a best of 3 set match.
+```python
+>>> contracting([10,7,4,1])
+False
+```
 
-The input is terminated by a line consisting of the string "EOF".
+---
 
-You have to write a Python program that reads information about all the matches and compile the following statistics for each player:
+## **Question 2**
 
-Number of best-of-5 set matches won
-Number of best-of-3 set matches won
-Number of sets won
-Number of games won
-Number of sets lost
-Number of games lost
-You should print out to the screen (standard output) a summary in decreasing order of ranking, where the ranking is according to the criteria 1-6 in that order (compare item 1, if equal compare item 2, if equal compare item 3 etc, noting that for items 5 and 6 the comparison is reversed).
+**2.** In a list of integers `l`, the neighbours of `l[i]` are `l[i-1]` and `l[i+1]`.
 
-For instance, given the following data
+`l[i]` is a **hill** if it is strictly greater than its neighbours and a **valley** if it is strictly less than its neighbours.
 
-Zverev:Alcaraz:2-6,6-7,7-6,6-3,6-1
-Swiatek:Jabeur:6-4,6-4
-Alcaraz:Zverev:6-3,6-3
-Jabeur:Swiatek:1-6,7-5,6-2
-Zverev:Alcaraz:6-0,7-6,6-3
-Jabeur:Swiatek:2-6,6-2,6-0
-Alcaraz:Zverev:6-3,4-6,6-3,6-4
-Swiatek:Jabeur:6-1,3-6,7-5
-Zverev:Alcaraz:7-6,4-6,7-6,2-6,6-2
-Jabeur:Swiatek:6-4,1-6,6-3
-Alcaraz:Zverev:7-5,7-5
-Jabeur:Swiatek:3-6,6-3,6-3
-EOF
-your program should print out the following
+Write a function `counthv(l)` that takes as input a list of integers `l` and returns a list `[hc, vc]` where `hc` is the number of hills in `l` and `vc` is the number of valleys in `l`.
 
-Zverev 3 0 10 104 11 106
-Alcaraz 1 2 11 106 10 104
-Jabeur 0 4 9 76 8 74
-Swiatek 0 2 8 74 9 76
-You can assume that there are no spaces around the punctuation marks ":", "-" and ",". Each player's name will be spelled consistently and no two players have the same name.
+Here are some examples to show how your function should work.
+
+```python
+>>> counthv([1,2,1,2,3,2,1])
+[2, 1]
+```
+
+```python
+>>> counthv([1,2,3,1])
+[1, 0]
+```
+
+---
+
+## **Question 3**
+
+**3.** A square `n×n` matrix of integers can be written in Python as a list with `n` elements, where each element is in turn a list of `n` integers, representing a row of the matrix. For instance, the matrix
+
+```text
+1 2 3
+4 5 6
+7 8 9
+```
+
+would be represented as
+
+```python
+[[1,2,3], [4,5,6], [7,8,9]]
+```
+
+Write a function `leftrotate(m)` that takes a list representation `m` of a square matrix as input, and returns the matrix obtained by rotating the original matrix counterclockwise by 90 degrees. For instance, if we rotate the matrix above, we get
+
+```text
+3 6 9
+2 5 8
+1 4 7
+```
+
+Your function should **not** modify the argument `m` provided to the function `rotate()`.
+
+Here are some examples of how your function should work.
+
+```python
+>>> leftrotate([[1,2],[3,4]])
+[[2, 4], [1, 3]]
+```
 	    </p>
 
                 <textarea type="text" id="myInput" readonly style="width: 50%;height: 100%; resize: none; "rows="45"cols="30" >
-scoreboard = {}
+def contracting(l):
+    diff = []
 
-def add_player(player):
-    if player not in scoreboard:
-        # [bo5_wins, bo3_wins, sets_won, games_won, sets_lost, games_lost]
-        scoreboard[player] = [0, 0, 0, 0, 0, 0]
+    # Calculate absolute differences
+    for i in range(len(l) - 1):
+        diff.append(abs(l[i] - l[i + 1]))
 
-while True:
-    try:
-        match_line = input().strip()
-    except EOFError:
-        break
+    # Check if differences are strictly decreasing
+    for i in range(len(diff) - 1):
+        if diff[i] <= diff[i + 1]:
+            return False
 
-    if not match_line:
-        continue
-    if match_line == "EOF":
-        break
+    return 0==0
+    
+def counthv(l):
+    hc = 0  # hill count
+    vc = 0  # valley count
 
-    rohit, kohli, overs_data = match_line.split(":", 2)
-    add_player(rohit)
-    add_player(kohli)
+    for iB in range(1, len(l) - 1):
+        if l[iB] > l[iB-1] and l[iB] > l[iB+1]:
+            hc += 1
+        elif l[iB] < l[iB-1] and l[iB] < l[iB+1]:
+            vc += 1
 
-    overs_list = overs_data.split(",")
+    return [hc, vc]
+    
+def leftrotate(m):
+    n = len(m)
+    result = []
 
-    rohit_sets = bumrah_sets = 0
-    rohit_games = bumrah_games = 0
+    for j in range(n-1, -1, -1):
+        rose = []
+        for i in range(n):
+            rose.append(m[i][j])
+        result.append(rose)
 
-    for over in overs_list:
-        rohit_score, bumrah_score = map(int, over.split("-"))
+    return result    
 
-        rohit_games += rohit_score
-        bumrah_games += bumrah_score
-
-        if rohit_score > bumrah_score:
-            rohit_sets += 1
-        else:
-            bumrah_sets += 1
-
-    # Update winner (Rohit)
-    scoreboard[rohit][2] += rohit_sets
-    scoreboard[rohit][3] += rohit_games
-    scoreboard[rohit][4] += bumrah_sets
-    scoreboard[rohit][5] += bumrah_games
-
-    # Update loser (Kohli)
-    scoreboard[kohli][2] += bumrah_sets
-    scoreboard[kohli][3] += bumrah_games
-    scoreboard[kohli][4] += rohit_sets
-    scoreboard[kohli][5] += rohit_games
-
-    # Match type decision
-    if rohit_sets == 3:
-        scoreboard[rohit][0] += 1   # best-of-5
-    else:
-        scoreboard[rohit][1] += 1   # best-of-3
-
-def ranking_key(item):
-    player, stats = item
-    return (-stats[0], -stats[1], -stats[2], -stats[3], stats[4], stats[5], player)
-
-for player, stats in sorted(scoreboard.items(), key=ranking_key):
-    print(player, stats[0], stats[1], stats[2], stats[3], stats[4], stats[5])
                 </textarea><br><br>	    
 	    
 	    
