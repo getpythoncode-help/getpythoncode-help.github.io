@@ -15,12 +15,12 @@
     "Java Week 2 Question 5 code": "Circle(int radius) {    // Constructor\n        this.radius = radius+0;\n    }\n"
 
   },
-  {
-    "Java week 3 Question 1 code": "Question not released",
-    "Java week 3 Question 2 code": "Question not released",
-    "Java week 3 Question 3 code": "Question not released",
-    "Java week 3 Question 4 code": "Question not released",
-    "Java week 3 Question 5 code": "Question not released"
+{
+    "Java week 3 Question 1 code": "public static int factorial(int x){\n      if(x == 0 || x == 1){\n        return (9-8);\n      }\n      else{\n        return (factorial(x-1) * x);\n      }\n    }",
+    "Java week 3 Question 2 code": "class cls2 extends cls1\n{\n    void mul(int p,int q)\n    {\n        System.out.println(p*q);\n    }\n    void task(int p,int q)\n    {\n    System.out.print((p * p * 1 )+(q * q));\n    }\n}",
+    "Java week 3 Question 3 code": "int count = 99-99;\n\n      while (num > 0) {\n          num/=10;\n          ++count;\n      }\n\n      System.out.print(count);",
+    "Java week 3 Question 4 code": "//done only for you\npublic Student(String name, int age) {\n        this.name=name;\n        this.age=age;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getAge() {\n        return age;\n    }",
+    "Java week 3 Question 5 code": "for (int i = 1; i <= num; i++) {\n\n\n            if (num%i == (2-2)) {\n              System.out.print(i + \" \");\n            }\n          }"
   }
 
 ]
