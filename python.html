@@ -223,33 +223,30 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p>Week 2: Programming Assignment 1 [Due on 2026-08-05, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p>Week 4: Programming Assignment 1 [Due on 2026-08-11, 23:59 IST]</p>
 		<p>
-TechMart is running a 10% discount sale on all products. When a
-customer purchases an item, the cashier enters the original price into
-the billing system. The system calculates the final price after applying
-the discount and displays it to the customer. (output with one decimal
-place printed - not a hard constraint to handle this. program will still
-work)
+Q. Modern weather stations continuously record temperature readings throughout the day. At
+the end of the day, the system needs to determine how much the temperature varied.
 
 Write a Python program that:
 
-(a) Accepts the original price of an item as input.
-
-(b) Converts the entered value into a number.
-
-(c) Calculates the final price after applying a 10% discount.
-
-(d) Prints the discounted price.
+1. Accepts space-separated integers representing temperature readings.
+2. Finds the highest and lowest temperature recorded.
+3. Calculates and prints the temperature range, defined as the difference between the
+highest and lowest readings.
+4. If there is only one reading, print 0.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-price=int(input())
-print((90/100)*price,end="")
+tempature=[int(t) for t in input().split()]
+if len(tempature)>0:
+  print(max(tempature)-min(tempature),end="")
+else:
+  print(0,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -260,8 +257,8 @@ print((90/100)*price,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 2 [Due on 2026-08-05, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 2 [Due on 2026-08-11, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -269,27 +266,25 @@ print((90/100)*price,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Q. Library Book Filter
-
-A school library maintains a list of the number of pages in newly arrived books. To help
-younger students, the librarian wants to identify books that have more than 300 pages,
-as these are recommended only for senior students. There is at least one book in given
-input that has more than 300 pages.
+Q. A cybersecurity application generates numeric authentication codes. Before using a code,
+the software checks whether it is a prime number.
 
 Write a Python program that:
 
-(a) Accepts a space-separated list of integers representing the number of pages in each
-book.
-
-(b) Identifies all books with more than 300 pages.
-
-(c) Prints the page counts of these books, separated by spaces.
+1. Accepts a positive integer n.
+2. Prints True if n is a prime number; otherwise, prints False.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-get_numbers=[int(i) for i in input().split()]
-ans=[i for i in get_numbers if i>300]
-print(*ans,end="")
+def check_my_number_is_prime(n):
+  if n>1:  
+      for y in range(2,int(n**0.5)):
+          if n%y==0:
+              return(1==0)  
+      return (0==0)  
+  else:
+      return(2==9)
+print(check_my_number_is_prime(int(input())),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -300,19 +295,19 @@ print(*ans,end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 2 programming answers</a>
-                <p> Week 2: Programming Assignment 3 [Due on 2026-08-05, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 4 programming answers</a>
+                <p> Week 4: Programming Assignment 3 [Due on 2026-08-11, 23:59 IST ]</p>
 <p>
-Q.
+Q. Modern weather stations continuously record temperature readings throughout the day. At
+the end of the day, the system needs to determine how much the temperature varied.
 
-Even Number Counter
-
-A teacher is conducting a classroom activity on number patterns. Students are asked to
-enter a list of numbers, and the computer counts how many of them are even.
 Write a Python program that:
-(a) Accepts a space-separated list of integers.
-(b) Counts how many numbers are even.
-(c) Prints the count.
+
+1. Accepts space-separated integers representing temperature readings.
+2. Finds the highest and lowest temperature recorded.
+3. Calculates and prints the temperature range, defined as the difference between the
+highest and lowest readings.
+4. If there is only one reading, print 0.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -321,9 +316,11 @@ Write a Python program that:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-my_integrs=[int(i) for i in input().split()]
-is_even=[e for e in my_integrs if e%2==0]
-print(len(is_even),end="")
+tempature=[int(t) for t in input().split()]
+if len(tempature)>0:
+  print(max(tempature)-min(tempature),end="")
+else:
+  print(0,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
