@@ -352,8 +352,8 @@ print(Is_PRD_id_appears_twice,end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 1   Due on  2026-08-13, 23:59 IST</p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 1   Due on  2026-08-27, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -361,17 +361,34 @@ print(Is_PRD_id_appears_twice,end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-During a school sports meet, the finishing times (in seconds) of runners are recorded. A
-lower time indicates a faster runner.
+Q. A data analyst receives a sequence of integers representing values recorded by a sensor.
+Some values may occur multiple times.
 
-(a) Accept a space-separated list of positive real numbers representing finishing times.
-(b) Find the minimum finishing time.
-(c) Print the fastest finishing time.
+Write a function that:
+
+(a) Accepts a space-separated sequence of integers.
+(b) Returns the number that occurs most frequently.
+(c) If two or more numbers have the same highest frequency, returns the smallest number.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-R_num=[float(i) for i in input().split()]
-print(min(R_num),end="")
+def num_frequency(my_s):
+  d={}
+  for s in my_s:
+    if s not in d:
+      d[s]=1
+    else:
+      d[s]=d[s]+1
+  max_f=max(list(d.values()))    
+  ans_L=[]
+  for t in d:
+    if d[t]==max_f:
+      ans_L.append(t)
+                    
+  return(min(ans_L))
+  
+n=[int(i) for i in input().split()]    
+print(num_frequency(n))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -382,19 +399,37 @@ print(min(R_num),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 3 programming answers</a>
-                <p>Week 3: Programming Assignment 2  Due on  2026-08-13, 23:59 IST </p>
+                <a>The Joy of Computing using python week 5 programming answers</a>
+                <p>Week 5: Programming Assignment 2  Due on  2026-08-27, 23:59 IST </p>
 		<p>
-A weather station records daily temperatures as decimal values.
+Q. A system receives a sequence of integers. Some numbers may appear more than once.
 
-(a) Accept a space-separated sequence of real numbers.
-(b) Convert each temperature to its integer part.
-(c) Print the sum of all converted integer values.
+Write a function that:
+
+(a) Accepts a space-separated sequence of integers.
+(b) Returns all numbers that occur more than once.
+(c) The numbers should be returned in the order of their first appearance.
+(d) If no number is repeated, returns -1.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-R_num_t=[int(float(i)) for i in input().split()]
-print(sum(R_num_t),end="")
+def num_frequency(my_s):
+  d={}
+  for s in my_s:
+    if s not in d:
+      d[s]=1
+    else:
+      d[s]=d[s]+1
+  ans_L=[]
+  for t in d:
+    if d[t]>1:
+      ans_L.append(t)
+  if len(ans_L)==0:
+    ans_L.append("-1")
+  return(" ".join(ans_L))
+  
+n=[i for i in input().split()]    
+print(num_frequency(n))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -406,25 +441,35 @@ print(sum(R_num_t),end="")
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 3  Due on  2026-08-13, 23:59 IST</p>
+                <p>Week 8: Programming Assignment 5  Due on  2026-08-27, 23:59 IST</p>
 <p>
-Week 03 - Programming Assignment 03
-Your last recorded submission was on 2026-08-01, 18:40 IST.
+Q. A sequence of integers is given. Find all numbers that occur exactly two times.
 
-Q. A courier company records package weights (in kg).
+Write a function that:
 
-(a) Accept a space-separated list of positive real numbers.
-(b) Compute the average package weight.
-(c) Count how many package weights are greater than the average.
+(a) Accepts a space-separated sequence of integers.
+(b) Returns all numbers that occur exactly two times.
+(c) The numbers should be returned in increasing order.
+(d) If no number occurs exactly two times, returns -1.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-R_num=[float(i) for i in input().split()]
-avg_r=sum(R_num)/len(R_num)
-count=0
-for r in R_num:
-  if r> avg_r:
-    count=count+1
-print(count,end="")
+def num_frequency(my_s):
+  d={}
+  for s in my_s:
+    if s not in d:
+      d[s]=1
+    else:
+      d[s]=d[s]+1
+  ans_L=[]
+  for t in d:
+    if d[t]==2:
+      ans_L.append(t)
+  if len(ans_L)==0:
+    ans_L.append("-1")
+  return(" ".join(sorted(ans_L)))
+  
+n=[i for i in input().split()]    
+print(num_frequency(n))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
