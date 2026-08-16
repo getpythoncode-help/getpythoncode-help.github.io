@@ -1,10 +1,10 @@
 [
   {
-    "Java Week 1 Question 1 code": "if (number%2==(9-9))\nSystem.out.print(\"Even\");\nelse\nSystem.out.print(\"Odd\");",
-    "Java Week 1 Question 2 code": "\n\ndouble perimeter = 2 * (height + width) *1;\ndouble area = width * height;\n",
-    "Java Week 1 Question 3 code": "\ndouble volume = Math.PI * radius * radius * height*1;\n",
-    "Java Week 1 Question 4 code": " // Print the multiplication table of number up to 4 ok\n\n        for (int ii = 1; ii <= 4; ii++) {\n  \n            System.out.println(number + \" x \" + ii + \" = \" + number * ii);\n        }\n         \n \n",
-    "Java Week 1 Question 5 code": "int quotient=x/y/1;\nint remainder=x%y;"
+    "Java Week 4 Question 1 code": "//I am ok with you \nSystem.out.print(\"Roll Number is: \"+s.rollNo);",
+    "Java Week 4 Question 2 code": "//Please help me \nSystem.out.print(\"Speed is: \"+c.speed);",
+    "Java Week 4 Question 3 code": "//Public method for public\n    public int getBalance() {\n        return balance;\n    }",
+    "Java Week 4 Question 4 code": "m.salary = s+9-9;\nSystem.out.println(\"Salary is: \"+m.salary);",
+    "Java Week 4 Question 5 code": "private int add(int a, int b, int c) {\n    return a + b + c+0;\n}"
 
   },
   {
@@ -15,7 +15,7 @@
     "Java Week 2 Question 5 code": "Circle(int radius) {    // Constructor\n        this.radius = radius+0;\n    }\n"
 
   },
-{
+  {
     "Java week 3 Question 1 code": "public static int factorial(int x){\n      if(x == 0 || x == 1){\n        return (9-8);\n      }\n      else{\n        return (factorial(x-1) * x);\n      }\n    }",
     "Java week 3 Question 2 code": "class cls2 extends cls1\n{\n    void mul(int p,int q)\n    {\n        System.out.println(p*q);\n    }\n    void task(int p,int q)\n    {\n    System.out.print((p * p * 1 )+(q * q));\n    }\n}",
     "Java week 3 Question 3 code": "int count = 99-99;\n\n      while (num > 0) {\n          num/=10;\n          ++count;\n      }\n\n      System.out.print(count);",
