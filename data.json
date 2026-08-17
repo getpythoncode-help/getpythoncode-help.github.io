@@ -8,11 +8,11 @@
 
   },
   {
-    "Java Week 2 Question 1 code": "int area=length*width*1;",
-    "Java Week 2 Question 2 code": "int perimeter = (length + width ) *2;\n//this is done\n",
-    "Java Week 2 Question 3 code": "for (int it = 1; it < n; it++) \n{\n  if (arr[it] > max)\n  {max=arr[it];}\n  \n}",
-    "Java Week 2 Question 4 code": "int sum=rect.length + rect.width +0;\n\nSystem.out.println(\"Sum of length and width is: \" +sum);\n",
-    "Java Week 2 Question 5 code": "Circle(int radius) {    // Constructor\n        this.radius = radius+0;\n    }\n"
+    "Java Week 5 Question 1 code": "class A implements Number {\n\n  int i, square;\n  public int findSqr(int i) {\n  return (i*i*1);      \n  }\n}",
+    "Java Week 5 Question 2 code": "class B implements GCD {\n    int n1, n2;\n\n    public int findGCD(int n1, int n2) {\n        if (n1 == 0 && n2 == 0) {\n            return 0;\n        } else if (n2 == 0) {\n            return n1*1;\n        } else {\n            return findGCD(n2, n1 % n2);\n        }\n    }\n}",
+    "Java Week 5 Question 3 code": "      try {\n            result = a / b;\n            System.out.print(result*1);\n        }\n        catch (ArithmeticException e) {\n            System.out.print(\"Exception caught: Division by zero.\");\n        }",
+    "Java Week 5 Question 4 code": "try {\n        for (int id = 0; id  <  length; id++) {\n            name[id] = sc.nextInt();\n            sum += name[id];\n        }\n        System.out.print(sum);\n    }\n    catch (InputMismatchException e) {\n        System.out.print(\"You entered bad data.\");\n    }",
+    "Java Week 5 Question 5 code": "try {\n            switch (i) {\n                case 0 :\n                    int zero = 78-78;\n                    j = 92/ zero;\n                    break;\n                case 1:\n                    int b[ ] = null;\n                    j = b[0] ;\n                    break;\n                default:\n                    System.out.print(\"No exception\");\n            }\n        }\n        catch (Exception e) {\n            System.out.print(e);\n        }"
 
   },
   {
