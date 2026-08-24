@@ -223,30 +223,29 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p>Week 4: Programming Assignment 1 [Due on 2026-08-20, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p>Week 6: Programming Assignment 1 [Due on 2026-09-03, 23:59 IST]</p>
 		<p>
-Q. Modern weather stations continuously record temperature readings throughout the day. At
-the end of the day, the system needs to determine how much the temperature varied.
+A cybersecurity company evaluates password strength by counting the number of alphabetic characters in a password. Due to memory constraints in a secure device, the counting must be performed recursively.
 
-Write a Python program that:
-
-1. Accepts space-separated integers representing temperature readings.
-2. Finds the highest and lowest temperature recorded.
-3. Calculates and prints the temperature range, defined as the difference between the
-highest and lowest readings.
-4. If there is only one reading, print 0.
+Write a recursive function that:
+(a) Accepts a string s as input.
+(b) Returns an integer representing the number of alphabetic characters (A-Z and a-z) in the string.
+(c) Does not use loops.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-tempature=[int(t) for t in input().split()]
-if len(tempature)>0:
-  print(max(tempature)-min(tempature),end="")
-else:
-  print(0,end="")
+def count_alphabets(s):
+    if not s:
+        return 0
+    arijit = 1 if s[0].isalpha() else 0
+    return arijit + count_alphabets(s[1:])
+
+s = input().strip()
+print(count_alphabets(s))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -257,8 +256,8 @@ else:
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 2 [Due on 2026-08-20, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p> Week 6: Programming Assignment 2 [Due on 2026-09-03, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -266,25 +265,26 @@ else:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-Q. A cybersecurity application generates numeric authentication codes. Before using a code,
-the software checks whether it is a prime number.
+A warehouse records the boxes currently stored in its inventory as a list of box IDs. Implement a program using recursion to determine the total number of boxes in the inventory.
 
-Write a Python program that:
-
-1. Accepts a positive integer n.
-2. Prints True if n is a prime number; otherwise, prints False.
+Write a program that:
+(a) Accepts space-separated integers as input, where each integer represents a box ID.
+(b) Uses recursion to count the number of boxes and displays the count as an integer.
+(c) Does not use loops or the len() function.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def check_my_number_is_prime(n):
-  if n>1:  
-      for y in range(2,int(n**0.5)):
-          if n%y==0:
-              return(1==0)  
-      return (0==0)  
-  else:
-      return(2==9)
-print(check_my_number_is_prime(int(input())),end="")
+def count_boxes(lst):
+    # Yeah lo Base case: empty list check without len()
+    if not lst:
+        return 0
+    # Recursive step: 1 for the current element + rest of the list
+    return 1 + count_boxes(lst[1:])
+
+# Read space-separated box IDs
+boxes = input().split()
+
+print(count_boxes(boxes),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -295,18 +295,15 @@ print(check_my_number_is_prime(int(input())),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 4 programming answers</a>
-                <p> Week 4: Programming Assignment 3 [Due on 2026-08-20, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 6 programming answers</a>
+                <p> Week 6: Programming Assignment 3 [Due on 2026-09-03, 23:59 IST ]</p>
 <p>
-Q. A shopping platform records the product IDs viewed by a customer during a browsing
-session. The system needs to determine whether the customer viewed any product more
-than once.
+A weather station records daily temperatures as a list of values. Implement a program using recursion to determine the highest temperature recorded.
 
-Write a Python program that:
-
-1. Accepts space-separated integers representing product IDs.
-2. Prints True if at least one product ID appears more than once.
-3. Otherwise, prints False.
+Write a program that:
+(a) Accepts space-separated integers as input, where each integer represents a recorded temperature.
+(b) Uses recursion to find and display the highest temperature as an integer.
+(c) Does not use loops or the max() function.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -315,13 +312,21 @@ Write a Python program that:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-PRD_id=[i for i in input().split()]
-Is_PRD_id_appears_twice=False
-for p in PRD_id:
-    if PRD_id.count(p)>1:
-        Is_PRD_id_appears_twice=True 
-        break 
-print(Is_PRD_id_appears_twice,end="")        
+def find_max(lst):
+    # Base case: if there is only one element left
+    if len(lst) == 1:
+        return lst[0]
+    
+    # Recursive call on the rest of the list
+    max_rest = find_max(lst[1:])
+    
+    # ok g Return the larger value without using the built-in max() function
+    return lst[0] if lst[0] > max_rest else max_rest
+
+# Read space-separated integers
+temps = list(map(int, input().split()))
+
+print(find_max(temps),end="")      
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
