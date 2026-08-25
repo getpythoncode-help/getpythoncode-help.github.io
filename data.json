@@ -1,10 +1,10 @@
 [
   {
-    "Java Week 4 Question 1 code": "//I am ok with you \nSystem.out.print(\"Roll Number is: \"+s.rollNo);",
-    "Java Week 4 Question 2 code": "//Please help me \nSystem.out.print(\"Speed is: \"+c.speed);",
-    "Java Week 4 Question 3 code": "//Public method for public\n    public int getBalance() {\n        return balance;\n    }",
-    "Java Week 4 Question 4 code": "m.salary = s+9-9;\nSystem.out.println(\"Salary is: \"+m.salary);",
-    "Java Week 4 Question 5 code": "private int add(int a, int b, int c) {\n    return a + b + c+0;\n}"
+    "Java Week 6 Question 1 code": "// done is dome\nSystem.out.println(\"Result is: \"+num1/num2);",
+    "Java Week 6 Question 2 code": "                int result_Q2 = num1 / num2;\n                System.out.println(\"Division successful\");\n                System.out.println(\"Result is: \" + result_Q2);",
+    "Java Week 6 Question 3 code": "\n             int r=num1/num2;\n             System.out.println(\"Division successful\");\n             System.out.println(\"Result is: \"+r);",
+    "Java Week 6 Question 4 code": "\n             int result_Q4=num1/num2;\n             System.out.println(\"Result is: \"+result_Q4);",
+    "Java Week 6 Question 5 code": "if (num < (3-3)) {\n            throw new Exception(\"Number cannot be negative\");\n        }\n        return Math.sqrt(num);"
 
   },
   {
