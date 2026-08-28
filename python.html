@@ -357,8 +357,8 @@ print(find_max(temps),end="")
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 1   Due on  2026-08-27, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 1   Due on  2026-09-10, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -366,34 +366,36 @@ print(find_max(temps),end="")
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Q. A data analyst receives a sequence of integers representing values recorded by a sensor.
-Some values may occur multiple times.
+Write a program that accepts attraction information and an attraction
+name. The program should print the rating of the attraction if it exists;
+otherwise, print -1.
 
-Write a function that:
+Input:
 
-(a) Accepts a space-separated sequence of integers.
-(b) Returns the number that occurs most frequently.
-(c) If two or more numbers have the same highest frequency, returns the smallest number.
+. The first input line contains the number of attractions N.
+. The next N lines contain an attraction name followed by its rating
+separated by a space. Please refer to public test cases for sample.
+. The last line contains the name of the attraction to search.
+
+Output:
+Print the rating of the attraction if it exists; otherwise, print -1.
+
+Note: Each attraction name is followed by its rating, which is a decimal
+number with exactly one digit after the decimal point.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def num_frequency(my_s):
-  d={}
-  for s in my_s:
-    if s not in d:
-      d[s]=1
-    else:
-      d[s]=d[s]+1
-  max_f=max(list(d.values()))    
-  ans_L=[]
-  for t in d:
-    if d[t]==max_f:
-      ans_L.append(t)
-                    
-  return(min(ans_L))
+N=int(input())
+tour={}
+for i in range(N):
+  t=input().split()
+  tour[t[0]]=t[1]
+target=input()  
+if target not in list(tour.keys()):
+  print(-1,end="")
+else:
+  print(tour[target],end="")
   
-n=[int(i) for i in input().split()]    
-print(num_frequency(n))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -404,37 +406,34 @@ print(num_frequency(n))
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 5 programming answers</a>
-                <p>Week 5: Programming Assignment 2  Due on  2026-08-27, 23:59 IST </p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 2  Due on  2026-09-10, 23:59 IST </p>
 		<p>
-Q. A system receives a sequence of integers. Some numbers may appear more than once.
+Q. A navigation system stores landmark names in a list.
 
-Write a function that:
+Write a program that accepts a list of landmark names and a landmark
+to search. The program should use linear search to find the landmark
+and print its index. If the landmark is not found, print -1.
 
-(a) Accepts a space-separated sequence of integers.
-(b) Returns all numbers that occur more than once.
-(c) The numbers should be returned in the order of their first appearance.
-(d) If no number is repeated, returns -1.
+Input:
+
+. The first input line contains the number of landmarks N.
+. The next line contains N landmark names separated by spaces. All
+landmarks have single word in them.
+. The last line contains the landmark name to search.
+
+Output:
+Print the index of the landmark if it is found; otherwise, print -1.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-def num_frequency(my_s):
-  d={}
-  for s in my_s:
-    if s not in d:
-      d[s]=1
-    else:
-      d[s]=d[s]+1
-  ans_L=[]
-  for t in d:
-    if d[t]>1:
-      ans_L.append(t)
-  if len(ans_L)==0:
-    ans_L.append("-1")
-  return(" ".join(ans_L))
-  
-n=[i for i in input().split()]    
-print(num_frequency(n))
+N=int(input())
+t=input().split()
+target=input()  
+if target not in t:
+  print(-1,end="")
+else:
+  print(t.index(target),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -445,36 +444,25 @@ print(num_frequency(n))
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 8 programming answers</a>
-                <p>Week 8: Programming Assignment 5  Due on  2026-08-27, 23:59 IST</p>
+                <a>The Joy of Computing using python week 7 programming answers</a>
+                <p>Week 7: Programming Assignment 3  Due on  2026-09-10, 23:59 IST</p>
 <p>
-Q. A sequence of integers is given. Find all numbers that occur exactly two times.
+Q. A system receives a set of numbers and needs to identify the second
+largest number.
 
-Write a function that:
+Write a program that accepts a set of integers and prints the second
+largest number. Assume that all numbers are distinct.
 
-(a) Accepts a space-separated sequence of integers.
-(b) Returns all numbers that occur exactly two times.
-(c) The numbers should be returned in increasing order.
-(d) If no number occurs exactly two times, returns -1.
+Input:
+A single line containing space-separated integers.
+
+Output:
+Print the second largest number.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def num_frequency(my_s):
-  d={}
-  for s in my_s:
-    if s not in d:
-      d[s]=1
-    else:
-      d[s]=d[s]+1
-  ans_L=[]
-  for t in d:
-    if d[t]==2:
-      ans_L.append(t)
-  if len(ans_L)==0:
-    ans_L.append("-1")
-  return(" ".join(sorted(ans_L)))
-  
-n=[i for i in input().split()]    
-print(num_frequency(n))
+baby_set=[int(b) for b in input().split()]
+baby_set.sort()
+print(baby_set[-2],end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
