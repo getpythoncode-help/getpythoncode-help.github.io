@@ -385,8 +385,8 @@ print(follows_same_pattern(id1, id2))
 
                 <br><br>
 
-                <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 1   Due on  2026-09-10, 23:59 IST</p>
+                <a>The Joy of Computing using python week 9 programming answers</a>
+                <p>Week 9: Programming Assignment 1   Due on  2026-09-24, 23:59 IST</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -394,35 +394,20 @@ print(follows_same_pattern(id1, id2))
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 <p>
-Write a program that accepts attraction information and an attraction
-name. The program should print the rating of the attraction if it exists;
-otherwise, print -1.
+A university records the courses enrolled in by students. The course names are given as space-separated values. Write a program that accepts the list of course names and a course name to search for, and returns the number of students enrolled in that course.
 
 Input:
 
-. The first input line contains the number of attractions N.
-. The next N lines contain an attraction name followed by its rating
-separated by a space. Please refer to public test cases for sample.
-. The last line contains the name of the attraction to search.
-
+First line: space-separated course names
+Second line: the course name to search for
 Output:
-Print the rating of the attraction if it exists; otherwise, print -1.
 
-Note: Each attraction name is followed by its rating, which is a decimal
-number with exactly one digit after the decimal point.
+A single integer representing the number of students enrolled in the given course.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-N=int(input())
-tour={}
-for i in range(N):
-  t=input().split()
-  tour[t[0]]=t[1]
-target=input()  
-if target not in list(tour.keys()):
-  print(-1,end="")
-else:
-  print(tour[target],end="")
+look=input()
+print(Course.count(look))
   
                 </textarea><br><br>
 
@@ -435,33 +420,36 @@ else:
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 2  Due on  2026-09-10, 23:59 IST </p>
+                <p>Week 7: Programming Assignment 2  Due on  2026-09-24, 23:59 IST </p>
 		<p>
-Q. A navigation system stores landmark names in a list.
-
-Write a program that accepts a list of landmark names and a landmark
-to search. The program should use linear search to find the landmark
-and print its index. If the landmark is not found, print -1.
+An organization blocks access to certain websites during working hours. The browsing history is given as space-separated website names, followed by the blocked website. Write a program to determine how many websites in the browsing history are not blocked.
 
 Input:
 
-. The first input line contains the number of landmarks N.
-. The next line contains N landmark names separated by spaces. All
-landmarks have single word in them.
-. The last line contains the landmark name to search.
+A single line containing space-separated website names. The last value represents the blocked website.
+
 
 Output:
-Print the index of the landmark if it is found; otherwise, print -1.
+
+Print a single integer representing the number of websites in the browsing history that are not blocked.
+
+
+Example:
+
+Input:
+google facebook github facebook
+
+Here, google, facebook, github is the browsing history and facebook is the blocked website. Since facebook is a blocked site, only google and github are not blocked. Hence output is 2. 
+
+
+
+Output:
+2
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 65vh;">
-N=int(input())
-t=input().split()
-target=input()  
-if target not in t:
-  print(-1,end="")
-else:
-  print(t.index(target),end="")
+website=[i for i in input().split()]
+print(len(website)-website[:len(website)-1].count(website[-1])-1)
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -473,7 +461,7 @@ else:
                   </div><br><br> -->
 
                 <a>The Joy of Computing using python week 7 programming answers</a>
-                <p>Week 7: Programming Assignment 3  Due on  2026-09-10, 23:59 IST</p>
+                <p>Week 7: Programming Assignment 3  Due on  2026-09-24, 23:59 IST</p>
 <p>
 Q. A system receives a set of numbers and needs to identify the second
 largest number.
@@ -488,9 +476,11 @@ Output:
 Print the second largest number.
 </p>
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-baby_set=[int(b) for b in input().split()]
-baby_set.sort()
-print(baby_set[-2],end="")
+n=[int(i) for i in input().split()]
+if len(n)==1:
+    print(n[0],end="")
+else:
+    print(max(n)-min(n),end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
