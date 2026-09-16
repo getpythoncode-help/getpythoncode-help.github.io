@@ -223,29 +223,28 @@
 		
 		I don't have any previous weekly quiz for the year 2019.<br><br>
              
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p>Week 6: Programming Assignment 1 [Due on 2026-09-03, 23:59 IST]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p>Week 8: Programming Assignment 1 [Due on 2026-09-17, 23:59 IST]</p>
 		<p>
-A cybersecurity company evaluates password strength by counting the number of alphabetic characters in a password. Due to memory constraints in a secure device, the counting must be performed recursively.
+Modern elevators move either up one floor (+1) or down one floor (-1). Given a sequence of elevator movements, determine the final floor reached.
 
-Write a recursive function that:
-(a) Accepts a string s as input.
-(b) Returns an integer representing the number of alphabetic characters (A-Z and a-z) in the string.
-(c) Does not use loops.
+Write a program that:
+
+(a) Accepts a single line containing space-separated integers, where each integer is either 1 or -1.
+
+(b) Assumes the elevator starts at floor 0.
+
+(c) Computes the final floor after applying all movements.
+
+(d) Prints the final floor.
 	</p>
 
 
 <br>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def count_alphabets(s):
-    if not s:
-        return 0
-    arijit = 1 if s[0].isalpha() else 0
-    return arijit + count_alphabets(s[1:])
-
-s = input().strip()
-print(count_alphabets(s))
+floor=[int(f) for f in input().split()]
+print(sum(floor))
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -256,8 +255,8 @@ print(count_alphabets(s))
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 2 [Due on 2026-09-03, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 2 [Due on 2026-09-17, 23:59 IST ]</p>
 <!-- 		 <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
         Please change Q4 answer to option A, C, D. Remove tick from option B (Earlier I marked all options as answer).<br>
@@ -265,26 +264,32 @@ print(count_alphabets(s))
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
 		<p>
-A warehouse records the boxes currently stored in its inventory as a list of box IDs. Implement a program using recursion to determine the total number of boxes in the inventory.
+An online quiz awards 10 points for every correct answer and deducts 2 points for every incorrect answer. Given the outcome of each question, determine the final score.
 
+Use the following representation:
+
+1 → Correct answer
+0 → Incorrect answer
 Write a program that:
-(a) Accepts space-separated integers as input, where each integer represents a box ID.
-(b) Uses recursion to count the number of boxes and displays the count as an integer.
-(c) Does not use loops or the len() function.
+
+(a) Accepts a single line containing space-separated integers consisting of 0s and 1s.
+
+(b) Starts with a score of 0.
+
+(c) Computes the final score.
+
+(d) Prints the final score.
 		</p>
 
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 90vh;">
-def count_boxes(lst):
-    # Yeah lo Base case: empty list check without len()
-    if not lst:
-        return 0
-    # Recursive step: 1 for the current element + rest of the list
-    return 1 + count_boxes(lst[1:])
-
-# Read space-separated box IDs
-boxes = input().split()
-
-print(count_boxes(boxes),end="")
+floor=[int(f) for f in input().split()]
+ans=0
+for i in floor:
+    if i ==0:
+        ans-=2
+    else:
+        ans+=10
+print(ans,end="")
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
@@ -295,15 +300,29 @@ print(count_boxes(boxes),end="")
                     
                   </div><br><br> -->
 
-                <a>The Joy of Computing using python week 6 programming answers</a>
-                <p> Week 6: Programming Assignment 3 [Due on 2026-09-03, 23:59 IST ]</p>
+                <a>The Joy of Computing using python week 8 programming answers</a>
+                <p> Week 8: Programming Assignment 3 [Due on 2026-09-17, 23:59 IST ]</p>
 <p>
-A weather station records daily temperatures as a list of values. Implement a program using recursion to determine the highest temperature recorded.
+Two employee IDs follow the same pattern if each character in the first ID always maps to the same character in the second ID, and different characters cannot map to the same character.
+
+For example:
+
+foo and egg follow the same pattern because:
+
+f → e
+o → g
+The second o also maps to g
+The mapping is consistent, so the answer is True.
+
+However, ab and aa do not follow the same pattern because a → a and b → a. Two different characters (a and b) map to the same character.
 
 Write a program that:
-(a) Accepts space-separated integers as input, where each integer represents a recorded temperature.
-(b) Uses recursion to find and display the highest temperature as an integer.
-(c) Does not use loops or the max() function.
+
+(a) Accepts a single line containing two space-separated strings id1 and id2.
+
+(b) Checks whether the two strings follow the same pattern.
+
+(c) Prints True if they follow the same pattern; otherwise, prints False.
 </p>
 <!--  <p style="color: red; font-weight: bold; font-size: 20px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
         Joy of Computing using Python week 4 Quiz correction : <br>
@@ -312,21 +331,30 @@ Write a program that:
 	Check JOY week 4 Quiz Youtube Video for more details</strong>
     </p> -->
                 <textarea type="text" id="myInput" readonly style="width: 100%;height: 70vh;">
-def find_max(lst):
-    # Base case: if there is only one element left
-    if len(lst) == 1:
-        return lst[0]
-    
-    # Recursive call on the rest of the list
-    max_rest = find_max(lst[1:])
-    
-    # ok g Return the larger value without using the built-in max() function
-    return lst[0] if lst[0] > max_rest else max_rest
+def follows_same_pattern(id1: str, id2: str) -> bool:
+    if len(id1) != len(id2):
+        return False
 
-# Read space-separated integers
-temps = list(map(int, input().split()))
+    map1 = {}
+    map2 = {}
 
-print(find_max(temps),end="")      
+    for c1, c2 in zip(id1, id2):
+        # Validate forward mapping (id1 -> id2)
+        if c1 in map1 and map1[c1] != c2:
+            return False
+
+        # Validate reverse mapping (id2 -> id1)
+        if c2 in map2 and map2[c2] != c1:
+            return False
+
+        map1[c1] = c2
+        map2[c2] = c1
+
+    return True
+
+
+id1, id2 = input().split()
+print(follows_same_pattern(id1, id2))    
                 </textarea><br><br>
 
 <!--                 <div class="tooltip">
